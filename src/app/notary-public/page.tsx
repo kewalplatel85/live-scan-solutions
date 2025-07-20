@@ -383,6 +383,8 @@ export default function NotaryPublicPage() {
                     Mon-Fri: 10AM-5PM PST
                     <br />
                     Sat: 10AM-2PM PST
+                    <br />
+                    Sun: Closed
                   </p>
                 </div>
               </div>

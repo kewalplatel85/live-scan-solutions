@@ -1,3 +1,5 @@
+'use client';
+
 import { ThemeProvider } from 'next-themes';
 
 // A wrapper that bootstraps next-themes and any other providers
