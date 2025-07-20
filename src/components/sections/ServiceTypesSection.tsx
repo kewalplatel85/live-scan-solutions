@@ -143,7 +143,8 @@ export const ServiceTypesSection = () => {
                   ))}
                 </div>
 
-                <div className="border-t pt-6">
+                {/* FUTURE: add feature flag and uncomment this section */}
+                {/* <div className="border-t pt-6">
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-2xl font-bold text-primary">
                       {service.pricing}
@@ -158,7 +159,7 @@ export const ServiceTypesSection = () => {
                   >
                     Schedule Now
                   </Button>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           ))}

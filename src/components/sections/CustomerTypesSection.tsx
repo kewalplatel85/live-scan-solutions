@@ -101,8 +101,8 @@ export const CustomerTypesSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Customers</h2>
           <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-            At LiveScan Express Hub, we&apos;re the experts in fingerprinting,
-            so you don&apos;t need to worry about a thing! From education and
+            At Live Scan Solutions, we&apos;re the experts in fingerprinting, so
+            you don&apos;t need to worry about a thing! From education and
             employment to business, travel, volunteering, and legal
             requirements, just about everyone in America will need
             fingerprinting services at some point. Our customers come to us for

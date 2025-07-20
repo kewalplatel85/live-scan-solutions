@@ -150,22 +150,24 @@ export default function NotaryPublicPage() {
                 </div>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-base" asChild>
-                  <Link href="tel:650-961-4646">
-                    <Phone className="mr-2 h-5 w-5" />
-                    Call Now: 650-961-4646
-                  </Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="text-base"
-                  asChild
-                >
-                  <Link href="/contact">Schedule Appointment</Link>
-                </Button>
+              {/* Primary CTAs */}
+              <div className="space-y-4">
+                <div className="text-sm text-muted-foreground">
+                  <span>Please call us to schedule your appointment</span>
+                </div>
+                <div className="flex">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="text-lg px-8 py-6"
+                    asChild
+                  >
+                    <Link href="tel:650-961-4646">
+                      <Phone className="mr-2 h-5 w-5" />
+                      (650) 961-4646
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
 
@@ -326,7 +328,8 @@ export default function NotaryPublicPage() {
             today. Walk-ins welcome or schedule an appointment for guaranteed
             service.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* FUTURE: Add a feature flag and uncomment this section */}
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="text-base" asChild>
               <Link href="tel:650-961-4646">
                 <Phone className="mr-2 h-5 w-5" />
@@ -341,7 +344,7 @@ export default function NotaryPublicPage() {
             >
               <Link href="/contact">Schedule Appointment</Link>
             </Button>
-          </div>
+          </div> */}
         </div>
       </section>
 

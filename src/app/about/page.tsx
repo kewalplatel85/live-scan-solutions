@@ -95,22 +95,24 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-base" asChild>
-                  <Link href="tel:650-961-4646">
-                    <Phone className="mr-2 h-5 w-5" />
-                    Call: 650-961-4646
-                  </Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="text-base"
-                  asChild
-                >
-                  <Link href="/contact">Get Started Today</Link>
-                </Button>
+              {/* Primary CTAs */}
+              <div className="space-y-4">
+                <div className="text-sm text-muted-foreground">
+                  <span>Please call us to schedule your appointment</span>
+                </div>
+                <div className="flex">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="text-lg px-8 py-6"
+                    asChild
+                  >
+                    <Link href="tel:650-961-4646">
+                      <Phone className="mr-2 h-5 w-5" />
+                      (650) 961-4646
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
 
@@ -374,14 +376,15 @@ export default function AboutPage() {
                 Call: 650-961-4646
               </Link>
             </Button>
-            <Button
+            {/* FUTURE: Add a feature flag and uncomment this section */}
+            {/* <Button
               size="lg"
               variant="outline"
               className="text-base bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
               asChild
             >
               <Link href="/contact">Schedule Service</Link>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>

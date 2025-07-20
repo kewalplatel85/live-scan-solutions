@@ -12,7 +12,6 @@ import {
   Award,
   BookOpen,
   Building2,
-  Calendar,
   Check,
   CheckCircle,
   Clock,
@@ -27,6 +26,7 @@ import {
   Star,
   Users,
 } from 'lucide-react';
+import Link from 'next/link';
 
 const apostilleServices = [
   {
@@ -287,16 +287,24 @@ export default function ApostillesPage() {
                 </div>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="px-8 py-3">
-                  <Calendar className="w-5 h-5 mr-2" />
-                  Schedule Consultation
-                </Button>
-                <Button variant="outline" size="lg" className="px-8 py-3">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Now: (650) 961-4646
-                </Button>
+              {/* Primary CTAs */}
+              <div className="space-y-4">
+                <div className="text-sm text-muted-foreground">
+                  <span>Please call us to schedule your appointment</span>
+                </div>
+                <div className="flex">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="text-lg px-8 py-6"
+                    asChild
+                  >
+                    <Link href="tel:650-961-4646">
+                      <Phone className="mr-2 h-5 w-5" />
+                      (650) 961-4646
+                    </Link>
+                  </Button>
+                </div>
               </div>
 
               {/* Contact Info */}
@@ -317,7 +325,7 @@ export default function ApostillesPage() {
               <Card className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-xl font-semibold">Apostille Services</h3>
-                  <Badge variant="secondary">Starting at $75</Badge>
+                  <Badge variant="outline">Lowest price in town</Badge>
                 </div>
                 <ul className="space-y-3">
                   <li className="flex items-center">
@@ -500,12 +508,13 @@ export default function ApostillesPage() {
                     {option.description}
                   </p>
                   <div className="text-center mt-4">
-                    <div className="text-2xl font-bold text-primary">
+                    {/* FUTURE: Add a feature flag and uncomment this section */}
+                    {/* <div className="text-2xl font-bold text-primary">
                       {option.price}
-                    </div>
-                    <div className="text-sm text-muted-foreground">
+                    </div> */}
+                    {/* <div className="text-sm text-muted-foreground">
                       {option.timeframe}
-                    </div>
+                    </div> */}
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -520,12 +529,13 @@ export default function ApostillesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button
+                  {/* FUTURE: Add a feature flag and uncomment this section */}
+                  {/* <Button
                     className="w-full mt-6"
                     variant={option.popular ? 'default' : 'outline'}
                   >
                     Get Started
-                  </Button>
+                  </Button> */}
                 </CardContent>
               </Card>
             ))}
@@ -612,10 +622,11 @@ export default function ApostillesPage() {
             process. Expert guidance and secure processing guaranteed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="px-8 py-3">
+            {/* FUTURE: Add a feature flag and uncomment this section */}
+            {/* <Button size="lg" variant="secondary" className="px-8 py-3">
               <Calendar className="w-5 h-5 mr-2" />
               Schedule Consultation
-            </Button>
+            </Button> */}
             <Button
               size="lg"
               className="px-8 py-3 bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors"
