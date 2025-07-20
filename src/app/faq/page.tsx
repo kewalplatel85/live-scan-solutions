@@ -65,9 +65,9 @@ const faqs = [
   },
   {
     category: 'Apostille',
-    question: 'Which countries accept apostilles?',
+    question: 'Which countries accept apostille?',
     answer:
-      'All countries that are members of the Hague Convention accept apostilles. This includes most European countries, many Asian countries, Australia, and others. For non-Hague countries, documents require embassy legalization.',
+      'All countries that are members of the Hague Convention accept apostille. This includes most European countries, many Asian countries, Australia, and others. For non-Hague countries, documents require embassy legalization.',
   },
   {
     category: 'Apostille',

@@ -31,7 +31,7 @@ export const DocumentsSection = () => {
               <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                 <FileText className="h-8 w-8 text-primary" />
               </div>
-              <CardTitle>Apostilles</CardTitle>
+              <CardTitle>Apostille</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">

@@ -211,9 +211,9 @@ const faqItems = [
       'An apostille is a form of authentication issued to documents for use in countries that participate in the Hague Convention. It verifies the authenticity of the document for international use.',
   },
   {
-    question: 'Which countries accept apostilles?',
+    question: 'Which countries accept apostille?',
     answer:
-      'All countries that are members of the Hague Convention accept apostilles. This includes most European countries, many Asian countries, Australia, and others. For non-Hague countries, documents require embassy legalization.',
+      'All countries that are members of the Hague Convention accept apostille. This includes most European countries, many Asian countries, Australia, and others. For non-Hague countries, documents require embassy legalization.',
   },
   {
     question: 'How long does the apostille process take?',
@@ -227,7 +227,7 @@ const faqItems = [
   },
 ];
 
-export default function ApostillesPage() {
+export default function ApostillePage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
