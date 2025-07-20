@@ -6,6 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Phone } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const navigation = [
@@ -20,6 +21,14 @@ const navigation = [
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/';
+    }
+    return pathname.startsWith(href);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -43,9 +52,14 @@ export const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                className={`text-sm font-medium transition-colors hover:text-primary relative ${
+                  isActive(item.href) ? 'text-primary' : 'text-muted-foreground'
+                }`}
               >
                 {item.name}
+                {isActive(item.href) && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                )}
               </Link>
             ))}
           </nav>
@@ -65,8 +79,10 @@ export const Header = () => {
               </Link>
             </Button>
 
-            {/* Theme Toggle */}
-            <ThemeToggle />
+            {/* Theme Toggle - Desktop only */}
+            <div className="hidden md:block">
+              <ThemeToggle />
+            </div>
 
             {/* Mobile menu button */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -89,16 +105,34 @@ export const Header = () => {
                         <div key={item.name}>
                           <Link
                             href={item.href}
-                            className="block px-3 py-3 text-lg font-medium text-muted-foreground transition-colors hover:text-primary hover:bg-muted/50 rounded-lg"
+                            className={`block px-3 py-3 text-lg font-medium transition-colors hover:text-primary hover:bg-muted/50 rounded-lg relative ${
+                              isActive(item.href)
+                                ? 'text-primary bg-primary/10'
+                                : 'text-muted-foreground'
+                            }`}
                             onClick={() => setIsOpen(false)}
                           >
                             {item.name}
+                            {isActive(item.href) && (
+                              <span className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full" />
+                            )}
                           </Link>
                           {index < navigation.length - 1 && (
                             <Separator className="mx-3 my-1" />
                           )}
                         </div>
                       ))}
+
+                      {/* Theme Toggle in Mobile Menu */}
+                      <div className="mt-6 px-3">
+                        <Separator className="mb-4" />
+                        <div className="flex items-center justify-between py-2">
+                          <span className="text-lg font-medium text-muted-foreground">
+                            Theme
+                          </span>
+                          <ThemeToggle />
+                        </div>
+                      </div>
                     </div>
                   </nav>
 
