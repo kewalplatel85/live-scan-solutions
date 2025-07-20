@@ -8,15 +8,11 @@ const footerLinks = {
     { name: 'Live Scan Fingerprinting', href: '/livescan' },
     { name: 'Notary Public', href: '/notary-public' },
     { name: 'Apostille Services', href: '/apostilles' },
-    { name: 'Passport Photos', href: '/passport-photos' },
-    { name: 'Document Services', href: '/documents' },
   ],
   company: [
     { name: 'About Us', href: '/about' },
     { name: 'Contact Us', href: '/contact' },
     { name: 'FAQ', href: '/faq' },
-    { name: 'Appointments', href: '/appointments' },
-    { name: 'Privacy Policy', href: '/privacy' },
   ],
 };
 
@@ -48,9 +44,9 @@ export const Footer = () => {
                   </Link>
                 </Button>
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="mailto:livescancenter1@gmail.com">
+                  <Link href="mailto:mailallcenter1@gmail.com">
                     <Mail className="mr-2 h-4 w-4" />
-                    livescancenter1@gmail.com
+                    mailallcenter1@gmail.com
                   </Link>
                 </Button>
               </div>
@@ -117,25 +113,11 @@ export const Footer = () => {
         <Separator />
 
         <div className="py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0">
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Live Scan Solutions. All rights
               reserved.
             </p>
-            <div className="flex items-center space-x-4">
-              <Link
-                href="/privacy"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                Terms of Service
-              </Link>
-            </div>
           </div>
         </div>
       </div>

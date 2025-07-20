@@ -227,7 +227,7 @@ export default function LiveScanPage() {
               <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center">
                   <Clock className="w-4 h-4 mr-2" />
-                  Mon-Fri: 10AM-5PM | Sat: 10AM-2PM
+                  Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST | Sun: Closed
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-4 h-4 mr-2" />
@@ -581,7 +581,7 @@ export default function LiveScanPage() {
             </Button>
           </div>
           <div className="mt-8 text-sm opacity-75">
-            <p>Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST</p>
+            <p>Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST | Sun: Closed</p>
             <p>Walk-ins welcome | Same-day processing available</p>
           </div>
         </div>

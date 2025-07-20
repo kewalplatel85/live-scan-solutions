@@ -88,7 +88,9 @@ export const HeroSection = () => {
             <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
               <div className="flex items-center space-x-2">
                 <Clock className="h-4 w-4" />
-                <span>Mon-Fri: 10AM-5PM</span>
+                <span>
+                  Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST | Sun: Closed
+                </span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />

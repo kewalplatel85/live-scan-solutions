@@ -14,14 +14,14 @@ const contactMethods = [
     icon: Phone,
     title: 'Call Us',
     description: 'Speak with our experts',
-    action: '(555) 123-4567',
+    action: '(650) 961-4646',
     primary: true,
   },
   {
     icon: Mail,
     title: 'Email Us',
     description: 'Send us your questions',
-    action: 'info@livescanexpress.com',
+    action: 'mailallcenter1@gmail.com',
     primary: false,
   },
   {
@@ -41,9 +41,9 @@ const contactMethods = [
 ];
 
 const businessHours = [
-  { day: 'Monday - Friday', hours: '8:00 AM - 6:00 PM' },
-  { day: 'Saturday', hours: '9:00 AM - 4:00 PM' },
-  { day: 'Sunday', hours: 'By Appointment Only' },
+  { day: 'Monday - Friday', hours: '10:00 AM - 5:00 PM PST' },
+  { day: 'Saturday', hours: '10:00 AM - 2:00 PM PST' },
+  { day: 'Sunday', hours: 'Closed' },
 ];
 
 export const ContactCTASection = () => {
@@ -158,7 +158,7 @@ export const ContactCTASection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8 py-6">
                 <Phone className="w-5 h-5 mr-2" />
-                Call (555) 123-4567
+                Call (650) 961-4646
               </Button>
               <Button
                 size="lg"
