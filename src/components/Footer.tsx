@@ -7,7 +7,7 @@ const footerLinks = {
   services: [
     { name: 'Live Scan Fingerprinting', href: '/livescan' },
     { name: 'Notary Public', href: '/notary-public' },
-    { name: 'Apostille Services', href: '/apostille' },
+    { name: 'Apostille Services', href: '/apostilles' },
     { name: 'Passport Photos', href: '/passport-photos' },
     { name: 'Document Services', href: '/documents' },
   ],

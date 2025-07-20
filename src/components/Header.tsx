@@ -12,7 +12,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Live Scan', href: '/livescan' },
   { name: 'Notary Public', href: '/notary-public' },
-  { name: 'Apostille', href: '/apostille' },
+  { name: 'Apostille', href: '/apostilles' },
   { name: 'About Us', href: '/about' },
   { name: 'FAQ', href: '/faq' },
   { name: 'Contact Us', href: '/contact' },
