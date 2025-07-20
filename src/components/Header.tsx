@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Live Scan', href: '/live-scan' },
+  { name: 'Live Scan', href: '/livescan' },
   { name: 'Notary Public', href: '/notary-public' },
   { name: 'Apostille', href: '/apostille' },
   { name: 'About Us', href: '/about' },
