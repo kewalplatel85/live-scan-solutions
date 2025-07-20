@@ -64,24 +64,32 @@ export const HeroSection = () => {
                   Electronic transmission
                 </span>
               </div>
+              <div className="flex items-center space-x-3">
+                <CheckCircle className="h-5 w-5 text-green-600" />
+                <span className="text-sm font-medium">
+                  Trusted by local schools and churches
+                </span>
+              </div>
             </div>
 
             {/* Primary CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8 py-6" asChild>
-                <Link href="/appointments">Book Online Appointment</Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-lg px-8 py-6"
-                asChild
-              >
-                <Link href="tel:650-961-4646">
-                  <Phone className="mr-2 h-5 w-5" />
-                  (650) 961-4646
-                </Link>
-              </Button>
+            <div className="space-y-4">
+              <div className="text-sm text-muted-foreground">
+                <span>Please call us to schedule your appointment</span>
+              </div>
+              <div className="flex">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-lg px-8 py-6"
+                  asChild
+                >
+                  <Link href="tel:650-961-4646">
+                    <Phone className="mr-2 h-5 w-5" />
+                    (650) 961-4646
+                  </Link>
+                </Button>
+              </div>
             </div>
 
             {/* Quick Info */}
@@ -139,6 +147,12 @@ export const HeroSection = () => {
                     <div className="text-2xl font-bold text-primary">99.9%</div>
                     <div className="text-sm text-muted-foreground">
                       Success Rate
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-primary">99.9%</div>
+                    <div className="text-sm text-muted-foreground">
+                      Trusted by Schools and Churches
                     </div>
                   </div>
                 </div>

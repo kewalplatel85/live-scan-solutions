@@ -1,13 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import {
-  Calendar,
-  Clock,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
-} from 'lucide-react';
+import { Clock, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 
 const contactMethods = [
   {
@@ -31,13 +24,6 @@ const contactMethods = [
     action: 'Get Directions',
     primary: false,
   },
-  {
-    icon: Calendar,
-    title: 'Schedule Online',
-    description: 'Book your appointment',
-    action: 'Book Now',
-    primary: true,
-  },
 ];
 
 const businessHours = [
@@ -55,7 +41,7 @@ export const ContactCTASection = () => {
             Ready to Get Started?
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Contact LiveScan Express Hub today to schedule your fingerprinting
+            Contact Live Scan Solutions today to schedule your fingerprinting
             appointment. Our certified professionals are ready to assist you
             with fast, secure, and reliable service.
           </p>
@@ -151,23 +137,24 @@ export const ContactCTASection = () => {
               Fast, Secure, Professional
             </h3>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who trust LiveScan Express
-              Hub for their fingerprinting needs. Get started today with our
-              certified professionals.
+              Join thousands of satisfied customers who trust Live Scan
+              Solutions for their fingerprinting needs. Get started today with
+              our certified professionals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8 py-6">
                 <Phone className="w-5 h-5 mr-2" />
                 Call (650) 961-4646
               </Button>
-              <Button
+              {/* FUTURE: Add a feature flag and uncomment this section */}
+              {/* <Button
                 size="lg"
                 variant="secondary"
                 className="text-lg px-8 py-6"
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 Schedule Online
-              </Button>
+              </Button> */}
             </div>
             <div className="mt-6 flex items-center justify-center space-x-6 text-sm text-muted-foreground">
               <div className="flex items-center space-x-1">
