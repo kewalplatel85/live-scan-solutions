@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Phone } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -36,13 +37,24 @@ export const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">
-                  L
+            <Link href="/" className="flex items-center space-x-3">
+              <div className="relative">
+                {/* Fingerprint scanner icon - using local image */}
+                <div className="h-12 w-12 flex items-center justify-center">
+                  <Image
+                    src="/assets/Logo/icons8-fingerprint-scan-80.png"
+                    alt="fingerprint-scan"
+                    width={48}
+                    height={48}
+                    className="w-12 h-12"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-bold text-xl tracking-tight text-foreground">
+                  Live Scan Solutions
                 </span>
               </div>
-              <span className="font-bold text-xl">Live Scan Solutions</span>
             </Link>
           </div>
 
