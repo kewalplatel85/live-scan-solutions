@@ -1,6 +1,6 @@
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { GenericHero } from '@/components/common/GenericHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { badgeData } from '@/data/badges';
 import {
   CheckCircle,
   Clock,
@@ -11,7 +11,6 @@ import {
   Star,
   Users,
 } from 'lucide-react';
-import Link from 'next/link';
 
 export default function NotaryPublicPage() {
   const processSteps = [
@@ -92,94 +91,36 @@ export default function NotaryPublicPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-background via-background to-primary/5">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              {/* Trust Badges */}
-              <div className="flex flex-wrap gap-3">
-                <Badge variant="secondary" className="px-4 py-2">
-                  <Shield className="w-4 h-4 mr-2" />
-                  Licensed Notary
-                </Badge>
-                <Badge variant="secondary" className="px-4 py-2">
-                  <Clock className="w-4 h-4 mr-2" />
-                  Same Day Service
-                </Badge>
-                <Badge variant="outline" className="px-4 py-2">
-                  <Star className="w-4 h-4 mr-2 fill-yellow-400 text-yellow-400" />
-                  Trusted & Reliable
-                </Badge>
-              </div>
-
-              {/* Main Headline */}
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                  Professional{' '}
-                  <span className="text-primary">Notary Public</span> Services
-                  in Mountain View
-                </h1>
-                <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-                  Accurate, efficient, and secure document notarization with
-                  licensed professionals. Walk-ins welcome or book online for
-                  guaranteed service.
-                </p>
-              </div>
-
-              {/* Key Benefits */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-sm font-medium">
-                    Same-day processing
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-sm font-medium">
-                    Licensed professionals
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-sm font-medium">Secure handling</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-sm font-medium">Walk-ins welcome</span>
-                </div>
-              </div>
-
-              {/* Primary CTAs */}
-              <div className="space-y-4">
-                <div className="text-sm text-muted-foreground">
-                  <span>Please call us to schedule your appointment</span>
-                </div>
-                <div className="flex">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-lg px-8 py-6"
-                    asChild
-                  >
-                    <Link href="tel:650-961-4646">
-                      <Phone className="mr-2 h-5 w-5" />
-                      (650) 961-4646
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Hero Image/Visual */}
-            <div className="relative">
-              <div className="bg-primary/10 rounded-2xl p-8 flex items-center justify-center h-96">
-                <FileText className="h-32 w-32 text-primary/60" />
-              </div>
-            </div>
+      <GenericHero
+        badges={badgeData.notaryPublic}
+        title={
+          <>
+            Professional <span className="text-primary">Notary Public</span>{' '}
+            Services in Mountain View
+          </>
+        }
+        description="Accurate, efficient, and secure document notarization with licensed professionals. Walk-ins welcome or book online for guaranteed service."
+        benefits={[
+          { text: 'Same-day processing' },
+          { text: 'Licensed professionals' },
+          { text: 'Secure handling' },
+          { text: 'Walk-ins welcome' },
+        ]}
+        ctaText="Please call us to schedule your appointment"
+        buttons={[
+          {
+            text: '(650) 961-4646',
+            href: 'tel:650-961-4646',
+            icon: Phone,
+            variant: 'outline',
+          },
+        ]}
+        rightContent={
+          <div className="bg-primary/10 rounded-2xl p-8 flex items-center justify-center h-96">
+            <FileText className="h-32 w-32 text-primary/60" />
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* Process Section */}
       <section className="py-16 bg-background">

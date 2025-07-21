@@ -1,7 +1,8 @@
 import { InteractiveMap } from '@/components/InteractiveMap';
-import { Badge } from '@/components/ui/badge';
+import { GenericHero } from '@/components/common/GenericHero';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { badgeData } from '@/data/badges';
 import {
   Clock,
   FileText,
@@ -10,7 +11,6 @@ import {
   Navigation,
   Phone,
   Shield,
-  Star,
   Users,
 } from 'lucide-react';
 import Link from 'next/link';
@@ -84,59 +84,31 @@ export default function ContactPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-background via-background to-primary/5">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            {/* Trust Badges */}
-            <div className="flex flex-wrap justify-center gap-3 mb-8">
-              <Badge variant="secondary" className="px-4 py-2">
-                <Shield className="w-4 h-4 mr-2" />
-                DOJ Certified
-              </Badge>
-              <Badge variant="secondary" className="px-4 py-2">
-                <Clock className="w-4 h-4 mr-2" />
-                Same Day Service
-              </Badge>
-              <Badge variant="outline" className="px-4 py-2">
-                <Star className="w-4 h-4 mr-2 fill-yellow-400 text-yellow-400" />
-                Trusted & Reliable
-              </Badge>
-            </div>
-
-            {/* Main Headline */}
-            <div className="space-y-6 mb-12">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                We Assure A{' '}
-                <span className="text-primary">Prompt Response</span>
-              </h1>
-              <h2 className="text-3xl md:text-4xl font-semibold text-muted-foreground">
-                To All Your Enquiries
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Ready to help with all your fingerprinting, notary, and
-                documentation needs. Contact us today for fast, professional
-                service.
-              </p>
-            </div>
-
-            {/* Quick Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-base" asChild>
-                <Link href="tel:650-961-4646">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call Now: 650-961-4646
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" className="text-base" asChild>
-                <Link href="mailto:mailallcenter1@gmail.com">
-                  <Mail className="mr-2 h-5 w-5" />
-                  Send Email
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <GenericHero
+        layout="centered"
+        badges={badgeData.contact}
+        title={
+          <>
+            We Assure A <span className="text-primary">Prompt Response</span>
+          </>
+        }
+        subtitle="To All Your Enquiries"
+        description="Ready to help with all your fingerprinting, notary, and documentation needs. Contact us today for fast, professional service."
+        buttons={[
+          {
+            text: 'Call Now: 650-961-4646',
+            href: 'tel:650-961-4646',
+            icon: Phone,
+            variant: 'default',
+          },
+          {
+            text: 'Send Email',
+            href: 'mailto:mailallcenter1@gmail.com',
+            icon: Mail,
+            variant: 'outline',
+          },
+        ]}
+      />
 
       {/* Contact Methods */}
       <section className="py-16 bg-background">
