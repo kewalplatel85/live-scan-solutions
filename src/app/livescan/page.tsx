@@ -1,12 +1,13 @@
+import { GenericHero } from '@/components/common/GenericHero';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { badgeData } from '@/data/badges';
 import {
   Award,
   Building2,
   Calendar,
   Check,
-  CheckCircle,
   Clock,
   CreditCard,
   FileText,
@@ -14,11 +15,9 @@ import {
   Phone,
   Shield,
   Smartphone,
-  Star,
   Users,
   Zap,
 } from 'lucide-react';
-import Link from 'next/link';
 
 const liveScanFeatures = [
   {
@@ -154,164 +153,96 @@ export default function LiveScanPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-background via-background to-primary/5">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="space-y-8">
-              {/* Trust Badges */}
-              <div className="flex flex-wrap gap-3">
-                <Badge variant="secondary" className="px-4 py-2">
-                  <Shield className="w-4 h-4 mr-2" />
-                  DOJ Certified
-                </Badge>
-                <Badge variant="secondary" className="px-4 py-2">
-                  <Shield className="w-4 h-4 mr-2" />
-                  FBI Authorized
-                </Badge>
-                <Badge variant="outline" className="px-4 py-2">
-                  <Star className="w-4 h-4 mr-2 fill-yellow-400 text-yellow-400" />
-                  5-Star Service
-                </Badge>
-              </div>
-
-              {/* Main Headline */}
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                  Professional <span className="text-primary">Live Scan</span>{' '}
-                  Fingerprinting
-                </h1>
-                <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-                  Certified digital and ink fingerprinting services for
-                  employment, licensing, and background checks. Trusted by
-                  businesses and individuals across the Bay Area.
-                </p>
-              </div>
-
-              {/* Key Benefits */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-sm font-medium">
-                    Same-day processing
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-sm font-medium">Walk-ins welcome</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-sm font-medium">
-                    Mobile service available
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-sm font-medium">Expert assistance</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-sm font-medium">
-                    Trusted by local schools and churches
-                  </span>
+      <GenericHero
+        badges={badgeData.liveScanService}
+        title={
+          <>
+            Professional <span className="text-primary">Live Scan</span>{' '}
+            Fingerprinting
+          </>
+        }
+        description="Certified digital and ink fingerprinting services for employment, licensing, and background checks. Trusted by businesses and individuals across the Bay Area."
+        benefits={[
+          { text: 'Same-day processing' },
+          { text: 'Walk-ins welcome' },
+          { text: 'Mobile service available' },
+          { text: 'Expert assistance' },
+        ]}
+        ctaText="Please call us to schedule your appointment"
+        buttons={[
+          {
+            text: '(650) 961-4646',
+            href: 'tel:650-961-4646',
+            icon: Phone,
+            variant: 'outline',
+          },
+        ]}
+        quickInfo={[
+          {
+            icon: Clock,
+            text: 'Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST | Sun: Closed',
+          },
+          { icon: MapPin, text: 'Bay Area Locations' },
+        ]}
+        rightContent={
+          <div className="space-y-6">
+            <Card className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold">Live Scan Services</h3>
+                <div className="flex items-center ">
+                  <Badge className="mr-2" variant="secondary">
+                    Rolling fee lowest in town
+                  </Badge>
+                  <Badge variant="default">$17</Badge>
                 </div>
               </div>
+              <ul className="space-y-3">
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600" />
+                  Digital fingerprint capture
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600" />
+                  Real-time quality verification
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600" />
+                  Instant electronic transmission
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600" />
+                  AFIS system integration
+                </li>
+              </ul>
+            </Card>
 
-              {/* CTA Buttons */}
-              {/* Primary CTAs */}
-              <div className="space-y-4">
-                <div className="text-sm text-muted-foreground">
-                  <span>Please call us to schedule your appointment</span>
-                </div>
-                <div className="flex">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-lg px-8 py-6"
-                    asChild
-                  >
-                    <Link href="tel:650-961-4646">
-                      <Phone className="mr-2 h-5 w-5" />
-                      (650) 961-4646
-                    </Link>
-                  </Button>
-                </div>
+            <Card className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold">Ink Fingerprinting</h3>
+                <Badge variant="outline">FBI FD-258</Badge>
               </div>
-
-              {/* Contact Info */}
-              <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-                <div className="flex items-center">
-                  <Clock className="w-4 h-4 mr-2" />
-                  Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST | Sun: Closed
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Bay Area Locations
-                </div>
-              </div>
-            </div>
-
-            {/* Right Content - Service Cards */}
-            <div className="space-y-6">
-              <Card className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-semibold">Live Scan Services</h3>
-                  <div className="flex items-center ">
-                    <Badge className="mr-2" variant="secondary">
-                      Rolling fee lowest in town
-                    </Badge>
-                    <Badge variant="default">$17</Badge>
-                  </div>
-                </div>
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    Digital fingerprint capture
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    Real-time quality verification
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    Instant electronic transmission
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    AFIS system integration
-                  </li>
-                </ul>
-              </Card>
-
-              <Card className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-semibold">Ink Fingerprinting</h3>
-                  <Badge variant="outline">FBI FD-258</Badge>
-                </div>
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    Authentic FBI cards provided
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    DOJ guidelines compliance
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    International acceptance
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    Hard card backup option
-                  </li>
-                </ul>
-              </Card>
-            </div>
+              <ul className="space-y-3">
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600" />
+                  Authentic FBI cards provided
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600" />
+                  DOJ guidelines compliance
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600" />
+                  International acceptance
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600" />
+                  Hard card backup option
+                </li>
+              </ul>
+            </Card>
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* Certifications Section */}
       <section className="py-16 bg-muted/50">

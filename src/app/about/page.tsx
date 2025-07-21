@@ -1,133 +1,67 @@
+import { GenericHero } from '@/components/common/GenericHero';
 import { CTASection } from '@/components/sections/CTASection';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { aboutData } from '@/data/about';
+import { badgeData } from '@/data/badges';
 import {
-  Award,
   CheckCircle,
   Clock,
   FileText,
   Heart,
-  MapPin,
   Phone,
   Shield,
-  Star,
   Target,
   Users,
 } from 'lucide-react';
-import Link from 'next/link';
 
 export default function AboutPage() {
-  const services = [
-    { name: 'Live Scan Fingerprinting', icon: FileText },
-    { name: 'Notary Public', icon: Shield },
-    { name: 'Passport Photos', icon: Users },
-    { name: 'Apostille Services', icon: Award },
-    { name: 'Mail Box Rental', icon: MapPin },
-    { name: 'Pack & Ship', icon: CheckCircle },
-  ];
-
-  const values = [
-    {
-      title: 'Safety & Security',
-      description: 'Your privacy and peace of mind are our top priorities.',
-      icon: Shield,
-    },
-    {
-      title: 'Speed & Accuracy',
-      description: 'Swift and precise capture of your information every time.',
-      icon: Target,
-    },
-    {
-      title: 'Convenience',
-      description: 'Walk-in or mobile services to meet your scheduling needs.',
-      icon: Clock,
-    },
-    {
-      title: 'Community Care',
-      description: 'Committed to serving our community with dedication.',
-      icon: Heart,
-    },
-  ];
-
-  const features = [
-    'DOJ & FBI Certified Fingerprint Specialists',
-    'Over 20 years of combined experience',
-    'State-of-the-art fingerprinting technology',
-    'Mobile Live Scan services available',
-    'Direct partnership with Department of Justice',
-    'Multiple locations throughout Northern California',
-    'Seven days a week availability',
-    'Group and individual accommodations',
-  ];
-
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-background via-background to-primary/5">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              {/* Trust Badges */}
-              <div className="flex flex-wrap gap-3">
-                <Badge variant="secondary" className="px-4 py-2">
-                  <Shield className="w-4 h-4 mr-2" />
-                  DOJ Certified
-                </Badge>
-                <Badge variant="secondary" className="px-4 py-2">
-                  <Award className="w-4 h-4 mr-2" />
-                  FBI Authorized
-                </Badge>
-                <Badge variant="outline" className="px-4 py-2">
-                  <Star className="w-4 h-4 mr-2 fill-yellow-400 text-yellow-400" />
-                  20+ Years Experience
-                </Badge>
-              </div>
-
-              {/* Main Headline */}
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                  We Care About You and Want to{' '}
-                  <span className="text-primary">Help</span>
-                </h1>
-                <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-                  We are an officially certified fingerprinting service provider
-                  agency authorized by the Department of Justice and FBI.
-                </p>
-              </div>
-
-              {/* Primary CTAs */}
-              <div className="space-y-4">
-                <div className="text-sm text-muted-foreground">
-                  <span>Please call us to schedule your appointment</span>
-                </div>
-                <div className="flex">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-lg px-8 py-6"
-                    asChild
-                  >
-                    <Link href="tel:650-961-4646">
-                      <Phone className="mr-2 h-5 w-5" />
-                      (650) 961-4646
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Hero Visual */}
-            <div className="relative">
-              <div className="bg-primary/10 rounded-2xl p-8 flex items-center justify-center h-96">
-                <Heart className="h-32 w-32 text-primary/60" />
-              </div>
-            </div>
+      <GenericHero
+        badges={badgeData.about}
+        title={
+          <>
+            {'We Care About You and Want to '}
+            <span className="text-primary">Help</span>
+          </>
+        }
+        description="We are an officially certified fingerprinting service provider agency authorized by the Department of Justice and FBI."
+        ctaText="Please call us to schedule your appointment"
+        buttons={[
+          {
+            text: '(650) 961-4646',
+            href: 'tel:650-961-4646',
+            icon: Phone,
+            variant: 'outline',
+          },
+        ]}
+        rightContent={
+          <div className="bg-primary/10 rounded-2xl p-8 flex items-center justify-center h-96">
+            <Heart className="h-32 w-32 text-primary/60" />
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* Services Overview */}
+      {/* <Section
+        title="Services We Offer"
+        description="Comprehensive solutions for all your documentation and identification needs."
+        background="default"
+        padding="lg"
+      >
+        <FeatureCards
+          items={aboutData.services.map((service) => ({
+            title: service.name,
+            icon: service.icon,
+          }))}
+          layout="compact"
+          columns="services"
+          size="sm"
+          variant="minimal"
+        />
+      </Section> */}
+
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -141,7 +75,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {services.map((service, index) => {
+            {aboutData.services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <div
@@ -250,7 +184,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => {
+            {aboutData.values.map((value, index) => {
               const Icon = value.icon;
               return (
                 <Card key={index} className="text-center">
@@ -358,7 +292,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {features.map((feature, index) => (
+            {aboutData.features.map((feature, index) => (
               <div key={index} className="flex items-start space-x-3">
                 <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
                 <span className="text-muted-foreground">{feature}</span>
