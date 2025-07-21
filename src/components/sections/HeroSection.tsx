@@ -18,12 +18,12 @@ import Link from 'next/link';
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-[70vh] bg-gradient-to-br from-primary/5 via-white to-primary/3">
+    <section className="relative min-h-[70vh] bg-gradient-to-br from-background via-background to-primary/5">
       {/* Subtle Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-grid-slate-100/20 [mask-image:linear-gradient(0deg,transparent,rgba(255,255,255,0.2),transparent)]"></div>
+        <div className="absolute inset-0 bg-grid-slate-100/20 dark:bg-grid-slate-900/20 [mask-image:linear-gradient(0deg,transparent,rgba(255,255,255,0.2),transparent)]"></div>
         <div className="absolute top-32 left-16 w-16 h-16 bg-primary/3 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-40 right-20 w-20 h-20 bg-blue-400/3 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-40 right-20 w-20 h-20 bg-primary/3 rounded-full blur-2xl"></div>
       </div>
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
@@ -89,8 +89,8 @@ export const HeroSection = () => {
                   key={index}
                   className="flex items-center space-x-2 text-sm"
                 >
-                  <benefit.icon className="h-4 w-4 text-green-600 flex-shrink-0" />
-                  <span className="font-medium text-gray-800">
+                  <benefit.icon className="h-4 w-4 text-green-600 dark:text-green-400 flex-shrink-0" />
+                  <span className="font-medium text-foreground">
                     {benefit.text}
                   </span>
                 </div>
@@ -132,17 +132,17 @@ export const HeroSection = () => {
 
           {/* Right Content - 3/7 of space, Centered */}
           <div className="lg:col-span-3 flex items-center justify-center mt-8 lg:mt-0">
-            <Card className="p-4 lg:p-6 bg-white/60 backdrop-blur-sm border-slate-200/50 shadow-sm w-full max-w-md">
+            <Card className="p-4 lg:p-6 bg-background/80 backdrop-blur-sm border-border shadow-sm w-full max-w-md">
               <div className="space-y-4">
                 <div className="text-center">
                   <h3 className="text-lg font-semibold mb-3">Why Choose Us?</h3>
                   {/* Rating moved to top of right side */}
-                  <Badge className="flex items-center gap-1 px-3 py-1 bg-yellow-50 text-yellow-700 border-yellow-200 text-sm mb-4 mx-auto w-fit">
+                  <Badge className="flex items-center gap-1 px-3 py-1 bg-yellow-50 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-300 border-yellow-200 dark:border-yellow-700 text-sm mb-4 mx-auto w-fit">
                     <div className="flex items-center gap-0.5">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className="h-3 w-3 fill-yellow-500 text-yellow-500"
+                          className="h-3 w-3 fill-yellow-500 dark:fill-yellow-400 text-yellow-500 dark:text-yellow-400"
                         />
                       ))}
                     </div>
@@ -184,21 +184,21 @@ export const HeroSection = () => {
                     const Icon = indicator.icon;
                     return (
                       <div key={index} className="flex items-start space-x-3">
-                        <div className="w-8 h-8 bg-slate-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center flex-shrink-0">
                           <Icon className={`h-4 w-4 ${indicator.color}`} />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
-                            <span className="font-medium text-sm text-slate-900">
+                            <span className="font-medium text-sm text-foreground">
                               {indicator.title}
                             </span>
                             {indicator.badge && (
-                              <span className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full">
+                              <span className="text-xs bg-muted text-muted-foreground px-2 py-0.5 rounded-full">
                                 {indicator.badge}
                               </span>
                             )}
                           </div>
-                          <p className="text-xs text-slate-600">
+                          <p className="text-xs text-muted-foreground">
                             {indicator.description}
                           </p>
                         </div>
@@ -208,8 +208,8 @@ export const HeroSection = () => {
                 </div>
 
                 {/* Simple Stats - Remove Duplicates */}
-                <div className="pt-3 border-t border-slate-100">
-                  <div className="flex justify-center gap-6 text-center text-xs text-slate-600">
+                <div className="pt-3 border-t border-border">
+                  <div className="flex justify-center gap-6 text-center text-xs text-muted-foreground">
                     <div>
                       <div className="font-semibold text-sm text-primary">
                         15K+
