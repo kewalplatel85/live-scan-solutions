@@ -1,5 +1,4 @@
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Building2,
@@ -7,9 +6,7 @@ import {
   CheckCircle,
   Clock,
   FileText,
-  MapPin,
   Package,
-  Phone,
   Smartphone,
   Stamp,
   Users,
@@ -236,29 +233,6 @@ export const ServiceTypesSection = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center">
-          <div className="bg-muted/50 rounded-2xl p-8">
-            <h3 className="text-xl font-semibold mb-2">
-              Ready to Get Started?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Contact us today to schedule your fingerprinting appointment or
-              learn more about our services.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg">
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
-              </Button>
-              <Button size="lg" variant="secondary">
-                <MapPin className="w-4 h-4 mr-2" />
-                Get Directions
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
     </section>

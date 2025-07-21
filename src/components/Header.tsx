@@ -1,11 +1,11 @@
 'use client';
 
+import { LogoLink } from '@/components/Logo';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Phone } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -36,27 +36,7 @@ export const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="relative">
-                {/* Fingerprint scanner icon - using local image */}
-                <div className="h-12 w-12 flex items-center justify-center">
-                  <Image
-                    src="/assets/Logo/icons8-fingerprint-scan-80.png"
-                    alt="fingerprint-scan"
-                    width={48}
-                    height={48}
-                    className="w-12 h-12"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-xl tracking-tight text-foreground">
-                  Live Scan Solutions
-                </span>
-              </div>
-            </Link>
-          </div>
+          <LogoLink size="lg" />
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex md:items-center md:space-x-8">
