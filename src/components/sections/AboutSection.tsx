@@ -10,8 +10,17 @@ export const AboutSection = () => {
             Live Scan Solutions
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Our organization holds official authorization from the Department of
-            Justice and is certified by the FBI as a fingerprinting service
+            Live Scan Solutions is part of{' '}
+            <a
+              href="https://www.mailallcenter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline font-medium"
+            >
+              All Mail Center
+            </a>
+            . Our organization holds official authorization from the Department
+            of Justice and is certified by the FBI as a fingerprinting service
             provider. We specialize in capturing and submitting fingerprints
             electronically or via ink. Our services cater to various needs,
             including licensure, certification, volunteering, employment,
