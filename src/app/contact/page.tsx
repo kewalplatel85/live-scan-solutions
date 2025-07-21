@@ -1,3 +1,4 @@
+import { InteractiveMap } from '@/components/InteractiveMap';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -362,14 +363,7 @@ export default function ContactPage() {
               </Card>
             </div>
 
-            <div className="bg-muted/50 rounded-2xl p-8 flex items-center justify-center h-96">
-              <div className="text-center">
-                <MapPin className="h-32 w-32 text-primary/60 mx-auto mb-4" />
-                <p className="text-muted-foreground">
-                  Interactive map would be embedded here
-                </p>
-              </div>
-            </div>
+            <InteractiveMap address="809 Cuesta Dr, Suite B, Mountain View, CA 94040" />
           </div>
         </div>
       </section>
