@@ -176,7 +176,7 @@ export default function AboutPage() {
                     rel="noopener noreferrer"
                     className="text-primary hover:underline font-medium"
                   >
-                    All Mail Center
+                    Mail All Center
                   </a>
                   , offering both In-Office and Onsite fingerprinting services
                   to Northern California and surrounding areas. Whether you

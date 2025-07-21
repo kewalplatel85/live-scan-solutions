@@ -17,7 +17,7 @@ export const AboutSection = () => {
               rel="noopener noreferrer"
               className="text-primary hover:underline font-medium"
             >
-              All Mail Center
+              Mail All Center
             </a>
             . Our organization holds official authorization from the Department
             of Justice and is certified by the FBI as a fingerprinting service
