@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import {
   Building2,
   CalendarCheck,
+  CheckCircle,
   Clock,
   FileText,
   MapPin,
@@ -76,6 +77,12 @@ const additionalServices = [
       'Professional document notarization with experienced certified notaries.',
   },
   {
+    icon: CheckCircle,
+    title: 'Apostille Services',
+    description:
+      'Document authentication for international use with fast, reliable processing.',
+  },
+  {
     icon: FileText,
     title: 'Passport Services',
     description:
@@ -104,7 +111,7 @@ export const ServiceTypesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {primaryServices.map((service) => (
             <Card
               key={service.title}
@@ -165,6 +172,38 @@ export const ServiceTypesSection = () => {
           ))}
         </div>
 
+        {/* Additional Services */}
+        <div className="text-center mb-12">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4">
+            Additional Services
+          </h3>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Complete business solutions beyond fingerprinting to serve all your
+            needs.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+          {additionalServices.map((service) => (
+            <Card
+              key={service.title}
+              className="text-center hover:shadow-md transition-shadow"
+            >
+              <CardContent className="p-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <service.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h4 className="text-base font-semibold mb-2">
+                  {service.title}
+                </h4>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  {service.description}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
         {/* Service Delivery Options */}
         <div className="text-center mb-12">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
@@ -193,36 +232,6 @@ export const ServiceTypesSection = () => {
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {method.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Additional Services */}
-        <div className="text-center mb-12">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            Additional Services
-          </h3>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Complete business solutions beyond fingerprinting to serve all your
-            needs.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {additionalServices.map((service) => (
-            <Card
-              key={service.title}
-              className="text-center h-full hover:shadow-md transition-shadow"
-            >
-              <CardContent className="p-6">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <service.icon className="h-8 w-8 text-primary" />
-                </div>
-                <h4 className="text-lg font-semibold mb-3">{service.title}</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {service.description}
                 </p>
               </CardContent>
             </Card>
