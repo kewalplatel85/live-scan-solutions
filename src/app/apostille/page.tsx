@@ -464,7 +464,7 @@ export default function ApostillePage() {
                   </CardContent>
                 </Card>
                 {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                  <div className="hidden lg:block absolute top-1/2 -right-7 transform -translate-y-1/2">
                     <ArrowRight className="w-6 h-6 text-primary" />
                   </div>
                 )}
@@ -586,12 +586,6 @@ export default function ApostillePage() {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
               Get answers to common questions about apostille services.
             </p>
-            <p className="text-sm text-muted-foreground">
-              For more FAQs including Live Scan questions,{' '}
-              <a href="/faq" className="text-primary hover:underline">
-                visit our full FAQ page
-              </a>
-            </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -608,36 +602,13 @@ export default function ApostillePage() {
               ))}
             </Accordion>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Apostille Your Documents?
-          </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Contact Live Scan Solutions today to simplify your apostille
-            process. Expert guidance and secure processing guaranteed.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {/* FUTURE: Add a feature flag and uncomment this section */}
-            {/* <Button size="lg" variant="secondary" className="px-8 py-3">
-              <Calendar className="w-5 h-5 mr-2" />
-              Schedule Consultation
-            </Button> */}
-            <Button
-              size="lg"
-              className="px-8 py-3 bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Call (650) 961-4646
-            </Button>
-          </div>
-          <div className="mt-8 text-sm opacity-75">
-            <p>Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST | Sun: Closed</p>
-            <p>Expert consultation available | Secure document handling</p>
+          <div className="text-center mt-12">
+            <p className="text-sm text-muted-foreground">
+              For more FAQs including Live Scan questions,{' '}
+              <a href="/faq" className="text-primary hover:underline">
+                visit our full FAQ page
+              </a>
+            </p>
           </div>
         </div>
       </section>

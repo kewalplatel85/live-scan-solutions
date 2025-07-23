@@ -1,5 +1,4 @@
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Building2,
@@ -7,9 +6,7 @@ import {
   CheckCircle,
   Clock,
   FileText,
-  MapPin,
   Package,
-  Phone,
   Smartphone,
   Stamp,
   Users,
@@ -98,7 +95,7 @@ const additionalServices = [
 
 export const ServiceTypesSection = () => {
   return (
-    <section className="py-16 bg-background">
+    <section className="py-12 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Primary Services */}
         <div className="text-center mb-12">
@@ -214,13 +211,13 @@ export const ServiceTypesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {serviceDeliveryMethods.map((method) => (
             <Card
               key={method.title}
               className="text-center h-full hover:shadow-md transition-shadow"
             >
-              <CardContent className="p-6">
+              <CardContent className="px-6">
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <method.icon className="h-8 w-8 text-primary" />
                 </div>
@@ -236,29 +233,6 @@ export const ServiceTypesSection = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center">
-          <div className="bg-muted/50 rounded-2xl p-8">
-            <h3 className="text-xl font-semibold mb-2">
-              Ready to Get Started?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Contact us today to schedule your fingerprinting appointment or
-              learn more about our services.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg">
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
-              </Button>
-              <Button size="lg" variant="secondary">
-                <MapPin className="w-4 h-4 mr-2" />
-                Get Directions
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
     </section>

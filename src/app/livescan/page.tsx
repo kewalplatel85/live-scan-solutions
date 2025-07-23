@@ -1,6 +1,5 @@
 import { GenericHero } from '@/components/common/GenericHero';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { badgeData } from '@/data/badges';
 import {
@@ -508,38 +507,6 @@ export default function LiveScanPage() {
                 </p>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Get Your Fingerprinting Done?
-          </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Join thousands of satisfied customers who trust us for their
-            fingerprinting needs. Walk-ins welcome or schedule your appointment
-            today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {/* FUTURE: Add a feature flag and uncomment this section */}
-            {/* <Button size="lg" variant="secondary" className="px-8 py-3">
-              <Calendar className="w-5 h-5 mr-2" />
-              Schedule Now
-            </Button> */}
-            <Button
-              size="lg"
-              className="px-8 py-3 bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Call (650) 961-4646
-            </Button>
-          </div>
-          <div className="mt-8 text-sm opacity-75">
-            <p>Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST | Sun: Closed</p>
-            <p>Walk-ins welcome | Same-day processing available</p>
           </div>
         </div>
       </section>

@@ -38,7 +38,7 @@ const topFAQs = [
 
 export const FAQSection = () => {
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="py-12 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">

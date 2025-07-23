@@ -1,3 +1,4 @@
+import { Logo } from '@/components/Logo';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Clock, Mail, Phone } from 'lucide-react';
@@ -25,12 +26,7 @@ export const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-2 mb-4">
-                <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-lg">
-                    L
-                  </span>
-                </div>
-                <span className="font-bold text-xl">Live Scan Solutions</span>
+                <Logo size="md" showText={true} />
               </div>
               <p className="text-sm text-muted-foreground mb-4">
                 We are an officially certified fingerprinting service provider
