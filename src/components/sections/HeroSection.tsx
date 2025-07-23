@@ -18,7 +18,7 @@ import Link from 'next/link';
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-[70vh] bg-gradient-to-br from-background via-background to-primary/5">
+    <section className="relative min-h-[70vh] bg-gradient-to-b from-background via-background to-primary/10">
       {/* Subtle Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-grid-slate-100/20 dark:bg-grid-slate-900/20 [mask-image:linear-gradient(0deg,transparent,rgba(255,255,255,0.2),transparent)]"></div>

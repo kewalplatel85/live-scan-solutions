@@ -1,5 +1,4 @@
-import { AboutSection } from '@/components/sections/AboutSection';
-import { CustomerTypesSection } from '@/components/sections/CustomerTypesSection';
+import { CustomerTypesAccordion } from '@/components/sections/CustomerTypesAccordion';
 import { FAQSection } from '@/components/sections/FAQSection';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { HowWorksSection } from '@/components/sections/HowWorksSection';
@@ -10,8 +9,7 @@ export default function HomePage() {
     <main>
       <HeroSection />
       <ServiceTypesSection />
-      <AboutSection />
-      <CustomerTypesSection />
+      <CustomerTypesAccordion />
       <HowWorksSection />
       <FAQSection />
     </main>

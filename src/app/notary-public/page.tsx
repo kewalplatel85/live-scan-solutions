@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { badgeData } from '@/data/badges';
 import {
   CheckCircle,
-  Clock,
   FileText,
   MapPin,
   Phone,
@@ -254,85 +253,6 @@ export default function NotaryPublicPage() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Get Your Documents Notarized?
-          </h2>
-          <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-            Don&apos;t wait - our professional notaries are ready to help you
-            today. Walk-ins welcome or schedule an appointment for guaranteed
-            service.
-          </p>
-          {/* FUTURE: Add a feature flag and uncomment this section */}
-          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-base" asChild>
-              <Link href="tel:650-961-4646">
-                <Phone className="mr-2 h-5 w-5" />
-                Call: 650-961-4646
-              </Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-base bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-              asChild
-            >
-              <Link href="/contact">Schedule Appointment</Link>
-            </Button>
-          </div> */}
-        </div>
-      </section>
-
-      {/* Contact Footer */}
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="flex flex-col items-center space-y-2">
-                <Phone className="h-8 w-8 text-primary" />
-                <div>
-                  <p className="font-medium">Phone</p>
-                  <a
-                    href="tel:650-961-4646"
-                    className="text-primary hover:underline"
-                  >
-                    650-961-4646
-                  </a>
-                </div>
-              </div>
-              <div className="flex flex-col items-center space-y-2">
-                <FileText className="h-8 w-8 text-primary" />
-                <div>
-                  <p className="font-medium">Email</p>
-                  <a
-                    href="mailto:mailallcenter1@gmail.com"
-                    className="text-primary hover:underline"
-                  >
-                    mailallcenter1@gmail.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex flex-col items-center space-y-2">
-                <Clock className="h-8 w-8 text-primary" />
-                <div>
-                  <p className="font-medium">Hours</p>
-                  <p className="text-sm text-muted-foreground">
-                    Mon-Fri: 10AM-5PM PST
-                    <br />
-                    Sat: 10AM-2PM PST
-                    <br />
-                    Sun: Closed
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
