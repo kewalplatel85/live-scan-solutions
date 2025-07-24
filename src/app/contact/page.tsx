@@ -138,10 +138,18 @@ export default function ContactPage() {
                   <h3 className="font-semibold text-foreground mb-2 text-lg">
                     Address
                   </h3>
-                  <div className="text-muted-foreground leading-relaxed">
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=809+Cuesta+Dr+Suite+B,+Mountain+View,+CA+94040"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-primary/80 transition-colors leading-relaxed cursor-pointer"
+                  >
                     <p className="font-medium">809 Cuesta Dr, Suite B</p>
                     <p className="font-medium">Mountain View, CA 94040</p>
-                  </div>
+                  </a>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Click to view on map
+                  </p>
                 </div>
               </div>
 
@@ -207,7 +215,7 @@ export default function ContactPage() {
                 size="lg"
                 className="h-12 px-8 text-lg font-semibold border-2"
               >
-                <Link href="mailto:livescansolutionsllc@gmail.com">
+                <Link href="mailto:mailallcenter1@gmail.com">
                   <Mail className="mr-3 h-5 w-5" />
                   Send Us a Message
                 </Link>
@@ -222,9 +230,24 @@ export default function ContactPage() {
             <CardTitle className="text-3xl font-bold">
               Find Us on the Map
             </CardTitle>
-            <p className="text-muted-foreground mt-2">
-              Conveniently located in Fremont with easy access and free parking
+            <p className="text-muted-foreground mt-2 mb-4">
+              Conveniently located in Mountain View with easy access and free
+              parking
             </p>
+            <Button
+              asChild
+              size="lg"
+              className="h-12 px-8 text-lg font-semibold mx-auto"
+            >
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=809+Cuesta+Dr+Suite+B,+Mountain+View,+CA+94040"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MapPin className="mr-3 h-5 w-5" />
+                Get Directions
+              </a>
+            </Button>
           </CardHeader>
           <CardContent>
             <InteractiveMap address="809 Cuesta Dr, Suite B, Mountain View, CA 94040" />

@@ -1,3 +1,4 @@
+import { GenericHero } from '@/components/common/GenericHero';
 import {
   Accordion,
   AccordionContent,
@@ -5,7 +6,6 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   ArrowRight,
@@ -26,7 +26,6 @@ import {
   Star,
   Users,
 } from 'lucide-react';
-import Link from 'next/link';
 
 const apostilleServices = [
   {
@@ -231,150 +230,120 @@ export default function ApostillePage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-background via-background to-primary/5">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="space-y-8">
-              {/* Trust Badges */}
-              <div className="flex flex-wrap gap-3">
-                <Badge variant="secondary" className="px-4 py-2">
-                  <Globe className="w-4 h-4 mr-2" />
-                  Hague Convention Certified
+      <GenericHero
+        badges={[
+          {
+            icon: Globe,
+            text: 'Hague Convention Certified',
+            variant: 'secondary',
+          },
+          {
+            icon: Shield,
+            text: 'Secure Processing',
+            variant: 'secondary',
+          },
+          {
+            icon: Star,
+            text: 'Expert Service',
+            variant: 'outline',
+            iconClassName: 'fill-yellow-400 text-yellow-400',
+          },
+        ]}
+        title={
+          <>
+            Professional <span className="text-primary">Apostille</span>{' '}
+            Services
+          </>
+        }
+        description="Simplifying document authentication for international use. Expert apostille services for personal, educational, and corporate documents with fast, secure processing."
+        benefits={[
+          { text: 'Fast processing' },
+          { text: 'Secure handling' },
+          { text: 'Expert guidance' },
+          { text: 'All document types' },
+        ]}
+        ctaText="Please call us to schedule your appointment"
+        buttons={[
+          {
+            text: '(650) 961-4646',
+            href: 'tel:650-961-4646',
+            icon: Phone,
+            variant: 'outline',
+            size: 'lg',
+          },
+        ]}
+        quickInfo={[
+          {
+            icon: Clock,
+            text: 'Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST | Sun: Closed',
+          },
+          {
+            icon: MapPin,
+            text: 'Bay Area Locations',
+          },
+        ]}
+        rightContent={
+          <div className="space-y-4 md:space-y-6">
+            <Card className="p-4 md:p-6">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+                <h3 className="text-lg md:text-xl font-semibold">
+                  Apostille Services
+                </h3>
+                <Badge variant="outline" className="self-start sm:self-center">
+                  Lowest price in town
                 </Badge>
-                <Badge variant="secondary" className="px-4 py-2">
-                  <Shield className="w-4 h-4 mr-2" />
-                  Secure Processing
+              </div>
+              <ul className="space-y-2 md:space-y-3">
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                  <span className="text-sm">Document authentication</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                  <span className="text-sm">State certification</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                  <span className="text-sm">International validation</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                  <span className="text-sm">Secure processing</span>
+                </li>
+              </ul>
+            </Card>
+
+            <Card className="p-4 md:p-6">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+                <h3 className="text-lg md:text-xl font-semibold">
+                  Additional Services
+                </h3>
+                <Badge variant="outline" className="self-start sm:self-center">
+                  Complete Solution
                 </Badge>
-                <Badge variant="outline" className="px-4 py-2">
-                  <Star className="w-4 h-4 mr-2 fill-yellow-400 text-yellow-400" />
-                  Expert Service
-                </Badge>
               </div>
-
-              {/* Main Headline */}
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                  Professional <span className="text-primary">Apostille</span>{' '}
-                  Services
-                </h1>
-                <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-                  Simplifying document authentication for international use.
-                  Expert apostille services for personal, educational, and
-                  corporate documents with fast, secure processing.
-                </p>
-              </div>
-
-              {/* Key Benefits */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-sm font-medium">Fast processing</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-sm font-medium">Secure handling</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-sm font-medium">Expert guidance</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-sm font-medium">
-                    All document types
-                  </span>
-                </div>
-              </div>
-
-              {/* Primary CTAs */}
-              <div className="space-y-4">
-                <div className="text-sm text-muted-foreground">
-                  <span>Please call us to schedule your appointment</span>
-                </div>
-                <div className="flex">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-lg px-8 py-6"
-                    asChild
-                  >
-                    <Link href="tel:650-961-4646">
-                      <Phone className="mr-2 h-5 w-5" />
-                      (650) 961-4646
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-
-              {/* Contact Info */}
-              <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-                <div className="flex items-center">
-                  <Clock className="w-4 h-4 mr-2" />
-                  Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST | Sun: Closed
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Bay Area Locations
-                </div>
-              </div>
-            </div>
-
-            {/* Right Content - Service Cards */}
-            <div className="space-y-6">
-              <Card className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-semibold">Apostille Services</h3>
-                  <Badge variant="outline">Lowest price in town</Badge>
-                </div>
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    Document authentication
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    State certification
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    International validation
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    Secure processing
-                  </li>
-                </ul>
-              </Card>
-
-              <Card className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-semibold">Additional Services</h3>
-                  <Badge variant="outline">Complete Solution</Badge>
-                </div>
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    Document notarization
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    Translation services
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    Embassy legalization
-                  </li>
-                  <li className="flex items-center">
-                    <Check className="w-4 h-4 mr-3 text-green-600" />
-                    Consultation & guidance
-                  </li>
-                </ul>
-              </Card>
-            </div>
+              <ul className="space-y-2 md:space-y-3">
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                  <span className="text-sm">Document notarization</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                  <span className="text-sm">Translation services</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                  <span className="text-sm">Embassy legalization</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                  <span className="text-sm">Consultation & guidance</span>
+                </li>
+              </ul>
+            </Card>
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* Document Types Section */}
       <section className="py-16 bg-muted/50">
@@ -389,7 +358,7 @@ export default function ApostillePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
             {apostilleServices.map((service, index) => (
               <Card key={index} className="p-6 h-full">
                 <CardHeader>
@@ -433,7 +402,7 @@ export default function ApostillePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
               <div key={index} className="relative">
                 <Card className="p-6 h-full">
@@ -464,7 +433,7 @@ export default function ApostillePage() {
                   </CardContent>
                 </Card>
                 {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-7 transform -translate-y-1/2">
+                  <div className="hidden xl:block absolute top-1/2 -right-7 transform -translate-y-1/2">
                     <ArrowRight className="w-6 h-6 text-primary" />
                   </div>
                 )}
@@ -490,7 +459,7 @@ export default function ApostillePage() {
             {serviceOptions.map((option, index) => (
               <Card
                 key={index}
-                className={`p-6 relative ${option.popular ? 'border-primary ring-2 ring-primary/20' : ''}`}
+                className={`relative ${option.popular ? 'border-primary ring-2 ring-primary/20' : ''}`}
               >
                 {option.popular && (
                   <Badge className="absolute -top-3 left-6" variant="secondary">
@@ -507,15 +476,15 @@ export default function ApostillePage() {
                   <p className="text-muted-foreground text-center">
                     {option.description}
                   </p>
-                  <div className="text-center mt-4">
-                    {/* FUTURE: Add a feature flag and uncomment this section */}
-                    {/* <div className="text-2xl font-bold text-primary">
+                  {/* <div className="text-center"> */}
+                  {/* FUTURE: Add a feature flag and uncomment this section */}
+                  {/* <div className="text-2xl font-bold text-primary">
                       {option.price}
                     </div> */}
-                    {/* <div className="text-sm text-muted-foreground">
+                  {/* <div className="text-sm text-muted-foreground">
                       {option.timeframe}
                     </div> */}
-                  </div>
+                  {/* </div> */}
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
@@ -558,7 +527,7 @@ export default function ApostillePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((item, index) => (
-              <Card key={index} className="p-6 text-center">
+              <Card key={index} className="text-center">
                 <CardHeader>
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <item.icon className="w-8 h-8 text-primary" />

@@ -115,9 +115,39 @@ export default function NotaryPublicPage() {
           },
         ]}
         rightContent={
-          <div className="bg-primary/10 rounded-2xl p-8 flex items-center justify-center h-96">
-            <FileText className="h-32 w-32 text-primary/60" />
-          </div>
+          <Card className="h-full">
+            <CardHeader className="text-center pb-4">
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8 text-primary" />
+              </div>
+              <CardTitle className="text-xl mb-2">
+                Why Choose Our Services?
+              </CardTitle>
+              <p className="text-sm text-muted-foreground">
+                Professional, reliable, and convenient notary services
+              </p>
+            </CardHeader>
+            <CardContent className="pt-0">
+              <div className="space-y-3">
+                {benefits.slice(0, 5).map((benefit, index) => {
+                  const Icon = benefit.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="flex items-center space-x-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors"
+                    >
+                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Icon className="h-4 w-4 text-primary" />
+                      </div>
+                      <span className="text-sm font-medium text-foreground">
+                        {benefit.text}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </CardContent>
+          </Card>
         }
       />
 
@@ -134,21 +164,21 @@ export default function NotaryPublicPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step) => {
               const Icon = step.icon;
               return (
-                <Card key={step.step} className="text-center">
-                  <CardHeader>
+                <Card key={step.step} className="text-center h-full gap-0">
+                  <CardHeader className="pb-4">
                     <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <div className="text-sm font-medium text-primary mb-2">
                       Step {step.step}
                     </div>
-                    <CardTitle className="text-xl">{step.title}</CardTitle>
+                    <CardTitle className="text-lg">{step.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="pt-0">
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {step.description}
                     </p>
@@ -163,28 +193,39 @@ export default function NotaryPublicPage() {
       {/* Document Types Section */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Why You Need a Notary Public
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Legal documents often require notarization to ensure
-                authenticity and prevent fraud. Here are common documents that
-                need notary services:
-              </p>
-              <ul className="space-y-4">
-                {documentTypes.map((type, index) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{type}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-primary/5 rounded-2xl p-8 flex items-center justify-center h-96">
-              <Shield className="h-32 w-32 text-primary/60" />
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why You Need a Notary Public
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Legal documents often require notarization to ensure authenticity
+              and prevent fraud. Our certified notaries handle a wide range of
+              documents with precision and legal compliance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {documentTypes.map((type, index) => {
+              const [title, description] = type.split(': ');
+              return (
+                <div
+                  key={index}
+                  className="flex items-start space-x-4 bg-card p-6 rounded-lg shadow-sm"
+                >
+                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      {title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -202,55 +243,25 @@ export default function NotaryPublicPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {notarizationTypes.map((type, index) => {
               const Icon = type.icon;
               return (
-                <Card key={index}>
-                  <CardHeader>
+                <Card key={index} className="h-full gap-0">
+                  <CardHeader className="pb-4">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                         <Icon className="h-6 w-6 text-primary" />
                       </div>
-                      <CardTitle className="text-xl">{type.title}</CardTitle>
+                      <CardTitle className="text-lg">{type.title}</CardTitle>
                     </div>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{type.description}</p>
+                  <CardContent className="pt-0">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {type.description}
+                    </p>
                   </CardContent>
                 </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Our Notary Services?
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We provide reliable, professional notary services with a focus on
-              convenience and security.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <div
-                  key={index}
-                  className="flex items-center space-x-4 bg-card p-6 rounded-lg shadow-sm"
-                >
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <span className="font-medium">{benefit.text}</span>
-                </div>
               );
             })}
           </div>

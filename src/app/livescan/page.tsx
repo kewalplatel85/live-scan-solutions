@@ -333,7 +333,7 @@ export default function LiveScanPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {serviceOptions.map((option, index) => (
-              <Card key={index} className="p-6 relative">
+              <Card key={index} className="xl:p-6 relative">
                 {option.badge && (
                   <Badge className="absolute -top-3 left-6" variant="secondary">
                     {option.badge}
@@ -386,7 +386,7 @@ export default function LiveScanPage() {
             {pricingPlans.map((plan, index) => (
               <Card
                 key={index}
-                className={`p-8 relative ${
+                className={`relative ${
                   plan.popular ? 'border-primary ring-2 ring-primary/20' : ''
                 }`}
               >

@@ -61,12 +61,12 @@ export const aboutValues: ValueItem[] = [
 // About page features list
 export const aboutFeatures: string[] = [
   'DOJ & FBI Certified Fingerprint Specialists',
-  'Over 20 years of combined experience',
+  'Over 15 years of combined experience',
   'State-of-the-art fingerprinting technology',
   'Mobile Live Scan services available',
-  'Direct partnership with Department of Justice',
-  'Multiple locations throughout Northern California',
-  'Seven days a week availability',
+  'Trusted by local schools and churches',
+  'Secure electronic processing and transmission',
+  'Service coverage throughout Bay Area',
   'Group and individual accommodations',
 ];
 
