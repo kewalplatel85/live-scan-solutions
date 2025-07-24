@@ -32,19 +32,21 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 xl:px-8 max-w-full">
+        <div className="flex h-16 items-center justify-between min-w-0">
           {/* Logo */}
-          <LogoLink size="lg" />
+          <div className="flex-shrink-0">
+            <LogoLink size="lg" />
+          </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex md:items-center md:space-x-8">
+          <nav className="hidden xl:flex xl:items-center xl:space-x-6 2xl:space-x-8 flex-1 justify-center min-w-0">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary relative ${
+                className={`text-sm font-medium transition-colors hover:text-primary relative whitespace-nowrap px-2 ${
                   isActive(item.href) ? 'text-primary' : 'text-muted-foreground'
                 }`}
               >
@@ -57,12 +59,12 @@ export const Header = () => {
           </nav>
 
           {/* Right side items */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3 flex-shrink-0">
             {/* Contact Button */}
             <Button
               variant="outline"
               size="sm"
-              className="hidden sm:inline-flex"
+              className="hidden xl:inline-flex text-sm"
               asChild
             >
               <Link href="tel:650-961-4646">
@@ -72,7 +74,7 @@ export const Header = () => {
             </Button>
 
             {/* Theme Toggle - Desktop only */}
-            <div className="hidden md:block">
+            <div className="hidden xl:block">
               <ThemeToggle />
             </div>
 
@@ -82,7 +84,7 @@ export const Header = () => {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="md:hidden"
+                  className="xl:hidden"
                   aria-label="Open menu"
                 >
                   <Menu className="h-5 w-5" />

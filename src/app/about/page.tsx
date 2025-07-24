@@ -1,108 +1,93 @@
-import { GenericHero } from '@/components/common/GenericHero';
-import { CTASection } from '@/components/sections/CTASection';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Card } from '@/components/ui/card';
 import { aboutData } from '@/data/about';
 import { badgeData } from '@/data/badges';
 import {
+  Award,
   CheckCircle,
   Clock,
   FileText,
-  Heart,
-  Phone,
+  MapPin,
   Shield,
   Target,
-  Users,
 } from 'lucide-react';
 
 export default function AboutPage() {
   return (
     <main>
-      {/* Hero Section */}
-      <GenericHero
-        badges={badgeData.about}
-        title={
-          <>
-            {'We Care About You and Want to '}
-            <span className="text-primary">Help</span>
-          </>
-        }
-        description="We are an officially certified fingerprinting service provider agency authorized by the Department of Justice and FBI."
-        ctaText="Please call us to schedule your appointment"
-        buttons={[
-          {
-            text: '(650) 961-4646',
-            href: 'tel:650-961-4646',
-            icon: Phone,
-            variant: 'outline',
-          },
-        ]}
-        rightContent={
-          <div className="bg-primary/10 rounded-2xl p-8 flex items-center justify-center h-96">
-            <Heart className="h-32 w-32 text-primary/60" />
-          </div>
-        }
-      />
-
-      {/* Services Overview */}
-      {/* <Section
-        title="Services We Offer"
-        description="Comprehensive solutions for all your documentation and identification needs."
-        background="default"
-        padding="lg"
-      >
-        <FeatureCards
-          items={aboutData.services.map((service) => ({
-            title: service.name,
-            icon: service.icon,
-          }))}
-          layout="compact"
-          columns="services"
-          size="sm"
-          variant="minimal"
-        />
-      </Section> */}
-
-      <section className="py-16 bg-background">
+      {/* Hero Section - Company Introduction */}
+      <section className="py-16 bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Services We Offer
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive solutions for all your documentation and
-              identification needs.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {aboutData.services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <div
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex flex-wrap gap-2 justify-center mb-6">
+              {badgeData.about.map((badge, index) => (
+                <Badge
                   key={index}
-                  className="flex flex-col items-center space-y-3 p-4 rounded-lg hover:bg-muted/50 transition-colors"
+                  variant={badge.variant || 'secondary'}
+                  className="px-4 py-2"
                 >
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <span className="text-sm font-medium text-center">
-                    {service.name}
-                  </span>
+                  <badge.icon
+                    className={`w-4 h-4 mr-2 ${badge.iconClassName || ''}`}
+                  />
+                  {badge.text}
+                </Badge>
+              ))}
+            </div>
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-4">
+              About <span className="text-primary">Live Scan Solutions</span>
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              Your trusted partner for professional fingerprinting and document
+              services. Officially certified by the Department of Justice and
+              FBI with over 15 years of experience.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="h-8 w-8 text-primary" />
                 </div>
-              );
-            })}
+                <h3 className="font-semibold mb-2">Certified Professionals</h3>
+                <p className="text-sm text-muted-foreground">
+                  DOJ & FBI authorized specialists
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="font-semibold mb-2">15+ Years Experience</h3>
+                <p className="text-sm text-muted-foreground">
+                  Trusted by thousands of clients
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="font-semibold mb-2">Northern California</h3>
+                <p className="text-sm text-muted-foreground">
+                  Multiple convenient locations
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* About Us Section */}
-      <section className="py-16 bg-muted/30">
+      {/* Our Story */}
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">About Us</h2>
-              <div className="space-y-6 text-muted-foreground">
-                <p className="text-lg leading-relaxed">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Story</h2>
+              <p className="text-lg text-muted-foreground">
+                Building trust through excellence in fingerprinting services
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <p className="text-lg leading-relaxed text-muted-foreground">
                   Live Scan Solutions is part of{' '}
                   <a
                     href="https://www.mailallcenter.com"
@@ -112,70 +97,115 @@ export default function AboutPage() {
                   >
                     Mail All Center
                   </a>
-                  , offering both In-Office and Onsite fingerprinting services
-                  to Northern California and surrounding areas. Whether you
-                  prefer the convenience of walking in without an appointment or
-                  having our services brought to your doorstep, we&apos;ve got
-                  you covered.
+                  , established to meet the growing demand for top-tier
+                  fingerprinting services in California. We&apos;ve grown from a
+                  local service provider to a trusted partner for individuals
+                  and organizations across Northern California.
                 </p>
-                <p>
-                  Our fingerprinting services include both Computer-based and
-                  Ink (card) based options, ensuring flexibility to meet your
-                  needs. Our top priority is to save you time while providing
-                  fingerprinting services of the highest quality and security.
-                </p>
-                <p>
-                  We strive to offer utmost convenience and ease for all your
-                  live scan fingerprint service requirements.
+                <p className="text-muted-foreground">
+                  Our journey began with a simple mission: to provide accurate,
+                  secure, and convenient fingerprinting services while
+                  maintaining the highest standards of privacy and
+                  professionalism. Today, we serve thousands of clients
+                  annually, from healthcare professionals to educators, from
+                  small businesses to large corporations.
                 </p>
               </div>
-            </div>
-            <div className="bg-primary/5 rounded-2xl p-8 flex items-center justify-center h-96">
-              <FileText className="h-32 w-32 text-primary/60" />
+              <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8">
+                <div className="text-center">
+                  <FileText className="h-20 w-20 text-primary/70 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">
+                    Part of Mail All Center
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    A comprehensive business services company serving Northern
+                    California
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Who We Are */}
-      <section className="py-16 bg-background">
+      {/* Mission & Vision */}
+      <section className="py-12 lg:py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="bg-primary/5 rounded-2xl p-8 flex items-center justify-center h-96">
-              <Users className="h-32 w-32 text-primary/60" />
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="p-6">
+                <div className="text-center mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Target className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold">Our Mission</h3>
+                </div>
+                <p className="text-muted-foreground text-center text-sm leading-relaxed">
+                  To provide accurate, secure, and convenient fingerprinting
+                  services while maintaining the highest standards of privacy,
+                  professionalism, and customer care. We strive to make the
+                  fingerprinting process seamless and stress-free for every
+                  client.
+                </p>
+              </Card>
+
+              <Card className="p-6">
+                <div className="text-center mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Shield className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold">Our Vision</h3>
+                </div>
+                <p className="text-muted-foreground text-center text-sm leading-relaxed">
+                  To be Northern California&apos;s most trusted fingerprinting
+                  service provider, known for our expertise, reliability, and
+                  commitment to excellence. We envision a future where secure
+                  identification services are accessible to everyone.
+                </p>
+              </Card>
             </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Who We Are
-              </h2>
-              <div className="space-y-6 text-muted-foreground">
-                <p className="text-lg leading-relaxed">
-                  At our company, safety and security are paramount. Founded to
-                  meet the growing demand for top-tier Peer Service Providers
-                  (PSP) in California, we prioritize your privacy and peace of
-                  mind.
-                </p>
-                <p>
-                  Our Department of Justice Certified Fingerprint Specialists
-                  leverage their extensive training and expertise to ensure
-                  swift and accurate capture of your information.
-                </p>
-                <p>
-                  With over 20 years of combined experience in fingerprinting,
-                  our dedicated staff is committed to delivering prompt and
-                  convenient service to our community, neighbors, partners, and
-                  employees.
-                </p>
-              </div>
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Services */}
+      <section className="py-12 lg:py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our Services
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Comprehensive solutions for all your documentation and
+              identification needs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {aboutData.services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={index}
+                  className="flex flex-col items-center space-y-2 p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                >
+                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <span className="text-sm font-medium text-center leading-tight">
+                    {service.name}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Our Values */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-12 lg:py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Values</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               The principles that guide everything we do and how we serve our
@@ -183,22 +213,18 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {aboutData.values.map((value, index) => {
               const Icon = value.icon;
               return (
-                <Card key={index} className="text-center">
-                  <CardHeader>
-                    <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <CardTitle className="text-xl">{value.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {value.description}
-                    </p>
-                  </CardContent>
+                <Card key={index} className="text-center p-4 gap-0">
+                  <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
+                    <Icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{value.title}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {value.description}
+                  </p>
                 </Card>
               );
             })}
@@ -206,82 +232,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What We Do */}
-      <section className="py-16 bg-background">
+      {/* Why Choose Us */}
+      <section className="py-12 lg:py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                What We Do
-              </h2>
-              <div className="space-y-6 text-muted-foreground">
-                <p className="text-lg leading-relaxed">
-                  As an accredited Department of Justice and FBI certified
-                  fingerprinting service provider, our agency specializes in
-                  electronically capturing and submitting fingerprints for
-                  various purposes including licensure, certification,
-                  volunteering, employment, and more.
-                </p>
-                <p>
-                  Additionally, we offer mobile Live Scan fingerprinting
-                  services for your convenience. Through our direct partnership
-                  with the Department of Justice, we securely transmit your
-                  fingerprints and associated data within seconds, expediting
-                  the process.
-                </p>
-                <p>
-                  With multiple &quot;Live Scan&quot; machines strategically
-                  located throughout Northern California, we can accommodate
-                  group or individual needs seven days a week.
-                </p>
-              </div>
-            </div>
-            <div className="bg-primary/5 rounded-2xl p-8 flex items-center justify-center h-96">
-              <Shield className="h-32 w-32 text-primary/60" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How We Do It */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="bg-primary/5 rounded-2xl p-8 flex items-center justify-center h-96">
-              <Target className="h-32 w-32 text-primary/60" />
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                How We Do It
-              </h2>
-              <div className="space-y-6 text-muted-foreground">
-                <p className="text-lg leading-relaxed">
-                  We employ state-of-the-art technology for capturing
-                  fingerprint information, ensuring precision and efficiency.
-                  Our equipment is expertly manufactured and maintained to
-                  uphold the highest standards of performance.
-                </p>
-                <p>
-                  Accuracy is our foremost priority, and our team of Fingerprint
-                  Specialists, certified by the California Department of
-                  Justice, undergo rigorous training to ensure meticulous data
-                  collection.
-                </p>
-                <p>
-                  Adhering strictly to DOJ guidelines, our specialists process
-                  fingerprint information with utmost care and attention to
-                  detail.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features & Capabilities */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Why Choose Live Scan Solutions
             </h2>
@@ -291,64 +245,13 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
             {aboutData.features.map((feature, index) => (
-              <div key={index} className="flex items-start space-x-3">
+              <div key={index} className="flex items-start space-x-3 p-2">
                 <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">{feature}</span>
+                <span className="text-muted-foreground text-sm">{feature}</span>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <CTASection />
-
-      {/* Contact Footer */}
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="flex flex-col items-center space-y-2">
-                <Phone className="h-8 w-8 text-primary" />
-                <div>
-                  <p className="font-medium">Phone</p>
-                  <a
-                    href="tel:650-961-4646"
-                    className="text-primary hover:underline"
-                  >
-                    650-961-4646
-                  </a>
-                </div>
-              </div>
-              <div className="flex flex-col items-center space-y-2">
-                <FileText className="h-8 w-8 text-primary" />
-                <div>
-                  <p className="font-medium">Email</p>
-                  <a
-                    href="mailto:mailallcenter1@gmail.com"
-                    className="text-primary hover:underline"
-                  >
-                    mailallcenter1@gmail.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex flex-col items-center space-y-2">
-                <Clock className="h-8 w-8 text-primary" />
-                <div>
-                  <p className="font-medium">Hours</p>
-                  <p className="text-sm text-muted-foreground">
-                    Mon-Fri: 10AM-5PM PST
-                    <br />
-                    Sat: 10AM-2PM PST
-                    <br />
-                    Sun: Closed
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

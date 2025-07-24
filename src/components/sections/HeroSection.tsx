@@ -18,7 +18,7 @@ import Link from 'next/link';
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-[70vh] bg-gradient-to-b from-background via-background to-primary/10">
+    <section className="relative min-h-[50vh] md:min-h-[60vh] lg:min-h-[40vh] bg-gradient-to-b from-background via-background to-primary/10">
       {/* Subtle Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-grid-slate-100/20 dark:bg-grid-slate-900/20 [mask-image:linear-gradient(0deg,transparent,rgba(255,255,255,0.2),transparent)]"></div>
@@ -26,12 +26,12 @@ export const HeroSection = () => {
         <div className="absolute bottom-40 right-20 w-20 h-20 bg-primary/3 rounded-full blur-2xl"></div>
       </div>
 
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-7 gap-6 lg:gap-12 items-center">
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 lg:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-7 gap-4 md:gap-6 lg:gap-12 items-center">
           {/* Left Content - 4/7 of the space on desktop, full width on mobile */}
-          <div className="lg:col-span-4 space-y-6 text-center lg:text-left">
+          <div className="lg:col-span-4 space-y-4 md:space-y-6 text-center lg:text-left">
             {/* Badge Section - Only Original Service Badges */}
-            <div className="space-y-3">
+            <div className="space-y-2 md:space-y-3">
               {/* Filter out DOJ, FBI, and Rating badges */}
               <div className="flex flex-wrap gap-2">
                 {badgeData.liveScanHome
@@ -60,8 +60,8 @@ export const HeroSection = () => {
             </div>
 
             {/* Main Title */}
-            <div className="space-y-4">
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
+            <div className="space-y-3 md:space-y-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                 Professional{' '}
                 <span className="bg-gradient-to-r from-primary via-blue-600 to-primary bg-clip-text text-transparent">
                   Live Scan
@@ -131,7 +131,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Right Content - 3/7 of space, Centered */}
-          <div className="lg:col-span-3 flex items-center justify-center mt-8 lg:mt-0">
+          <div className="lg:col-span-3 flex items-center justify-center mt-6 md:mt-8 lg:mt-0">
             <Card className="p-4 lg:p-6 bg-background/80 backdrop-blur-sm border-border shadow-sm w-full max-w-md">
               <div className="space-y-4">
                 <div className="text-center">

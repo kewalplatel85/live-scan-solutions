@@ -1,5 +1,5 @@
 import { BadgeItem } from '@/components/common/GenericHero';
-import { Award, Clock, Shield, Star } from 'lucide-react';
+import { Clock, Shield, Star } from 'lucide-react';
 
 // Common badge configurations for different pages/sections
 export const badgeData = {
@@ -31,15 +31,14 @@ export const badgeData = {
       variant: 'secondary' as const,
     },
     {
-      icon: Award,
+      icon: Shield,
       text: 'FBI Authorized',
       variant: 'secondary' as const,
     },
     {
-      icon: Star,
-      text: '20+ Years Experience',
+      icon: Clock,
+      text: '15+ Years Experience',
       variant: 'outline' as const,
-      iconClassName: 'fill-yellow-400 text-yellow-400',
     },
   ] as BadgeItem[],
 
