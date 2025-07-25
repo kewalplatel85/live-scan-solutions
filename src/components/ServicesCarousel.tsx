@@ -46,16 +46,30 @@ const servicesData = [
 ];
 
 export const ServicesCarousel = () => {
-  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   const [currentSlide, setCurrentSlide] = useState(0);
   const [api, setApi] = useState<CarouselApi>();
+
+  // Create autoplay plugin with useRef to avoid recreation
+  const autoplayPlugin = useRef(
+    Autoplay({
+      delay: 2000,
+      stopOnInteraction: true,
+      stopOnMouseEnter: true,
+    })
+  );
 
   useEffect(() => {
     if (!api) return;
 
-    api.on('select', () => {
+    const updateSlide = () => {
       setCurrentSlide(api.selectedScrollSnap());
-    });
+    };
+
+    api.on('select', updateSlide);
+
+    return () => {
+      api.off('select', updateSlide);
+    };
   }, [api]);
 
   return (
@@ -70,14 +84,14 @@ export const ServicesCarousel = () => {
 
       <Carousel
         setApi={setApi}
-        plugins={[plugin.current]}
+        plugins={[autoplayPlugin.current]}
         opts={{
           align: 'start',
           loop: true,
         }}
         className="w-full relative"
-        onMouseEnter={plugin.current.stop}
-        onMouseLeave={plugin.current.reset}
+        onMouseEnter={() => autoplayPlugin.current.stop()}
+        onMouseLeave={() => autoplayPlugin.current.reset()}
       >
         <CarouselContent>
           {servicesData.map((service, index) => {
