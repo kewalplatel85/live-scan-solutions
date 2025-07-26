@@ -87,7 +87,7 @@ export function GlowingBadge({
             rotate: [0, 360],
           }}
           transition={{
-            duration: 0,
+            duration: 12,
             repeat: Infinity,
             ease: 'linear',
           }}
