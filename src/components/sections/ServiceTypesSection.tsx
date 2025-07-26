@@ -97,6 +97,35 @@ export const ServiceTypesSection = () => {
   return (
     <section className="py-12 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Additional Services */}
+        <div className="text-center mb-12">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4">Our Services</h3>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Complete business solutions beyond fingerprinting to serve all your
+            needs.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+          {additionalServices.map((service) => (
+            <Card
+              key={service.title}
+              className="text-center hover:shadow-md transition-shadow"
+            >
+              <CardContent className="p-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <service.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h4 className="text-base font-semibold mb-2">
+                  {service.title}
+                </h4>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  {service.description}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
         {/* Primary Services */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -164,38 +193,6 @@ export const ServiceTypesSection = () => {
                     Schedule Now
                   </Button>
                 </div> */}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Additional Services */}
-        <div className="text-center mb-12">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            Additional Services
-          </h3>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Complete business solutions beyond fingerprinting to serve all your
-            needs.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
-          {additionalServices.map((service) => (
-            <Card
-              key={service.title}
-              className="text-center hover:shadow-md transition-shadow"
-            >
-              <CardContent className="p-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <service.icon className="h-6 w-6 text-primary" />
-                </div>
-                <h4 className="text-base font-semibold mb-2">
-                  {service.title}
-                </h4>
-                <p className="text-muted-foreground text-xs leading-relaxed">
-                  {service.description}
-                </p>
               </CardContent>
             </Card>
           ))}

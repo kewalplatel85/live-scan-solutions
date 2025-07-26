@@ -4,7 +4,12 @@ import { LogoLink } from '@/components/Logo';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 import { Menu, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -47,7 +52,9 @@ export const Header = () => {
                 key={item.name}
                 href={item.href}
                 className={`text-sm font-medium transition-colors hover:text-primary relative whitespace-nowrap px-2 ${
-                  isActive(item.href) ? 'text-primary' : 'text-muted-foreground'
+                  isActive(item.href)
+                    ? 'text-primary'
+                    : 'text-accent-foreground'
                 }`}
               >
                 {item.name}
@@ -91,6 +98,7 @@ export const Header = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0">
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="flex flex-col h-full">
                   {/* Navigation Links */}
                   <nav className="flex-1 px-6 py-8">
@@ -102,7 +110,7 @@ export const Header = () => {
                             className={`block px-3 py-3 text-lg font-medium transition-colors hover:text-primary hover:bg-muted/50 rounded-lg relative ${
                               isActive(item.href)
                                 ? 'text-primary bg-primary/10'
-                                : 'text-muted-foreground'
+                                : 'text-accent-foreground'
                             }`}
                             onClick={() => setIsOpen(false)}
                           >

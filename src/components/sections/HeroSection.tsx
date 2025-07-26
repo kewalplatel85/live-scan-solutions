@@ -1,6 +1,6 @@
+import { ServicesCarousel } from '@/components/ServicesCarousel';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
 import { badgeData } from '@/data/badges';
 import {
   Award,
@@ -9,8 +9,6 @@ import {
   Lock,
   MapPin,
   Phone,
-  Shield,
-  Star,
   Users,
   Zap,
 } from 'lucide-react';
@@ -62,18 +60,17 @@ export const HeroSection = () => {
             {/* Main Title */}
             <div className="space-y-3 md:space-y-4">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                Professional{' '}
+                We simplify{' '}
                 <span className="bg-gradient-to-r from-primary via-blue-600 to-primary bg-clip-text text-transparent">
-                  Live Scan
+                  Live Scan, Notary Public, and Apostille services
                 </span>{' '}
-                Fingerprinting Services
+                for busy professionals.
               </h1>
 
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                Fast, secure, and certified fingerprinting for employment,
-                licensing, and legal requirements. Walk-ins welcome or book
-                online.
-              </p>
+              {/* <p className="text-lg text-muted-foreground max-w-2xl">
+                We simplify Live Scan, Notary Public, and Apostille services for
+                busy professionals.
+              </p> */}
             </div>
 
             {/* Benefits - Compact Grid */}
@@ -132,106 +129,7 @@ export const HeroSection = () => {
 
           {/* Right Content - 3/7 of space, Centered */}
           <div className="lg:col-span-3 flex items-center justify-center mt-6 md:mt-8 lg:mt-0">
-            <Card className="p-4 lg:p-6 bg-background/80 backdrop-blur-sm border-border shadow-sm w-full max-w-md">
-              <div className="space-y-4">
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold mb-3">Why Choose Us?</h3>
-                  {/* Rating moved to top of right side */}
-                  <Badge className="flex items-center gap-1 px-3 py-1 bg-yellow-50 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-300 border-yellow-200 dark:border-yellow-700 text-sm mb-4 mx-auto w-fit">
-                    <div className="flex items-center gap-0.5">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="h-3 w-3 fill-yellow-500 dark:fill-yellow-400 text-yellow-500 dark:text-yellow-400"
-                        />
-                      ))}
-                    </div>
-                    4.9/5 Rating
-                  </Badge>
-                </div>
-
-                <div className="space-y-3">
-                  {[
-                    {
-                      icon: Shield,
-                      title: 'DOJ Certified',
-                      description:
-                        'California Department of Justice authorized fingerprinting service provider',
-                      color: 'text-blue-600',
-                      badge: 'Official',
-                    },
-                    {
-                      icon: Award,
-                      title: 'FBI Approved',
-                      description:
-                        'Federal Bureau of Investigation certified for background checks',
-                      color: 'text-purple-600',
-                      badge: 'Federal',
-                    },
-                    {
-                      icon: Lock,
-                      title: 'Secure Processing',
-                      description: 'Encrypted data transmission protocols',
-                      color: 'text-green-600',
-                    },
-                    {
-                      icon: Zap,
-                      title: 'Instant Transmission',
-                      description: 'Electronic submission directly to agencies',
-                      color: 'text-orange-600',
-                    },
-                  ].map((indicator, index) => {
-                    const Icon = indicator.icon;
-                    return (
-                      <div key={index} className="flex items-start space-x-3">
-                        <div className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Icon className={`h-4 w-4 ${indicator.color}`} />
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="font-medium text-sm text-foreground">
-                              {indicator.title}
-                            </span>
-                            {indicator.badge && (
-                              <span className="text-xs bg-muted text-muted-foreground px-2 py-0.5 rounded-full">
-                                {indicator.badge}
-                              </span>
-                            )}
-                          </div>
-                          <p className="text-xs text-muted-foreground">
-                            {indicator.description}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Simple Stats - Remove Duplicates */}
-                <div className="pt-3 border-t border-border">
-                  <div className="flex justify-center gap-6 text-center text-xs text-muted-foreground">
-                    <div>
-                      <div className="font-semibold text-sm text-primary">
-                        15K+
-                      </div>
-                      <div>Customers</div>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-sm text-primary">
-                        99.9%
-                      </div>
-                      <div>Success Rate</div>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-sm text-primary">
-                        15+
-                      </div>
-                      <div>Years Experience</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Card>
+            <ServicesCarousel />
           </div>
         </div>
       </div>
