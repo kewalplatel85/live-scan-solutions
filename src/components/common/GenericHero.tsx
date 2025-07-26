@@ -128,7 +128,7 @@ export const GenericHero = ({
 
             {/* Main Headlines */}
             <div className={titleContainerClass}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+              <h1 className="text-4xl lg:text-5xl font-bold tracking-tight">
                 {title}
               </h1>
               {subtitle && (

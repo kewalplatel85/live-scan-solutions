@@ -289,7 +289,10 @@ export default function ApostillePage() {
                 <h3 className="text-lg md:text-xl font-semibold">
                   Apostille Services
                 </h3>
-                <Badge variant="outline" className="self-start sm:self-center">
+                <Badge
+                  variant="outline"
+                  className="self-start sm:self-center bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 dark:bg-blue-950 dark:border-blue-800 dark:text-blue-300 dark:hover:bg-blue-900"
+                >
                   Lowest price in town
                 </Badge>
               </div>
@@ -318,7 +321,10 @@ export default function ApostillePage() {
                 <h3 className="text-lg md:text-xl font-semibold">
                   Additional Services
                 </h3>
-                <Badge variant="outline" className="self-start sm:self-center">
+                <Badge
+                  variant="outline"
+                  className="self-start sm:self-center bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 dark:bg-blue-950 dark:border-blue-800 dark:text-blue-300 dark:hover:bg-blue-900"
+                >
                   Complete Solution
                 </Badge>
               </div>

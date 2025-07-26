@@ -1,9 +1,11 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import { CustomerTypesAccordion } from '@/components/sections/CustomerTypesAccordion';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { GlowingBadge } from '@/components/ui/glowing-badge';
 import { badgeData } from '@/data/badges';
 import {
-  Award,
+  // Award,
   Building2,
   Calendar,
   Check,
@@ -12,37 +14,36 @@ import {
   FileText,
   MapPin,
   Phone,
-  Shield,
+  // Shield,
   Smartphone,
   Users,
-  Zap,
 } from 'lucide-react';
 
-const liveScanFeatures = [
-  {
-    icon: Zap,
-    title: 'Digital Live Scan',
-    description: 'Electronic fingerprint capture directly into digital format',
-    benefits: [
-      'Cleaner and faster than ink methods',
-      'Less prone to errors',
-      'Instant transmission to AFIS systems',
-      'Real-time quality verification',
-    ],
-  },
-  {
-    icon: FileText,
-    title: 'Ink Fingerprinting',
-    description:
-      'Traditional FBI FD-258 card fingerprints for specific requirements',
-    benefits: [
-      'Authentic FBI FD-258 cards provided',
-      'DOJ guidelines compliance',
-      'Hard card backup option',
-      'International acceptance',
-    ],
-  },
-];
+// const liveScanFeatures = [
+//   {
+//     icon: Zap,
+//     title: 'Digital Live Scan',
+//     description: 'Electronic fingerprint capture directly into digital format',
+//     benefits: [
+//       'Cleaner and faster than ink methods',
+//       'Less prone to errors',
+//       'Instant transmission to AFIS systems',
+//       'Real-time quality verification',
+//     ],
+//   },
+//   {
+//     icon: FileText,
+//     title: 'Ink Fingerprinting',
+//     description:
+//       'Traditional FBI FD-258 card fingerprints for specific requirements',
+//     benefits: [
+//       'Authentic FBI FD-258 cards provided',
+//       'DOJ guidelines compliance',
+//       'Hard card backup option',
+//       'International acceptance',
+//     ],
+//   },
+// ];
 
 const serviceOptions = [
   {
@@ -72,23 +73,23 @@ const serviceOptions = [
   },
 ];
 
-const certifications = [
-  {
-    icon: Shield,
-    title: 'DOJ Certified',
-    description: 'Authorized by Department of Justice',
-  },
-  {
-    icon: Shield,
-    title: 'FBI Authorized',
-    description: 'Official FBI fingerprinting provider',
-  },
-  {
-    icon: Award,
-    title: 'CJIS Compliant',
-    description: 'Criminal Justice Information Services certified',
-  },
-];
+// const certifications = [
+//   {
+//     icon: Shield,
+//     title: 'DOJ Certified',
+//     description: 'Authorized by Department of Justice',
+//   },
+//   {
+//     icon: Shield,
+//     title: 'FBI Authorized',
+//     description: 'Official FBI fingerprinting provider',
+//   },
+//   {
+//     icon: Award,
+//     title: 'CJIS Compliant',
+//     description: 'Criminal Justice Information Services certified',
+//   },
+// ];
 
 const pricingPlans = [
   {
@@ -218,7 +219,12 @@ export default function LiveScanPage() {
             <Card className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold">Ink Fingerprinting</h3>
-                <Badge variant="outline">FBI FD-258</Badge>
+                <GlowingBadge variant="outline" size="lg">
+                  FBI FD-258
+                </GlowingBadge>
+                {/* <Badge variant="outline" className="self-start sm:self-center">
+                  FBI FD-258
+                </Badge> */}
               </div>
               <ul className="space-y-3">
                 <li className="flex items-center">
@@ -242,9 +248,10 @@ export default function LiveScanPage() {
           </div>
         }
       />
+      <CustomerTypesAccordion />
 
       {/* Certifications Section */}
-      <section className="py-16 bg-muted/50">
+      {/* <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -272,10 +279,10 @@ export default function LiveScanPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Services Comparison */}
-      <section className="py-16 bg-background">
+      {/* <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -317,7 +324,7 @@ export default function LiveScanPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Service Options */}
       <section className="py-16 bg-muted/50">
