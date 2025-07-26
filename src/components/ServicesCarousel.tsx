@@ -11,7 +11,7 @@ import {
   type CarouselApi,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import { Award, CheckCircle, Lock, Shield, Star } from 'lucide-react';
+import { FileText, Globe, Package, ShieldCheck, Star } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 const servicesData = [
@@ -19,28 +19,28 @@ const servicesData = [
     title: 'Notary Services',
     description:
       'Professional document notarization with experienced certified notaries.',
-    icon: CheckCircle,
+    icon: FileText,
     color: 'text-blue-600',
   },
   {
     title: 'Apostille Services',
     description:
       'Document authentication for international use with fast, reliable processing.',
-    icon: Award,
+    icon: Globe,
     color: 'text-green-600',
   },
   {
     title: 'Passport Services',
     description:
       'Complete passport application and renewal assistance for hassle-free travel.',
-    icon: Shield,
+    icon: ShieldCheck,
     color: 'text-purple-600',
   },
   {
     title: 'Pack & Ship',
     description:
       'Reliable packing and shipping solutions for documents and packages.',
-    icon: Lock,
+    icon: Package,
     color: 'text-orange-600',
   },
 ];
@@ -52,7 +52,7 @@ export const ServicesCarousel = () => {
   // Create autoplay plugin with useRef to avoid recreation
   const autoplayPlugin = useRef(
     Autoplay({
-      delay: 2000,
+      delay: 4000,
       stopOnInteraction: true,
       stopOnMouseEnter: true,
     })
@@ -91,7 +91,7 @@ export const ServicesCarousel = () => {
         }}
         className="w-full relative"
         onMouseEnter={() => autoplayPlugin.current.stop()}
-        onMouseLeave={() => autoplayPlugin.current.reset()}
+        onMouseLeave={() => autoplayPlugin.current.play()}
       >
         <CarouselContent>
           {servicesData.map((service, index) => {

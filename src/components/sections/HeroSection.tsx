@@ -60,18 +60,17 @@ export const HeroSection = () => {
             {/* Main Title */}
             <div className="space-y-3 md:space-y-4">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                Professional{' '}
+                We simplify{' '}
                 <span className="bg-gradient-to-r from-primary via-blue-600 to-primary bg-clip-text text-transparent">
-                  Live Scan
+                  Live Scan, Notary Public, and Apostille services
                 </span>{' '}
-                Fingerprinting Services
+                for busy professionals.
               </h1>
 
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                Fast, secure, and certified fingerprinting for employment,
-                licensing, and legal requirements. Walk-ins welcome or book
-                online.
-              </p>
+              {/* <p className="text-lg text-muted-foreground max-w-2xl">
+                We simplify Live Scan, Notary Public, and Apostille services for
+                busy professionals.
+              </p> */}
             </div>
 
             {/* Benefits - Compact Grid */}
