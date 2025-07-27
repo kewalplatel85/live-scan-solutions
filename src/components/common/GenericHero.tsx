@@ -33,7 +33,7 @@ export interface QuickInfoItem {
 
 export interface HeroProps {
   // Layout
-  layout?: 'centered' | 'split'; // centered for contact, split for others
+  layout?: 'centered' | 'split' | 'split-70-30'; // added 70/30 option
   className?: string;
 
   // Badges
@@ -80,7 +80,9 @@ export const GenericHero = ({
   const containerClass =
     layout === 'centered'
       ? 'text-center max-w-4xl mx-auto'
-      : 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center';
+      : layout === 'split-70-30'
+        ? 'grid grid-cols-1 lg:grid-cols-[7fr_3fr] gap-8 items-start'
+        : 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center';
 
   const badgeContainerClass =
     layout === 'centered'
@@ -107,7 +109,11 @@ export const GenericHero = ({
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={containerClass}>
           {/* Left Content or Centered Content */}
-          <div className={layout === 'split' ? 'space-y-8' : ''}>
+          <div
+            className={
+              layout === 'split' || layout === 'split-70-30' ? 'space-y-8' : ''
+            }
+          >
             {/* Badges */}
             {badges.length > 0 && (
               <div className={badgeContainerClass}>
@@ -219,15 +225,16 @@ export const GenericHero = ({
           </div>
 
           {/* Right Content - Only for split layout */}
-          {layout === 'split' && (rightContent || statsOrVisual) && (
-            <div className="relative">
-              {rightContent || (
-                <Card className="p-8 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
-                  {statsOrVisual}
-                </Card>
-              )}
-            </div>
-          )}
+          {(layout === 'split' || layout === 'split-70-30') &&
+            (rightContent || statsOrVisual) && (
+              <div className="relative">
+                {rightContent || (
+                  <Card className="p-8 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+                    {statsOrVisual}
+                  </Card>
+                )}
+              </div>
+            )}
         </div>
       </div>
     </section>

@@ -24,8 +24,8 @@ export const HeroSection = () => {
         <div className="absolute bottom-40 right-20 w-20 h-20 bg-primary/3 rounded-full blur-2xl"></div>
       </div>
 
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 lg:py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-7 gap-4 md:gap-6 lg:gap-12 items-center">
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 lg:py-12 overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-7 gap-4 md:gap-6 lg:gap-12 items-center min-w-0">
           {/* Left Content - 4/7 of the space on desktop, full width on mobile */}
           <div className="lg:col-span-4 space-y-4 md:space-y-6 text-center lg:text-left">
             {/* Badge Section - Only Original Service Badges */}
@@ -128,8 +128,10 @@ export const HeroSection = () => {
           </div>
 
           {/* Right Content - 3/7 of space, Centered */}
-          <div className="lg:col-span-3 flex items-center justify-center mt-6 md:mt-8 lg:mt-0">
-            <ServicesCarousel />
+          <div className="lg:col-span-3 flex items-center justify-center mt-6 md:mt-8 lg:mt-0 overflow-hidden">
+            <div className="w-full max-w-full px-4 sm:px-0">
+              <ServicesCarousel />
+            </div>
           </div>
         </div>
       </div>

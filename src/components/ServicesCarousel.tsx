@@ -73,7 +73,7 @@ export const ServicesCarousel = () => {
   }, [api]);
 
   return (
-    <div className="w-full max-w-md">
+    <div className="w-full max-w-sm mx-auto">
       <div className="text-center mb-4">
         <h3 className="text-lg font-semibold mb-3">Our Services</h3>
         <p className="text-sm text-muted-foreground">
@@ -89,7 +89,7 @@ export const ServicesCarousel = () => {
           align: 'start',
           loop: true,
         }}
-        className="w-full relative"
+        className="w-full relative px-8 sm:px-12"
         onMouseEnter={() => autoplayPlugin.current.stop()}
         onMouseLeave={() => autoplayPlugin.current.play()}
       >
@@ -98,8 +98,8 @@ export const ServicesCarousel = () => {
             const Icon = service.icon;
             return (
               <CarouselItem key={index}>
-                <Card className="p-4 lg:p-6 bg-background/80 backdrop-blur-sm border-border shadow-sm">
-                  <div className="text-center space-y-4">
+                <Card className="p-3 sm:p-4 lg:p-6 bg-background/80 backdrop-blur-sm border-border shadow-sm mx-1">
+                  <div className="text-center space-y-3 sm:space-y-4">
                     <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center mx-auto">
                       <Icon className={`h-6 w-6 ${service.color}`} />
                     </div>
@@ -130,8 +130,8 @@ export const ServicesCarousel = () => {
             );
           })}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="left-0 -translate-x-1/2" />
+        <CarouselNext className="right-0 translate-x-1/2" />
       </Carousel>
 
       {/* Slide Indicator */}
