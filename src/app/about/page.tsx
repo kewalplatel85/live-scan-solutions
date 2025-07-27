@@ -11,6 +11,25 @@ import {
   Shield,
   Target,
 } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title:
+    'About Live Scan Solutions | Trusted Fingerprinting Experts | Mountain View, CA',
+  description:
+    "Learn about Live Scan Solutions, Bay Area's trusted fingerprinting experts since 2010. DOJ & FBI certified, serving Mountain View, Palo Alto, Sunnyvale. Over 15 years experience, 10,000+ customers served.",
+  keywords:
+    'about live scan solutions, fingerprinting experts, DOJ FBI certified, mountain view fingerprinting company, bay area background check services, trusted notary services, professional document services',
+  openGraph: {
+    title: 'About Live Scan Solutions | Trusted Fingerprinting Experts',
+    description:
+      "Bay Area's trusted fingerprinting experts since 2010. DOJ & FBI certified, 15+ years experience, 10,000+ customers served.",
+    url: 'https://livescansolutions.com/about',
+  },
+  alternates: {
+    canonical: 'https://livescansolutions.com/about',
+  },
+};
 
 export default function AboutPage() {
   return (

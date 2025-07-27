@@ -2,6 +2,25 @@ import { GenericHero } from '@/components/common/GenericHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { badgeData } from '@/data/badges';
 import { CheckCircle, FileText, Phone, Shield, Users } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title:
+    'Notary Public Services Mountain View | Licensed Notary | Bay Area, CA',
+  description:
+    'Professional notary public services in Mountain View, CA. Licensed notaries for contracts, real estate, wills, affidavits. Walk-ins welcome, same-day service. Serving entire Bay Area. Call (650) 961-4646.',
+  keywords:
+    'notary public mountain view, notary services bay area, document notarization, licensed notary, mobile notary, notary near me, contract notarization, real estate notary, will notarization, affidavit notary, same day notary',
+  openGraph: {
+    title: 'Notary Public Services Mountain View | Licensed Notary',
+    description:
+      'Professional notary public services in Mountain View, CA. Licensed notaries, walk-ins welcome, same-day service.',
+    url: 'https://livescansolutions.com/notary-public',
+  },
+  alternates: {
+    canonical: 'https://livescansolutions.com/notary-public',
+  },
+};
 
 export default function NotaryPublicPage() {
   const processSteps = [

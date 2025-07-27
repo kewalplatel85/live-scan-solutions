@@ -16,32 +16,46 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Live Scan Solutions - Professional Fingerprinting Services',
+  title:
+    'Live Scan Fingerprinting Services Bay Area | DOJ & FBI Certified | Mountain View, CA',
   description:
-    'Live Scan Solutions offers professional fingerprinting services including Live Scan, Notary Public, Apostille, Passport Photo, and more. Certified by DOJ and FBI.',
+    'Professional Live Scan fingerprinting, Notary Public, and Apostille services in Mountain View, CA. Serving Bay Area: Palo Alto, Sunnyvale, San Jose, Cupertino. DOJ & FBI certified. Same-day service, walk-ins welcome. Call (650) 961-4646.',
   keywords:
-    'live scan, fingerprinting, notary public, apostille, passport photo, background check, DOJ, FBI, certified fingerprinting',
+    'live scan fingerprinting bay area, fingerprinting mountain view, live scan near me, notary public mountain view, apostille services bay area, background check mountain view, DOJ FBI certified fingerprinting, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, digital fingerprinting california, employment background check, live scan appointment, same day fingerprinting',
   authors: [{ name: 'Live Scan Solutions' }],
   creator: 'Live Scan Solutions',
   publisher: 'Live Scan Solutions',
+  category: 'Business Services',
+  classification: 'Fingerprinting and Notary Services',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'Live Scan Solutions - Professional Fingerprinting Services',
+    title: 'Live Scan Fingerprinting Services Bay Area | DOJ & FBI Certified',
     description:
-      'Live Scan Solutions offers professional fingerprinting services including Live Scan, Notary Public, Apostille, Passport Photo, and more.',
+      'Professional Live Scan fingerprinting, Notary Public, and Apostille services in Mountain View, CA. Serving entire Bay Area with same-day service. DOJ & FBI certified.',
     url: 'https://livescansolutions.com',
     siteName: 'Live Scan Solutions',
     type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: '/assets/Logo/icons8-fingerprint-scan-80.png',
+        width: 80,
+        height: 80,
+        alt: 'Live Scan Solutions - Professional Fingerprinting Services',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Live Scan Solutions - Professional Fingerprinting Services',
+    site: '@LiveScanSolutions',
+    title: 'Live Scan Fingerprinting Services Bay Area | DOJ & FBI Certified',
     description:
-      'Professional fingerprinting services including Live Scan, Notary Public, Apostille, and more.',
+      'Professional Live Scan fingerprinting, Notary Public, and Apostille services in Mountain View, CA. Same-day service, walk-ins welcome.',
+    images: ['/assets/Logo/icons8-fingerprint-scan-80.png'],
   },
   viewport: {
     width: 'device-width',
@@ -59,6 +73,14 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  alternates: {
+    canonical: 'https://livescansolutions.com',
+  },
+  verification: {
+    google: 'your-google-site-verification-code',
+    yandex: 'your-yandex-verification-code',
+    yahoo: 'your-yahoo-verification-code',
+  },
 };
 
 export default function RootLayout({
@@ -72,6 +94,42 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/assets/Logo/icons8-fingerprint-scan-48.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/assets/Logo/icons8-fingerprint-scan-48.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="48x48"
+          href="/assets/Logo/icons8-fingerprint-scan-48.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="80x80"
+          href="/assets/Logo/icons8-fingerprint-scan-80.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/assets/Logo/icons8-fingerprint-scan-80.png"
+        />
+        <meta name="theme-color" content="#1e40af" />
+        <meta name="msapplication-TileColor" content="#1e40af" />
+        <meta
+          name="msapplication-TileImage"
+          content="/assets/Logo/icons8-fingerprint-scan-80.png"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
@@ -82,6 +140,94 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </AppProviders>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              '@id': 'https://livescansolutions.com/#organization',
+              name: 'Live Scan Solutions',
+              description:
+                'Professional Live Scan fingerprinting, Notary Public, and Apostille services in Mountain View, CA. DOJ & FBI certified.',
+              url: 'https://livescansolutions.com',
+              telephone: '(650) 961-4646',
+              email: 'info@livescansolutions.com',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '809 Cuesta Dr, Suite B',
+                addressLocality: 'Mountain View',
+                addressRegion: 'CA',
+                postalCode: '94040',
+                addressCountry: 'US',
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 37.4089,
+                longitude: -122.0877,
+              },
+              openingHours: ['Mo-Fr 10:00-17:00', 'Sa 10:00-14:00'],
+              priceRange: '$17-$125',
+              areaServed: [
+                'Mountain View, CA',
+                'Palo Alto, CA',
+                'Sunnyvale, CA',
+                'San Jose, CA',
+                'Cupertino, CA',
+                'Santa Clara, CA',
+                'Menlo Park, CA',
+                'Redwood City, CA',
+                'Fremont, CA',
+                'Campbell, CA',
+              ],
+              hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: 'Fingerprinting and Document Services',
+                itemListElement: [
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Live Scan Fingerprinting',
+                      description:
+                        'Electronic fingerprinting for employment, licensing, and background checks',
+                    },
+                    price: '17',
+                    priceCurrency: 'USD',
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Notary Public Services',
+                      description:
+                        'Professional document notarization with licensed notaries',
+                    },
+                    price: '25',
+                    priceCurrency: 'USD',
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Apostille Services',
+                      description:
+                        'Document authentication for international use',
+                    },
+                    price: '75',
+                    priceCurrency: 'USD',
+                  },
+                ],
+              },
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '4.9',
+                reviewCount: '127',
+                bestRating: '5',
+              },
+            }),
+          }}
+        />
       </body>
     </html>
   );

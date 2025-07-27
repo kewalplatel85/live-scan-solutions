@@ -23,6 +23,7 @@ import {
   Wifi,
   Zap,
 } from 'lucide-react';
+import type { Metadata } from 'next';
 
 // const liveScanFeatures = [
 //   {
@@ -153,6 +154,24 @@ const locations = [
   'Saratoga',
   'Morgan Hill',
 ];
+
+export const metadata: Metadata = {
+  title:
+    'Live Scan Fingerprinting Bay Area | Same Day Service | Mountain View, CA',
+  description:
+    'Professional Live Scan fingerprinting services in Mountain View, CA. Serving Palo Alto, Sunnyvale, San Jose, Cupertino. DOJ & FBI certified. Walk-ins welcome, same-day processing. Starting at $17. Call (650) 961-4646.',
+  keywords:
+    'live scan fingerprinting, live scan bay area, fingerprinting mountain view, digital fingerprinting, background check, employment screening, DOJ certified, FBI approved, live scan near me, same day fingerprinting, walk-in fingerprinting',
+  openGraph: {
+    title: 'Live Scan Fingerprinting Bay Area | Same Day Service',
+    description:
+      'Professional Live Scan fingerprinting in Mountain View, CA. DOJ & FBI certified. Walk-ins welcome, same-day processing.',
+    url: 'https://livescansolutions.com/livescan',
+  },
+  alternates: {
+    canonical: 'https://livescansolutions.com/livescan',
+  },
+};
 
 export default function LiveScanPage() {
   return (
