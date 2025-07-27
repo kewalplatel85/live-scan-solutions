@@ -1,15 +1,7 @@
 import { GenericHero } from '@/components/common/GenericHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { badgeData } from '@/data/badges';
-import {
-  CheckCircle,
-  FileText,
-  MapPin,
-  Phone,
-  Shield,
-  Star,
-  Users,
-} from 'lucide-react';
+import { CheckCircle, FileText, Phone, Shield, Users } from 'lucide-react';
 
 export default function NotaryPublicPage() {
   const processSteps = [
@@ -80,17 +72,22 @@ export default function NotaryPublicPage() {
   ];
 
   const benefits = [
-    { text: 'Walk-in and on-site services', icon: MapPin },
-    { text: 'Licensed Notaries with extensive experience', icon: Star },
-    { text: 'Confidential handling of sensitive documents', icon: Shield },
-    { text: 'Serving Mountain View and the Bay Area', icon: MapPin },
-    { text: 'Ensuring documents meet legal requirements', icon: CheckCircle },
+    { text: 'Same-day processing' },
+    // { text: 'Licensed professionals' },
+    // { text: 'Secure handling' },
+    { text: 'Walk-ins welcome' },
+    // { text: 'Walk-in and on-site services' },
+    { text: 'Licensed Notaries with extensive experience' },
+    { text: 'Confidential handling of sensitive documents' },
+    { text: 'Serving Mountain View and the Bay Area' },
+    { text: 'Ensuring documents meet legal requirements' },
   ];
 
   return (
     <main>
       {/* Hero Section */}
       <GenericHero
+        layout="split-70-30"
         badges={badgeData.notaryPublic}
         title={
           <>
@@ -99,12 +96,7 @@ export default function NotaryPublicPage() {
           </>
         }
         description="Accurate, efficient, and secure document notarization with licensed professionals. Walk-ins welcome or book online for guaranteed service."
-        benefits={[
-          { text: 'Same-day processing' },
-          { text: 'Licensed professionals' },
-          { text: 'Secure handling' },
-          { text: 'Walk-ins welcome' },
-        ]}
+        benefits={benefits}
         ctaText="Please call us to schedule your appointment"
         buttons={[
           {
@@ -117,34 +109,45 @@ export default function NotaryPublicPage() {
         rightContent={
           <Card className="h-full">
             <CardHeader className="text-center pb-4">
-              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-primary" />
+              <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                <FileText className="h-6 w-6 text-primary" />
               </div>
-              <CardTitle className="text-xl mb-2">
-                Why Choose Our Services?
-              </CardTitle>
-              <p className="text-sm text-muted-foreground">
-                Professional, reliable, and convenient notary services
+              <CardTitle className="text-lg mb-2">Notarization Types</CardTitle>
+              <p className="text-xs text-muted-foreground">
+                We handle all types with precision
               </p>
             </CardHeader>
             <CardContent className="pt-0">
               <div className="space-y-3">
-                {benefits.slice(0, 5).map((benefit, index) => {
-                  const Icon = benefit.icon;
+                {notarizationTypes.map((type, index) => {
+                  const Icon = type.icon;
                   return (
                     <div
                       key={index}
-                      className="flex items-center space-x-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors"
+                      className="flex items-center space-x-3 p-2 rounded-lg bg-muted/20 hover:bg-muted/40 transition-colors"
                     >
-                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Icon className="h-4 w-4 text-primary" />
+                      <div className="w-7 h-7 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Icon className="h-3.5 w-3.5 text-primary" />
                       </div>
-                      <span className="text-sm font-medium text-foreground">
-                        {benefit.text}
-                      </span>
+                      <div className="flex-1 min-w-0">
+                        <span className="text-sm font-medium text-foreground leading-tight">
+                          {type.title}
+                        </span>
+                      </div>
                     </div>
                   );
                 })}
+              </div>
+
+              <div className="mt-4 pt-3 border-t">
+                <div className="text-center">
+                  <div className="text-sm font-medium text-foreground mb-1">
+                    Need Service Today?
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    Walk-ins welcome • Same-day processing
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -204,64 +207,26 @@ export default function NotaryPublicPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {documentTypes.map((type, index) => {
               const [title, description] = type.split(': ');
               return (
                 <div
                   key={index}
-                  className="flex items-start space-x-4 bg-card p-6 rounded-lg shadow-sm"
+                  className="flex items-start space-x-3 bg-card p-4 rounded-lg shadow-sm"
                 >
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle className="h-5 w-5 text-primary" />
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <CheckCircle className="h-4 w-4 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-foreground mb-1 text-sm">
                       {title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-xs text-muted-foreground leading-tight">
                       {description}
                     </p>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Types of Notarizations */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Types of Notarizations We Offer
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our experienced notaries handle all types of notarizations with
-              precision and care.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {notarizationTypes.map((type, index) => {
-              const Icon = type.icon;
-              return (
-                <Card key={index} className="h-full gap-0">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <CardTitle className="text-lg">{type.title}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-muted-foreground leading-relaxed">
-                      {type.description}
-                    </p>
-                  </CardContent>
-                </Card>
               );
             })}
           </div>

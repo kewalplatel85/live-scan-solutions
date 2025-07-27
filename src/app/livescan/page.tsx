@@ -2,21 +2,26 @@ import { GenericHero } from '@/components/common/GenericHero';
 import { CustomerTypesAccordion } from '@/components/sections/CustomerTypesAccordion';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { GlowingBadge } from '@/components/ui/glowing-badge';
 import { badgeData } from '@/data/badges';
 import {
   // Award,
+  Banknote,
   Building2,
-  Calendar,
+  CalendarClock,
   Check,
   Clock,
   CreditCard,
-  FileText,
+  Globe,
+  HardDrive,
   MapPin,
   Phone,
-  // Shield,
+  Receipt,
+  Shield,
   Smartphone,
-  Users,
+  Truck,
+  UserCheck,
+  Wifi,
+  Zap,
 } from 'lucide-react';
 
 // const liveScanFeatures = [
@@ -47,14 +52,14 @@ import {
 
 const serviceOptions = [
   {
-    icon: Users,
+    icon: UserCheck,
     title: 'Walk-In Service',
     description: 'No appointment needed - fast and convenient',
     badge: 'Most Popular',
     features: ['Immediate service', 'Quick turnaround', 'Professional staff'],
   },
   {
-    icon: Calendar,
+    icon: CalendarClock,
     title: 'Scheduled Appointments',
     description: 'Book your preferred time slot',
     badge: 'Recommended',
@@ -65,7 +70,7 @@ const serviceOptions = [
     ],
   },
   {
-    icon: Smartphone,
+    icon: Truck,
     title: 'Mobile Service',
     description: 'On-site fingerprinting at your location',
     badge: 'Enterprise',
@@ -185,66 +190,167 @@ export default function LiveScanPage() {
           { icon: MapPin, text: 'Bay Area Locations' },
         ]}
         rightContent={
-          <div className="space-y-6">
-            <Card className="p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold">Live Scan Services</h3>
-                <div className="flex items-center ">
-                  <Badge className="mr-2" variant="secondary">
+          <div className="space-y-4 md:space-y-6">
+            {/* First Row - Service Cards Side by Side */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <Card className="relative p-4 md:p-6">
+                <Badge
+                  variant="outline"
+                  className="absolute -top-3 left-4 bg-purple-50 border-purple-200 text-purple-700 hover:bg-purple-100 dark:bg-purple-950 dark:border-purple-800 dark:text-purple-300 dark:hover:bg-purple-900"
+                >
+                  FBI FD-258
+                </Badge>
+                <div className="mt-2">
+                  <h3 className="text-lg font-semibold mb-3">
+                    Ink Fingerprinting
+                  </h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <Shield className="w-4 h-4 mr-3 text-purple-600 flex-shrink-0" />
+                      <span className="text-sm">
+                        Authentic FBI cards provided
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check className="w-4 h-4 mr-3 text-purple-600 flex-shrink-0" />
+                      <span className="text-sm">DOJ guidelines compliance</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Globe className="w-4 h-4 mr-3 text-purple-600 flex-shrink-0" />
+                      <span className="text-sm">International acceptance</span>
+                    </li>
+                    <li className="flex items-center">
+                      <HardDrive className="w-4 h-4 mr-3 text-purple-600 flex-shrink-0" />
+                      <span className="text-sm">Hard card backup option</span>
+                    </li>
+                  </ul>
+                </div>
+              </Card>
+
+              <Card className="relative p-4 md:p-6">
+                <div className="flex items-center gap-2 absolute -top-3 left-4">
+                  <Badge
+                    variant="secondary"
+                    className="bg-green-50 border-green-200 text-green-700 hover:bg-green-100 dark:bg-green-950 dark:border-green-800 dark:text-green-300 dark:hover:bg-green-900"
+                  >
                     Rolling fee lowest in town
                   </Badge>
-                  <Badge variant="default">$17</Badge>
+                  <Badge
+                    variant="default"
+                    className="bg-green-600 text-white hover:bg-green-700 dark:bg-green-600 dark:text-white dark:hover:bg-green-700"
+                  >
+                    $17
+                  </Badge>
                 </div>
-              </div>
-              <ul className="space-y-3">
-                <li className="flex items-center">
-                  <Check className="w-4 h-4 mr-3 text-green-600" />
-                  Digital fingerprint capture
-                </li>
-                <li className="flex items-center">
-                  <Check className="w-4 h-4 mr-3 text-green-600" />
-                  Real-time quality verification
-                </li>
-                <li className="flex items-center">
-                  <Check className="w-4 h-4 mr-3 text-green-600" />
-                  Instant electronic transmission
-                </li>
-                <li className="flex items-center">
-                  <Check className="w-4 h-4 mr-3 text-green-600" />
-                  AFIS system integration
-                </li>
-              </ul>
-            </Card>
+                <div className="mt-2">
+                  <h3 className="text-lg font-semibold mb-3">
+                    Live Scan Services
+                  </h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <Smartphone className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                      <span className="text-sm">
+                        Digital fingerprint capture
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                      <span className="text-sm">
+                        Real-time quality verification
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <Zap className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                      <span className="text-sm">
+                        Instant electronic transmission
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <Wifi className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                      <span className="text-sm">AFIS system integration</span>
+                    </li>
+                  </ul>
+                </div>
+              </Card>
+            </div>
 
-            <Card className="p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold">Ink Fingerprinting</h3>
-                <GlowingBadge variant="outline" size="lg">
-                  FBI FD-258
-                </GlowingBadge>
-                {/* <Badge variant="outline" className="self-start sm:self-center">
-                  FBI FD-258
-                </Badge> */}
-              </div>
-              <ul className="space-y-3">
-                <li className="flex items-center">
-                  <Check className="w-4 h-4 mr-3 text-green-600" />
-                  Authentic FBI cards provided
-                </li>
-                <li className="flex items-center">
-                  <Check className="w-4 h-4 mr-3 text-green-600" />
-                  DOJ guidelines compliance
-                </li>
-                <li className="flex items-center">
-                  <Check className="w-4 h-4 mr-3 text-green-600" />
-                  International acceptance
-                </li>
-                <li className="flex items-center">
-                  <Check className="w-4 h-4 mr-3 text-green-600" />
-                  Hard card backup option
-                </li>
-              </ul>
-            </Card>
+            {/* Second Row - Locations and Payment Options */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <Card className="relative p-4 md:p-6">
+                <Badge
+                  variant="outline"
+                  className="absolute -top-3 left-4 bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 dark:bg-blue-950 dark:border-blue-800 dark:text-blue-300 dark:hover:bg-blue-900"
+                >
+                  Bay Area Coverage
+                </Badge>
+                <div className="mt-2">
+                  <h3 className="text-lg font-semibold mb-3">
+                    Service Locations
+                  </h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <MapPin className="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" />
+                      <span className="text-sm">
+                        Palo Alto • Sunnyvale • Los Altos
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <MapPin className="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" />
+                      <span className="text-sm">
+                        Cupertino • Menlo Park • Santa Clara
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <MapPin className="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" />
+                      <span className="text-sm">
+                        San Jose • Mountain View • Fremont
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <MapPin className="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" />
+                      <a
+                        href="#bay-area-locations"
+                        className="text-sm text-primary hover:text-primary/80 underline underline-offset-2 transition-colors"
+                      >
+                        And 5 more Bay Area cities
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </Card>
+
+              <Card className="relative p-4 md:p-6">
+                <Badge
+                  variant="outline"
+                  className="absolute -top-3 left-4 bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-100 dark:bg-orange-950 dark:border-orange-800 dark:text-orange-300 dark:hover:bg-orange-900"
+                >
+                  Payment Methods
+                </Badge>
+                <div className="mt-2">
+                  <h3 className="text-lg font-semibold mb-3">
+                    Payment Options
+                  </h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <CreditCard className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
+                      <span className="text-sm">Credit & Debit Cards</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Building2 className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
+                      <span className="text-sm">Corporate Invoicing</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Receipt className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
+                      <span className="text-sm">Payment Vouchers</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Banknote className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
+                      <span className="text-sm">Cash payments accepted</span>
+                    </li>
+                  </ul>
+                </div>
+              </Card>
+            </div>
           </div>
         }
       />
@@ -339,39 +445,61 @@ export default function LiveScanPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {serviceOptions.map((option, index) => (
-              <Card key={index} className="xl:p-6 relative">
-                {option.badge && (
-                  <Badge className="absolute -top-3 left-6" variant="secondary">
-                    {option.badge}
-                  </Badge>
-                )}
-                <CardHeader>
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <option.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl text-center">
-                    {option.title}
-                  </CardTitle>
-                  <p className="text-muted-foreground text-center">
-                    {option.description}
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {option.features.map((feature, featureIndex) => (
-                      <li
-                        key={featureIndex}
-                        className="flex items-center text-sm"
-                      >
-                        <Check className="w-4 h-4 mr-2 text-green-600" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
+            {serviceOptions.map((option, index) => {
+              // Define unique colors for each service option
+              const iconColors = [
+                'bg-blue-50 border-blue-200 dark:bg-blue-950 dark:border-blue-800', // Walk-in: Blue
+                'bg-emerald-50 border-emerald-200 dark:bg-emerald-950 dark:border-emerald-800', // Scheduled: Green
+                'bg-purple-50 border-purple-200 dark:bg-purple-950 dark:border-purple-800', // Mobile: Purple
+              ];
+              const textColors = [
+                'text-blue-600 dark:text-blue-400',
+                'text-emerald-600 dark:text-emerald-400',
+                'text-purple-600 dark:text-purple-400',
+              ];
+
+              return (
+                <Card
+                  key={index}
+                  className="xl:p-6 relative hover:shadow-lg transition-shadow duration-200"
+                >
+                  {option.badge && (
+                    <Badge
+                      className="absolute -top-3 left-6"
+                      variant="secondary"
+                    >
+                      {option.badge}
+                    </Badge>
+                  )}
+                  <CardHeader>
+                    <div
+                      className={`w-16 h-16 ${iconColors[index]} border rounded-full flex items-center justify-center mx-auto mb-4`}
+                    >
+                      <option.icon className={`w-8 h-8 ${textColors[index]}`} />
+                    </div>
+                    <CardTitle className="text-xl text-center">
+                      {option.title}
+                    </CardTitle>
+                    <p className="text-muted-foreground text-center">
+                      {option.description}
+                    </p>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {option.features.map((feature, featureIndex) => (
+                        <li
+                          key={featureIndex}
+                          className="flex items-center text-sm"
+                        >
+                          <Check className="w-4 h-4 mr-2 text-green-600" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -434,7 +562,7 @@ export default function LiveScanPage() {
       </section>
 
       {/* Locations Section */}
-      <section className="py-16 bg-muted/50">
+      <section id="bay-area-locations" className="py-16 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -463,7 +591,7 @@ export default function LiveScanPage() {
       </section>
 
       {/* Payment Options */}
-      <section className="py-16 bg-background">
+      {/* <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -478,7 +606,7 @@ export default function LiveScanPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="p-6 text-center">
               <CardHeader>
-                <CreditCard className="w-12 h-12 mx-auto mb-4 text-primary" />
+                <CreditCard className="w-12 h-12 mx-auto mb-4 text-blue-600" />
                 <CardTitle>Individual Payments</CardTitle>
               </CardHeader>
               <CardContent>
@@ -491,7 +619,7 @@ export default function LiveScanPage() {
 
             <Card className="p-6 text-center">
               <CardHeader>
-                <Building2 className="w-12 h-12 mx-auto mb-4 text-primary" />
+                <Building2 className="w-12 h-12 mx-auto mb-4 text-purple-600" />
                 <CardTitle>Corporate Accounts</CardTitle>
               </CardHeader>
               <CardContent>
@@ -504,7 +632,7 @@ export default function LiveScanPage() {
 
             <Card className="p-6 text-center">
               <CardHeader>
-                <FileText className="w-12 h-12 mx-auto mb-4 text-primary" />
+                <Receipt className="w-12 h-12 mx-auto mb-4 text-orange-600" />
                 <CardTitle>Payment Vouchers</CardTitle>
               </CardHeader>
               <CardContent>
@@ -516,7 +644,7 @@ export default function LiveScanPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
