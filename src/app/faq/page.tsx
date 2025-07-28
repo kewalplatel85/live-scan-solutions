@@ -4,6 +4,25 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title:
+    'Live Scan FAQ | Fingerprinting Questions Answered | Mountain View, CA',
+  description:
+    'Get answers to frequently asked questions about Live Scan fingerprinting, notary services, and apostille in Mountain View, CA. Expert guidance from certified professionals serving Bay Area.',
+  keywords:
+    'live scan FAQ, fingerprinting questions, live scan answers, notary FAQ, apostille questions, background check FAQ, fingerprinting help, live scan guide',
+  openGraph: {
+    title: 'Live Scan FAQ | Fingerprinting Questions Answered',
+    description:
+      'Get answers to frequently asked questions about Live Scan fingerprinting and notary services.',
+    url: 'https://livescansolutions.com/faq',
+  },
+  alternates: {
+    canonical: 'https://livescansolutions.com/faq',
+  },
+};
 
 const faqs = [
   // Live Scan FAQs

@@ -32,6 +32,25 @@ import {
   Users,
   Zap,
 } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title:
+    'Apostille Services Bay Area | Document Authentication | Mountain View, CA',
+  description:
+    'Professional apostille services for international document authentication in Mountain View, CA. Birth certificates, diplomas, business documents. Fast processing, expert guidance. Serving entire Bay Area. Call (650) 961-4646.',
+  keywords:
+    'apostille services bay area, document authentication, apostille mountain view, hague convention, international documents, birth certificate apostille, diploma apostille, business document authentication, document legalization, apostille near me',
+  openGraph: {
+    title: 'Apostille Services Bay Area | Document Authentication',
+    description:
+      'Professional apostille services for international document authentication in Mountain View, CA. Fast processing, expert guidance.',
+    url: 'https://livescansolutions.com/apostille',
+  },
+  alternates: {
+    canonical: 'https://livescansolutions.com/apostille',
+  },
+};
 
 const apostilleServices = [
   {
