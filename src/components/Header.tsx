@@ -3,6 +3,15 @@
 import { LogoLink } from '@/components/Logo';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu';
 import { Separator } from '@/components/ui/separator';
 import {
   Sheet,
@@ -10,20 +19,112 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import { cn } from '@/lib/utils';
 import { Menu, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Live Scan', href: '/livescan' },
-  { name: 'Notary Public', href: '/notary-public' },
-  { name: 'Apostille', href: '/apostille' },
   { name: 'About Us', href: '/about' },
   { name: 'FAQ', href: '/faq' },
-  { name: 'Contact Us', href: '/contact' },
+  { name: 'Contact', href: '/contact' },
 ];
+
+// Services grouped for dropdown menu - all services under /services/
+const services = [
+  {
+    title: 'Live Scan',
+    href: '/services/live-scan',
+    description: 'Electronic fingerprinting services for background checks',
+  },
+  {
+    title: 'Notary Public',
+    href: '/services/notary',
+    description: 'Professional notarization services for documents',
+  },
+  {
+    title: 'Apostille',
+    href: '/services/apostille',
+    description: 'Document authentication for international use',
+  },
+  {
+    title: 'Passport Photos',
+    href: '/services/passport-photos',
+    description:
+      'Professional passport and ID photos that meet all requirements',
+  },
+  {
+    title: 'Mailbox Rental',
+    href: '/services/mailbox-rental',
+    description: 'Secure mailbox services for your business or personal needs',
+  },
+];
+
+const packShipServices = [
+  {
+    title: 'Professional Packing',
+    href: '/pack-ship/packing',
+    description: 'Professional packing for safe shipping',
+  },
+  {
+    title: 'Package Tracking Page',
+    href: '/pack-ship/tracking',
+    description: 'Track your packages in real-time',
+  },
+];
+
+const shippingServices = [
+  {
+    title: 'FedEx Shipping',
+    href: '/pack-ship/shipping/fedex',
+    description: 'Reliable FedEx shipping services',
+  },
+  {
+    title: 'UPS Access Point',
+    href: '/pack-ship/shipping/ups',
+    description: 'Convenient UPS shipping and pickup',
+  },
+  {
+    title: 'US Postal Service',
+    href: '/pack-ship/shipping/usps',
+    description: 'Complete USPS shipping solutions',
+  },
+  {
+    title: 'Package Drop-Offs',
+    href: '/pack-ship/shipping/drop-off',
+    description: 'Convenient package drop-off services',
+  },
+];
+
+// ListItem component for navigation menu
+const ListItem = React.forwardRef<
+  React.ElementRef<'a'>,
+  React.ComponentPropsWithoutRef<'a'> & { title: string; href: string }
+>(({ className, title, children, href, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <Link
+          href={href}
+          ref={ref}
+          className={cn(
+            'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </Link>
+      </NavigationMenuLink>
+    </li>
+  );
+});
+ListItem.displayName = 'ListItem';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,11 +134,39 @@ export const Header = () => {
     if (href === '/') {
       return pathname === '/';
     }
+    // Handle services routes - check for both old and new paths
+    if (href.startsWith('/services/')) {
+      const servicePath = href.replace('/services/', '/');
+      return pathname.startsWith(href) || pathname.startsWith(servicePath);
+    }
     return pathname.startsWith(href);
   };
 
+  // All mobile navigation items including services
+  const allMobileItems = [
+    ...navigation,
+    { name: 'Services', href: '#services', isHeader: true as const },
+    ...services.map((service) => ({
+      name: service.title,
+      href: service.href,
+      isService: true as const,
+    })),
+    { name: 'Pack & Ship', href: '#pack-ship', isHeader: true as const },
+    ...packShipServices.map((service) => ({
+      name: service.title,
+      href: service.href,
+      isService: true as const,
+    })),
+    { name: 'Shipping Services', href: '#shipping', isHeader: true as const },
+    ...shippingServices.map((service) => ({
+      name: service.title,
+      href: service.href,
+      isService: true as const,
+    })),
+  ];
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 overflow-hidden">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 xl:px-8 max-w-full">
         <div className="flex h-16 items-center justify-between min-w-0">
           {/* Logo */}
@@ -46,24 +175,109 @@ export const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex xl:items-center xl:space-x-6 2xl:space-x-8 flex-1 justify-center min-w-0">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary relative whitespace-nowrap px-2 ${
-                  isActive(item.href)
-                    ? 'text-primary'
-                    : 'text-accent-foreground'
-                }`}
-              >
-                {item.name}
-                {isActive(item.href) && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
-                )}
-              </Link>
-            ))}
-          </nav>
+          <div className="hidden xl:flex xl:items-center xl:space-x-4 2xl:space-x-6 flex-1 justify-center min-w-0 relative z-[100]">
+            <NavigationMenu viewport={false}>
+              <NavigationMenuList>
+                {navigation.map((item) => (
+                  <NavigationMenuItem key={item.name}>
+                    <Link href={item.href} legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={cn(
+                          navigationMenuTriggerStyle(),
+                          isActive(item.href)
+                            ? 'text-primary bg-accent'
+                            : 'text-accent-foreground'
+                        )}
+                      >
+                        {item.name}
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                ))}
+
+                {/* Services Menu */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger
+                    className={cn(
+                      isActive('/services/live-scan') ||
+                        isActive('/livescan') ||
+                        isActive('/services/passport-photos') ||
+                        isActive('/passport-photos') ||
+                        isActive('/services/notary') ||
+                        isActive('/notary-public') ||
+                        isActive('/services/apostille') ||
+                        isActive('/apostille') ||
+                        isActive('/services/mailbox-rental') ||
+                        isActive('/mailbox-rental')
+                        ? 'text-primary bg-accent'
+                        : 'text-accent-foreground'
+                    )}
+                  >
+                    Services
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {services.map((service) => (
+                        <ListItem
+                          key={service.title}
+                          title={service.title}
+                          href={service.href}
+                        >
+                          {service.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Pack & Ship Menu */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger
+                    className={cn(
+                      isActive('/pack-ship')
+                        ? 'text-primary bg-accent'
+                        : 'text-accent-foreground'
+                    )}
+                  >
+                    Pack & Ship
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {packShipServices.map((service) => (
+                        <ListItem
+                          key={service.title}
+                          title={service.title}
+                          href={service.href}
+                        >
+                          {service.description}
+                        </ListItem>
+                      ))}
+                      {/* Shipping Submenu Group Header - Not Clickable */}
+                      <li className="col-span-2">
+                        <div className="rounded-md p-3 bg-muted/30 border-l-4 border-primary">
+                          <div className="text-sm font-medium leading-none mb-1 text-primary">
+                            Shipping Services
+                          </div>
+                          <p className="text-xs text-muted-foreground">
+                            Choose your preferred shipping method
+                          </p>
+                        </div>
+                      </li>
+                      {shippingServices.map((service) => (
+                        <ListItem
+                          key={service.title}
+                          title={service.title}
+                          href={service.href}
+                        >
+                          {service.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
 
           {/* Right side items */}
           <div className="flex items-center space-x-3 flex-shrink-0">
@@ -103,25 +317,37 @@ export const Header = () => {
                   {/* Navigation Links */}
                   <nav className="flex-1 px-6 py-8">
                     <div className="space-y-0">
-                      {navigation.map((item, index) => (
-                        <div key={item.name}>
-                          <Link
-                            href={item.href}
-                            className={`block px-3 py-3 text-lg font-medium transition-colors hover:text-primary hover:bg-muted/50 rounded-lg relative ${
-                              isActive(item.href)
-                                ? 'text-primary bg-primary/10'
-                                : 'text-accent-foreground'
-                            }`}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {item.name}
-                            {isActive(item.href) && (
-                              <span className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full" />
-                            )}
-                          </Link>
-                          {index < navigation.length - 1 && (
-                            <Separator className="mx-3 my-1" />
+                      {allMobileItems.map((item, index) => (
+                        <div key={`${item.name}-${index}`}>
+                          {'isHeader' in item && item.isHeader ? (
+                            <div className="px-3 py-3 text-lg font-semibold text-primary border-b border-border/30 mb-2">
+                              {item.name}
+                            </div>
+                          ) : (
+                            <Link
+                              href={item.href}
+                              className={`block px-3 py-3 text-lg font-medium transition-colors hover:text-primary hover:bg-muted/50 rounded-lg relative ${
+                                'isService' in item && item.isService
+                                  ? 'ml-4 text-base'
+                                  : ''
+                              } ${
+                                isActive(item.href)
+                                  ? 'text-primary bg-primary/10'
+                                  : 'text-accent-foreground'
+                              }`}
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {item.name}
+                              {isActive(item.href) && (
+                                <span className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full" />
+                              )}
+                            </Link>
                           )}
+                          {!('isHeader' in item && item.isHeader) &&
+                            !('isService' in item && item.isService) &&
+                            index < allMobileItems.length - 1 && (
+                              <Separator className="mx-3 my-1" />
+                            )}
                         </div>
                       ))}
 

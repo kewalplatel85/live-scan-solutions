@@ -16,15 +16,15 @@ import Link from 'next/link';
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-[50vh] md:min-h-[60vh] lg:min-h-[40vh] bg-gradient-to-b from-background via-background to-primary/10">
+    <section className="relative min-h-[50vh] md:min-h-[60vh] lg:min-h-[40vh] bg-gradient-to-b from-background via-background to-primary/10 z-0">
       {/* Subtle Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-grid-slate-100/20 dark:bg-grid-slate-900/20 [mask-image:linear-gradient(0deg,transparent,rgba(255,255,255,0.2),transparent)]"></div>
         <div className="absolute top-32 left-16 w-16 h-16 bg-primary/3 rounded-full blur-2xl"></div>
         <div className="absolute bottom-40 right-20 w-20 h-20 bg-primary/3 rounded-full blur-2xl"></div>
       </div>
 
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 lg:py-12 overflow-hidden">
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 lg:py-12 overflow-hidden z-10">
         <div className="grid grid-cols-1 lg:grid-cols-7 gap-4 md:gap-6 lg:gap-12 items-center min-w-0">
           {/* Left Content - 4/7 of the space on desktop, full width on mobile */}
           <div className="lg:col-span-4 space-y-4 md:space-y-6 text-center lg:text-left">
