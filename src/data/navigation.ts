@@ -23,16 +23,12 @@ export const navigationConfig: NavigationConfig = {
       items: [
         { name: 'Packing', href: '/pack-ship/packing' },
         { name: 'Tracking', href: '/pack-ship/tracking' },
-        {
-          name: 'Shipping',
-          hasSubmenu: true,
-          submenu: [
-            { name: 'FedEx', href: '/pack-ship/shipping/fedex' },
-            { name: 'UPS', href: '/pack-ship/shipping/ups' },
-            { name: 'USPS', href: '/pack-ship/shipping/usps' },
-            { name: 'Drop-Off', href: '/pack-ship/shipping/drop-off' },
-          ],
-        },
+        { name: 'separator', isSeparator: true },
+        { name: 'Shipping Options', isHeading: true },
+        { name: 'FedEx', href: '/pack-ship/shipping/fedex' },
+        { name: 'UPS', href: '/pack-ship/shipping/ups' },
+        { name: 'USPS', href: '/pack-ship/shipping/usps' },
+        { name: 'Drop-Off', href: '/pack-ship/shipping/drop-off' },
       ],
     },
   ],

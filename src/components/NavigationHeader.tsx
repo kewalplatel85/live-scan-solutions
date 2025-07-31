@@ -5,10 +5,10 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 import { NavigationConfig } from '@/components/types/navigation';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { ChevronDown, Menu, Phone, X } from 'lucide-react';
+import { ChevronDown, ChevronRight, Menu, Phone, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 interface NavigationHeaderProps {
   config: NavigationConfig;
@@ -21,11 +21,6 @@ export const NavigationHeader = ({
   logoSize = 'lg',
   className = '',
 }: NavigationHeaderProps) => {
-  // State for desktop dropdowns
-  const [openDropdowns, setOpenDropdowns] = useState<Record<string, boolean>>(
-    {}
-  );
-
   // State for mobile navigation
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdowns, setMobileDropdowns] = useState<
@@ -35,29 +30,73 @@ export const NavigationHeader = ({
     {}
   );
 
-  // Refs for click outside detection
-  const dropdownRefs = useRef<Record<string, HTMLDivElement | null>>({});
-
   const pathname = usePathname();
 
-  const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
-    return pathname.startsWith(href);
-  };
+  // Enhanced active state detection with parent tracking
+  const getActiveState = useMemo(() => {
+    const result = {
+      activePrimary: null as string | null,
+      activeSection: null as string | null,
+      activeItem: null as string | null,
+      activeSubmenu: null as string | null,
+    };
 
-  const toggleDropdown = (sectionName: string) => {
-    setOpenDropdowns((prev) => ({
-      ...prev,
-      [sectionName]: !prev[sectionName],
-    }));
-  };
+    // Check primary items
+    for (const item of config.primaryItems) {
+      if (
+        pathname === item.href ||
+        (item.href !== '/' && pathname.startsWith(item.href!))
+      ) {
+        result.activePrimary = item.name;
+        return result;
+      }
+    }
 
-  const closeDropdown = (sectionName: string) => {
-    setOpenDropdowns((prev) => ({
-      ...prev,
-      [sectionName]: false,
-    }));
-  };
+    // Check dropdown sections
+    for (const section of config.dropdownSections) {
+      if (section.isMegaMenu && section.megaMenuColumns) {
+        for (const column of section.megaMenuColumns) {
+          for (const item of column.items) {
+            if (
+              pathname === item.href ||
+              (item.href !== '/' && pathname.startsWith(item.href!))
+            ) {
+              result.activeSection = section.name;
+              result.activeItem = item.name;
+              return result;
+            }
+          }
+        }
+      } else if (section.items) {
+        for (const item of section.items) {
+          if (item.hasSubmenu && item.submenu) {
+            for (const subItem of item.submenu) {
+              if (
+                pathname === subItem.href ||
+                (subItem.href !== '/' && pathname.startsWith(subItem.href!))
+              ) {
+                result.activeSection = section.name;
+                result.activeItem = item.name;
+                result.activeSubmenu = subItem.name;
+                return result;
+              }
+            }
+          } else if (item.href) {
+            if (
+              pathname === item.href ||
+              (item.href !== '/' && pathname.startsWith(item.href!))
+            ) {
+              result.activeSection = section.name;
+              result.activeItem = item.name;
+              return result;
+            }
+          }
+        }
+      }
+    }
+
+    return result;
+  }, [pathname, config]);
 
   const toggleMobileDropdown = (sectionName: string) => {
     setMobileDropdowns((prev) => ({
@@ -78,20 +117,6 @@ export const NavigationHeader = ({
     setMobileDropdowns({});
     setMobileSubmenus({});
   };
-
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      Object.entries(dropdownRefs.current).forEach(([sectionName, ref]) => {
-        if (ref && !ref.contains(event.target as Node)) {
-          closeDropdown(sectionName);
-        }
-      });
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   return (
     <header
@@ -116,7 +141,7 @@ export const NavigationHeader = ({
                 href={item.href!}
                 className={cn(
                   'px-3 py-2 text-sm font-medium transition-colors rounded-md',
-                  isActive(item.href!)
+                  getActiveState.activePrimary === item.name
                     ? 'text-primary bg-primary/10'
                     : 'text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
                 )}
@@ -127,50 +152,149 @@ export const NavigationHeader = ({
 
             {/* Dropdown sections */}
             {config.dropdownSections.map((section) => (
-              <div
-                key={section.name}
-                className="relative"
-                ref={(el) => {
-                  dropdownRefs.current[section.name] = el;
-                }}
-              >
+              <div key={section.name} className="relative group">
                 <button
-                  onClick={() => toggleDropdown(section.name)}
-                  className="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-primary transition-colors rounded-md"
+                  className={cn(
+                    'flex items-center space-x-1 px-3 py-2 text-sm font-medium transition-colors rounded-md',
+                    getActiveState.activeSection === section.name
+                      ? 'text-primary bg-primary/10'
+                      : 'text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
+                  )}
                 >
                   <span>{section.name}</span>
+                  {getActiveState.activeSection === section.name && (
+                    <div className="flex items-center space-x-1 ml-2">
+                      <ChevronRight className="h-3 w-3 text-primary/60" />
+                      <span className="text-xs text-primary/80 font-normal">
+                        {getActiveState.activeSubmenu ||
+                          getActiveState.activeItem}
+                      </span>
+                    </div>
+                  )}
                   <ChevronDown
                     className={cn(
                       'h-4 w-4 transition-transform duration-200',
-                      openDropdowns[section.name] && 'rotate-180'
+                      'group-hover:rotate-180'
                     )}
                   />
                 </button>
 
-                {openDropdowns[section.name] && (
-                  <div className="absolute top-full left-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-50 min-w-[200px]">
+                {/* Hover dropdown */}
+                <div
+                  className={cn(
+                    'absolute top-full left-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200',
+                    section.isMegaMenu ? 'w-96 p-6' : 'min-w-[200px]'
+                  )}
+                >
+                  {section.isMegaMenu && section.megaMenuColumns ? (
+                    // Enhanced Mega Menu Layout
+                    <div className="grid grid-cols-2 gap-6">
+                      {section.megaMenuColumns.map((column) => (
+                        <div key={column.title}>
+                          <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                            {column.title}
+                          </h3>
+                          <div className="space-y-2">
+                            {column.items.map((item) => (
+                              <Link
+                                key={item.name}
+                                href={item.href!}
+                                className={cn(
+                                  'block group',
+                                  getActiveState.activeItem === item.name &&
+                                    'ring-1 ring-primary/20 rounded-md'
+                                )}
+                              >
+                                <div
+                                  className={cn(
+                                    'p-2 rounded-md transition-colors',
+                                    getActiveState.activeItem === item.name
+                                      ? 'bg-primary/10'
+                                      : 'hover:bg-gray-100 dark:hover:bg-gray-700'
+                                  )}
+                                >
+                                  <div
+                                    className={cn(
+                                      'text-sm font-medium group-hover:text-primary',
+                                      getActiveState.activeItem === item.name
+                                        ? 'text-primary'
+                                        : 'text-gray-700 dark:text-gray-200'
+                                    )}
+                                  >
+                                    {item.name}
+                                    {getActiveState.activeItem ===
+                                      item.name && (
+                                      <span className="ml-2 text-xs text-primary/60">
+                                        • Active
+                                      </span>
+                                    )}
+                                  </div>
+                                  {item.description && (
+                                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                      {item.description}
+                                    </div>
+                                  )}
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    // Enhanced Regular Dropdown Layout
                     <div className="py-1">
-                      {section.items.map((item) => (
+                      {section.items?.map((item) => (
                         <div key={item.name}>
-                          {item.hasSubmenu ? (
+                          {item.isSeparator ? (
+                            <div className="border-t border-gray-200 dark:border-gray-600 my-1" />
+                          ) : item.isHeading ? (
+                            <div className="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                              {item.name}
+                            </div>
+                          ) : item.hasSubmenu ? (
                             <div className="relative group">
-                              <div className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
-                                <span>{item.name}</span>
+                              <div
+                                className={cn(
+                                  'flex items-center justify-between px-4 py-2 text-sm cursor-pointer transition-colors',
+                                  getActiveState.activeItem === item.name
+                                    ? 'text-primary bg-primary/10'
+                                    : 'text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700'
+                                )}
+                              >
+                                <span className="flex items-center">
+                                  {item.name}
+                                  {getActiveState.activeItem === item.name &&
+                                    getActiveState.activeSubmenu && (
+                                      <span className="ml-2 text-xs text-primary/60">
+                                        • {getActiveState.activeSubmenu}
+                                      </span>
+                                    )}
+                                </span>
                                 <ChevronDown className="h-4 w-4 -rotate-90" />
                               </div>
-                              {/* Hover submenu */}
+                              {/* Enhanced submenu */}
                               <div className="absolute left-full top-0 ml-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-50 min-w-[180px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                 <div className="py-1">
                                   {item.submenu?.map((subItem) => (
                                     <Link
                                       key={subItem.name}
                                       href={subItem.href!}
-                                      className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                                      onClick={() =>
-                                        closeDropdown(section.name)
-                                      }
+                                      className={cn(
+                                        'block px-4 py-2 text-sm transition-colors',
+                                        getActiveState.activeSubmenu ===
+                                          subItem.name
+                                          ? 'text-primary bg-primary/10 font-medium'
+                                          : 'text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700'
+                                      )}
                                     >
                                       {subItem.name}
+                                      {getActiveState.activeSubmenu ===
+                                        subItem.name && (
+                                        <span className="ml-2 text-xs text-primary/60">
+                                          ✓
+                                        </span>
+                                      )}
                                     </Link>
                                   ))}
                                 </div>
@@ -179,17 +303,26 @@ export const NavigationHeader = ({
                           ) : (
                             <Link
                               href={item.href!}
-                              className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                              onClick={() => closeDropdown(section.name)}
+                              className={cn(
+                                'block px-4 py-2 text-sm transition-colors',
+                                getActiveState.activeItem === item.name
+                                  ? 'text-primary bg-primary/10 font-medium'
+                                  : 'text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700'
+                              )}
                             >
                               {item.name}
+                              {getActiveState.activeItem === item.name && (
+                                <span className="ml-2 text-xs text-primary/60">
+                                  ✓
+                                </span>
+                              )}
                             </Link>
                           )}
                         </div>
                       ))}
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             ))}
           </nav>
@@ -234,6 +367,43 @@ export const NavigationHeader = ({
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="lg:hidden border-t bg-white dark:bg-gray-900">
+            {/* Add breadcrumb for mobile when in submenu */}
+            {(getActiveState.activeSection || getActiveState.activePrimary) && (
+              <div className="px-4 py-2 bg-gray-50 dark:bg-gray-800/50 border-b text-xs text-gray-600 dark:text-gray-400">
+                <div className="flex items-center space-x-1">
+                  <span>You are here:</span>
+                  {getActiveState.activePrimary && (
+                    <span className="font-medium text-primary">
+                      {getActiveState.activePrimary}
+                    </span>
+                  )}
+                  {getActiveState.activeSection && (
+                    <>
+                      <ChevronRight className="h-3 w-3" />
+                      <span className="font-medium text-primary">
+                        {getActiveState.activeSection}
+                      </span>
+                    </>
+                  )}
+                  {getActiveState.activeItem && (
+                    <>
+                      <ChevronRight className="h-3 w-3" />
+                      <span className="font-medium text-primary">
+                        {getActiveState.activeItem}
+                      </span>
+                    </>
+                  )}
+                  {getActiveState.activeSubmenu && (
+                    <>
+                      <ChevronRight className="h-3 w-3" />
+                      <span className="font-medium text-primary">
+                        {getActiveState.activeSubmenu}
+                      </span>
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
             <div className="px-2 pt-2 pb-3 space-y-1">
               {/* Primary navigation items */}
               {config.primaryItems.map((item) => (
@@ -242,7 +412,7 @@ export const NavigationHeader = ({
                   href={item.href!}
                   className={cn(
                     'block px-3 py-2 text-base font-medium rounded-md transition-colors',
-                    isActive(item.href!)
+                    getActiveState.activePrimary === item.name
                       ? 'text-primary bg-primary/10'
                       : 'text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
                   )}
@@ -269,56 +439,82 @@ export const NavigationHeader = ({
                   </button>
                   {mobileDropdowns[section.name] && (
                     <div className="pl-4 space-y-1">
-                      {section.items.map((item) => (
-                        <div key={item.name}>
-                          {item.hasSubmenu ? (
-                            <div>
-                              <button
-                                onClick={() =>
-                                  toggleMobileSubmenu(
-                                    `${section.name}-${item.name}`
-                                  )
-                                }
-                                className="flex items-center justify-between w-full px-3 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
-                              >
-                                {item.name}
-                                <ChevronDown
-                                  className={cn(
-                                    'h-4 w-4 transition-transform duration-200',
-                                    mobileSubmenus[
-                                      `${section.name}-${item.name}`
-                                    ] && 'rotate-180'
-                                  )}
-                                />
-                              </button>
-                              {mobileSubmenus[
-                                `${section.name}-${item.name}`
-                              ] && (
-                                <div className="pl-4 space-y-1">
-                                  {item.submenu?.map((subItem) => (
-                                    <Link
-                                      key={subItem.name}
-                                      href={subItem.href!}
-                                      className="block px-3 py-2 text-xs text-gray-500 dark:text-gray-400 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
-                                      onClick={closeMobileMenu}
-                                    >
-                                      {subItem.name}
-                                    </Link>
-                                  ))}
+                      {section.isMegaMenu && section.megaMenuColumns
+                        ? // Mobile Mega Menu Layout
+                          section.megaMenuColumns.map((column) => (
+                            <div key={column.title} className="mb-4">
+                              <div className="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-2 px-3">
+                                {column.title}
+                              </div>
+                              {column.items.map((item) => (
+                                <Link
+                                  key={item.name}
+                                  href={item.href!}
+                                  className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
+                                  onClick={closeMobileMenu}
+                                >
+                                  {item.name}
+                                </Link>
+                              ))}
+                            </div>
+                          ))
+                        : // Regular Mobile Menu
+                          section.items?.map((item) => (
+                            <div key={item.name}>
+                              {item.isSeparator ? (
+                                <div className="border-t border-gray-200 dark:border-gray-600 my-2 mx-3" />
+                              ) : item.isHeading ? (
+                                <div className="px-3 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                                  {item.name}
                                 </div>
+                              ) : item.hasSubmenu ? (
+                                <div>
+                                  <button
+                                    onClick={() =>
+                                      toggleMobileSubmenu(
+                                        `${section.name}-${item.name}`
+                                      )
+                                    }
+                                    className="flex items-center justify-between w-full px-3 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
+                                  >
+                                    {item.name}
+                                    <ChevronDown
+                                      className={cn(
+                                        'h-4 w-4 transition-transform duration-200',
+                                        mobileSubmenus[
+                                          `${section.name}-${item.name}`
+                                        ] && 'rotate-180'
+                                      )}
+                                    />
+                                  </button>
+                                  {mobileSubmenus[
+                                    `${section.name}-${item.name}`
+                                  ] && (
+                                    <div className="pl-4 space-y-1">
+                                      {item.submenu?.map((subItem) => (
+                                        <Link
+                                          key={subItem.name}
+                                          href={subItem.href!}
+                                          className="block px-3 py-2 text-xs text-gray-500 dark:text-gray-400 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
+                                          onClick={closeMobileMenu}
+                                        >
+                                          {subItem.name}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
+                              ) : (
+                                <Link
+                                  href={item.href!}
+                                  className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
+                                  onClick={closeMobileMenu}
+                                >
+                                  {item.name}
+                                </Link>
                               )}
                             </div>
-                          ) : (
-                            <Link
-                              href={item.href!}
-                              className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
-                              onClick={closeMobileMenu}
-                            >
-                              {item.name}
-                            </Link>
-                          )}
-                        </div>
-                      ))}
+                          ))}
                     </div>
                   )}
                 </div>

@@ -4,11 +4,21 @@ export interface NavigationItem {
   href?: string;
   hasSubmenu?: boolean;
   submenu?: NavigationItem[];
+  description?: string;
+  isSeparator?: boolean;
+  isHeading?: boolean;
+}
+
+export interface MegaMenuColumn {
+  title: string;
+  items: NavigationItem[];
 }
 
 export interface NavigationSection {
   name: string;
-  items: NavigationItem[];
+  items?: NavigationItem[];
+  isMegaMenu?: boolean;
+  megaMenuColumns?: MegaMenuColumn[];
 }
 
 export interface NavigationConfig {
