@@ -1,25 +1,20 @@
 'use client';
 
-import { LogoLink } from '@/components/Logo';
-import { ThemeToggle } from '@/components/ThemeToggle';
 import { NavigationConfig } from '@/components/types/navigation';
-import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
-import { ChevronDown, ChevronRight, Menu, Phone } from 'lucide-react';
+import { ChevronDown, ChevronRight, Menu } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 
 interface NavigationHeaderProps {
   config: NavigationConfig;
-  logoSize?: 'sm' | 'md' | 'lg';
   className?: string;
 }
 
 export const NavigationHeader = ({
   config,
-  logoSize = 'lg',
   className = '',
 }: NavigationHeaderProps) => {
   // State for mobile navigation
@@ -139,12 +134,7 @@ export const NavigationHeader = ({
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <LogoLink size={logoSize} />
-          </div>
-
+        <div className="flex h-16 items-center justify-center">
           {/* Desktop Navigation */}
           <nav className="hidden xl:flex items-center space-x-1">
             {/* Primary navigation items */}
@@ -325,29 +315,8 @@ export const NavigationHeader = ({
             ))}
           </nav>
 
-          {/* Right side items */}
-          <div className="flex items-center space-x-3">
-            {/* Contact Button */}
-            {config.contactInfo && (
-              <Button
-                variant="outline"
-                size="sm"
-                className="hidden xl:inline-flex text-sm"
-                asChild
-              >
-                <Link href={`tel:${config.contactInfo.phone}`}>
-                  <Phone className="mr-2 h-4 w-4" />
-                  {config.contactInfo.label}
-                </Link>
-              </Button>
-            )}
-
-            {/* Theme Toggle */}
-            <div className="hidden xl:block">
-              <ThemeToggle />
-            </div>
-
-            {/* Mobile menu button */}
+          {/* Mobile menu button */}
+          <div className="xl:hidden">
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <button
@@ -558,26 +527,7 @@ export const NavigationHeader = ({
                     </div>
                   </div>
 
-                  {/* Footer with Theme Toggle & Contact - Fixed at bottom */}
-                  <div className="border-t bg-white dark:bg-gray-900 p-4 space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
-                        Theme
-                      </span>
-                      <ThemeToggle />
-                    </div>
-                    {config.contactInfo && (
-                      <Button className="w-full" asChild>
-                        <Link
-                          href={`tel:${config.contactInfo.phone}`}
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          <Phone className="mr-2 h-4 w-4" />
-                          {config.contactInfo.label}
-                        </Link>
-                      </Button>
-                    )}
-                  </div>
+                  {/* Mobile menu continues with just the navigation content */}
                 </div>
               </SheetContent>
             </Sheet>

@@ -1,3 +1,4 @@
+import { BrandHeader } from '@/components/BrandHeader';
 import { Footer } from '@/components/Footer';
 import { NavigationHeader } from '@/components/NavigationHeader';
 import { navigationConfig } from '@/data/navigation';
@@ -137,6 +138,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <AppProviders>
+          <BrandHeader contactInfo={navigationConfig.contactInfo} />
           <NavigationHeader config={navigationConfig} />
           <main className="flex-1">{children}</main>
           <Footer />
