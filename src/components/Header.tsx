@@ -1,6 +1,5 @@
 'use client';
 
-import { LogoLink } from '@/components/Logo';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import {
@@ -168,12 +167,7 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 xl:px-8 max-w-full">
-        <div className="flex h-16 items-center justify-between min-w-0">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <LogoLink size="lg" />
-          </div>
-
+        <div className="flex h-16 items-center justify-center min-w-0">
           {/* Desktop Navigation */}
           <div className="hidden xl:flex xl:items-center xl:space-x-4 2xl:space-x-6 flex-1 justify-center min-w-0 relative z-[100]">
             <NavigationMenu viewport={false}>

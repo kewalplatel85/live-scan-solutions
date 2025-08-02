@@ -1,3 +1,4 @@
+import { BrandHeader } from '@/components/BrandHeader';
 import { Footer } from '@/components/Footer';
 import { NavigationHeader } from '@/components/NavigationHeader';
 import { navigationConfig } from '@/data/navigation';
@@ -137,7 +138,14 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <AppProviders>
-          <NavigationHeader config={navigationConfig} />
+          <BrandHeader
+            contactInfo={navigationConfig.contactInfo}
+            className="hidden lg:block"
+          />
+          <NavigationHeader
+            config={navigationConfig}
+            contactInfo={navigationConfig.contactInfo}
+          />
           <main className="flex-1">{children}</main>
           <Footer />
         </AppProviders>

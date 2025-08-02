@@ -1,4 +1,5 @@
-import { Switch } from '@/components/ui/switch';
+'use client';
+
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
@@ -15,10 +16,10 @@ export const ThemeToggle = () => {
   if (!mounted) {
     // Return a placeholder that matches the server render
     return (
-      <div className="flex items-center space-x-2">
-        <Sun className="text-muted-foreground h-[1.2rem] w-[1.2rem]" />
-        <Switch disabled aria-label="Toggle theme" />
-        <Moon className="text-muted-foreground h-[1.2rem] w-[1.2rem]" />
+      <div className="relative inline-flex h-8 w-16 rounded-full border border-gray-200 dark:border-gray-600">
+        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-900 dark:bg-white translate-x-1 mt-0.5 ml-0.5">
+          <Sun className="h-3.5 w-3.5 text-white dark:text-gray-700" />
+        </div>
       </div>
     );
   }
@@ -27,28 +28,30 @@ export const ThemeToggle = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
+  const isDark = theme === 'dark';
+
   return (
-    <div className="flex items-center space-x-2 transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
-      <Sun
-        className={`h-[1.2rem] w-[1.2rem] transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
-          theme === 'dark'
-            ? 'text-muted-foreground scale-75 rotate-12'
-            : 'text-foreground scale-100 rotate-0'
+    <button
+      onClick={toggleTheme}
+      className="relative inline-flex h-8 w-16 items-center rounded-full border border-gray-200 dark:border-gray-600 bg-transparent transition-all duration-300 ease-in-out focus:outline-none"
+      aria-label="Toggle theme"
+    >
+      {/* Sliding toggle button */}
+      <div
+        className={`relative flex h-6 w-6 transform items-center justify-center rounded-full shadow-sm transition-all duration-300 ease-in-out ${
+          isDark
+            ? 'translate-x-9 bg-white'
+            : 'translate-x-1 bg-gray-900 dark:bg-white'
         }`}
-      />
-      <Switch
-        checked={theme === 'dark'}
-        onCheckedChange={toggleTheme}
-        aria-label="Toggle theme"
-        className="transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-110"
-      />
-      <Moon
-        className={`h-[1.2rem] w-[1.2rem] transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
-          theme === 'light'
-            ? 'text-muted-foreground scale-75 rotate-12'
-            : 'text-foreground scale-100 rotate-0'
-        }`}
-      />
-    </div>
+      >
+        <div className="relative transition-all duration-300 ease-in-out">
+          {isDark ? (
+            <Moon className="h-3.5 w-3.5 text-gray-700 transition-all duration-300 ease-in-out" />
+          ) : (
+            <Sun className="h-3.5 w-3.5 text-white dark:text-gray-700 transition-all duration-300 ease-in-out" />
+          )}
+        </div>
+      </div>
+    </button>
   );
 };
