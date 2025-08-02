@@ -34,7 +34,7 @@ export const BrandHeader = ({ className, contactInfo }: BrandHeaderProps) => {
               <Button
                 variant="outline"
                 size="sm"
-                className="hidden xl:inline-flex text-sm"
+                className="hidden lg:inline-flex text-sm"
                 asChild
               >
                 <Link href={`tel:${contactInfo.phone}`}>
@@ -43,7 +43,7 @@ export const BrandHeader = ({ className, contactInfo }: BrandHeaderProps) => {
                 </Link>
               </Button>
             )}
-            <div className="hidden xl:block">
+            <div className="hidden lg:block">
               <ThemeToggle />
             </div>
           </div>

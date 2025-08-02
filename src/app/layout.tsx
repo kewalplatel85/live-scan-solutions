@@ -138,8 +138,14 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <AppProviders>
-          <BrandHeader contactInfo={navigationConfig.contactInfo} />
-          <NavigationHeader config={navigationConfig} />
+          <BrandHeader
+            contactInfo={navigationConfig.contactInfo}
+            className="hidden lg:block"
+          />
+          <NavigationHeader
+            config={navigationConfig}
+            contactInfo={navigationConfig.contactInfo}
+          />
           <main className="flex-1">{children}</main>
           <Footer />
         </AppProviders>

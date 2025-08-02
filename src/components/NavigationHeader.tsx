@@ -1,9 +1,12 @@
 'use client';
 
+import { LogoLink } from '@/components/Logo';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { NavigationConfig } from '@/components/types/navigation';
+import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
-import { ChevronDown, ChevronRight, Menu } from 'lucide-react';
+import { ChevronDown, ChevronRight, Menu, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
@@ -11,11 +14,18 @@ import { useEffect, useMemo, useState } from 'react';
 interface NavigationHeaderProps {
   config: NavigationConfig;
   className?: string;
+  contactInfo?: {
+    phone: string;
+    label: string;
+  };
+  showMobileBreadcrumbs?: boolean;
 }
 
 export const NavigationHeader = ({
   config,
   className = '',
+  contactInfo,
+  showMobileBreadcrumbs = false,
 }: NavigationHeaderProps) => {
   // State for mobile navigation
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -135,9 +145,14 @@ export const NavigationHeader = ({
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-center">
+        <div className="flex h-16 items-center justify-between lg:justify-center">
+          {/* Mobile Logo (visible only on mobile) */}
+          <div className="lg:hidden">
+            <LogoLink size="md" />
+          </div>
+
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center space-x-1">
             {/* Primary navigation items */}
             {config.primaryItems.map((item) => (
               <Link
@@ -318,11 +333,11 @@ export const NavigationHeader = ({
           </nav>
 
           {/* Mobile menu button */}
-          <div className="xl:hidden">
+          <div className="lg:hidden">
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <button
-                  className="xl:hidden p-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors"
+                  className="lg:hidden p-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors"
                   aria-label="Toggle menu"
                 >
                   <Menu className="h-5 w-5" />
@@ -333,43 +348,44 @@ export const NavigationHeader = ({
                   {/* Mobile Navigation Content */}
                   <div className="flex-1 overflow-y-auto p-4 pt-12">
                     {/* Add breadcrumb for mobile when in submenu */}
-                    {(getActiveState.activeSection ||
-                      getActiveState.activePrimary) && (
-                      <div className="px-2 py-3 bg-gray-50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-400 mb-4 -mx-4">
-                        <div className="flex items-center space-x-1">
-                          <span>You are here:</span>
-                          {getActiveState.activePrimary && (
-                            <span className="font-medium text-primary">
-                              {getActiveState.activePrimary}
-                            </span>
-                          )}
-                          {getActiveState.activeSection && (
-                            <>
-                              <ChevronRight className="h-3 w-3" />
+                    {showMobileBreadcrumbs &&
+                      (getActiveState.activeSection ||
+                        getActiveState.activePrimary) && (
+                        <div className="px-2 py-3 bg-gray-50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-400 mb-4 -mx-4">
+                          <div className="flex items-center space-x-1">
+                            <span>You are here:</span>
+                            {getActiveState.activePrimary && (
                               <span className="font-medium text-primary">
-                                {getActiveState.activeSection}
+                                {getActiveState.activePrimary}
                               </span>
-                            </>
-                          )}
-                          {getActiveState.activeItem && (
-                            <>
-                              <ChevronRight className="h-3 w-3" />
-                              <span className="font-medium text-primary">
-                                {getActiveState.activeItem}
-                              </span>
-                            </>
-                          )}
-                          {getActiveState.activeSubmenu && (
-                            <>
-                              <ChevronRight className="h-3 w-3" />
-                              <span className="font-medium text-primary">
-                                {getActiveState.activeSubmenu}
-                              </span>
-                            </>
-                          )}
+                            )}
+                            {getActiveState.activeSection && (
+                              <>
+                                <ChevronRight className="h-3 w-3" />
+                                <span className="font-medium text-primary">
+                                  {getActiveState.activeSection}
+                                </span>
+                              </>
+                            )}
+                            {getActiveState.activeItem && (
+                              <>
+                                <ChevronRight className="h-3 w-3" />
+                                <span className="font-medium text-primary">
+                                  {getActiveState.activeItem}
+                                </span>
+                              </>
+                            )}
+                            {getActiveState.activeSubmenu && (
+                              <>
+                                <ChevronRight className="h-3 w-3" />
+                                <span className="font-medium text-primary">
+                                  {getActiveState.activeSubmenu}
+                                </span>
+                              </>
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
                     <div className="space-y-1">
                       {/* Primary navigation items */}
                       {config.primaryItems.map((item) => (
@@ -532,7 +548,48 @@ export const NavigationHeader = ({
                     </div>
                   </div>
 
-                  {/* Mobile menu continues with just the navigation content */}
+                  {/* Footer Section with Utilities */}
+                  <div className="border-t border-gray-200 dark:border-gray-700 p-4 bg-gray-50 dark:bg-gray-800/50">
+                    <div className="space-y-3">
+                      {/* Phone Number */}
+                      {contactInfo && (
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm text-gray-600 dark:text-gray-400">
+                            Contact Us
+                          </span>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="text-sm"
+                            asChild
+                          >
+                            <Link
+                              href={`tel:${contactInfo.phone}`}
+                              className="flex items-center space-x-2"
+                            >
+                              <Phone className="h-4 w-4" />
+                              <span>{contactInfo.label}</span>
+                            </Link>
+                          </Button>
+                        </div>
+                      )}
+
+                      {/* Theme Toggle */}
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-600 dark:text-gray-400">
+                          Theme
+                        </span>
+                        <ThemeToggle />
+                      </div>
+
+                      {/* App Version or Copyright */}
+                      <div className="pt-2 border-t border-gray-200 dark:border-gray-600">
+                        <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+                          Live Scan Solutions
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
