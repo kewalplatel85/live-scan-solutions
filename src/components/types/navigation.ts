@@ -23,7 +23,15 @@ export interface NavigationSection {
 
 export interface NavigationConfig {
   primaryItems: NavigationItem[];
-  dropdownSections: NavigationSection[];
+  dropdownSections?: NavigationSection[];
+  contactInfo?: {
+    phone: string;
+    label: string;
+  };
+}
+
+export interface NavigationConfigWithoutDropdown {
+  primaryItems: NavigationItem[];
   contactInfo?: {
     phone: string;
     label: string;
