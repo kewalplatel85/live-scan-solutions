@@ -5,8 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { badgeData } from '@/data/badges';
 import {
   // Award,
-  Banknote,
-  Building2,
   CalendarClock,
   Check,
   Clock,
@@ -15,7 +13,6 @@ import {
   HardDrive,
   MapPin,
   Phone,
-  Receipt,
   Shield,
   Smartphone,
   Truck,
@@ -181,7 +178,7 @@ export default function LiveScanPage() {
         badges={badgeData.liveScanService}
         title={
           <>
-            Professional <span className="text-primary">Live Scan</span>{' '}
+            Professional <span className="text-primary">Live Scan & Ink</span>{' '}
             Fingerprinting
           </>
         }
@@ -191,6 +188,8 @@ export default function LiveScanPage() {
           { text: 'Walk-ins welcome' },
           { text: 'Mobile service available' },
           { text: 'Expert assistance' },
+          { text: 'Trusted by local schools and churches' },
+          { text: 'Group discount' },
         ]}
         ctaText="Please call us to schedule your appointment"
         buttons={[
@@ -207,10 +206,14 @@ export default function LiveScanPage() {
             text: 'Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST | Sun: Closed',
           },
           { icon: MapPin, text: 'Bay Area Locations' },
+          {
+            icon: CreditCard,
+            text: 'Payment: Credit Cards • Cash • Corporate Invoicing • Vouchers',
+          },
         ]}
         rightContent={
           <div className="space-y-4 md:space-y-6">
-            {/* First Row - Service Cards Side by Side */}
+            {/* First Row - Service Cards (2 columns) */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <Card className="relative p-4 md:p-6">
                 <Badge
@@ -293,8 +296,40 @@ export default function LiveScanPage() {
               </Card>
             </div>
 
-            {/* Second Row - Locations and Payment Options */}
+            {/* Second Row - FBI FD-1164 and Service Locations */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <Card className="relative p-4 md:p-6">
+                <Badge
+                  variant="outline"
+                  className="absolute -top-3 left-4 bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-100 dark:bg-orange-950 dark:border-orange-800 dark:text-orange-300 dark:hover:bg-orange-900"
+                >
+                  FBI FD-1164
+                </Badge>
+                <div className="mt-2">
+                  <h3 className="text-lg font-semibold mb-3">
+                    Identity History Check
+                  </h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <Shield className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
+                      <span className="text-sm">Complete criminal history</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Check className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
+                      <span className="text-sm">National FBI database</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Clock className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
+                      <span className="text-sm">24-48 hour processing</span>
+                    </li>
+                    <li className="flex items-center">
+                      <Globe className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
+                      <span className="text-sm">Immigration & adoption</span>
+                    </li>
+                  </ul>
+                </div>
+              </Card>
+
               <Card className="relative p-4 md:p-6">
                 <Badge
                   variant="outline"
@@ -333,38 +368,6 @@ export default function LiveScanPage() {
                       >
                         And 5 more Bay Area cities
                       </a>
-                    </li>
-                  </ul>
-                </div>
-              </Card>
-
-              <Card className="relative p-4 md:p-6">
-                <Badge
-                  variant="outline"
-                  className="absolute -top-3 left-4 bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-100 dark:bg-orange-950 dark:border-orange-800 dark:text-orange-300 dark:hover:bg-orange-900"
-                >
-                  Payment Methods
-                </Badge>
-                <div className="mt-2">
-                  <h3 className="text-lg font-semibold mb-3">
-                    Payment Options
-                  </h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-center">
-                      <CreditCard className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
-                      <span className="text-sm">Credit & Debit Cards</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Building2 className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
-                      <span className="text-sm">Corporate Invoicing</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Receipt className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
-                      <span className="text-sm">Payment Vouchers</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Banknote className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
-                      <span className="text-sm">Cash payments accepted</span>
                     </li>
                   </ul>
                 </div>
