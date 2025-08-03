@@ -1,28 +1,50 @@
 import { GenericHero } from '@/components/common/GenericHero';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
+import { SiDhl, SiFedex, SiUps, SiUsps } from '@icons-pack/react-simple-icons';
 import {
   CheckCircle,
   Clock,
+  Globe,
   MapPin,
   Package,
   Phone,
-  Search,
   Shield,
   Truck,
 } from 'lucide-react';
-import Link from 'next/link';
 
 export default function PackShipPage() {
   return (
     <main>
       {/* Hero Section */}
       <GenericHero
-        title="Pack & Ship Services"
-        subtitle="Complete Shipping Solutions"
-        description="Professional packing, shipping, and tracking services for all your delivery needs. From delicate documents to large packages, we handle it all with care and expertise."
-        ctaText="Get your items packed and shipped today"
+        layout="split-60-40"
+        title={
+          <>
+            Professional{' '}
+            <span className="text-primary">Packing & Shipping</span> Services
+          </>
+        }
+        subtitle="Your Complete Shipping Solution Center"
+        description="Expert packing, multi-carrier shipping, and package services all in one place. From delicate items to large packages, we handle everything with professional care and guaranteed reliability."
+        benefits={[
+          {
+            text: 'Professional packing with 90+ box sizes & insurance',
+            icon: Package,
+          },
+          {
+            text: 'FedEx, UPS, USPS & DHL authorized shipping center',
+            icon: Truck,
+          },
+          {
+            text: 'Daily pickups & convenient package drop-off',
+            icon: CheckCircle,
+          },
+          {
+            text: 'Domestic & international shipping worldwide',
+            icon: Globe,
+          },
+        ]}
+        ctaText="Get expert packing and shipping services today"
         buttons={[
           {
             text: '(650) 961-4646',
@@ -39,253 +61,271 @@ export default function PackShipPage() {
           },
           {
             icon: MapPin,
-            text: 'Bay Area Locations',
+            text: 'Authorized FedEx, UPS, USPS & DHL Location',
           },
         ]}
         rightContent={
           <div className="space-y-4 md:space-y-6">
-            <Card className="relative p-4 md:p-6">
-              <Badge
-                variant="outline"
-                className="absolute -top-3 left-4 bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-100 dark:bg-orange-950 dark:border-orange-800 dark:text-orange-300 dark:hover:bg-orange-900"
-              >
-                Full Service
-              </Badge>
-              <div className="mt-2">
-                <h3 className="text-lg font-semibold mb-3">
-                  Complete Solutions
-                </h3>
-                <ul className="space-y-2">
-                  <li className="flex items-center">
-                    <Package className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
-                    <span className="text-sm">Professional packing</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Truck className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
-                    <span className="text-sm">Multiple carriers</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Search className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
-                    <span className="text-sm">Package tracking</span>
-                  </li>
-                </ul>
-              </div>
-            </Card>
+            {/* Shipping Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+              <Card className="p-4 md:p-6">
+                <div>
+                  <h3 className="text-lg font-semibold mb-3 flex items-center">
+                    <SiFedex
+                      className="w-12 h-12 mr-3 flex-shrink-0"
+                      color="#4d148c"
+                    />
+                    <span>FedEx</span>
+                  </h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">
+                        Early A.M. Delivery Available
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">Same Day Delivery</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">Express Saver® (3-Day)</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">International First®</span>
+                    </li>
+                  </ul>
+                </div>
+              </Card>
+
+              <Card className="p-4 md:p-6">
+                <div>
+                  <h3 className="text-lg font-semibold mb-3 flex items-center">
+                    <SiUps
+                      className="w-12 h-12 mr-3 flex-shrink-0"
+                      color="#C67D30"
+                    />
+                    <span>UPS</span>
+                  </h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">
+                        My Choice® Delivery Control
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">Carbon Neutral Shipping</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">Access Point™ Network</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">WorldShip® Integration</span>
+                    </li>
+                  </ul>
+                </div>
+              </Card>
+
+              <Card className="p-4 md:p-6">
+                <div>
+                  <h3 className="text-lg font-semibold mb-3 flex items-center">
+                    <SiUsps
+                      className="w-12 h-12 mr-3 flex-shrink-0"
+                      color="#004b87"
+                    />
+                    <span>USPS</span>
+                  </h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">
+                        Flat Rate Pricing Available
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">Free Package Pickup</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">APO/FPO Military Shipping</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">P.O. Box Delivery</span>
+                    </li>
+                  </ul>
+                </div>
+              </Card>
+
+              <Card className="p-4 md:p-6">
+                <div>
+                  <h3 className="text-lg font-semibold mb-3 flex items-center">
+                    <SiDhl
+                      className="w-12 h-12 mr-3 flex-shrink-0"
+                      color="#d40511"
+                    />
+                    <span>DHL</span>
+                  </h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">220+ Countries Coverage</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">
+                        Customs Clearance Expertise
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">
+                        GoGreen Plus Sustainability
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />
+                      <span className="text-sm">Real-Time Tracking</span>
+                    </li>
+                  </ul>
+                </div>
+              </Card>
+            </div>
           </div>
         }
       />
 
-      {/* Service Overview Section */}
-      <section className="py-16 bg-background">
+      {/* Package Drop-Off Information */}
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Complete Pack & Ship Solutions
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From careful packing to reliable shipping and real-time tracking,
-              we provide end-to-end solutions for all your delivery needs.
-            </p>
-          </div>
+          <div className="bg-gradient-to-r from-emerald-50 to-cyan-50 dark:from-emerald-950 dark:to-cyan-950 rounded-2xl p-6 md:p-8">
+            <div className="text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                Package Drop-Off Services
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
+                Already have your packages packed and labeled? Drop them off at
+                our authorized location for daily carrier pickup - no additional
+                charges for account holders.
+              </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-4 border border-orange-200 dark:bg-orange-950 dark:border-orange-800">
-                  <Package className="w-6 h-6 text-orange-600 dark:text-orange-400" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div className="text-left">
+                  <h3 className="font-semibold mb-3 flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-2 text-emerald-600" />
+                    What We Accept
+                  </h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>• Pre-labeled FedEx, UPS, USPS & DHL packages</li>
+                    <li>• Letters and packages with valid shipping accounts</li>
+                    <li>• Business and personal shipments</li>
+                    <li>• Daily carrier pickup included</li>
+                  </ul>
                 </div>
-                <CardTitle className="text-lg">
-                  <Link
-                    href="/pack-ship/packing"
-                    className="hover:text-primary transition-colors"
-                  >
-                    Professional Packing
-                  </Link>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Expert packing services using quality materials to ensure your
-                  items arrive safely at their destination.
-                </p>
-                <ul className="space-y-2 mb-4">
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-600" />
-                    Fragile item protection
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-600" />
-                    Quality packing materials
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-600" />
-                    Custom box sizing
-                  </li>
-                </ul>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/pack-ship/packing">Learn More</Link>
-                </Button>
-              </CardContent>
-            </Card>
 
-            <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 border border-blue-200 dark:bg-blue-950 dark:border-blue-800">
-                  <Truck className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                <div className="text-left">
+                  <h3 className="font-semibold mb-3 flex items-center">
+                    <Shield className="w-5 h-5 mr-2 text-blue-600" />
+                    Requirements
+                  </h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>• Valid carrier account required</li>
+                    <li>• Packages must be properly labeled</li>
+                    <li>• Additional packaging/taping may incur fees</li>
+                    <li>• No USPS Registered Mail accepted</li>
+                  </ul>
                 </div>
-                <CardTitle className="text-lg">
-                  <Link
-                    href="/pack-ship/shipping"
-                    className="hover:text-primary transition-colors"
-                  >
-                    Reliable Shipping
-                  </Link>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Multiple carrier options with competitive rates and delivery
-                  options to meet your timeline and budget.
-                </p>
-                <ul className="space-y-2 mb-4">
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-600" />
-                    FedEx, UPS, USPS
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-600" />
-                    Express & standard options
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-600" />
-                    International shipping
-                  </li>
-                </ul>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/pack-ship/shipping">Learn More</Link>
-                </Button>
-              </CardContent>
-            </Card>
+              </div>
 
-            <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-4 border border-emerald-200 dark:bg-emerald-950 dark:border-emerald-800">
-                  <Search className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
-                </div>
-                <CardTitle className="text-lg">
-                  <Link
-                    href="/pack-ship/tracking"
-                    className="hover:text-primary transition-colors"
-                  >
-                    Package Tracking
-                  </Link>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Real-time tracking information and delivery updates to keep
-                  you informed throughout the shipping process.
-                </p>
-                <ul className="space-y-2 mb-4">
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-600" />
-                    Real-time updates
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-600" />
-                    Delivery confirmation
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 mr-2 text-emerald-600" />
-                    SMS & email alerts
-                  </li>
-                </ul>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/pack-ship/tracking">Learn More</Link>
-                </Button>
-              </CardContent>
-            </Card>
+              <p className="text-sm text-muted-foreground">
+                Perfect for businesses and individuals who prefer to pack their
+                own items but need convenient drop-off with guaranteed daily
+                pickup.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Additional Services Section */}
-      <section className="py-16 bg-muted/50">
+      {/* Professional Services Highlight */}
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Additional Services
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive shipping and logistics support for all your business
-              and personal needs.
-            </p>
-          </div>
+          <div className="bg-gradient-to-r from-orange-50 to-blue-50 dark:from-orange-950 dark:to-blue-950 rounded-2xl p-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold mb-4">
+                Why Choose Our Packing & Shipping Services?
+              </h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto mb-8">
+                From fragile electronics to oversized items, our certified
+                specialists treat every package with professional care. We
+                guarantee your items are packed to meet all carrier requirements
+                for insurability.
+              </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                title: 'Insurance',
-                description:
-                  'Protect valuable shipments with comprehensive coverage',
-                icon: Shield,
-              },
-              {
-                title: 'Documentation',
-                description:
-                  'International shipping paperwork and customs forms',
-                icon: Package,
-              },
-              {
-                title: 'Storage',
-                description: 'Temporary storage solutions for your packages',
-                icon: MapPin,
-              },
-              {
-                title: 'Consultation',
-                description: 'Expert advice on shipping options and costs',
-                icon: Phone,
-              },
-            ].map((service, index) => (
-              <Card key={index} className="text-center p-4">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <service.icon className="h-6 w-6 text-primary" />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                {[
+                  {
+                    title: 'Premium Materials',
+                    description:
+                      '90+ box sizes, bubble wrap, foam, and specialty packaging',
+                    icon: Package,
+                  },
+                  {
+                    title: 'Custom Solutions',
+                    description:
+                      'From elk antlers to car bumpers - we pack anything',
+                    icon: Shield,
+                  },
+                  {
+                    title: 'Full Insurance',
+                    description:
+                      'Comprehensive coverage options for valuable shipments',
+                    icon: CheckCircle,
+                  },
+                  {
+                    title: 'Expert Guidance',
+                    description:
+                      'International docs, customs forms, and shipping advice',
+                    icon: Phone,
+                  },
+                ].map((service, index) => (
+                  <div key={index} className="text-center">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <service.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="font-semibold mb-2">{service.title}</h3>
+                    <p className="text-sm text-muted-foreground">
+                      {service.description}
+                    </p>
                   </div>
-                  <CardTitle className="text-lg">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+                ))}
+              </div>
 
-      {/* Contact Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Get Your Items Shipped Today
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Visit our location or call us for expert packing and shipping
-              services. We&apos;re here to help with all your delivery needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
-                <Link href="tel:650-961-4646">
-                  <Phone className="mr-2 h-4 w-4" />
-                  Call (650) 961-4646
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/contact">Visit Our Location</Link>
-              </Button>
+              <div className="flex flex-wrap justify-center gap-4 text-sm">
+                <div className="flex items-center">
+                  <CheckCircle className="w-4 h-4 mr-2 text-emerald-600" />
+                  Computers & Electronics
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-4 h-4 mr-2 text-emerald-600" />
+                  Artwork & Antiques
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-4 h-4 mr-2 text-emerald-600" />
+                  Medical Devices
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-4 h-4 mr-2 text-emerald-600" />
+                  Auto Parts & Household Goods
+                </div>
+              </div>
             </div>
           </div>
         </div>
