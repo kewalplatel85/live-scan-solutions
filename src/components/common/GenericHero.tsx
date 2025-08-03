@@ -33,7 +33,7 @@ export interface QuickInfoItem {
 
 export interface HeroProps {
   // Layout
-  layout?: 'centered' | 'split' | 'split-70-30'; // added 70/30 option
+  layout?: 'centered' | 'split' | 'split-70-30' | 'split-60-40'; // added 70/30 and 60/40 options
   className?: string;
 
   // Badges
@@ -82,7 +82,9 @@ export const GenericHero = ({
       ? 'text-center max-w-4xl mx-auto'
       : layout === 'split-70-30'
         ? 'grid grid-cols-1 lg:grid-cols-[7fr_3fr] gap-8 items-start'
-        : 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center';
+        : layout === 'split-60-40'
+          ? 'grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 items-start'
+          : 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center';
 
   const badgeContainerClass =
     layout === 'centered'
@@ -111,7 +113,11 @@ export const GenericHero = ({
           {/* Left Content or Centered Content */}
           <div
             className={
-              layout === 'split' || layout === 'split-70-30' ? 'space-y-8' : ''
+              layout === 'split' ||
+              layout === 'split-70-30' ||
+              layout === 'split-60-40'
+                ? 'space-y-8'
+                : ''
             }
           >
             {/* Badges */}
@@ -138,13 +144,13 @@ export const GenericHero = ({
                 {title}
               </h1>
               {subtitle && (
-                <h2 className="text-3xl md:text-4xl font-semibold text-muted-foreground">
+                <h2 className="text-2xl lg:text-3xl font-semibold text-muted-foreground">
                   {subtitle}
                 </h2>
               )}
               <p
-                className={`text-lg md:text-xl text-muted-foreground leading-relaxed ${
-                  layout === 'centered' ? 'max-w-3xl mx-auto' : 'max-w-lg'
+                className={`text-lg md:text-lg text-muted-foreground leading-relaxed ${
+                  layout === 'centered' ? 'max-w-4xl mx-auto' : 'max-w-3xl'
                 }`}
               >
                 {description}
@@ -225,7 +231,9 @@ export const GenericHero = ({
           </div>
 
           {/* Right Content - Only for split layout */}
-          {(layout === 'split' || layout === 'split-70-30') &&
+          {(layout === 'split' ||
+            layout === 'split-70-30' ||
+            layout === 'split-60-40') &&
             (rightContent || statsOrVisual) && (
               <div className="relative">
                 {rightContent || (

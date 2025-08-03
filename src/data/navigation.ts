@@ -8,6 +8,7 @@ export const navigationConfig: NavigationConfigWithoutDropdown = {
     { name: 'Apostille', href: '/services/apostille' },
     { name: 'Passport Photos', href: '/services/passport-photos' },
     { name: 'Mailbox Rental', href: '/services/mailbox-rental' },
+    { name: 'Pack & Ship', href: '/pack-ship' },
     { name: 'About Us', href: '/about' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
