@@ -1,27 +1,31 @@
 import { GenericHero } from '@/components/common/GenericHero';
-import { CustomerTypesAccordion } from '@/components/sections/CustomerTypesAccordion';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
+  Building,
   Building2,
   CalendarClock,
   Check,
   Clock,
   Copy,
-  CreditCard,
-  Download,
   FileImage,
   FileText,
   Globe,
+  GraduationCap,
+  HardHat,
+  Heart,
   MapPin,
+  Monitor,
   Palette,
   Phone,
   Printer,
-  Receipt,
-  Smartphone,
+  Scale,
+  ShoppingBag,
   Star,
   Truck,
   UserCheck,
+  Users,
+  UtensilsCrossed,
   Zap,
 } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -85,37 +89,34 @@ const serviceOptions = [
   {
     icon: UserCheck,
     title: 'Walk-In Service',
-    description: 'Quick printing service without appointments',
-    badge: 'Fastest',
+    description: 'Get your prints done while you wait - no appointment needed',
     features: [
       'Same-day printing',
       'Rush orders available',
-      'While-you-wait service',
       'Expert consultation',
+      'Quality guaranteed',
     ],
   },
   {
     icon: CalendarClock,
     title: 'Scheduled Orders',
-    description: 'Plan ahead for large volume printing',
-    badge: 'Volume Discounts',
+    description: 'Plan ahead for large volume printing with bulk discounts',
     features: [
-      'Bulk order pricing',
-      'Delivery scheduling',
+      'Volume pricing',
       'Project management',
+      'Delivery scheduling',
       'Quality assurance',
     ],
   },
   {
     icon: Truck,
-    title: 'Delivery Service',
-    description: 'Professional delivery to your location',
-    badge: 'Convenient',
+    title: 'Delivery & Installation',
+    description: 'Professional delivery and installation services available',
     features: [
-      'Local delivery available',
+      'Bay Area delivery',
       'Secure packaging',
-      'Tracking provided',
       'Installation services',
+      'Tracking provided',
     ],
   },
 ];
@@ -150,54 +151,39 @@ const paperOptions = [
 const finishingServices = [
   {
     icon: Copy,
-    name: 'Binding Services',
-    options: [
-      'Spiral binding',
-      'Comb binding',
-      'Perfect binding',
-      'Saddle stitching',
-    ],
+    name: 'Binding & Assembly',
+    options: ['Spiral binding', 'Stapling', 'Folding'],
   },
   {
     icon: FileText,
-    name: 'Laminating',
-    options: [
-      'Hot lamination',
-      'Cold lamination',
-      'Various thicknesses',
-      'Custom sizes',
-    ],
+    name: 'Lamination',
+    options: ['Document protection', 'Professional finish', 'Various sizes'],
   },
   {
     icon: Zap,
-    name: 'Cutting & Trimming',
-    options: [
-      'Precision cutting',
-      'Custom shapes',
-      'Bulk trimming',
-      'Professional finish',
-    ],
+    name: 'Cutting Services',
+    options: ['Custom sizes', 'Precise trimming', 'Business cards'],
   },
   {
     icon: Star,
     name: 'Special Finishes',
-    options: ['UV coating', 'Embossing', 'Foil stamping', 'Die cutting'],
+    options: ['UV coating', 'Embossing', 'Foil stamping'],
   },
 ];
 
 const industries = [
-  'Real Estate',
-  'Healthcare',
-  'Legal Services',
-  'Education',
-  'Construction',
-  'Marketing Agencies',
-  'Non-Profits',
-  'Retail',
-  'Restaurants',
-  'Technology',
-  'Architecture',
-  'Engineering',
+  { name: 'Real Estate', icon: Building },
+  { name: 'Healthcare', icon: Heart },
+  { name: 'Legal Services', icon: Scale },
+  { name: 'Education', icon: GraduationCap },
+  { name: 'Construction', icon: HardHat },
+  { name: 'Marketing Agencies', icon: Users },
+  { name: 'Non-Profits', icon: Heart },
+  { name: 'Retail', icon: ShoppingBag },
+  { name: 'Restaurants', icon: UtensilsCrossed },
+  { name: 'Technology', icon: Monitor },
+  { name: 'Architecture', icon: Building2 },
+  { name: 'Engineering', icon: HardHat },
 ];
 
 export const metadata: Metadata = {
@@ -236,7 +222,7 @@ export default function PrintingPage() {
         }
         description="From business cards to large format banners, we provide professional printing services for businesses and individuals. High-quality prints, competitive pricing, and expert service you can trust."
         benefits={[
-          { text: 'Small to large format printing' },
+          { text: 'Digital & large format printing' },
           { text: 'Same-day turnaround available' },
           { text: 'Professional finishing services' },
           { text: 'Competitive bulk pricing' },
@@ -258,13 +244,12 @@ export default function PrintingPage() {
           { icon: MapPin, text: 'Mountain View & Bay Area' },
         ]}
         rightContent={
-          <div className="space-y-4 md:space-y-6">
-            {/* First Row - Digital and Large Format */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              <Card className="relative p-4 md:p-6">
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Card className="relative p-6">
                 <Badge
                   variant="outline"
-                  className="absolute -top-3 left-4 bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 dark:bg-blue-950 dark:border-blue-800 dark:text-blue-300 dark:hover:bg-blue-900"
+                  className="absolute -top-3 left-4 bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 dark:bg-blue-950 dark:border-blue-800 dark:text-blue-300"
                 >
                   Digital Printing
                 </Badge>
@@ -284,21 +269,21 @@ export default function PrintingPage() {
                       <span className="text-sm">Fast turnaround times</span>
                     </li>
                     <li className="flex items-center">
-                      <FileText className="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" />
+                      <Check className="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" />
                       <span className="text-sm">Various paper options</span>
                     </li>
                     <li className="flex items-center">
-                      <Check className="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" />
+                      <Star className="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" />
                       <span className="text-sm">Quality guaranteed</span>
                     </li>
                   </ul>
                 </div>
               </Card>
 
-              <Card className="relative p-4 md:p-6">
+              <Card className="relative p-6">
                 <Badge
                   variant="outline"
-                  className="absolute -top-3 left-4 bg-purple-50 border-purple-200 text-purple-700 hover:bg-purple-100 dark:bg-purple-950 dark:border-purple-800 dark:text-purple-300 dark:hover:bg-purple-900"
+                  className="absolute -top-3 left-4 bg-purple-50 border-purple-200 text-purple-700 hover:bg-purple-100 dark:bg-purple-950 dark:border-purple-800 dark:text-purple-300"
                 >
                   Large Format
                 </Badge>
@@ -326,14 +311,11 @@ export default function PrintingPage() {
                   </ul>
                 </div>
               </Card>
-            </div>
 
-            {/* Second Row - Business and Photo */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              <Card className="relative p-4 md:p-6">
+              <Card className="relative p-6">
                 <Badge
                   variant="outline"
-                  className="absolute -top-3 left-4 bg-green-50 border-green-200 text-green-700 hover:bg-green-100 dark:bg-green-950 dark:border-green-800 dark:text-green-300 dark:hover:bg-green-900"
+                  className="absolute -top-3 left-4 bg-green-50 border-green-200 text-green-700 hover:bg-green-100 dark:bg-green-950 dark:border-green-800 dark:text-green-300"
                 >
                   Business Materials
                 </Badge>
@@ -343,13 +325,13 @@ export default function PrintingPage() {
                   </h3>
                   <ul className="space-y-2">
                     <li className="flex items-center">
-                      <Building2 className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                      <Copy className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
                       <span className="text-sm">
                         Business cards & letterhead
                       </span>
                     </li>
                     <li className="flex items-center">
-                      <FileImage className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                      <FileText className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
                       <span className="text-sm">Brochures & flyers</span>
                     </li>
                     <li className="flex items-center">
@@ -357,17 +339,17 @@ export default function PrintingPage() {
                       <span className="text-sm">Custom design services</span>
                     </li>
                     <li className="flex items-center">
-                      <Receipt className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
+                      <Zap className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
                       <span className="text-sm">Volume pricing available</span>
                     </li>
                   </ul>
                 </div>
               </Card>
 
-              <Card className="relative p-4 md:p-6">
+              <Card className="relative p-6">
                 <Badge
                   variant="outline"
-                  className="absolute -top-3 left-4 bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-100 dark:bg-orange-950 dark:border-orange-800 dark:text-orange-300 dark:hover:bg-orange-900"
+                  className="absolute -top-3 left-4 bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-100 dark:bg-orange-950 dark:border-orange-800 dark:text-orange-300"
                 >
                   Photo Services
                 </Badge>
@@ -377,11 +359,11 @@ export default function PrintingPage() {
                   </h3>
                   <ul className="space-y-2">
                     <li className="flex items-center">
-                      <Smartphone className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
+                      <FileImage className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
                       <span className="text-sm">Digital file printing</span>
                     </li>
                     <li className="flex items-center">
-                      <Download className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
+                      <Globe className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
                       <span className="text-sm">Online upload service</span>
                     </li>
                     <li className="flex items-center">
@@ -389,7 +371,7 @@ export default function PrintingPage() {
                       <span className="text-sm">Matte & glossy finishes</span>
                     </li>
                     <li className="flex items-center">
-                      <CreditCard className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
+                      <Copy className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
                       <span className="text-sm">Wallet to poster sizes</span>
                     </li>
                   </ul>
@@ -400,26 +382,21 @@ export default function PrintingPage() {
         }
       />
 
-      {/* Customer Types Accordion */}
-      <CustomerTypesAccordion />
-
       {/* Printing Services Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Comprehensive Printing Services
+              Our Printing Services
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From the smallest business card to the largest banner, we handle
-              all your printing needs with professional quality and competitive
-              pricing.
+              From business cards to large banners, we handle all your printing
+              needs with professional quality and competitive pricing.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {printingServices.map((service, index) => {
-              // Define unique colors for each service
               const iconColors = [
                 'bg-blue-50 border-blue-200 dark:bg-blue-950 dark:border-blue-800',
                 'bg-purple-50 border-purple-200 dark:bg-purple-950 dark:border-purple-800',
@@ -436,58 +413,66 @@ export default function PrintingPage() {
               return (
                 <Card
                   key={index}
-                  className="xl:p-6 relative hover:shadow-lg transition-shadow duration-200"
+                  className="p-4 relative hover:shadow-lg transition-shadow duration-200"
                 >
                   {service.badge && (
                     <Badge
-                      className="absolute -top-3 left-6"
+                      className="absolute -top-2 left-4 text-xs"
                       variant="secondary"
                     >
                       {service.badge}
                     </Badge>
                   )}
-                  <CardHeader>
+                  <CardHeader className="p-0">
                     <div
-                      className={`w-16 h-16 ${iconColors[index]} border rounded-full flex items-center justify-center mx-auto mb-4`}
+                      className={`w-12 h-12 ${iconColors[index]} border rounded-full flex items-center justify-center mx-auto mb-3`}
                     >
                       <service.icon
-                        className={`w-8 h-8 ${textColors[index]}`}
+                        className={`w-6 h-6 ${textColors[index]}`}
                       />
                     </div>
-                    <CardTitle className="text-xl text-center">
+                    <CardTitle className="text-lg text-center">
                       {service.title}
                     </CardTitle>
-                    <p className="text-muted-foreground text-center">
+                    <p className="text-muted-foreground text-center text-sm">
                       {service.description}
                     </p>
                   </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <ul className="space-y-2">
+                  <CardContent className="p-0">
+                    <div className="space-y-3">
+                      <ul className="space-y-1">
                         {service.features.map((feature, featureIndex) => (
                           <li
                             key={featureIndex}
-                            className="flex items-center text-sm"
+                            className="flex items-center text-xs"
                           >
-                            <Check className="w-4 h-4 mr-2 text-green-600" />
-                            {feature}
+                            <Check className="w-3 h-3 mr-2 text-green-600 flex-shrink-0" />
+                            <span>{feature}</span>
                           </li>
                         ))}
                       </ul>
                       <div className="pt-2 border-t border-border">
-                        <p className="text-xs text-muted-foreground mb-2 font-medium">
-                          Available Sizes:
+                        <p className="text-xs text-muted-foreground mb-1 font-medium">
+                          Sizes:
                         </p>
                         <div className="flex flex-wrap gap-1">
-                          {service.sizes.map((size, sizeIndex) => (
+                          {service.sizes.slice(0, 3).map((size, sizeIndex) => (
                             <Badge
                               key={sizeIndex}
                               variant="outline"
-                              className="text-xs"
+                              className="text-xs px-2 py-0"
                             >
                               {size}
                             </Badge>
                           ))}
+                          {service.sizes.length > 3 && (
+                            <Badge
+                              variant="outline"
+                              className="text-xs px-2 py-0"
+                            >
+                              +{service.sizes.length - 3} more
+                            </Badge>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -504,7 +489,7 @@ export default function PrintingPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Flexible Service Options
+              How We Serve You
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Choose the service option that best fits your timeline and project
@@ -512,7 +497,7 @@ export default function PrintingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
             {serviceOptions.map((option, index) => {
               const iconColors = [
                 'bg-blue-50 border-blue-200 dark:bg-blue-950 dark:border-blue-800',
@@ -528,37 +513,29 @@ export default function PrintingPage() {
               return (
                 <Card
                   key={index}
-                  className="xl:p-6 relative hover:shadow-lg transition-shadow duration-200"
+                  className="p-6 hover:shadow-lg transition-shadow duration-200"
                 >
-                  {option.badge && (
-                    <Badge
-                      className="absolute -top-3 left-6"
-                      variant="secondary"
-                    >
-                      {option.badge}
-                    </Badge>
-                  )}
-                  <CardHeader>
+                  <CardHeader className="p-0">
                     <div
-                      className={`w-16 h-16 ${iconColors[index]} border rounded-full flex items-center justify-center mx-auto mb-4`}
+                      className={`w-16 h-16 ${iconColors[index]} border rounded-full flex items-center justify-center mx-auto mb-4 p-0`}
                     >
                       <option.icon className={`w-8 h-8 ${textColors[index]}`} />
                     </div>
-                    <CardTitle className="text-xl text-center">
+                    <CardTitle className="text-xl text-center p-0">
                       {option.title}
                     </CardTitle>
-                    <p className="text-muted-foreground text-center">
+                    <p className="text-muted-foreground text-center text-sm p-0">
                       {option.description}
                     </p>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2">
+                    <ul className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-2 p-0">
                       {option.features.map((feature, featureIndex) => (
                         <li
                           key={featureIndex}
                           className="flex items-center text-sm"
                         >
-                          <Check className="w-4 h-4 mr-2 text-green-600" />
+                          <Check className="w-4 h-4 mr-2 text-green-600 flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
@@ -584,38 +561,70 @@ export default function PrintingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {paperOptions.map((paper, index) => (
-              <Card key={index} className="p-6">
-                <CardHeader className="text-center pb-4">
-                  <CardTitle className="text-lg">{paper.name}</CardTitle>
-                  <Badge variant="outline" className="mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+            {paperOptions.map((paper, index) => {
+              const iconColors = [
+                'bg-blue-50 border-blue-200 dark:bg-blue-950 dark:border-blue-800',
+                'bg-purple-50 border-purple-200 dark:bg-purple-950 dark:border-purple-800',
+                'bg-green-50 border-green-200 dark:bg-green-950 dark:border-green-800',
+                'bg-orange-50 border-orange-200 dark:bg-orange-950 dark:border-orange-800',
+              ];
+              const textColors = [
+                'text-blue-600 dark:text-blue-400',
+                'text-purple-600 dark:text-purple-400',
+                'text-green-600 dark:text-green-400',
+                'text-orange-600 dark:text-orange-400',
+              ];
+
+              return (
+                <Card
+                  key={index}
+                  className="p-6 hover:shadow-lg transition-shadow duration-200 relative gap-0 px-4"
+                >
+                  <Badge
+                    variant="secondary"
+                    className="absolute -top-2 left-4 text-xs"
+                  >
                     {paper.weight}
                   </Badge>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    {paper.description}
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <div>
-                    <p className="text-xs font-medium text-muted-foreground mb-2">
-                      Best for:
+                  <CardHeader className="text-center p-0">
+                    <div
+                      className={`w-16 h-16 ${iconColors[index]} border rounded-full flex items-center justify-center mx-auto mb-3`}
+                    >
+                      {index === 0 && (
+                        <FileText className={`w-8 h-8 ${textColors[index]}`} />
+                      )}
+                      {index === 1 && (
+                        <Star className={`w-8 h-8 ${textColors[index]}`} />
+                      )}
+                      {index === 2 && (
+                        <Copy className={`w-8 h-8 ${textColors[index]}`} />
+                      )}
+                      {index === 3 && (
+                        <FileImage className={`w-8 h-8 ${textColors[index]}`} />
+                      )}
+                    </div>
+                    <CardTitle className="text-lg">{paper.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0 pt-2">
+                    <p className="text-xs text-center text-muted-foreground mb-3">
+                      {paper.description}
                     </p>
-                    <ul className="space-y-1">
+                    <ul className="grid grid-cols-2 gap-x-2 gap-y-2 pt-2">
                       {paper.uses.map((use, useIndex) => (
                         <li
                           key={useIndex}
-                          className="text-xs flex items-center"
+                          className="flex items-center text-xs"
                         >
                           <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2 flex-shrink-0" />
                           {use}
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -633,34 +642,57 @@ export default function PrintingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {finishingServices.map((service, index) => (
-              <Card key={index} className="p-6 text-center">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <service.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">{service.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {service.options.map((option, optionIndex) => (
-                      <li
-                        key={optionIndex}
-                        className="text-sm text-muted-foreground"
-                      >
-                        {option}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+            {finishingServices.map((service, index) => {
+              const iconColors = [
+                'bg-blue-50 border-blue-200 dark:bg-blue-950 dark:border-blue-800',
+                'bg-purple-50 border-purple-200 dark:bg-purple-950 dark:border-purple-800',
+                'bg-green-50 border-green-200 dark:bg-green-950 dark:border-green-800',
+                'bg-orange-50 border-orange-200 dark:bg-orange-950 dark:border-orange-800',
+              ];
+              const textColors = [
+                'text-blue-600 dark:text-blue-400',
+                'text-purple-600 dark:text-purple-400',
+                'text-green-600 dark:text-green-400',
+                'text-orange-600 dark:text-orange-400',
+              ];
+
+              return (
+                <Card
+                  key={index}
+                  className="p-6 hover:shadow-lg transition-shadow duration-200 gap-0"
+                >
+                  <CardHeader className="text-center pb-4">
+                    <div
+                      className={`w-16 h-16 ${iconColors[index]} border rounded-full flex items-center justify-center mx-auto mb-4`}
+                    >
+                      <service.icon
+                        className={`w-8 h-8 ${textColors[index]}`}
+                      />
+                    </div>
+                    <CardTitle className="text-lg">{service.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-3">
+                      {service.options.map((option, optionIndex) => (
+                        <li
+                          key={optionIndex}
+                          className="flex items-center text-sm"
+                        >
+                          <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0" />
+                          {option}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Industries Served Section */}
+      {/* Industries We Serve Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -673,15 +705,15 @@ export default function PrintingPage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
             {industries.map((industry, index) => (
               <div
                 key={index}
-                className="inline-flex items-center px-4 py-2 bg-background rounded-full border border-border shadow-sm"
+                className="flex items-center gap-2 px-4 py-3 bg-background border border-border rounded-lg"
               >
-                <Building2 className="w-3 h-3 mr-2 text-primary" />
+                <industry.icon className="w-4 h-4 text-primary flex-shrink-0" />
                 <span className="text-sm font-medium text-foreground">
-                  {industry}
+                  {industry.name}
                 </span>
               </div>
             ))}
