@@ -191,7 +191,7 @@ export const GenericHero = ({
                         className={
                           layout === 'centered'
                             ? 'flex flex-col sm:flex-row gap-4 justify-center'
-                            : 'flex gap-4'
+                            : 'flex flex-col sm:flex-row gap-4'
                         }
                       >
                         {buttons.map((button, index) => (
