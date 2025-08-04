@@ -163,10 +163,10 @@ export const metadata: Metadata = {
     title: 'Live Scan Fingerprinting Bay Area | Same Day Service',
     description:
       'Professional Live Scan fingerprinting in Mountain View, CA. DOJ & FBI certified. Walk-ins welcome, same-day processing.',
-    url: 'https://livescansolutions.com/livescan',
+    url: 'https://www.mailallcenter.com/livescan',
   },
   alternates: {
-    canonical: 'https://livescansolutions.com/livescan',
+    canonical: 'https://www.mailallcenter.com/livescan',
   },
 };
 

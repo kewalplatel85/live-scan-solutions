@@ -15,19 +15,19 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'About Live Scan Solutions | Trusted Fingerprinting Experts | Mountain View, CA',
+    'About Mail All Center | Trusted Fingerprinting Experts | Mountain View, CA',
   description:
-    "Learn about Live Scan Solutions, Bay Area's trusted fingerprinting experts since 2010. DOJ & FBI certified, serving Mountain View, Palo Alto, Sunnyvale. Over 15 years experience, 10,000+ customers served.",
+    "Learn about Mail All Center, Bay Area's trusted fingerprinting experts since 2010. DOJ & FBI certified, serving Mountain View, Palo Alto, Sunnyvale. Over 15 years experience, 10,000+ customers served.",
   keywords:
-    'about live scan solutions, fingerprinting experts, DOJ FBI certified, mountain view fingerprinting company, bay area background check services, trusted notary services, professional document services',
+    'about Mail All Center, fingerprinting experts, DOJ FBI certified, mountain view fingerprinting company, bay area background check services, trusted notary services, professional document services',
   openGraph: {
-    title: 'About Live Scan Solutions | Trusted Fingerprinting Experts',
+    title: 'About Mail All Center | Trusted Fingerprinting Experts',
     description:
       "Bay Area's trusted fingerprinting experts since 2010. DOJ & FBI certified, 15+ years experience, 10,000+ customers served.",
-    url: 'https://livescansolutions.com/about',
+    url: 'https://www.mailallcenter.com/about',
   },
   alternates: {
-    canonical: 'https://livescansolutions.com/about',
+    canonical: 'https://www.mailallcenter.com/about',
   },
 };
 
@@ -53,7 +53,7 @@ export default function AboutPage() {
               ))}
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-4">
-              About <span className="text-primary">Live Scan Solutions</span>
+              About <span className="text-primary">Mail All Center</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               Your trusted partner for professional fingerprinting and document
@@ -107,7 +107,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  Live Scan Solutions is part of{' '}
+                  Mail All Center is part of{' '}
                   <a
                     href="https://www.mailallcenter.com"
                     target="_blank"
@@ -256,7 +256,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Live Scan Solutions
+              Why Choose Mail All Center
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Our commitment to excellence sets us apart in the fingerprinting

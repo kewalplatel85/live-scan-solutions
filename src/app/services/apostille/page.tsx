@@ -45,10 +45,10 @@ export const metadata: Metadata = {
     title: 'Apostille Services Bay Area | Document Authentication',
     description:
       'Professional apostille services for international document authentication in Mountain View, CA. Fast processing, expert guidance.',
-    url: 'https://livescansolutions.com/apostille',
+    url: 'https://www.mailallcenter.com/apostille',
   },
   alternates: {
-    canonical: 'https://livescansolutions.com/apostille',
+    canonical: 'https://www.mailallcenter.com/apostille',
   },
 };
 
@@ -745,7 +745,7 @@ export default function ApostillePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Live Scan Solutions?
+              Why Choose Mail All Center?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Experience the difference with our professional apostille
@@ -801,7 +801,7 @@ export default function ApostillePage() {
           </div>
           <div className="text-center mt-12">
             <p className="text-sm text-muted-foreground">
-              For more FAQs including Live Scan questions,{' '}
+              For more FAQs including Apostille questions,{' '}
               <a href="/faq" className="text-primary hover:underline">
                 visit our full FAQ page
               </a>

@@ -2,7 +2,7 @@ import { GenericHero } from '@/components/common/GenericHero';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'FedEx Shipping Services | Live Scan Solutions Mountain View',
+  title: 'FedEx Shipping Services | Mail All Center Mountain View',
   description:
     'Professional FedEx shipping services in Mountain View, CA. Fast, reliable package delivery with tracking. Serving Bay Area businesses and individuals.',
 };

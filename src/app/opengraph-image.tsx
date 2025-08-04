@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/og';
 export const runtime = 'edge';
 
 export const alt =
-  'Live Scan Solutions - Professional Fingerprinting Services Bay Area';
+  'Mail All Center - Professional Fingerprinting Services Bay Area';
 export const size = {
   width: 1200,
   height: 630,
@@ -50,7 +50,7 @@ export default async function Image() {
           >
             🔒
           </div>
-          <div style={{ fontWeight: 'bold' }}>Live Scan Solutions</div>
+          <div style={{ fontWeight: 'bold' }}>Mail All Center</div>
         </div>
         <div
           style={{

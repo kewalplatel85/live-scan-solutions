@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     title: 'Live Scan FAQ | Fingerprinting Questions Answered',
     description:
       'Get answers to frequently asked questions about Live Scan fingerprinting and notary services.',
-    url: 'https://livescansolutions.com/faq',
+    url: 'https://www.mailallcenter.com/faq',
   },
   alternates: {
-    canonical: 'https://livescansolutions.com/faq',
+    canonical: 'https://www.mailallcenter.com/faq',
   },
 };
 

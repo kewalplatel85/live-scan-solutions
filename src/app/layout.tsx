@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     'Professional Live Scan fingerprinting, Notary Public, and Apostille services in Mountain View, CA. Serving Bay Area: Palo Alto, Sunnyvale, San Jose, Cupertino. DOJ & FBI certified. Same-day service, walk-ins welcome. Call (650) 961-4646.',
   keywords:
     'live scan fingerprinting bay area, fingerprinting mountain view, live scan near me, notary public mountain view, apostille services bay area, background check mountain view, DOJ FBI certified fingerprinting, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, digital fingerprinting california, employment background check, live scan appointment, same day fingerprinting',
-  authors: [{ name: 'Live Scan Solutions' }],
-  creator: 'Live Scan Solutions',
-  publisher: 'Live Scan Solutions',
+  authors: [{ name: 'Mail All Center' }],
+  creator: 'Mail All Center',
+  publisher: 'Mail All Center',
   category: 'Business Services',
   classification: 'Fingerprinting and Notary Services',
   formatDetection: {
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     title: 'Live Scan Fingerprinting Services Bay Area | DOJ & FBI Certified',
     description:
       'Professional Live Scan fingerprinting, Notary Public, and Apostille services in Mountain View, CA. Serving entire Bay Area with same-day service. DOJ & FBI certified.',
-    url: 'https://livescansolutions.com',
-    siteName: 'Live Scan Solutions',
+    url: 'https://www.mailallcenter.com',
+    siteName: 'Mail All Center',
     type: 'website',
     locale: 'en_US',
     images: [
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         url: '/assets/Logo/icons8-fingerprint-scan-80.png',
         width: 80,
         height: 80,
-        alt: 'Live Scan Solutions - Professional Fingerprinting Services',
+        alt: 'Mail All Center - Professional Fingerprinting Services',
       },
     ],
   },
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://livescansolutions.com',
+    canonical: 'https://www.mailallcenter.com',
   },
   verification: {
     google: 'your-google-site-verification-code',
@@ -155,11 +155,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'LocalBusiness',
-              '@id': 'https://livescansolutions.com/#organization',
-              name: 'Live Scan Solutions',
+              '@id': 'https://www.mailallcenter.com/#organization',
+              name: 'Mail All Center',
               description:
                 'Professional Live Scan fingerprinting, Notary Public, and Apostille services in Mountain View, CA. DOJ & FBI certified.',
-              url: 'https://livescansolutions.com',
+              url: 'https://www.mailallcenter.com',
               telephone: '(650) 961-4646',
               email: 'info@livescansolutions.com',
               address: {

@@ -2,7 +2,7 @@ import { GenericHero } from '@/components/common/GenericHero';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'USPS Shipping Services | Live Scan Solutions Mountain View',
+  title: 'USPS Shipping Services | Mail All Center Mountain View',
   description:
     'Professional USPS shipping services in Mountain View, CA. Affordable postal delivery with tracking. Serving Bay Area businesses and individuals.',
 };

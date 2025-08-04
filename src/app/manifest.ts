@@ -2,8 +2,8 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Live Scan Solutions - Professional Fingerprinting Services',
-    short_name: 'Live Scan Solutions',
+    name: 'Mail All Center - Professional Fingerprinting Services',
+    short_name: 'Mail All Center',
     description:
       'Professional Live Scan fingerprinting, Notary Public, and Apostille services in Mountain View, CA. DOJ & FBI certified.',
     start_url: '/',

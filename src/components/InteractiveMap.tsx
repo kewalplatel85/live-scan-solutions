@@ -30,7 +30,7 @@ export const InteractiveMap = ({
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        title="Live Scan Solutions Location"
+        title="Mail All Center Location"
         className="rounded-2xl"
       />
     </div>
