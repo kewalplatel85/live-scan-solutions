@@ -52,7 +52,7 @@ export const Logo = ({
         >
           <Image
             src="/assets/Logo/icons8-fingerprint-scan-80.png"
-            alt="Live Scan Solutions Logo"
+            alt="Mail All Center Logo"
             width={sizeConfig.imageSize}
             height={sizeConfig.imageSize}
             className={cn(sizeConfig.image, imageClassName)}
@@ -67,7 +67,7 @@ export const Logo = ({
             textClassName
           )}
         >
-          Live Scan Solutions
+          Mail All Center
         </span>
       )}
     </div>

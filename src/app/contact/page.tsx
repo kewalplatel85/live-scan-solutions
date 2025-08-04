@@ -6,19 +6,19 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Contact Live Scan Solutions | Location & Hours | Mountain View, CA',
+  title: 'Contact Mail All Center | Location & Hours | Mountain View, CA',
   description:
-    'Contact Live Scan Solutions in Mountain View, CA. Located at 809 Cuesta Dr, Suite B. Phone: (650) 961-4646. Hours: Mon-Fri 10AM-5PM, Sat 10AM-2PM. Serving entire Bay Area with professional fingerprinting services.',
+    'Contact Mail All Center in Mountain View, CA. Located at 809 Cuesta Dr, Suite B. Phone: (650) 961-4646. Hours: Mon-Fri 10AM-5PM, Sat 10AM-2PM. Serving entire Bay Area with professional fingerprinting services.',
   keywords:
-    'contact live scan solutions, mountain view fingerprinting location, live scan hours, fingerprinting near me, 809 cuesta dr mountain view, bay area fingerprinting contact, live scan phone number',
+    'contact Mail All Center, mountain view fingerprinting location, live scan hours, fingerprinting near me, 809 cuesta dr mountain view, bay area fingerprinting contact, live scan phone number',
   openGraph: {
-    title: 'Contact Live Scan Solutions | Location & Hours',
+    title: 'Contact Mail All Center | Location & Hours',
     description:
-      'Contact Live Scan Solutions in Mountain View, CA. Phone: (650) 961-4646. Professional fingerprinting services.',
-    url: 'https://livescansolutions.com/contact',
+      'Contact Mail All Center in Mountain View, CA. Phone: (650) 961-4646. Professional fingerprinting services.',
+    url: 'https://www.mailallcenter.com/contact',
   },
   alternates: {
-    canonical: 'https://livescansolutions.com/contact',
+    canonical: 'https://www.mailallcenter.com/contact',
   },
 };
 

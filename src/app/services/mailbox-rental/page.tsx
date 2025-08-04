@@ -26,7 +26,7 @@ export default function MailboxRentalPage() {
       <GenericHero
         title="Private Mailbox Rental Service"
         subtitle="Starting at $25/month — Get 3 Months FREE!"
-        description="Looking for a reliable and secure way to receive your mail and packages? Avoid the hassle and limitations of traditional mail options. At Live Scan Solutions, we provide professional, secure, and affordable private mailbox rentals in Mountain View, CA — perfect for individuals and businesses alike."
+        description="Looking for a reliable and secure way to receive your mail and packages? Avoid the hassle and limitations of traditional mail options. At Mail All Center, we provide professional, secure, and affordable private mailbox rentals in Mountain View, CA — perfect for individuals and businesses alike."
         badges={[
           {
             icon: DollarSign,
@@ -322,7 +322,7 @@ export default function MailboxRentalPage() {
                       <tr className="border-b bg-primary/5 border-primary/20">
                         <td className="px-6 py-4 font-semibold text-primary">
                           <div className="flex items-center gap-2">
-                            Live Scan Solutions
+                            Mail All Center
                             <Badge variant="default" className="text-xs">
                               Best Choice
                             </Badge>
@@ -406,8 +406,8 @@ export default function MailboxRentalPage() {
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Don&apos;t settle for limited access, higher fees, or unreliable
-              deliveries. Choose Live Scan Solutions — the smarter alternative
-              to the Post Office and UPS Store.
+              deliveries. Choose Mail All Center — the smarter alternative to
+              the Post Office and UPS Store.
             </p>
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8 max-w-md mx-auto">
               <div className="flex items-center justify-center gap-2 mb-2">

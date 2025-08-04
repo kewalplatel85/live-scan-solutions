@@ -15,10 +15,10 @@ export const metadata: Metadata = {
     title: 'Notary Public Services Mountain View | Licensed Notary',
     description:
       'Professional notary public services in Mountain View, CA. Licensed notaries, walk-ins welcome, same-day service.',
-    url: 'https://livescansolutions.com/notary-public',
+    url: 'https://www.mailallcenter.com/notary-public',
   },
   alternates: {
-    canonical: 'https://livescansolutions.com/notary-public',
+    canonical: 'https://www.mailallcenter.com/notary-public',
   },
 };
 

@@ -2,7 +2,7 @@ import { GenericHero } from '@/components/common/GenericHero';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Package Drop-Off Services | Live Scan Solutions Mountain View',
+  title: 'Package Drop-Off Services | Mail All Center Mountain View',
   description:
     'Convenient package drop-off services in Mountain View, CA. Secure package handling and delivery coordination. Serving Bay Area businesses and individuals.',
 };

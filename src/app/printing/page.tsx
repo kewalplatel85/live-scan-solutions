@@ -211,10 +211,10 @@ export const metadata: Metadata = {
     title: 'Professional Printing Services Bay Area | Digital & Large Format',
     description:
       'Complete printing solutions from small to large format. Same-day service available in Mountain View, CA.',
-    url: 'https://livescansolutions.com/printing',
+    url: 'https://www.mailallcenter.com/printing',
   },
   alternates: {
-    canonical: 'https://livescansolutions.com/printing',
+    canonical: 'https://www.mailallcenter.com/printing',
   },
 };
 

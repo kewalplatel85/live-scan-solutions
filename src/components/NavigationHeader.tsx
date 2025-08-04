@@ -585,7 +585,7 @@ export const NavigationHeader = ({
                       {/* App Version or Copyright */}
                       <div className="pt-2 border-t border-gray-200 dark:border-gray-600">
                         <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-                          Live Scan Solutions
+                          Mail All Center
                         </p>
                       </div>
                     </div>

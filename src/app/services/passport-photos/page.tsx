@@ -176,7 +176,7 @@ export default function PassportPhotosPage() {
                       <tr className="border-b bg-primary/5 border-primary/20">
                         <td className="px-6 py-4 font-semibold text-primary">
                           <div className="flex items-center gap-2">
-                            Live Scan Solutions
+                            Mail All Center
                             <Badge variant="default" className="text-xs">
                               Best Choice
                             </Badge>

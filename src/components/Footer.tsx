@@ -111,7 +111,7 @@ export const Footer = () => {
         <div className="py-6">
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Live Scan Solutions. All rights
+              © {new Date().getFullYear()} Mail All Center. All rights
               reserved.
             </p>
           </div>

@@ -12,11 +12,11 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
     const baseOrganization = {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
-      '@id': 'https://livescansolutions.com/#organization',
-      name: 'Live Scan Solutions',
+      '@id': 'https://www.mailallcenter.com/#organization',
+      name: 'Mail All Center',
       description:
         'Professional Live Scan fingerprinting, Notary Public, and Apostille services in Mountain View, CA. DOJ & FBI certified.',
-      url: 'https://livescansolutions.com',
+      url: 'https://www.mailallcenter.com',
       telephone: '(650) 961-4646',
       email: 'info@livescansolutions.com',
       address: {
@@ -96,7 +96,7 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
               description:
                 'Electronic fingerprinting for employment, licensing, and background checks',
               provider: {
-                '@id': 'https://livescansolutions.com/#organization',
+                '@id': 'https://www.mailallcenter.com/#organization',
               },
             },
             price: '17',
@@ -111,7 +111,7 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
               description:
                 'Professional document notarization with licensed notaries',
               provider: {
-                '@id': 'https://livescansolutions.com/#organization',
+                '@id': 'https://www.mailallcenter.com/#organization',
               },
             },
             price: '25',
@@ -125,7 +125,7 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
               name: 'Apostille Services',
               description: 'Document authentication for international use',
               provider: {
-                '@id': 'https://livescansolutions.com/#organization',
+                '@id': 'https://www.mailallcenter.com/#organization',
               },
             },
             price: '75',
@@ -134,9 +134,9 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
           },
         ],
       },
-      logo: 'https://livescansolutions.com/assets/Logo/icons8-fingerprint-scan-80.png',
+      logo: 'https://www.mailallcenter.com/assets/Logo/icons8-fingerprint-scan-80.png',
       image:
-        'https://livescansolutions.com/assets/Logo/icons8-fingerprint-scan-80.png',
+        'https://www.mailallcenter.com/assets/Logo/icons8-fingerprint-scan-80.png',
       sameAs: [
         'https://www.facebook.com/livescansolutions',
         'https://www.linkedin.com/company/livescansolutions',
@@ -144,7 +144,7 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
       ],
       founder: {
         '@type': 'Person',
-        name: 'Live Scan Solutions Team',
+        name: 'Mail All Center Team',
       },
       aggregateRating: {
         '@type': 'AggregateRating',
@@ -185,7 +185,7 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
             (data?.description as string) ||
             'Professional electronic fingerprinting services for employment and licensing',
           provider: {
-            '@id': 'https://livescansolutions.com/#organization',
+            '@id': 'https://www.mailallcenter.com/#organization',
           },
           areaServed: 'San Francisco Bay Area, California',
           hasOfferCatalog: {
