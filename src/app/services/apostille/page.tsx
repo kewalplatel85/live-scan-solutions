@@ -801,9 +801,8 @@ export default function ApostillePage() {
           </div>
           <div className="text-center mt-12">
             <p className="text-sm text-muted-foreground">
-              Browse our FAQs for more details.,{' '}
               <a href="/faq" className="text-primary hover:underline">
-                visit our full FAQ page
+                Browse our FAQs for more details
               </a>
             </p>
           </div>
