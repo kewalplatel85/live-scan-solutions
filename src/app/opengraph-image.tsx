@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/og';
 export const runtime = 'edge';
 
 export const alt =
-  'Mail All Center - Professional Fingerprinting Services Bay Area';
+  'Mail All Center - Complete Business Services in Mountain View, Bay Area';
 export const size = {
   width: 1200,
   height: 630,
@@ -61,7 +61,18 @@ export default async function Image() {
             marginBottom: 24,
           }}
         >
-          Professional Fingerprinting Services
+          Complete Business Services
+        </div>
+        <div
+          style={{
+            fontSize: 20,
+            textAlign: 'center',
+            opacity: 0.9,
+            maxWidth: 900,
+            marginBottom: 16,
+          }}
+        >
+          Live Scan • Notary • Passport Photos • Mailbox • Shipping • Printing
         </div>
         <div
           style={{
@@ -71,7 +82,7 @@ export default async function Image() {
             maxWidth: 600,
           }}
         >
-          DOJ & FBI Certified • Bay Area • Same Day Service
+          DOJ & FBI Certified • Mountain View, CA • Walk-ins Welcome
         </div>
         <div
           style={{

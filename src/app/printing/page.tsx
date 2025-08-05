@@ -211,15 +211,15 @@ const industries = [
 
 export const metadata: Metadata = {
   title:
-    'Professional Printing Services Bay Area | Digital & Large Format | Mountain View, CA',
+    'Printing Services Mountain View | Mail All Center | Copy, Fax, Lamination',
   description:
-    'Complete printing solutions in Mountain View, CA. From business cards to large banners, plus fax, copy, and shredding services. Same-day service, competitive prices. Serving Palo Alto, Sunnyvale, San Jose. Call (650) 961-4646.',
+    'Mail All Center offers complete printing solutions in Mountain View, CA: Digital printing, large format printing, business cards, banners, flyers, lamination, fax, copy, and shredding services. Same-day service, competitive prices. Serving Bay Area. Call (650) 961-4646.',
   keywords:
-    'printing services, digital printing, large format printing, business cards, banners, flyers, document printing, photo printing, fax services, copy services, document shredding, mountain view printing, bay area printing, same day printing, professional printing',
+    'printing services mountain view, Mail All Center printing, digital printing mountain view, large format printing mountain view, business cards mountain view, banner printing mountain view, flyers printing mountain view, document printing mountain view, photo printing mountain view, lamination services mountain view, fax services mountain view, copy services mountain view, document shredding mountain view, same day printing mountain view, professional printing bay area, printing near me',
   openGraph: {
-    title: 'Professional Printing Services Bay Area | Digital & Large Format',
+    title: 'Printing Services Mountain View | Mail All Center',
     description:
-      'Complete printing solutions from small to large format. Fax, copy, and shredding services also available. Same-day service in Mountain View, CA.',
+      'Mail All Center offers complete printing solutions: digital, large format, lamination, fax, copy, and shredding services. Same-day service in Mountain View, CA.',
     url: 'https://www.mailallcenter.com/printing',
   },
   alternates: {

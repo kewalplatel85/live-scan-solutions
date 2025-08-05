@@ -14,7 +14,26 @@ import {
   Shield,
   Zap,
 } from 'lucide-react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title:
+    'Mailbox Rental Mountain View | Mail All Center | Private Mailbox Service',
+  description:
+    'Mail All Center offers secure mailbox rental services in Mountain View, CA. Get a real street address with 24/7 access, package receiving, mail forwarding. Perfect for businesses, remote workers, and travelers. Starting at $20/month. Call (650) 961-4646.',
+  keywords:
+    'mailbox rental mountain view, private mailbox mountain view, Mail All Center mailbox, mailbox service bay area, package receiving mountain view, mail forwarding mountain view, business mailbox mountain view, virtual mailbox mountain view, secure mailbox rental, mailbox rental near me, private mailbox service, street address rental mountain view, mailbox rental palo alto, mailbox rental sunnyvale',
+  openGraph: {
+    title: 'Mailbox Rental Mountain View | Mail All Center',
+    description:
+      'Mail All Center offers secure mailbox rental in Mountain View, CA. Real street address, 24/7 access, package receiving.',
+    url: 'https://www.mailallcenter.com/mailbox-rental',
+  },
+  alternates: {
+    canonical: 'https://www.mailallcenter.com/mailbox-rental',
+  },
+};
 
 export default function MailboxRentalPage() {
   return (

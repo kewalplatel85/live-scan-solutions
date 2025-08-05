@@ -14,6 +14,25 @@ import {
   Users,
   Zap,
 } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title:
+    'Passport Photos Mountain View | Mail All Center | $9.99 Professional Photos',
+  description:
+    'Mail All Center offers professional passport photos in Mountain View, CA for only $9.99 - cheapest in Bay Area! US passport, visa, ID photos that meet all official requirements. Same-day service, guaranteed acceptance or free retake. Walk-ins welcome. Call (650) 961-4646.',
+  keywords:
+    'passport photos mountain view, passport photos near me, passport photos bay area, Mail All Center passport photos, cheap passport photos mountain view, visa photos mountain view, ID photos mountain view, professional passport photos, same day passport photos, passport photo service mountain view, passport photos palo alto, passport photos sunnyvale, US passport photos, visa application photos',
+  openGraph: {
+    title: 'Passport Photos Mountain View | Mail All Center | $9.99',
+    description:
+      'Mail All Center offers professional passport photos in Mountain View, CA for only $9.99. Same-day service, guaranteed acceptance.',
+    url: 'https://www.mailallcenter.com/passport-photos',
+  },
+  alternates: {
+    canonical: 'https://www.mailallcenter.com/passport-photos',
+  },
+};
 
 export default function PassportPhotosPage() {
   return (

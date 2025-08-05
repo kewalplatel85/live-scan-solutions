@@ -154,19 +154,19 @@ const locations = [
 
 export const metadata: Metadata = {
   title:
-    'Live Scan Fingerprinting Bay Area | Same Day Service | Mountain View, CA',
+    'Live Scan Fingerprinting Mountain View | Mail All Center | DOJ & FBI Certified',
   description:
-    'Professional Live Scan fingerprinting services in Mountain View, CA. Serving Palo Alto, Sunnyvale, San Jose, Cupertino. DOJ & FBI certified. Walk-ins welcome, same-day processing. Starting at $17. Call (650) 961-4646.',
+    'Mail All Center provides professional Live Scan & Ink fingerprinting services in Mountain View, CA. Serving Bay Area with same-day processing, walk-ins welcome. DOJ & FBI certified. Employment, licensing, background checks. Starting at $17. Call (650) 961-4646.',
   keywords:
-    'live scan fingerprinting, live scan bay area, fingerprinting mountain view, digital fingerprinting, background check, employment screening, DOJ certified, FBI approved, live scan near me, same day fingerprinting, walk-in fingerprinting',
+    'live scan fingerprinting mountain view, ink fingerprinting mountain view, live scan near me, fingerprinting services bay area, digital fingerprinting mountain view, background check mountain view, employment screening mountain view, DOJ certified fingerprinting, FBI approved fingerprinting, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, same day fingerprinting, walk-in fingerprinting, Mail All Center fingerprinting',
   openGraph: {
-    title: 'Live Scan Fingerprinting Bay Area | Same Day Service',
+    title: 'Live Scan Fingerprinting Mountain View | Mail All Center',
     description:
-      'Professional Live Scan fingerprinting in Mountain View, CA. DOJ & FBI certified. Walk-ins welcome, same-day processing.',
-    url: 'https://www.mailallcenter.com/livescan',
+      'Mail All Center provides professional Live Scan & Ink fingerprinting in Mountain View, CA. DOJ & FBI certified. Walk-ins welcome, same-day processing.',
+    url: 'https://www.mailallcenter.com/live-scan',
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/livescan',
+    canonical: 'https://www.mailallcenter.com/live-scan',
   },
 };
 

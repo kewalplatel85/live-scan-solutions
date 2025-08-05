@@ -10,9 +10,9 @@ export const navigationConfig: NavigationConfigWithoutDropdown = {
     { name: 'Mailbox Rental', href: '/mailbox-rental' },
     { name: 'Pack & Ship', href: '/pack-ship' },
     { name: 'Printing', href: '/printing' },
-    { name: 'About Us', href: '/about' },
+    { name: 'About Us', href: '/about-us' },
     { name: 'FAQ', href: '/faq' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Contact Us', href: '/contact-us' },
   ],
   contactInfo: {
     phone: '650-961-4646',

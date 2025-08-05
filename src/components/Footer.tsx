@@ -6,9 +6,13 @@ import Link from 'next/link';
 
 const footerLinks = {
   services: [
-    { name: 'Live Scan Fingerprinting', href: '/livescan' },
-    { name: 'Notary Public', href: '/notary-public' },
-    { name: 'Apostille Services', href: '/apostille' },
+    { name: 'Live Scan', href: '/live-scan' },
+    { name: 'Notary Public', href: '/notary' },
+    { name: 'Apostille', href: '/apostille' },
+    { name: 'Passport Photos', href: '/passport-photos' },
+    { name: 'Mailbox Rental', href: '/mailbox-rental' },
+    { name: 'Printing', href: '/printing' },
+    { name: 'Pack & Ship', href: '/pack-ship' },
   ],
   company: [
     { name: 'About Us', href: '/about' },
@@ -51,7 +55,7 @@ export const Footer = () => {
             {/* Services */}
             <div>
               <h3 className="font-semibold mb-4">Services</h3>
-              <ul className="space-y-2">
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
                 {footerLinks.services.map((link) => (
                   <li key={link.name}>
                     <Link
