@@ -1,6 +1,6 @@
 import { GenericHero } from '@/components/common/GenericHero';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Camera,
   CheckCircle,
@@ -12,6 +12,7 @@ import {
   Shield,
   Star,
   Users,
+  X,
   Zap,
 } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -226,95 +227,191 @@ export default function PassportPhotosPage() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <Card className="overflow-hidden border-2 border-primary/20">
-              <CardHeader className="bg-primary/5 border-b">
-                <div className="flex items-center justify-center gap-2">
-                  <Badge variant="default" className="text-sm">
-                    <DollarSign className="w-4 h-4 mr-1" />
-                    Price Match Guarantee
-                  </Badge>
-                </div>
-              </CardHeader>
+            {/* Mobile-friendly card layout for small screens */}
+            <div className="block md:hidden space-y-4">
+              <div className="text-center mb-6">
+                <Badge variant="default" className="text-sm">
+                  <DollarSign className="w-4 h-4 mr-1" />
+                  Price Match Guarantee
+                </Badge>
+              </div>
+
+              {/* Mail All Center - Featured */}
+              <Card className="border-2 border-primary/30 bg-primary/5">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-bold text-primary">
+                        Mail All Center
+                      </h3>
+                      <Badge variant="default" className="text-xs">
+                        Best Choice
+                      </Badge>
+                    </div>
+                    <span className="text-2xl font-bold text-primary">
+                      $9.99
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center gap-1 text-emerald-600">
+                      <CheckCircle className="w-4 h-4" />
+                      <span>Same Day Service</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-emerald-600">
+                      <CheckCircle className="w-4 h-4" />
+                      <span>Guarantee Included</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* UPS Store */}
+              <Card className="border">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold">UPS Store</h3>
+                    <span className="text-xl font-bold">$15.99</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center gap-1 text-blue-600">
+                      <Clock className="w-4 h-4" />
+                      <span>Same Day Available</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-red-500">
+                      <X className="w-4 h-4" />
+                      <span>No Guarantee</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Walgreens */}
+              <Card className="border">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold">Walgreens</h3>
+                    <span className="text-xl font-bold">$19.99</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center gap-1 text-blue-600">
+                      <Clock className="w-4 h-4" />
+                      <span>Same Day Available</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-red-500">
+                      <X className="w-4 h-4" />
+                      <span>No Guarantee</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* FedEx Office */}
+              <Card className="border">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold">FedEx Office</h3>
+                    <span className="text-xl font-bold">$19.99</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center gap-1 text-blue-600">
+                      <Clock className="w-4 h-4" />
+                      <span>Same Day Available</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-red-500">
+                      <X className="w-4 h-4" />
+                      <span>No Guarantee</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Desktop table layout for medium screens and up */}
+            <Card className="hidden md:block overflow-hidden border-2 border-primary/20">
+              <div className="bg-primary/5 border-b py-4 flex items-center justify-center">
+                <Badge variant="default" className="text-sm px-3 py-1">
+                  <DollarSign className="w-4 h-4 mr-1" />
+                  Price Match Guarantee
+                </Badge>
+              </div>
               <CardContent className="p-0">
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead className="bg-muted/50">
-                      <tr>
-                        <th className="px-6 py-4 text-left font-semibold">
-                          Provider
-                        </th>
-                        <th className="px-6 py-4 text-center font-semibold">
-                          Price
-                        </th>
-                        <th className="px-6 py-4 text-center font-semibold">
-                          Same Day
-                        </th>
-                        <th className="px-6 py-4 text-center font-semibold">
-                          Guarantee
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="border-b bg-primary/5 border-primary/20">
-                        <td className="px-6 py-4 font-semibold text-primary">
-                          <div className="flex items-center gap-2">
-                            Mail All Center
-                            <Badge variant="default" className="text-xs">
-                              Best Choice
-                            </Badge>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 text-center">
-                          <span className="text-2xl font-bold text-primary">
-                            $9.99
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 text-center">
-                          <CheckCircle className="w-5 h-5 text-emerald-600 mx-auto" />
-                        </td>
-                        <td className="px-6 py-4 text-center">
-                          <CheckCircle className="w-5 h-5 text-emerald-600 mx-auto" />
-                        </td>
-                      </tr>
-                      <tr className="border-b">
-                        <td className="px-6 py-4">UPS Store</td>
-                        <td className="px-6 py-4 text-center font-semibold">
-                          $15.99
-                        </td>
-                        <td className="px-6 py-4 text-center">
-                          <CheckCircle className="w-5 h-5 text-emerald-600 mx-auto" />
-                        </td>
-                        <td className="px-6 py-4 text-center text-muted-foreground">
-                          -
-                        </td>
-                      </tr>
-                      <tr className="border-b">
-                        <td className="px-6 py-4">Walgreens</td>
-                        <td className="px-6 py-4 text-center font-semibold">
-                          $19.99
-                        </td>
-                        <td className="px-6 py-4 text-center">
-                          <CheckCircle className="w-5 h-5 text-emerald-600 mx-auto" />
-                        </td>
-                        <td className="px-6 py-4 text-center text-muted-foreground">
-                          -
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4">FedEx Office</td>
-                        <td className="px-6 py-4 text-center font-semibold">
-                          $19.99
-                        </td>
-                        <td className="px-6 py-4 text-center">
-                          <CheckCircle className="w-5 h-5 text-emerald-600 mx-auto" />
-                        </td>
-                        <td className="px-6 py-4 text-center text-muted-foreground">
-                          -
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                <table className="w-full">
+                  <thead className="bg-muted/50">
+                    <tr>
+                      <th className="px-6 py-4 text-left font-semibold">
+                        Provider
+                      </th>
+                      <th className="px-6 py-4 text-center font-semibold">
+                        Price
+                      </th>
+                      <th className="px-6 py-4 text-center font-semibold">
+                        Same Day
+                      </th>
+                      <th className="px-6 py-4 text-center font-semibold">
+                        Guarantee
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b bg-primary/5 border-primary/20">
+                      <td className="px-6 py-4 font-semibold text-primary">
+                        <div className="flex items-center gap-2">
+                          Mail All Center
+                          <Badge variant="default" className="text-xs">
+                            Best Choice
+                          </Badge>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 text-center">
+                        <span className="text-2xl font-bold text-primary">
+                          $9.99
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 text-center">
+                        <CheckCircle className="w-5 h-5 text-emerald-600 mx-auto" />
+                      </td>
+                      <td className="px-6 py-4 text-center">
+                        <CheckCircle className="w-5 h-5 text-emerald-600 mx-auto" />
+                      </td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-6 py-4">UPS Store</td>
+                      <td className="px-6 py-4 text-center font-semibold">
+                        $15.99
+                      </td>
+                      <td className="px-6 py-4 text-center">
+                        <Clock className="w-5 h-5 text-blue-600 mx-auto" />
+                      </td>
+                      <td className="px-6 py-4 text-center">
+                        <X className="w-5 h-5 text-red-500 mx-auto" />
+                      </td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="px-6 py-4">Walgreens</td>
+                      <td className="px-6 py-4 text-center font-semibold">
+                        $19.99
+                      </td>
+                      <td className="px-6 py-4 text-center">
+                        <Clock className="w-5 h-5 text-blue-600 mx-auto" />
+                      </td>
+                      <td className="px-6 py-4 text-center">
+                        <X className="w-5 h-5 text-red-500 mx-auto" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4">FedEx Office</td>
+                      <td className="px-6 py-4 text-center font-semibold">
+                        $19.99
+                      </td>
+                      <td className="px-6 py-4 text-center">
+                        <Clock className="w-5 h-5 text-blue-600 mx-auto" />
+                      </td>
+                      <td className="px-6 py-4 text-center">
+                        <X className="w-5 h-5 text-red-500 mx-auto" />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </CardContent>
             </Card>
 
