@@ -3,11 +3,11 @@ import { NavigationConfigWithoutDropdown } from '@/components/types/navigation';
 export const navigationConfig: NavigationConfigWithoutDropdown = {
   primaryItems: [
     { name: 'Home', href: '/' },
-    { name: 'Live Scan', href: '/services/live-scan' },
-    { name: 'Notary Public', href: '/services/notary' },
-    { name: 'Apostille', href: '/services/apostille' },
-    { name: 'Passport Photos', href: '/services/passport-photos' },
-    { name: 'Mailbox Rental', href: '/services/mailbox-rental' },
+    { name: 'Live Scan', href: '/live-scan' },
+    { name: 'Notary Public', href: '/notary' },
+    { name: 'Apostille', href: '/apostille' },
+    { name: 'Passport Photos', href: '/passport-photos' },
+    { name: 'Mailbox Rental', href: '/mailbox-rental' },
     { name: 'Pack & Ship', href: '/pack-ship' },
     { name: 'Printing', href: '/printing' },
     { name: 'About Us', href: '/about' },

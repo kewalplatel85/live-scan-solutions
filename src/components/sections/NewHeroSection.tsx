@@ -3,11 +3,20 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Award,
+  BadgeCheck,
+  Camera,
   CheckCircle,
   Clock,
+  Copy,
+  FileText,
+  Fingerprint,
+  Mail,
   MapPin,
+  Package,
   Phone,
+  Printer,
   Shield,
+  ShredderIcon,
   Star,
   Users,
   Zap,
@@ -31,7 +40,7 @@ const quickStats = [
   { label: 'Years Experience', value: '15+' },
   { label: 'Satisfied Customers', value: '15K+' },
   { label: 'Services Offered', value: '10+' },
-  { label: 'Bay Area Locations', value: '3+' },
+  { label: 'Bay Area Coverage', value: '100%' },
 ];
 
 export const NewHeroSection = () => {
@@ -126,60 +135,84 @@ export const NewHeroSection = () => {
               </p>
             </div>
 
-            {/* Services Grid - Compact Version */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {/* Services Grid - Enhanced with Lucide Icons */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {[
                 {
-                  name: 'Live & Ink Fingerprinting',
-                  icon: '🔍',
-                  href: '/services/live-scan',
+                  name: 'Live Scan & Ink Fingerprinting',
+                  icon: Fingerprint,
+                  href: '/live-scan',
+                  color: 'text-blue-600',
+                  bgColor: 'bg-blue-50 dark:bg-blue-950/20',
                 },
                 {
                   name: 'Notary Public',
-                  icon: '📋',
-                  href: '/services/notary',
+                  icon: FileText,
+                  href: '/notary',
+                  color: 'text-green-600',
+                  bgColor: 'bg-green-50 dark:bg-green-950/20',
                 },
                 {
                   name: 'Apostille Services',
-                  icon: '✅',
-                  href: '/services/apostille',
+                  icon: BadgeCheck,
+                  href: '/apostille',
+                  color: 'text-purple-600',
+                  bgColor: 'bg-purple-50 dark:bg-purple-950/20',
                 },
                 {
                   name: 'Passport Photos',
-                  icon: '📷',
-                  href: '/services/passport-photos',
+                  icon: Camera,
+                  href: '/passport-photos',
+                  color: 'text-orange-600',
+                  bgColor: 'bg-orange-50 dark:bg-orange-950/20',
                 },
                 {
                   name: 'Mailbox Rental',
-                  icon: '📫',
-                  href: '/services/mailbox-rental',
+                  icon: Mail,
+                  href: '/mailbox-rental',
+                  color: 'text-red-600',
+                  bgColor: 'bg-red-50 dark:bg-red-950/20',
                 },
                 {
                   name: 'Packing & Shipping',
-                  icon: '📦',
-                  href: '/pack-ship/packing',
+                  icon: Package,
+                  href: '/pack-ship',
+                  color: 'text-indigo-600',
+                  bgColor: 'bg-indigo-50 dark:bg-indigo-950/20',
                 },
                 {
-                  name: 'Printing',
-                  icon: '🖨️',
+                  name: 'Printing & Lamination',
+                  icon: Printer,
                   href: '/printing',
+                  color: 'text-teal-600',
+                  bgColor: 'bg-teal-50 dark:bg-teal-950/20',
                 },
                 {
                   name: 'Fax & Copy',
-                  icon: '📄',
+                  icon: Copy,
                   href: '/printing',
+                  color: 'text-pink-600',
+                  bgColor: 'bg-pink-50 dark:bg-pink-950/20',
                 },
                 {
-                  name: 'Lamination',
-                  icon: '🛡️',
+                  name: 'Shredding',
+                  icon: ShredderIcon,
                   href: '/printing',
+                  color: 'text-cyan-600',
+                  bgColor: 'bg-cyan-50 dark:bg-cyan-950/20',
                 },
               ].map((service, index) => (
                 <Link key={index} href={service.href} className="group block">
-                  <Card className="p-3 h-full transition-all duration-200 hover:shadow-md hover:scale-105 bg-card/50 hover:bg-card border-muted hover:border-primary/20">
-                    <CardContent className="p-0 text-center">
-                      <div className="text-2xl mb-2">{service.icon}</div>
-                      <h4 className="text-xs font-medium leading-tight text-foreground group-hover:text-primary">
+                  <Card className="p-4 h-full transition-all duration-300 hover:shadow-lg hover:scale-105 bg-card/80 hover:bg-card border-muted hover:border-primary/30 backdrop-blur-sm">
+                    <CardContent className="p-0 text-center space-y-3">
+                      <div
+                        className={`inline-flex items-center justify-center w-12 h-12 rounded-full ${service.bgColor} transition-all duration-300 group-hover:scale-110`}
+                      >
+                        <service.icon
+                          className={`h-6 w-6 ${service.color} transition-colors duration-300 group-hover:text-primary`}
+                        />
+                      </div>
+                      <h4 className="text-sm font-semibold leading-tight text-foreground group-hover:text-primary transition-colors duration-300">
                         {service.name}
                       </h4>
                     </CardContent>

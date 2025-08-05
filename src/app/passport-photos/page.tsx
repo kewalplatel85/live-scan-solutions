@@ -20,9 +20,19 @@ export default function PassportPhotosPage() {
     <main>
       {/* Hero Section */}
       <GenericHero
-        title="Professional Passport Photos"
-        subtitle="Only $9.99 - Cheapest in Mountain View"
+        title={
+          <>
+            Professional <span className="text-primary">Passport Photos</span>
+          </>
+        }
+        subtitle="Only $9.99 - Cheapest in Bay Area"
         description="Get professional passport photos that meet all official requirements for US passports, visas, and international identification documents. Same-day service with guaranteed acceptance or we'll retake them for free."
+        benefits={[
+          { text: 'Professional service' },
+          { text: 'Same-day service' },
+          { text: 'Multiple copies' },
+          { text: 'All ages welcome' },
+        ]}
         badges={[
           {
             icon: DollarSign,
@@ -67,92 +77,119 @@ export default function PassportPhotosPage() {
           },
         ]}
         rightContent={
-          <div className="space-y-3 md:space-y-4">
-            {/* Photo Types Card */}
-            <Card className="p-4">
-              <h4 className="text-base font-semibold mb-3">
+          <Card className="p-5 hover:shadow-lg transition-shadow border-2 border-primary/10">
+            {/* Main Heading */}
+            <div className="text-center mb-5">
+              <h3 className="text-lg font-bold mb-2">
                 All Photo Types We Provide
-              </h4>
-              <div className="space-y-2">
-                {/* US Passport */}
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Professional photos for all your needs
+              </p>
+            </div>
+
+            {/* Photo Types List */}
+            <div className="space-y-3 mb-5">
+              {/* US Passport */}
+              <div className="flex items-start">
+                <div className="w-9 h-9 bg-blue-100 border border-blue-200 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                  <Globe className="w-5 h-5 text-blue-600" />
+                </div>
                 <div>
-                  <div className="flex items-center text-sm font-medium mb-1">
-                    <Globe className="w-4 h-4 mr-2 text-primary" />
-                    <span>US Passport</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground ml-6">
+                  <h4 className="font-semibold text-sm mb-1">US Passport</h4>
+                  <p className="text-xs text-muted-foreground">
                     2x2 inch photos for US passport applications
                   </p>
                 </div>
+              </div>
 
-                {/* Visa Photos */}
+              {/* Visa Photos */}
+              <div className="flex items-start">
+                <div className="w-9 h-9 bg-emerald-100 border border-emerald-200 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                  <Camera className="w-5 h-5 text-emerald-600" />
+                </div>
                 <div>
-                  <div className="flex items-center text-sm font-medium mb-1">
-                    <Camera className="w-4 h-4 mr-2 text-primary" />
-                    <span>Visa Photos</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground ml-6">
+                  <h4 className="font-semibold text-sm mb-1">Visa Photos</h4>
+                  <p className="text-xs text-muted-foreground">
                     Country-specific visa application photos
                   </p>
                 </div>
+              </div>
 
-                {/* ID Cards */}
+              {/* ID Cards */}
+              <div className="flex items-start">
+                <div className="w-9 h-9 bg-purple-100 border border-purple-200 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                  <Shield className="w-5 h-5 text-purple-600" />
+                </div>
                 <div>
-                  <div className="flex items-center text-sm font-medium mb-1">
-                    <Shield className="w-4 h-4 mr-2 text-primary" />
-                    <span>ID Cards</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground ml-6">
+                  <h4 className="font-semibold text-sm mb-1">ID Cards</h4>
+                  <p className="text-xs text-muted-foreground">
                     State ID and driver license photos
                   </p>
                 </div>
+              </div>
 
-                {/* Immigration */}
+              {/* Immigration */}
+              <div className="flex items-start">
+                <div className="w-9 h-9 bg-orange-100 border border-orange-200 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                  <Users className="w-5 h-5 text-orange-600" />
+                </div>
                 <div>
-                  <div className="flex items-center text-sm font-medium mb-1">
-                    <Users className="w-4 h-4 mr-2 text-primary" />
-                    <span>Immigration</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground ml-6">
+                  <h4 className="font-semibold text-sm mb-1">Immigration</h4>
+                  <p className="text-xs text-muted-foreground">
                     USCIS and immigration document photos
                   </p>
                 </div>
+              </div>
 
-                {/* All Country Sizes */}
+              {/* All Country Sizes */}
+              <div className="flex items-start">
+                <div className="w-9 h-9 bg-indigo-100 border border-indigo-200 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                  <Globe className="w-5 h-5 text-indigo-600" />
+                </div>
                 <div>
-                  <div className="flex items-center text-sm font-medium mb-1">
-                    <Globe className="w-4 h-4 mr-2 text-primary" />
-                    <span>All Country Sizes</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground ml-6">
+                  <h4 className="font-semibold text-sm mb-1">
+                    All Country Sizes
+                  </h4>
+                  <p className="text-xs text-muted-foreground">
                     We accept and provide photos for all international size
                     requirements
                   </p>
                 </div>
               </div>
+            </div>
 
-              <div className="mt-3 pt-3 border-t border-border">
-                <div className="grid grid-cols-2 gap-2 text-xs">
-                  <div className="flex items-center">
-                    <CheckCircle className="w-3 h-3 mr-1 text-emerald-600" />
-                    <span>Professional service</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="w-3 h-3 mr-1 text-emerald-600" />
-                    <span>Same-day service</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="w-3 h-3 mr-1 text-emerald-600" />
-                    <span>Multiple copies</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="w-3 h-3 mr-1 text-emerald-600" />
-                    <span>All ages welcome</span>
-                  </div>
+            {/* Separator */}
+            <div className="border-t border-border pt-4">
+              <h4 className="font-semibold text-sm mb-3 text-center">
+                Additional Services
+              </h4>
+              <div className="space-y-2 mb-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-muted-foreground font-medium">
+                    Digital copy available
+                  </span>
+                  <Badge variant="secondary" className="text-xs px-2 py-0.5">
+                    Available
+                  </Badge>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-muted-foreground font-medium">
+                    USB drive copy
+                  </span>
+                  <Badge variant="outline" className="text-xs px-2 py-0.5">
+                    Extra Cost
+                  </Badge>
                 </div>
               </div>
-            </Card>
-          </div>
+              <div className="pt-2 border-t border-border">
+                <p className="text-xs text-center text-muted-foreground">
+                  <span className="font-bold text-primary">Base $9.99</span>{' '}
+                  includes print copy only
+                </p>
+              </div>
+            </div>
+          </Card>
         }
       />
 

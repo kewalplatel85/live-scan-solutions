@@ -35,28 +35,28 @@ const navigation = [
 const services = [
   {
     title: 'Live Scan',
-    href: '/services/live-scan',
+    href: '/live-scan',
     description: 'Electronic fingerprinting services for background checks',
   },
   {
     title: 'Notary Public',
-    href: '/services/notary',
+    href: '/notary',
     description: 'Professional notarization services for documents',
   },
   {
     title: 'Apostille',
-    href: '/services/apostille',
+    href: '/apostille',
     description: 'Document authentication for international use',
   },
   {
     title: 'Passport Photos',
-    href: '/services/passport-photos',
+    href: '/passport-photos',
     description:
       'Professional passport and ID photos that meet all requirements',
   },
   {
     title: 'Mailbox Rental',
-    href: '/services/mailbox-rental',
+    href: '/mailbox-rental',
     description: 'Secure mailbox services for your business or personal needs',
   },
 ];
