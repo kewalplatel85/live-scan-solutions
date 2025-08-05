@@ -11,12 +11,12 @@ const footerLinks = {
     { name: 'Apostille', href: '/apostille' },
     { name: 'Passport Photos', href: '/passport-photos' },
     { name: 'Mailbox Rental', href: '/mailbox-rental' },
-    { name: 'Printing', href: '/printing' },
     { name: 'Pack & Ship', href: '/pack-ship' },
+    { name: 'Printing', href: '/printing' },
   ],
   company: [
-    { name: 'About Us', href: '/about' },
-    { name: 'Contact Us', href: '/contact' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Contact Us', href: '/contact-us' },
     { name: 'FAQ', href: '/faq' },
   ],
 };
@@ -34,8 +34,16 @@ export const Footer = () => {
               </div>
               <p className="text-sm text-muted-foreground mb-4">
                 We are an officially certified fingerprinting service provider
-                agency authorized by the Department of Justice and FBI.
+                agency authorized by the Department of Justice and FBI. Serving
+                the Bay Area for over 15 years with professional business
+                services.
               </p>
+              <div className="mb-4">
+                <p className="text-xs text-muted-foreground mb-2">
+                  <strong>Address:</strong> 809 Cuesta Dr, Suite B, Mountain
+                  View, CA 94040
+                </p>
+              </div>
               <div className="flex flex-col space-y-2">
                 <Button variant="outline" size="sm" asChild>
                   <Link href="tel:650-961-4646">

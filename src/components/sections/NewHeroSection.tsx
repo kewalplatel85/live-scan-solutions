@@ -72,15 +72,16 @@ export const NewHeroSection = () => {
             {/* Main Headline - More Compact */}
             <div className="space-y-4">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                Your One-Stop{' '}
+                Bay Area&apos;s Trusted{' '}
                 <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                  Document Center
+                  Business Services
                 </span>
               </h1>
 
               <p className="text-lg text-muted-foreground max-w-lg">
-                From fingerprinting to notary services, we handle all your
-                document needs quickly and professionally in the Bay Area.
+                From live scan fingerprinting to notary services, we handle all
+                your document needs quickly and professionally. Serving Mountain
+                View, Palo Alto, Sunnyvale, San Jose, and entire Bay Area.
               </p>
             </div>
 

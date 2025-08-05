@@ -6,11 +6,11 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'Notary Public Services Mountain View | Mail All Center | Licensed Notary Bay Area',
+    'Notary Public Services Bay Area | Mail All Center | Licensed Notary Near Me',
   description:
-    'Mail All Center offers professional notary public services in Mountain View, CA. Licensed notaries for contracts, real estate, wills, affidavits, power of attorney, loan documents. Walk-ins welcome, same-day service. Mobile notary available. Serving entire Bay Area. Call (650) 961-4646.',
+    'Mail All Center offers professional notary public services in Mountain View, CA and entire Bay Area. Licensed notaries for contracts, real estate, wills, affidavits, power of attorney, loan documents. Walk-ins welcome, same-day service. Mobile notary available. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont. Call (650) 961-4646.',
   keywords:
-    'notary public mountain view, notary services bay area, Mail All Center notary, document notarization mountain view, licensed notary mountain view, mobile notary mountain view, notary near me, contract notarization, real estate notary mountain view, will notarization, affidavit notary, same day notary, power of attorney notarization, loan document notary, notary public palo alto, notary public sunnyvale',
+    'notary public mountain view, notary services bay area, notary near me, notary public near me, Mail All Center notary, document notarization mountain view, licensed notary mountain view, mobile notary mountain view, mobile notary bay area, contract notarization, real estate notary mountain view, will notarization, affidavit notary, same day notary, power of attorney notarization, loan document notary, notary public palo alto, notary public sunnyvale, notary public san jose, notary public cupertino, notary public fremont, notary public santa clara, notary services silicon valley, bay area notary services, peninsula notary services, south bay notary',
   openGraph: {
     title: 'Notary Public Services Mountain View | Mail All Center',
     description:

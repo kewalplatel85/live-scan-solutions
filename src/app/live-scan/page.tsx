@@ -154,11 +154,11 @@ const locations = [
 
 export const metadata: Metadata = {
   title:
-    'Live Scan Fingerprinting Mountain View | Mail All Center | DOJ & FBI Certified',
+    'Live Scan Fingerprinting Bay Area | Mail All Center | DOJ & FBI Certified Near Me',
   description:
-    'Mail All Center provides professional Live Scan & Ink fingerprinting services in Mountain View, CA. Serving Bay Area with same-day processing, walk-ins welcome. DOJ & FBI certified. Employment, licensing, background checks. Starting at $17. Call (650) 961-4646.',
+    'Mail All Center provides professional Live Scan & Ink fingerprinting services in Mountain View, CA and entire Bay Area. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont with same-day processing, walk-ins welcome. DOJ & FBI certified. Employment, licensing, background checks. Starting at $17. Call (650) 961-4646.',
   keywords:
-    'live scan fingerprinting mountain view, ink fingerprinting mountain view, live scan near me, fingerprinting services bay area, digital fingerprinting mountain view, background check mountain view, employment screening mountain view, DOJ certified fingerprinting, FBI approved fingerprinting, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, same day fingerprinting, walk-in fingerprinting, Mail All Center fingerprinting',
+    'live scan fingerprinting mountain view, live scan fingerprinting bay area, live scan near me, fingerprinting near me, ink fingerprinting mountain view, fingerprinting services bay area, digital fingerprinting mountain view, background check mountain view, employment screening mountain view, DOJ certified fingerprinting, FBI approved fingerprinting, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, live scan menlo park, live scan redwood city, same day fingerprinting, walk-in fingerprinting, Mail All Center fingerprinting, fingerprinting silicon valley, fingerprinting peninsula, fingerprinting south bay',
   openGraph: {
     title: 'Live Scan Fingerprinting Mountain View | Mail All Center',
     description:
