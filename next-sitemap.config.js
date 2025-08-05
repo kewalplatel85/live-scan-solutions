@@ -65,8 +65,8 @@ module.exports = {
     await config.transform(config, '/mailbox-rental'),
     await config.transform(config, '/pack-ship'),
     await config.transform(config, '/printing'),
-    await config.transform(config, '/about'),
-    await config.transform(config, '/contact'),
+    await config.transform(config, '/about-us'),
+    await config.transform(config, '/contact-us'),
     await config.transform(config, '/faq'),
   ],
 };

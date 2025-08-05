@@ -14,7 +14,7 @@ export const googleBusinessSchema = {
   // Contact Information
   url: 'https://www.mailallcenter.com',
   telephone: '(650) 961-4646',
-  email: 'info@mailallcenter.com',
+  email: 'mailallcenter1@gmail.com',
 
   // Location Information
   address: {
@@ -167,6 +167,44 @@ export const googleBusinessSchema = {
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
       },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Printing & Lamination',
+          description:
+            'High-quality printing and lamination services for all your document needs',
+          serviceType: 'Printing Service',
+        },
+        price: '5.00',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Passport Photos',
+          description: 'High-quality passport photos meeting all requirements',
+          serviceType: 'Photo Service',
+        },
+        price: '9.99',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Fax copy and Shredding',
+          description:
+            'High-quality fax, copy, and shredding services for all your document needs',
+          serviceType: 'Document Service',
+        },
+        price: '1.99',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+      },
     ],
   },
 
@@ -191,6 +229,9 @@ export const googleBusinessSchema = {
     'Printing Services',
     'Document Services',
     'Background Checks',
+    'Lamination Services',
+    'Fax and Copy Services',
+    'Shredding Services',
   ],
 
   // Certifications
