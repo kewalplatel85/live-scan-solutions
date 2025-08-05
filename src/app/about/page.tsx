@@ -15,15 +15,15 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'About Mail All Center | Trusted Fingerprinting Experts | Mountain View, CA',
+    'About Mail All Center | DOJ & FBI Certified Business Services | Mountain View, CA',
   description:
-    "Learn about Mail All Center, Bay Area's trusted fingerprinting experts since 2010. DOJ & FBI certified, serving Mountain View, Palo Alto, Sunnyvale. Over 15 years experience, 10,000+ customers served.",
+    "Learn about Mail All Center, Bay Area's trusted DOJ & FBI certified business services provider since 2010. Live scan fingerprinting, notary, apostille, passport photos, mailbox rental, packing & shipping, printing, lamination, fax & copy, and shredding services.",
   keywords:
-    'about Mail All Center, fingerprinting experts, DOJ FBI certified, mountain view fingerprinting company, bay area background check services, trusted notary services, professional document services',
+    'about Mail All Center, DOJ FBI certified, business services mountain view, live scan fingerprinting, notary public, apostille services, passport photos, mailbox rental, packing shipping, printing lamination, fax copy shredding, bay area business center',
   openGraph: {
-    title: 'About Mail All Center | Trusted Fingerprinting Experts',
+    title: 'About Mail All Center | DOJ & FBI Certified Business Services',
     description:
-      "Bay Area's trusted fingerprinting experts since 2010. DOJ & FBI certified, 15+ years experience, 10,000+ customers served.",
+      "Bay Area's trusted DOJ & FBI certified business services provider since 2010. Live scan, notary, mailbox rental, printing, shipping and more.",
     url: 'https://www.mailallcenter.com/about',
   },
   alternates: {
@@ -56,36 +56,38 @@ export default function AboutPage() {
               About <span className="text-primary">Mail All Center</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Your trusted partner for professional fingerprinting and document
-              services. Officially certified by the Department of Justice and
-              FBI with over 15 years of experience.
+              Your one-stop business services center offering live and ink
+              fingerprinting, notary public, apostille services, passport
+              photos, mailbox rental, packing & shipping, printing, lamination,
+              fax & copy, and secure shredding. DOJ & FBI certified with over 15
+              years of trusted service.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Award className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">Certified Professionals</h3>
+                <h3 className="font-semibold mb-2">DOJ & FBI Certified</h3>
                 <p className="text-sm text-muted-foreground">
-                  DOJ & FBI authorized specialists
+                  Officially authorized specialists
                 </p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Clock className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">15+ Years Experience</h3>
+                <h3 className="font-semibold mb-2">Complete Business Hub</h3>
                 <p className="text-sm text-muted-foreground">
-                  Trusted by thousands of clients
+                  10+ essential services under one roof
                 </p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <MapPin className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">Northern California</h3>
+                <h3 className="font-semibold mb-2">15+ Years Experience</h3>
                 <p className="text-sm text-muted-foreground">
-                  Multiple convenient locations
+                  Trusted by thousands in Bay Area
                 </p>
               </div>
             </div>
@@ -100,45 +102,41 @@ export default function AboutPage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Story</h2>
               <p className="text-lg text-muted-foreground">
-                Building trust through excellence in fingerprinting services
+                Your complete business services destination in the heart of the
+                Bay Area
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  Mail All Center is part of{' '}
-                  <a
-                    href="https://www.mailallcenter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline font-medium"
-                  >
-                    Mail All Center
-                  </a>
-                  , established to meet the growing demand for top-tier
-                  fingerprinting services in California. We&apos;ve grown from a
-                  local service provider to a trusted partner for individuals
-                  and organizations across Northern California.
+                  Founded in 2010, Mail All Center has grown from a specialized
+                  fingerprinting service into the Bay Area&apos;s premier
+                  one-stop business services destination. We recognized early on
+                  that busy professionals and organizations needed a reliable
+                  partner who could handle multiple essential services with the
+                  same level of expertise and care.
                 </p>
                 <p className="text-muted-foreground">
-                  Our journey began with a simple mission: to provide accurate,
-                  secure, and convenient fingerprinting services while
-                  maintaining the highest standards of privacy and
-                  professionalism. Today, we serve thousands of clients
-                  annually, from healthcare professionals to educators, from
-                  small businesses to large corporations.
+                  Today, we offer a complete suite of business services: Live
+                  and Ink Fingerprinting, Notary Public services, Apostille
+                  Services, Passport Photos, Mailbox Rental, Packing & Shipping,
+                  professional Printing, Lamination, Fax & Copy services, and
+                  secure Shredding. Whether you&apos;re a healthcare
+                  professional needing background checks, a business owner
+                  requiring notarization, or someone who needs convenient
+                  mailbox services, we&apos;ve got you covered under one roof.
                 </p>
               </div>
               <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8">
                 <div className="text-center">
                   <FileText className="h-20 w-20 text-primary/70 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-2">
-                    Part of Mail All Center
+                    10+ Essential Services
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    A comprehensive business services company serving Northern
-                    California
+                    From fingerprinting to shipping - everything you need for
+                    your business requirements
                   </p>
                 </div>
               </div>
@@ -160,11 +158,13 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold">Our Mission</h3>
                 </div>
                 <p className="text-muted-foreground text-center text-sm leading-relaxed">
-                  To provide accurate, secure, and convenient fingerprinting
-                  services while maintaining the highest standards of privacy,
-                  professionalism, and customer care. We strive to make the
-                  fingerprinting process seamless and stress-free for every
-                  client.
+                  To be your trusted one-stop destination for all essential
+                  business services, from DOJ & FBI certified fingerprinting and
+                  notary services to mailbox rental, printing, shipping, and
+                  secure document solutions. We maintain the highest standards
+                  of security, professionalism, and customer care in everything
+                  we do, making complex processes simple and convenient for our
+                  clients.
                 </p>
               </Card>
 
@@ -176,10 +176,13 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold">Our Vision</h3>
                 </div>
                 <p className="text-muted-foreground text-center text-sm leading-relaxed">
-                  To be Northern California&apos;s most trusted fingerprinting
-                  service provider, known for our expertise, reliability, and
-                  commitment to excellence. We envision a future where secure
-                  identification services are accessible to everyone.
+                  To be the Bay Area&apos;s premier comprehensive business
+                  services center, recognized as the go-to destination where
+                  individuals and businesses can efficiently handle all their
+                  essential needs - from certified fingerprinting and document
+                  services to mailbox solutions and office support. We envision
+                  a future where quality business services are accessible,
+                  convenient, and delivered with unmatched expertise.
                 </p>
               </Card>
             </div>
@@ -195,12 +198,13 @@ export default function AboutPage() {
               Our Services
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive solutions for all your documentation and
-              identification needs.
+              From fingerprinting and notary services to mailbox rental and
+              office support - we provide 10+ essential services to meet all
+              your business needs.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
             {aboutData.services.map((service, index) => {
               const Icon = service.icon;
               return (
@@ -259,8 +263,9 @@ export default function AboutPage() {
               Why Choose Mail All Center
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our commitment to excellence sets us apart in the fingerprinting
-              industry.
+              Experience the convenience of having all your essential business
+              services handled by one trusted provider with over 15 years of
+              excellence.
             </p>
           </div>
 

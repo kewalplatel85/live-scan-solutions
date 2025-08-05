@@ -135,27 +135,19 @@ export default function PassportPhotosPage() {
                 <div className="grid grid-cols-2 gap-2 text-xs">
                   <div className="flex items-center">
                     <CheckCircle className="w-3 h-3 mr-1 text-emerald-600" />
-                    <span className="text-muted-foreground">
-                      Professional service
-                    </span>
+                    <span>Professional service</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="w-3 h-3 mr-1 text-emerald-600" />
-                    <span className="text-muted-foreground">
-                      Same-day service
-                    </span>
+                    <span>Same-day service</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="w-3 h-3 mr-1 text-emerald-600" />
-                    <span className="text-muted-foreground">
-                      Multiple copies
-                    </span>
+                    <span>Multiple copies</span>
                   </div>
                   <div className="flex items-center">
                     <CheckCircle className="w-3 h-3 mr-1 text-emerald-600" />
-                    <span className="text-muted-foreground">
-                      All ages welcome
-                    </span>
+                    <span>All ages welcome</span>
                   </div>
                 </div>
               </div>
