@@ -20,6 +20,7 @@ import {
   Phone,
   Printer,
   Scale,
+  Scissors,
   ShoppingBag,
   Star,
   Truck,
@@ -82,6 +83,19 @@ const printingServices = [
       'Presentation folders',
     ],
     sizes: ['Standard', 'Custom', 'Folded', 'Die-cut'],
+  },
+  {
+    icon: Phone,
+    title: 'Fax & Copy Services',
+    description: 'Professional fax transmission and document copying services',
+    badge: 'Fast Service',
+    features: [
+      'Send and receive fax',
+      'International fax service',
+      'High-volume copying',
+      'Document scanning',
+    ],
+    sizes: ['8.5x11"', '8.5x14"', '11x17"', 'A3', 'A4'],
   },
 ];
 
@@ -169,6 +183,15 @@ const finishingServices = [
     name: 'Special Finishes',
     options: ['UV coating', 'Embossing', 'Foil stamping'],
   },
+  {
+    icon: Scissors,
+    name: 'Document Shredding',
+    options: [
+      'Secure document destruction',
+      'HIPAA compliant',
+      'Bulk shredding',
+    ],
+  },
 ];
 
 const industries = [
@@ -190,13 +213,13 @@ export const metadata: Metadata = {
   title:
     'Professional Printing Services Bay Area | Digital & Large Format | Mountain View, CA',
   description:
-    'Complete printing solutions in Mountain View, CA. From business cards to large banners, we handle all your printing needs. Same-day service, competitive prices. Serving Palo Alto, Sunnyvale, San Jose. Call (650) 961-4646.',
+    'Complete printing solutions in Mountain View, CA. From business cards to large banners, plus fax, copy, and shredding services. Same-day service, competitive prices. Serving Palo Alto, Sunnyvale, San Jose. Call (650) 961-4646.',
   keywords:
-    'printing services, digital printing, large format printing, business cards, banners, flyers, document printing, photo printing, mountain view printing, bay area printing, same day printing, professional printing',
+    'printing services, digital printing, large format printing, business cards, banners, flyers, document printing, photo printing, fax services, copy services, document shredding, mountain view printing, bay area printing, same day printing, professional printing',
   openGraph: {
     title: 'Professional Printing Services Bay Area | Digital & Large Format',
     description:
-      'Complete printing solutions from small to large format. Same-day service available in Mountain View, CA.',
+      'Complete printing solutions from small to large format. Fax, copy, and shredding services also available. Same-day service in Mountain View, CA.',
     url: 'https://www.mailallcenter.com/printing',
   },
   alternates: {
@@ -395,19 +418,21 @@ export default function PrintingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {printingServices.map((service, index) => {
               const iconColors = [
                 'bg-blue-50 border-blue-200 dark:bg-blue-950 dark:border-blue-800',
                 'bg-purple-50 border-purple-200 dark:bg-purple-950 dark:border-purple-800',
                 'bg-green-50 border-green-200 dark:bg-green-950 dark:border-green-800',
                 'bg-orange-50 border-orange-200 dark:bg-orange-950 dark:border-orange-800',
+                'bg-red-50 border-red-200 dark:bg-red-950 dark:border-red-800',
               ];
               const textColors = [
                 'text-blue-600 dark:text-blue-400',
                 'text-purple-600 dark:text-purple-400',
                 'text-green-600 dark:text-green-400',
                 'text-orange-600 dark:text-orange-400',
+                'text-red-600 dark:text-red-400',
               ];
 
               return (
@@ -642,19 +667,21 @@ export default function PrintingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {finishingServices.map((service, index) => {
               const iconColors = [
                 'bg-blue-50 border-blue-200 dark:bg-blue-950 dark:border-blue-800',
                 'bg-purple-50 border-purple-200 dark:bg-purple-950 dark:border-purple-800',
                 'bg-green-50 border-green-200 dark:bg-green-950 dark:border-green-800',
                 'bg-orange-50 border-orange-200 dark:bg-orange-950 dark:border-orange-800',
+                'bg-red-50 border-red-200 dark:bg-red-950 dark:border-red-800',
               ];
               const textColors = [
                 'text-blue-600 dark:text-blue-400',
                 'text-purple-600 dark:text-purple-400',
                 'text-green-600 dark:text-green-400',
                 'text-orange-600 dark:text-orange-400',
+                'text-red-600 dark:text-red-400',
               ];
 
               return (
@@ -662,7 +689,7 @@ export default function PrintingPage() {
                   key={index}
                   className="p-6 hover:shadow-lg transition-shadow duration-200 gap-0"
                 >
-                  <CardHeader className="text-center pb-4">
+                  <CardHeader className="text-center p-0 pb-4">
                     <div
                       className={`w-16 h-16 ${iconColors[index]} border rounded-full flex items-center justify-center mx-auto mb-4`}
                     >
@@ -670,9 +697,11 @@ export default function PrintingPage() {
                         className={`w-8 h-8 ${textColors[index]}`}
                       />
                     </div>
-                    <CardTitle className="text-lg">{service.name}</CardTitle>
+                    <CardTitle className="text-lg p-0">
+                      {service.name}
+                    </CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="p-0">
                     <ul className="space-y-3">
                       {service.options.map((option, optionIndex) => (
                         <li
