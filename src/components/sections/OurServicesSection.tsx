@@ -123,7 +123,7 @@ export const OurServicesSection = () => {
               <Link href="/contact">
                 <Button className="w-full sm:w-auto">Contact Us Today</Button>
               </Link>
-              <Link href="/about">
+              <Link href="/about-us">
                 <Button variant="outline" className="w-full sm:w-auto">
                   Learn About Us
                 </Button>

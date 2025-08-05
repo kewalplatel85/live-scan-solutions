@@ -39,8 +39,8 @@ module.exports = {
       '/pack-ship': { priority: 0.8, changefreq: 'weekly' },
       '/mailbox-rental': { priority: 0.7, changefreq: 'weekly' },
       '/printing': { priority: 0.7, changefreq: 'weekly' },
-      '/about': { priority: 0.6, changefreq: 'monthly' },
-      '/contact': { priority: 0.6, changefreq: 'monthly' },
+      '/about-us': { priority: 0.6, changefreq: 'monthly' },
+      '/contact-us': { priority: 0.6, changefreq: 'monthly' },
       '/faq': { priority: 0.5, changefreq: 'monthly' },
     };
 

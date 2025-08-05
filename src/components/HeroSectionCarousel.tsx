@@ -141,8 +141,8 @@ const heroSlides = [
       '15,000+ satisfied customers',
     ],
     cta: {
-      primary: { text: 'About Us', href: '/about' },
-      secondary: { text: 'Our Locations', href: '/contact' },
+      primary: { text: 'About Us', href: '/about-us' },
+      secondary: { text: 'Our Locations', href: '/contact-us' },
     },
     badges: [
       {

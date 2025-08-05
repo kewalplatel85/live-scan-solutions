@@ -9,8 +9,8 @@ Allow: /passport-photos
 Allow: /mailbox-rental
 Allow: /pack-ship
 Allow: /printing
-Allow: /about
-Allow: /contact
+Allow: /about-us
+Allow: /contact-us
 Allow: /faq
 
 # Block access to admin and private areas
