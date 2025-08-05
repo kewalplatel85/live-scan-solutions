@@ -18,12 +18,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.mailallcenter.com'),
   title:
-    'Live Scan Fingerprinting Services Bay Area | DOJ & FBI Certified | Mountain View, CA',
+    'Mail All Center - Live Scan, Notary, Passport Photos & More | Bay Area, Mountain View, CA',
   description:
-    'Professional Live Scan fingerprinting, Notary Public, and Apostille services in Mountain View, CA. Serving Bay Area: Palo Alto, Sunnyvale, San Jose, Cupertino. DOJ & FBI certified. Same-day service, walk-ins welcome. Call (650) 961-4646.',
+    'Mail All Center offers comprehensive business services in Mountain View, CA: Live Scan & Ink Fingerprinting, Notary Public, Apostille, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, Lamination, Fax & Copy, and Shredding. DOJ & FBI certified. Serving entire Bay Area since 2010. Walk-ins welcome! Call (650) 961-4646.',
   keywords:
-    'live scan fingerprinting bay area, fingerprinting mountain view, live scan near me, notary public mountain view, apostille services bay area, background check mountain view, DOJ FBI certified fingerprinting, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, digital fingerprinting california, employment background check, live scan appointment, same day fingerprinting',
+    'Mail All Center, live scan fingerprinting bay area, live scan near me, fingerprinting near me, notary public mountain view, notary near me, notary bay area, passport photos near me, passport photos bay area, mailbox rental mountain view, mailbox rental bay area, packing shipping mountain view, packing shipping bay area, apostille services bay area, apostille near me, printing services mountain view, printing near me, printing bay area, fingerprinting mountain view, business services near me, document services bay area, DOJ FBI certified fingerprinting, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, live scan menlo park, live scan redwood city, notary palo alto, notary sunnyvale, notary san jose, notary cupertino, notary fremont, notary santa clara, digital fingerprinting california, employment background check, live scan appointment, same day fingerprinting, business services mountain view, lamination services, fax copy services, shredding services, professional fingerprinting, ink fingerprinting, walk in fingerprinting, background check services, licensing fingerprinting, employment fingerprinting, silicon valley fingerprinting, silicon valley notary, silicon valley business services',
   authors: [{ name: 'Mail All Center' }],
   creator: 'Mail All Center',
   publisher: 'Mail All Center',
@@ -35,9 +36,10 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'Live Scan Fingerprinting Services Bay Area | DOJ & FBI Certified',
+    title:
+      'Mail All Center - Complete Business Services | Bay Area, Silicon Valley, Mountain View',
     description:
-      'Professional Live Scan fingerprinting, Notary Public, and Apostille services in Mountain View, CA. Serving entire Bay Area with same-day service. DOJ & FBI certified.',
+      'Mail All Center provides Live Scan & Ink Fingerprinting, Notary Public, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, and more in Mountain View, CA. DOJ & FBI certified. Serving entire Bay Area including Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont, Santa Clara with same-day service.',
     url: 'https://www.mailallcenter.com',
     siteName: 'Mail All Center',
     type: 'website',
@@ -47,16 +49,16 @@ export const metadata: Metadata = {
         url: '/assets/Logo/icons8-fingerprint-scan-80.png',
         width: 80,
         height: 80,
-        alt: 'Mail All Center - Professional Fingerprinting Services',
+        alt: 'Mail All Center - Professional Business Services in Mountain View',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@LiveScanSolutions',
-    title: 'Live Scan Fingerprinting Services Bay Area | DOJ & FBI Certified',
+    site: '@MailAllCenter',
+    title: 'Mail All Center - Business Services in Bay Area, Silicon Valley',
     description:
-      'Professional Live Scan fingerprinting, Notary Public, and Apostille services in Mountain View, CA. Same-day service, walk-ins welcome.',
+      'Mail All Center offers Live Scan & Ink Fingerprinting, Notary Public, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, and more. DOJ & FBI certified. Serving Bay Area including Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont. Walk-ins welcome!',
     images: ['/assets/Logo/icons8-fingerprint-scan-80.png'],
   },
   viewport: {
@@ -158,7 +160,7 @@ export default function RootLayout({
               '@id': 'https://www.mailallcenter.com/#organization',
               name: 'Mail All Center',
               description:
-                'Professional Live Scan fingerprinting, Notary Public, and Apostille services in Mountain View, CA. DOJ & FBI certified.',
+                'Mail All Center provides comprehensive business services including Live Scan & Ink Fingerprinting, Notary Public, Apostille Services, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, Lamination, Fax & Copy, and Shredding in Mountain View, CA. DOJ & FBI certified.',
               url: 'https://www.mailallcenter.com',
               telephone: '(650) 961-4646',
               email: 'info@livescansolutions.com',
@@ -188,10 +190,41 @@ export default function RootLayout({
                 'Redwood City, CA',
                 'Fremont, CA',
                 'Campbell, CA',
+                'Los Altos, CA',
+                'Milpitas, CA',
+                'Foster City, CA',
+                'San Mateo, CA',
+                'Belmont, CA',
+                'San Carlos, CA',
+                'Atherton, CA',
+                'East Palo Alto, CA',
+                'Newark, CA',
+                'Union City, CA',
+                'Hayward, CA',
+                'San Leandro, CA',
+                'Oakland, CA',
+                'Berkeley, CA',
+                'Daly City, CA',
+                'South San Francisco, CA',
+                'Brisbane, CA',
+                'Burlingame, CA',
+                'Millbrae, CA',
+                'Los Altos Hills, CA',
+                'Saratoga, CA',
+                'Monte Sereno, CA',
+                'Portola Valley, CA',
+                'Woodside, CA',
+                'Half Moon Bay, CA',
+                'Pacifica, CA',
+                'Bay Area, CA',
+                'Silicon Valley, CA',
+                'San Francisco Bay Area, CA',
+                'South Bay, CA',
+                'Peninsula, CA',
               ],
               hasOfferCatalog: {
                 '@type': 'OfferCatalog',
-                name: 'Fingerprinting and Document Services',
+                name: 'Business and Document Services',
                 itemListElement: [
                   {
                     '@type': 'Offer',
@@ -202,6 +235,17 @@ export default function RootLayout({
                         'Electronic fingerprinting for employment, licensing, and background checks',
                     },
                     price: '17',
+                    priceCurrency: 'USD',
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Ink Fingerprinting',
+                      description:
+                        'Traditional ink fingerprinting services for all applications',
+                    },
+                    price: '25',
                     priceCurrency: 'USD',
                   },
                   {
@@ -224,6 +268,72 @@ export default function RootLayout({
                         'Document authentication for international use',
                     },
                     price: '75',
+                    priceCurrency: 'USD',
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Passport Photos',
+                      description:
+                        'Professional passport photos meeting all requirements',
+                    },
+                    price: '15',
+                    priceCurrency: 'USD',
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Mailbox Rental',
+                      description:
+                        'Private mailbox rental with package receiving services',
+                    },
+                    price: '20',
+                    priceCurrency: 'USD',
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Packing & Shipping',
+                      description:
+                        'Professional packing and shipping services via UPS, FedEx, USPS',
+                    },
+                    price: '10',
+                    priceCurrency: 'USD',
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Printing Services',
+                      description:
+                        'High-quality printing, copying, and lamination services',
+                    },
+                    price: '0.25',
+                    priceCurrency: 'USD',
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Fax & Copy Services',
+                      description:
+                        'Fax sending and receiving, copying services',
+                    },
+                    price: '2',
+                    priceCurrency: 'USD',
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Shredding Services',
+                      description:
+                        'Secure document shredding for sensitive materials',
+                    },
+                    price: '1',
                     priceCurrency: 'USD',
                   },
                 ],

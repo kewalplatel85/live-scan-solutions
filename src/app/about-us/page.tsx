@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     title: 'About Mail All Center | DOJ & FBI Certified Business Services',
     description:
       "Bay Area's trusted DOJ & FBI certified business services provider since 2010. Live scan, notary, mailbox rental, printing, shipping and more.",
-    url: 'https://www.mailallcenter.com/about',
+    url: 'https://www.mailallcenter.com/about-us',
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/about',
+    canonical: 'https://www.mailallcenter.com/about-us',
   },
 };
 

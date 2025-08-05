@@ -29,7 +29,7 @@ export interface ValueItem {
 
 // About page services data
 export const aboutServices: ServiceItem[] = [
-  { name: 'Live & Ink Fingerprinting', icon: FileText },
+  { name: 'Live Scan & Ink Fingerprinting', icon: FileText },
   { name: 'Notary Public', icon: Shield },
   { name: 'Apostille Services', icon: Award },
   { name: 'Passport Photos', icon: Users },

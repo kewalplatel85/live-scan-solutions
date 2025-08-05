@@ -17,34 +17,34 @@ import Link from 'next/link';
 const services = [
   {
     icon: Fingerprint,
-    title: 'Live & Ink Fingerprinting',
+    title: 'Live Scan & Ink Fingerprinting',
     description:
       'Electronic & traditional fingerprinting for background checks',
-    href: '/services/live-scan',
+    href: '/live-scan',
   },
   {
     icon: FileText,
     title: 'Notary Public',
     description: 'Professional document notarization services',
-    href: '/services/notary',
+    href: '/notary',
   },
   {
     icon: CheckCircle,
     title: 'Apostille Services',
     description: 'Document authentication for international use',
-    href: '/services/apostille',
+    href: '/apostille',
   },
   {
     icon: Camera,
     title: 'Passport Photos',
     description: 'Professional photos meeting all official requirements',
-    href: '/services/passport-photos',
+    href: '/passport-photos',
   },
   {
     icon: Mail,
     title: 'Mailbox Rental',
     description: 'Secure mailbox services for business & personal use',
-    href: '/services/mailbox-rental',
+    href: '/mailbox-rental',
   },
   {
     icon: Package,
@@ -123,7 +123,7 @@ export const OurServicesSection = () => {
               <Link href="/contact">
                 <Button className="w-full sm:w-auto">Contact Us Today</Button>
               </Link>
-              <Link href="/about">
+              <Link href="/about-us">
                 <Button variant="outline" className="w-full sm:w-auto">
                   Learn About Us
                 </Button>

@@ -26,37 +26,37 @@ import React, { useState } from 'react';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about' },
+  { name: 'About Us', href: '/about-us' },
   { name: 'FAQ', href: '/faq' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Contact Us', href: '/contact-us' },
 ];
 
 // Services grouped for dropdown menu - all services under /services/
 const services = [
   {
     title: 'Live Scan',
-    href: '/services/live-scan',
+    href: '/live-scan',
     description: 'Electronic fingerprinting services for background checks',
   },
   {
     title: 'Notary Public',
-    href: '/services/notary',
+    href: '/notary',
     description: 'Professional notarization services for documents',
   },
   {
     title: 'Apostille',
-    href: '/services/apostille',
+    href: '/apostille',
     description: 'Document authentication for international use',
   },
   {
     title: 'Passport Photos',
-    href: '/services/passport-photos',
+    href: '/passport-photos',
     description:
       'Professional passport and ID photos that meet all requirements',
   },
   {
     title: 'Mailbox Rental',
-    href: '/services/mailbox-rental',
+    href: '/mailbox-rental',
     description: 'Secure mailbox services for your business or personal needs',
   },
 ];

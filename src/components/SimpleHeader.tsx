@@ -12,9 +12,9 @@ import { useEffect, useRef, useState } from 'react';
 // Navigation data
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about' },
+  { name: 'About Us', href: '/about-us' },
   { name: 'FAQ', href: '/faq' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Contact Us', href: '/contact-us' },
 ];
 
 const services = [

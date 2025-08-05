@@ -36,15 +36,15 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'Apostille Services Bay Area | Document Authentication | Mountain View, CA',
+    'Apostille Services Mountain View | Mail All Center | Document Authentication',
   description:
-    'Professional apostille services for international document authentication in Mountain View, CA. Birth certificates, diplomas, business documents. Fast processing, expert guidance. Serving entire Bay Area. Call (650) 961-4646.',
+    'Mail All Center provides professional apostille services for international document authentication in Mountain View, CA. Birth certificates, diplomas, business documents, marriage certificates. Fast processing, expert guidance. Hague Convention compliance. Serving entire Bay Area. Call (650) 961-4646.',
   keywords:
-    'apostille services bay area, document authentication, apostille mountain view, hague convention, international documents, birth certificate apostille, diploma apostille, business document authentication, document legalization, apostille near me',
+    'apostille services mountain view, Mail All Center apostille, document authentication mountain view, apostille bay area, hague convention mountain view, international documents mountain view, birth certificate apostille mountain view, diploma apostille mountain view, business document authentication, document legalization mountain view, apostille near me, apostille services palo alto, apostille services sunnyvale',
   openGraph: {
-    title: 'Apostille Services Bay Area | Document Authentication',
+    title: 'Apostille Services Mountain View | Mail All Center',
     description:
-      'Professional apostille services for international document authentication in Mountain View, CA. Fast processing, expert guidance.',
+      'Mail All Center provides professional apostille services for international document authentication in Mountain View, CA. Fast processing, expert guidance.',
     url: 'https://www.mailallcenter.com/apostille',
   },
   alternates: {

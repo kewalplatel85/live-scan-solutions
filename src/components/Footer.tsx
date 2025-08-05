@@ -6,13 +6,17 @@ import Link from 'next/link';
 
 const footerLinks = {
   services: [
-    { name: 'Live Scan Fingerprinting', href: '/livescan' },
-    { name: 'Notary Public', href: '/notary-public' },
-    { name: 'Apostille Services', href: '/apostille' },
+    { name: 'Live Scan', href: '/live-scan' },
+    { name: 'Notary Public', href: '/notary' },
+    { name: 'Apostille', href: '/apostille' },
+    { name: 'Passport Photos', href: '/passport-photos' },
+    { name: 'Mailbox Rental', href: '/mailbox-rental' },
+    { name: 'Pack & Ship', href: '/pack-ship' },
+    { name: 'Printing', href: '/printing' },
   ],
   company: [
-    { name: 'About Us', href: '/about' },
-    { name: 'Contact Us', href: '/contact' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Contact Us', href: '/contact-us' },
     { name: 'FAQ', href: '/faq' },
   ],
 };
@@ -30,8 +34,16 @@ export const Footer = () => {
               </div>
               <p className="text-sm text-muted-foreground mb-4">
                 We are an officially certified fingerprinting service provider
-                agency authorized by the Department of Justice and FBI.
+                agency authorized by the Department of Justice and FBI. Serving
+                the Bay Area for over 15 years with professional business
+                services.
               </p>
+              <div className="mb-4">
+                <p className="text-xs text-muted-foreground mb-2">
+                  <strong>Address:</strong> 809 Cuesta Dr, Suite B, Mountain
+                  View, CA 94040
+                </p>
+              </div>
               <div className="flex flex-col space-y-2">
                 <Button variant="outline" size="sm" asChild>
                   <Link href="tel:650-961-4646">
@@ -51,7 +63,7 @@ export const Footer = () => {
             {/* Services */}
             <div>
               <h3 className="font-semibold mb-4">Services</h3>
-              <ul className="space-y-2">
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
                 {footerLinks.services.map((link) => (
                   <li key={link.name}>
                     <Link

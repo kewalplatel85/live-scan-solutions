@@ -6,19 +6,19 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'Notary Public Services Mountain View | Licensed Notary | Bay Area, CA',
+    'Notary Public Services Bay Area | Mail All Center | Licensed Notary Near Me',
   description:
-    'Professional notary public services in Mountain View, CA. Licensed notaries for contracts, real estate, wills, affidavits. Walk-ins welcome, same-day service. Serving entire Bay Area. Call (650) 961-4646.',
+    'Mail All Center offers professional notary public services in Mountain View, CA and entire Bay Area. Licensed notaries for contracts, real estate, wills, affidavits, power of attorney, loan documents. Walk-ins welcome, same-day service. Mobile notary available. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont. Call (650) 961-4646.',
   keywords:
-    'notary public mountain view, notary services bay area, document notarization, licensed notary, mobile notary, notary near me, contract notarization, real estate notary, will notarization, affidavit notary, same day notary',
+    'notary public mountain view, notary services bay area, notary near me, notary public near me, Mail All Center notary, document notarization mountain view, licensed notary mountain view, mobile notary mountain view, mobile notary bay area, contract notarization, real estate notary mountain view, will notarization, affidavit notary, same day notary, power of attorney notarization, loan document notary, notary public palo alto, notary public sunnyvale, notary public san jose, notary public cupertino, notary public fremont, notary public santa clara, notary services silicon valley, bay area notary services, peninsula notary services, south bay notary',
   openGraph: {
-    title: 'Notary Public Services Mountain View | Licensed Notary',
+    title: 'Notary Public Services Mountain View | Mail All Center',
     description:
-      'Professional notary public services in Mountain View, CA. Licensed notaries, walk-ins welcome, same-day service.',
-    url: 'https://www.mailallcenter.com/notary-public',
+      'Mail All Center provides professional notary public services in Mountain View, CA. Licensed notaries, walk-ins welcome, same-day service.',
+    url: 'https://www.mailallcenter.com/notary',
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/notary-public',
+    canonical: 'https://www.mailallcenter.com/notary',
   },
 };
 

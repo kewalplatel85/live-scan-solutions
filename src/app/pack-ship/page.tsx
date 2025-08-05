@@ -11,6 +11,25 @@ import {
   Shield,
   Truck,
 } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title:
+    'Packing & Shipping Services Mountain View | Mail All Center | UPS, FedEx, USPS',
+  description:
+    'Mail All Center offers professional packing and shipping services in Mountain View, CA. Expert packing, UPS, FedEx, USPS shipping, package tracking. Safe handling of fragile items. Serving Bay Area businesses and individuals. Call (650) 961-4646.',
+  keywords:
+    'packing services mountain view, shipping services mountain view, Mail All Center shipping, UPS shipping mountain view, FedEx shipping mountain view, USPS shipping mountain view, package packing mountain view, fragile item packing, professional packing services, shipping near me, package services mountain view, shipping center mountain view, pack and ship mountain view, shipping solutions bay area',
+  openGraph: {
+    title: 'Packing & Shipping Services Mountain View | Mail All Center',
+    description:
+      'Mail All Center offers professional packing and shipping services with UPS, FedEx, USPS. Expert handling of all package types in Mountain View, CA.',
+    url: 'https://www.mailallcenter.com/pack-ship',
+  },
+  alternates: {
+    canonical: 'https://www.mailallcenter.com/pack-ship',
+  },
+};
 
 export default function PackShipPage() {
   return (

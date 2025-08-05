@@ -26,7 +26,7 @@ export const AboutSection = () => {
             licensing or employment purposes.
           </p>
           <Button size="lg" asChild>
-            <Link href="/about">About Us</Link>
+            <Link href="/about-us">About Us</Link>
           </Button>
         </div>
       </div>
