@@ -18,8 +18,7 @@ import {
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title:
-    'Passport Photos Mountain View | Mail All Center | $9.99 Professional Photos',
+  title: 'Fast and professional—Passport Photos ready in 5 minutes',
   description:
     'Mail All Center offers professional passport photos in Mountain View, CA for only $9.99 - cheapest in Bay Area! US passport, visa, ID photos that meet all official requirements. Same-day service, guaranteed acceptance or free retake. Walk-ins welcome. Call (650) 961-4646.',
   keywords:

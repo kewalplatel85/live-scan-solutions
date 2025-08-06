@@ -154,7 +154,7 @@ const locations = [
 
 export const metadata: Metadata = {
   title:
-    'Live Scan Fingerprinting Bay Area | Mail All Center | DOJ & FBI Certified Near Me',
+    'Mail All Center: Top-rated Live Scan, Fingerprinting service - Walk-in Welcome',
   description:
     'Mail All Center provides professional Live Scan & Ink fingerprinting services in Mountain View, CA and entire Bay Area. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont with same-day processing, walk-ins welcome. DOJ & FBI certified. Employment, licensing, background checks. Starting at $17. Call (650) 961-4646.',
   keywords:

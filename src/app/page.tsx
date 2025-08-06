@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'Mail All Center | Business Services Mountain View & Bay Area | Live Scan, Notary, Passport Photos & More',
+    'Top-rated Live Scan, Fingerprinting, Notary, Apostille, Passport Photo and Shipping Services | Mail All Center',
   description:
     'Mail All Center is your trusted business service provider in Mountain View, CA, serving the entire Bay Area. We offer Live Scan & Ink Fingerprinting, Notary Public, Apostille, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, and more. DOJ & FBI certified with over 15 years of experience. Same-day service, walk-ins welcome. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont, Santa Clara, and all Bay Area cities. Call (650) 961-4646.',
   keywords:

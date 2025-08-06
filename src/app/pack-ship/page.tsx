@@ -15,7 +15,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'Packing & Shipping Services Mountain View | Mail All Center | UPS, FedEx, USPS',
+    'Ship Packages Fast  Domestic & International Shipping | UPS, FedEx, USPS and DHL',
   description:
     'Mail All Center offers professional packing and shipping services in Mountain View, CA. Expert packing, UPS, FedEx, USPS shipping, package tracking. Safe handling of fragile items. Serving Bay Area businesses and individuals. Call (650) 961-4646.',
   keywords:

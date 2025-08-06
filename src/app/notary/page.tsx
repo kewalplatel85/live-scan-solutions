@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'Notary Public Services Bay Area | Mail All Center | Licensed Notary Near Me',
+    'Trusted Notary Public & Fast Apostille Services in Bay Area| Walk-In & Mobile Notary Available',
   description:
     'Mail All Center offers professional notary public services in Mountain View, CA and entire Bay Area. Licensed notaries for contracts, real estate, wills, affidavits, power of attorney, loan documents. Walk-ins welcome, same-day service. Mobile notary available. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont. Call (650) 961-4646.',
   keywords:

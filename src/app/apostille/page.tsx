@@ -36,7 +36,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'Apostille Services Mountain View | Mail All Center | Document Authentication',
+    'Professional Apostille Services for International Document Authentication',
   description:
     'Mail All Center provides professional apostille services for international document authentication in Mountain View, CA. Birth certificates, diplomas, business documents, marriage certificates. Fast processing, expert guidance. Hague Convention compliance. Serving entire Bay Area. Call (650) 961-4646.',
   keywords:
