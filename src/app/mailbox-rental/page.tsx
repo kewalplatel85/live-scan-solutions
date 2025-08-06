@@ -19,7 +19,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title:
-    'Mailbox Rental Bay Area | Mail All Center | Private Mailbox Service Near Me',
+    'Mailbox Rental Services | Get a Real Street Address | Mail All Center',
   description:
     'Mail All Center offers secure mailbox rental services in Mountain View, CA and entire Bay Area. Get a real street address with 24/7 access, package receiving, mail forwarding. Perfect for businesses, remote workers, and travelers. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont. Starting at $20/month. Call (650) 961-4646.',
   keywords:

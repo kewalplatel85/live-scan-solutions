@@ -210,8 +210,7 @@ const industries = [
 ];
 
 export const metadata: Metadata = {
-  title:
-    'Printing Services Mountain View | Mail All Center | Copy, Fax, Lamination',
+  title: 'Print Documents, Flyers & More | Walk-In Printing Near You',
   description:
     'Mail All Center offers complete printing solutions in Mountain View, CA: Digital printing, large format printing, business cards, banners, flyers, lamination, fax, copy, and shredding services. Same-day service, competitive prices. Serving Bay Area. Call (650) 961-4646.',
   keywords:
