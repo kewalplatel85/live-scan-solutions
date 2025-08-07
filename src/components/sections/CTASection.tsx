@@ -38,7 +38,7 @@ export const CTASection = ({
             className="text-base bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
             asChild
           >
-            <Link href="/contact">Schedule Service</Link>
+            <Link href="/contact-us">Schedule Service</Link>
           </Button> */}
         </div>
       </div>

@@ -30,7 +30,7 @@ export const navigationConfig: NavigationConfigWithoutDropdown = {
 //     { name: 'Mailbox Rental', href: '/services/mailbox-rental' },
 //     { name: 'About Us', href: '/about' },
 //     { name: 'FAQ', href: '/faq' },
-//     { name: 'Contact', href: '/contact' },
+//     { name: 'Contact', href: '/contact-us' },
 //   ],
 //   dropdownSections: [
 //     {

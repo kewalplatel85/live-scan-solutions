@@ -112,7 +112,7 @@ export const NewHeroSection = () => {
                 className="text-base px-6"
                 asChild
               >
-                <Link href="/contact">
+                <Link href="/contact-us">
                   <MapPin className="mr-2 h-4 w-4" />
                   Find Location
                 </Link>

@@ -80,7 +80,7 @@ const heroSlides = [
     ],
     cta: {
       primary: { text: 'Notary Services', href: '/notary-public' },
-      secondary: { text: 'Contact Us', href: '/contact' },
+      secondary: { text: 'Contact Us', href: '/contact-us' },
     },
     badges: [
       {

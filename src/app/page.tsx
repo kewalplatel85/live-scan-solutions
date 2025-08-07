@@ -276,8 +276,15 @@ export default function HomePage() {
 
             <div className="text-center mt-8 space-y-2">
               <p className="text-sm text-muted-foreground">
-                <strong>Address:</strong> 809 Cuesta Dr, Suite B, Mountain View,
-                CA 94040
+                <strong>Address:</strong>{' '}
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=809+Cuesta+Dr+Suite+B+Mountain+View+CA+94040"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline font-semibold"
+                >
+                  809 Cuesta Dr, Suite B, Mountain View, CA 94040
+                </a>
               </p>
               <p className="text-sm text-muted-foreground">
                 Call{' '}

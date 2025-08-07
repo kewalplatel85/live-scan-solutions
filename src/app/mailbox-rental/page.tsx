@@ -67,10 +67,16 @@ export default function MailboxRentalPage() {
         ]}
         buttons={[
           {
-            text: '(650) 961-4646',
+            text: 'Get Your Mailbox Today',
+            href: '/contact-us',
+            variant: 'default',
+            size: 'lg',
+          },
+          {
+            text: 'Call (650) 961-4646',
             href: 'tel:650-961-4646',
             icon: Phone,
-            variant: 'default',
+            variant: 'outline',
             size: 'lg',
           },
         ]}

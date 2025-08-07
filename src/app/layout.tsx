@@ -1,4 +1,3 @@
-import { BrandHeader } from '@/components/BrandHeader';
 import { Footer } from '@/components/Footer';
 import { NavigationHeader } from '@/components/NavigationHeader';
 import { navigationConfig } from '@/data/navigation';
@@ -155,10 +154,10 @@ export default function RootLayout({
             `}
           </Script>
 
-          <BrandHeader
+          {/* <BrandHeader
             contactInfo={navigationConfig.contactInfo}
             className="hidden lg:block"
-          />
+          /> */}
           <NavigationHeader
             config={navigationConfig}
             contactInfo={navigationConfig.contactInfo}

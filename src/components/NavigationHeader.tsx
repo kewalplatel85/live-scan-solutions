@@ -5,11 +5,13 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 import { NavigationConfig } from '@/components/types/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { navigationConfig } from '@/data/navigation';
 import { cn } from '@/lib/utils';
 import { ChevronDown, ChevronRight, Menu, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
+import { BrandHeader } from './BrandHeader';
 
 interface NavigationHeaderProps {
   config: NavigationConfig;
@@ -141,14 +143,19 @@ export const NavigationHeader = ({
     <header
       className={cn(
         'sticky top-0 z-50 w-full border-b bg-white/95 dark:bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-900/60',
+        // 'w-full border-b bg-white/95 dark:bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-900/60',
         className
       )}
     >
+      <BrandHeader
+        contactInfo={navigationConfig.contactInfo}
+        className="hidden lg:block"
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between lg:justify-center">
           {/* Mobile Logo (visible only on mobile) */}
           <div className="lg:hidden">
-            <LogoLink size="md" />
+            <LogoLink size="md" animated variant="gradient" />
           </div>
 
           {/* Desktop Navigation */}

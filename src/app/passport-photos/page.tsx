@@ -73,7 +73,7 @@ export default function PassportPhotosPage() {
         buttons={[
           {
             text: 'Get Your Photos Today',
-            href: '#contact',
+            href: '/contact-us',
             variant: 'default',
             size: 'lg',
           },

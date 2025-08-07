@@ -160,7 +160,7 @@ export const metadata: Metadata = {
   keywords:
     'live scan fingerprinting mountain view, live scan fingerprinting bay area, live scan near me, fingerprinting near me, ink fingerprinting mountain view, fingerprinting services bay area, digital fingerprinting mountain view, background check mountain view, employment screening mountain view, DOJ certified fingerprinting, FBI approved fingerprinting, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, live scan menlo park, live scan redwood city, same day fingerprinting, walk-in fingerprinting, Mail All Center fingerprinting, fingerprinting silicon valley, fingerprinting peninsula, fingerprinting south bay',
   openGraph: {
-    title: 
+    title:
       'Get your Live Scan fingerprinting done fast in Mountain View, CA. Walk-ins welcome. Trusted by local schools, nonprofits & businesses. Only $17 rolling fee!',
     description:
       'Mail All Center provides professional Live Scan & Ink fingerprinting in Mountain View, CA. DOJ & FBI certified. Walk-ins welcome, same-day processing.',
@@ -195,10 +195,17 @@ export default function LiveScanPage() {
         ctaText="Please call us to schedule your appointment"
         buttons={[
           {
-            text: '(650) 961-4646',
+            text: 'Get Your Fingerprinting Today',
+            href: '/contact-us',
+            variant: 'default',
+            size: 'lg',
+          },
+          {
+            text: 'Call (650) 961-4646',
             href: 'tel:650-961-4646',
             icon: Phone,
             variant: 'outline',
+            size: 'lg',
           },
         ]}
         quickInfo={[
