@@ -30,7 +30,7 @@ export const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-2 mb-4">
-                <Logo size="md" showText={true} />
+                <Logo size="md" showText={true} animated variant="gradient" />
               </div>
               <p className="text-sm text-muted-foreground mb-4">
                 We are an officially certified fingerprinting service provider

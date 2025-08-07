@@ -290,7 +290,13 @@ export default function ApostillePage() {
         ctaText="Please call us to schedule your appointment"
         buttons={[
           {
-            text: '(650) 961-4646',
+            text: 'Apostille Your Documents Today',
+            href: '/contact-us',
+            variant: 'default',
+            size: 'lg',
+          },
+          {
+            text: 'Call (650) 961-4646',
             href: 'tel:650-961-4646',
             icon: Phone,
             variant: 'outline',

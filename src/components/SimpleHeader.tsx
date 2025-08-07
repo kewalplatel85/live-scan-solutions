@@ -92,7 +92,18 @@ export const SimpleHeader = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <LogoLink size="lg" />
+            <LogoLink
+              size="lg"
+              animated
+              variant="gradient"
+              className="hidden sm:block"
+            />
+            <LogoLink
+              size="md"
+              animated
+              variant="gradient"
+              className="block sm:hidden"
+            />
           </div>
 
           {/* Desktop Navigation */}

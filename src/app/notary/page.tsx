@@ -119,10 +119,17 @@ export default function NotaryPublicPage() {
         ctaText="Please call us to schedule your appointment"
         buttons={[
           {
-            text: '(650) 961-4646',
+            text: 'Get Documents Notarized',
+            href: '/contact-us',
+            variant: 'default',
+            size: 'lg',
+          },
+          {
+            text: 'Call (650) 961-4646',
             href: 'tel:650-961-4646',
             icon: Phone,
             variant: 'outline',
+            size: 'lg',
           },
         ]}
         rightContent={

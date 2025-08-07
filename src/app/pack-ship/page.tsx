@@ -66,7 +66,13 @@ export default function PackShipPage() {
         ctaText="Get expert packing and shipping services today"
         buttons={[
           {
-            text: '(650) 961-4646',
+            text: 'Send Your Package Today',
+            href: '/contact-us',
+            variant: 'default',
+            size: 'lg',
+          },
+          {
+            text: 'Call (650) 961-4646',
             href: 'tel:650-961-4646',
             icon: Phone,
             variant: 'outline',

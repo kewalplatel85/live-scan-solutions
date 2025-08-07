@@ -264,7 +264,7 @@ export const CustomerTypesAccordion = () => {
             requiring background checks.
           </p>
           <Button asChild>
-            <Link href="/contact">Contact Us for Your Specific Needs</Link>
+            <Link href="/contact-us">Contact Us for Your Specific Needs</Link>
           </Button>
         </div>
       </div>

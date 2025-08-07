@@ -120,7 +120,7 @@ export const OurServicesSection = () => {
               Save time and get everything done in one visit.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link href="/contact">
+              <Link href="/contact-us">
                 <Button className="w-full sm:w-auto">Contact Us Today</Button>
               </Link>
               <Link href="/about-us">

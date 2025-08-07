@@ -17,7 +17,8 @@ export const BrandHeader = ({ className, contactInfo }: BrandHeaderProps) => {
   return (
     <div
       className={cn(
-        'w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b',
+        // 'w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b',
+        'border-b',
         className
       )}
     >
@@ -25,7 +26,7 @@ export const BrandHeader = ({ className, contactInfo }: BrandHeaderProps) => {
         <div className="flex items-center py-4 relative">
           {/* Center - Logo (absolutely centered) */}
           <div className="flex-1 flex justify-center">
-            <LogoLink size="lg" />
+            <LogoLink size="lg" animated variant="gradient" />
           </div>
 
           {/* Right side - Contact Button and Theme Toggle (positioned absolutely) */}

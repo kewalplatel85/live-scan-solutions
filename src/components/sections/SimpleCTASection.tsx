@@ -26,7 +26,7 @@ export const SimpleCTASection = () => {
             className="text-base bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
             asChild
           >
-            <Link href="/contact">
+            <Link href="/contact-us">
               <MapPin className="mr-2 h-5 w-5" />
               Find Locations
             </Link>
