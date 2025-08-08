@@ -38,7 +38,7 @@ export const WhyChooseUsSection = () => {
             Why Choose Mail All Center?
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Trusted by thousands for reliable, professional document services
+            Trusted by thousands for reliable, professional document and shipping (UPS, Fedex, DHL and USPS) services
           </p>
         </div>
 
