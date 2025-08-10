@@ -73,7 +73,7 @@ export default function ContactPage() {
                     href="info@mailallcenter.com"
                     className="text-primary hover:text-primary/80 transition-colors font-medium"
                   >
-                    mailallcenter1@gmail.com
+                    info@mailallcenter.com
                   </a>
                   <p className="text-sm text-muted-foreground mt-1">
                     We respond within 24 hours
@@ -233,7 +233,7 @@ export default function ContactPage() {
                 size="lg"
                 className="h-12 px-8 text-lg font-semibold border-2"
               >
-                <Link href="mailto:mailallcenter1@gmail.com">
+                <Link href="mailto:info@mailallcenter.com">
                   <Mail className="mr-3 h-5 w-5" />
                   Send Us a Message
                 </Link>

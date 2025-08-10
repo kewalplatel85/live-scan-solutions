@@ -54,7 +54,7 @@ export const Footer = () => {
                 <Button variant="outline" size="sm" asChild>
                   <Link href="mailto:info@mailallcenter.com">
                     <Mail className="mr-2 h-4 w-4" />
-                    mailallcenter1@gmail.com
+                    info@mailallcenter.com
                   </Link>
                 </Button>
               </div>
