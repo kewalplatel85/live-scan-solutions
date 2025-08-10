@@ -70,7 +70,7 @@ export default function ContactPage() {
                     Email
                   </h3>
                   <a
-                    href="mailto:mailallcenter1@gmail.com"
+                    href="info@mailallcenter.com"
                     className="text-primary hover:text-primary/80 transition-colors font-medium"
                   >
                     mailallcenter1@gmail.com

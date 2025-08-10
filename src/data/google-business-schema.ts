@@ -14,7 +14,7 @@ export const googleBusinessSchema = {
   // Contact Information
   url: 'https://www.mailallcenter.com',
   telephone: '(650) 961-4646',
-  email: 'mailallcenter1@gmail.com',
+  email: 'info@mailallcenter.com',
 
   // Location Information
   address: {
