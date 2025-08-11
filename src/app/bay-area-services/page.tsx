@@ -17,13 +17,14 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'Bay Area Business Services | Mail All Center | Live Scan, Notary & More',
+    'Mail All Center – Walk-In Live Scan, Notary, Apostille & Mailbox Rentals',
   description:
     'Mail All Center provides comprehensive business services throughout the Bay Area: Live Scan & Ink Fingerprinting, Notary Public, Apostille, Passport Photos, Mailbox Rental, Packing & Shipping, Printing. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont, Santa Clara, Mountain View. DOJ & FBI certified. Same-day service. Call (650) 961-4646.',
   keywords:
-    'bay area business services, business services near me, live scan bay area, live scan near me, fingerprinting bay area, fingerprinting near me, notary bay area, notary near me, passport photos bay area, passport photos near me, apostille bay area, apostille near me, mailbox rental bay area, packing shipping bay area, printing services bay area, silicon valley business services, peninsula business services, south bay business services, mountain view business services, palo alto business services, sunnyvale business services, san jose business services, cupertino business services, fremont business services, santa clara business services, professional services bay area, document services bay area, same day services bay area',
+    'walk-in live scan, FD258, FBI background check, ink fingerprint, walkin live scan, walkin notary public,school voluteers live scan, boys scouts live scan, real estate notary,church live scan, real estate live scan, sunnyvale live scan,bay area business services, business services near me, live scan bay area, live scan near me, fingerprinting bay area, fingerprinting near me, notary bay area, notary near me, passport photos bay area, passport photos near me, apostille bay area, apostille near me, mailbox rental near me, packing shipping near me, printing services near me, south bay business services, mountain view business services, palo alto business services, sunnyvale business services, san jose business services, cupertino business services, fremont business services, santa clara business services, professional services bay area, document services bay area, same day services',
   openGraph: {
-    title: 'Bay Area Business Services | Mail All Center',
+    title:
+      'Mail All Center – Walk-In Live Scan, Notary, Apostille & Mailbox Rental',
     description:
       'Comprehensive business services throughout the Bay Area: Live Scan, Notary, Passport Photos, Mailbox Rental, Packing & Shipping, Printing. Serving all Bay Area cities.',
     url: 'https://www.mailallcenter.com/bay-area-services',
@@ -109,9 +110,9 @@ export default function BayAreaServicesPage() {
   return (
     <main>
       <GenericHero
-        title="Complete Business Services Throughout the Bay Area"
-        subtitle="Professional Document and Business Services Serving All Bay Area Cities"
-        description="Mail All Center provides comprehensive business services from our Mountain View location, serving the entire Bay Area including Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont, and beyond. DOJ & FBI certified with over 15 years of trusted service."
+        title="Mail All Center – Walk-In Live Scan, Notary, Apostille & Mailbox Rentals"
+        subtitle="Professional live scan and Business Services Serving All Bay Area Cities"
+        description="Mail All Center provides comprehensive business services from our Mountain View location, serving the entire Bay Area including Mountain View,Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont, and beyond. DOJ & FBI certified with over 15 years of trusted service."
         buttons={[
           {
             text: 'View All Services',
