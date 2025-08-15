@@ -8,9 +8,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Contact Mail All Center | Location & Hours | Mountain View, CA',
   description:
-    'Contact Mail All Center in Mountain View, CA. Located at 809 Cuesta Dr, Suite B. Phone: (650) 961-4646. Hours: Mon-Fri 10AM-5PM, Sat 10AM-2PM. Serving entire Bay Area with professional fingerprinting services.',
+    'Contact Mail All Center in Mountain View, CA. Located at 809 Cuesta Dr, Suite B. Phone: (650) 961-4646. Hours: Mon-Fri 10AM-5PM, Sat 10AM-2PM. Serving entire Bay Area with professional fingerprinting services. Supporting school districts like Mountain View, Palo Alto, Sunnyvale, Cupertino, and organizations like Boy Scouts and AYSO.',
   keywords:
-    'contact Mail All Center, mountain view fingerprinting location, live scan hours, fingerprinting near me, 809 cuesta dr mountain view, bay area fingerprinting contact, live scan phone number',
+    'contact Mail All Center, mountain view fingerprinting location, live scan hours, fingerprinting near me, 809 cuesta dr mountain view, bay area fingerprinting contact, live scan phone number, Mountain View School District, Los Altos School District, Sunnyvale School District, Cupertino School District, Menlo Park School District, Palo Alto School District, Santa Clara School District, San Jose School District, Boys Scouts, Sunnyvale Boy Scouts, Redwood City School District, Los Gatos School District, AYSO',
   openGraph: {
     title: 'Contact Mail All Center | Location & Hours',
     description:
