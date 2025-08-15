@@ -14,12 +14,26 @@ import {
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title:
-    'About Mail All Center | DOJ & FBI Certified Business Services | Mountain View, CA',
+  title: 'About Mail All Center | DOJ & FBI Certified Business Services',
   description:
-    "Learn about Mail All Center, Bay Area's trusted DOJ & FBI certified business services provider since 2010. Live scan fingerprinting, notary, apostille, passport photos, mailbox rental, packing & shipping, printing, lamination, fax & copy, and shredding services.",
-  keywords:
-    'about Mail All Center, DOJ FBI certified, business services mountain view, live scan fingerprinting, notary public, apostille services, passport photos, mailbox rental, packing shipping, printing lamination, fax copy shredding, bay area business center',
+    "Bay Area's trusted DOJ & FBI certified business services provider since 2010. Live scan, notary, mailbox rental, printing, shipping and more. Supporting school districts like Mountain View, Palo Alto, Sunnyvale, Cupertino, and organizations like Boy Scouts and AYSO.",
+  keywords: [
+    'DOJ FBI certified business services',
+    'live scan fingerprinting bay area',
+    'Mountain View School District',
+    'Los Altos School District',
+    'Sunnyvale School District',
+    'Cupertino School District',
+    'Menlo Park School District',
+    'Palo Alto School District',
+    'Santa Clara School District',
+    'San Jose School District',
+    'Boys Scouts',
+    'Sunnyvale Boy Scouts',
+    'Redwood City School District',
+    'Los Gatos School District',
+    'AYSO',
+  ],
   openGraph: {
     title: 'About Mail All Center | DOJ & FBI Certified Business Services',
     description:
