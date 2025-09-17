@@ -153,11 +153,6 @@ export default function RootLayout({
               gtag('config', 'G-LD5G3H781T');
             `}
           </Script>
-
-          {/* <BrandHeader
-            contactInfo={navigationConfig.contactInfo}
-            className="hidden lg:block"
-          /> */}
           <NavigationHeader
             config={navigationConfig}
             contactInfo={navigationConfig.contactInfo}

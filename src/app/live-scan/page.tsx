@@ -386,82 +386,6 @@ export default function LiveScanPage() {
       />
       <CustomerTypesAccordion />
 
-      {/* Certifications Section */}
-      {/* <section className="py-16 bg-muted/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Certified & Authorized Provider
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We are officially certified and authorized by law enforcement
-              agencies to provide secure and reliable fingerprinting services.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {certifications.map((cert, index) => (
-              <Card key={index} className="text-center p-8">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <cert.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{cert.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{cert.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Services Comparison */}
-      {/* <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Choose Your Fingerprinting Method
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We offer both modern digital Live Scan and traditional ink
-              fingerprinting to meet all your requirements.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {liveScanFeatures.map((feature, index) => (
-              <Card key={index} className="p-8">
-                <CardHeader>
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                      <feature.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <CardTitle className="text-xl">{feature.title}</CardTitle>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground mb-6">
-                    {feature.description}
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {feature.benefits.map((benefit, benefitIndex) => (
-                      <li key={benefitIndex} className="flex items-center">
-                        <Check className="w-4 h-4 mr-3 text-green-600" />
-                        <span className="text-sm">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* Service Options */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -577,13 +501,6 @@ export default function LiveScanPage() {
                       </li>
                     ))}
                   </ul>
-                  {/* FUTURE: Add a feature flag and uncomment this section */}
-                  {/* <Button
-                    className="w-full"
-                    variant={plan.popular ? 'default' : 'outline'}
-                  >
-                    Get Started
-                  </Button> */}
                 </CardContent>
               </Card>
             ))}
@@ -619,62 +536,6 @@ export default function LiveScanPage() {
           </div>
         </div>
       </section>
-
-      {/* Payment Options */}
-      {/* <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Flexible Payment Options
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We offer convenient payment methods to make your experience
-              seamless.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-6 text-center">
-              <CardHeader>
-                <CreditCard className="w-12 h-12 mx-auto mb-4 text-blue-600" />
-                <CardTitle>Individual Payments</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Cash, credit cards, and debit cards accepted for individual
-                  services.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6 text-center">
-              <CardHeader>
-                <Building2 className="w-12 h-12 mx-auto mb-4 text-purple-600" />
-                <CardTitle>Corporate Accounts</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Monthly invoicing available for businesses with service
-                  agreements.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6 text-center">
-              <CardHeader>
-                <Receipt className="w-12 h-12 mx-auto mb-4 text-orange-600" />
-                <CardTitle>Payment Vouchers</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Special discount pricing and payment vouchers for employee
-                  programs.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section> */}
     </main>
   );
 }
