@@ -28,18 +28,12 @@ export default function ContactPage() {
       <div className="container mx-auto px-4 py-12">
         {/* Page Header */}
         <div className="text-center mb-8">
-          {/* <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
-            <MessageSquare className="h-8 w-8 text-primary" />
-          </div> */}
           <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-4">
             Contact{' '}
             <span className="bg-gradient-to-r from-primary via-blue-600 to-primary bg-clip-text text-transparent">
               Us
             </span>{' '}
           </h1>
-          {/* <h1 className="text-3xl md:text-6xl font-bold text-foreground mb-6">
-            Contact <span className="text-primary">Us</span>
-          </h1> */}
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Have questions or need assistance? We&apos;re here to help. Reach
             out to us through any of the methods below, and our team will

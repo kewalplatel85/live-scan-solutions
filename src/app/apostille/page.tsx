@@ -201,33 +201,6 @@ const serviceOptions = [
   },
 ];
 
-// const whyChooseUs = [
-//   {
-//     icon: Award,
-//     title: 'Certified Expertise',
-//     description:
-//       'Years of experience in document authentication and apostille services',
-//   },
-//   {
-//     icon: Globe,
-//     title: 'International Knowledge',
-//     description:
-//       'Deep understanding of Hague Convention requirements and country-specific needs',
-//   },
-//   {
-//     icon: Shield,
-//     title: 'Secure Processing',
-//     description:
-//       'Your sensitive documents are handled with the highest security standards',
-//   },
-//   {
-//     icon: Clock,
-//     title: 'Fast Turnaround',
-//     description:
-//       'Efficient processing with standard and expedited options available',
-//   },
-// ];
-
 const faqItems = [
   {
     question: 'What is an Apostille?',
@@ -709,15 +682,6 @@ export default function ApostillePage() {
                     <p className="text-muted-foreground text-center">
                       {option.description}
                     </p>
-                    {/* <div className="text-center"> */}
-                    {/* FUTURE: Add a feature flag and uncomment this section */}
-                    {/* <div className="text-2xl font-bold text-primary">
-                        {option.price}
-                      </div> */}
-                    {/* <div className="text-sm text-muted-foreground">
-                        {option.timeframe}
-                      </div> */}
-                    {/* </div> */}
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
@@ -731,13 +695,6 @@ export default function ApostillePage() {
                         </li>
                       ))}
                     </ul>
-                    {/* FUTURE: Add a feature flag and uncomment this section */}
-                    {/* <Button
-                    className="w-full mt-6"
-                    variant={option.popular ? 'default' : 'outline'}
-                  >
-                    Get Started
-                  </Button> */}
                   </CardContent>
                 </Card>
               );
@@ -745,39 +702,6 @@ export default function ApostillePage() {
           </div>
         </div>
       </section>
-
-      {/* Why Choose Us */}
-      {/* <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Mail All Center?
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Experience the difference with our professional apostille
-              services.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whyChooseUs.map((item, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">
-                    {item.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* FAQ Section */}
       <section className="py-16 bg-background">

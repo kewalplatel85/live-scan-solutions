@@ -92,10 +92,7 @@ export default function NotaryPublicPage() {
 
   const benefits = [
     { text: 'Same-day processing' },
-    // { text: 'Licensed professionals' },
-    // { text: 'Secure handling' },
     { text: 'Walk-ins welcome' },
-    // { text: 'Walk-in and on-site services' },
     { text: 'Licensed Notaries with extensive experience' },
     { text: 'Confidential handling of sensitive documents' },
     { text: 'Serving Mountain View and the Bay Area' },

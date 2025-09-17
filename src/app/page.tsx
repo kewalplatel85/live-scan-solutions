@@ -1,5 +1,3 @@
-// import { HeroSectionCarousel } from '@/components/HeroSectionCarousel';
-// import { ServicesBanner } from '@/components/ServicesBanner';
 import { FAQSection } from '@/components/sections/FAQSection';
 import { NewHeroSection } from '@/components/sections/NewHeroSection';
 import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
@@ -200,9 +198,6 @@ export default function HomePage() {
       {/* New Hero with clear value proposition */}
       <NewHeroSection />
 
-      {/* Our Services - compact grid */}
-      {/* <OurServicesSection /> */}
-
       {/* Why choose us - trust indicators */}
       <WhyChooseUsSection />
 
@@ -300,13 +295,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Quick FAQ - most common questions */}
-      {/* <QuickFAQSection /> */}
       <FAQSection />
-
-      {/* Final CTA */}
-      {/* <SimpleCTASection /> */}
     </main>
   );
 }
