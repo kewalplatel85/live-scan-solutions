@@ -1,4 +1,5 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import {
@@ -37,6 +38,17 @@ export const metadata: Metadata = {
 export default function PassportPhotosPage() {
   return (
     <main>
+      {/* Business Schema */}
+      <SEOStructuredData type="business" />
+
+      {/* Service Schema */}
+      <SEOStructuredData
+        type="service"
+        serviceName="Professional Passport Photos"
+        serviceDescription="Professional passport photos for US passports, visas, and international ID documents. Same-day service with guaranteed acceptance or free retake. Starting at $9.99."
+        price="9.99"
+      />
+
       {/* Hero Section */}
       <GenericHero
         title={

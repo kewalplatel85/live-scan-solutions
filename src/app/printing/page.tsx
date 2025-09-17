@@ -1,4 +1,5 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
@@ -229,6 +230,17 @@ export const metadata: Metadata = {
 export default function PrintingPage() {
   return (
     <main className="min-h-screen">
+      {/* Business Schema */}
+      <SEOStructuredData type="business" />
+
+      {/* Service Schema */}
+      <SEOStructuredData
+        type="service"
+        serviceName="Printing & Lamination Services"
+        serviceDescription="High-quality printing and lamination services for documents, photos, banners, and marketing materials. Same-day service with professional results."
+        price="5"
+      />
+
       {/* Hero Section */}
       <GenericHero
         badges={[

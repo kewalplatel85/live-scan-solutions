@@ -1,5 +1,6 @@
 import { GenericHero } from '@/components/common/GenericHero';
 import { CTASection } from '@/components/sections/CTASection';
+import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
@@ -109,6 +110,19 @@ const services = [
 export default function BayAreaServicesPage() {
   return (
     <main>
+      {/* SEO Structured Data */}
+      <SEOStructuredData type="business" />
+      <SEOStructuredData
+        type="breadcrumb"
+        breadcrumbItems={[
+          { name: 'Home', url: 'https://www.mailallcenter.com' },
+          {
+            name: 'Bay Area Services',
+            url: 'https://www.mailallcenter.com/bay-area-services',
+          },
+        ]}
+      />
+      <SEOStructuredData type="website" />
       <GenericHero
         title="Mail All Center – Walk-In Live Scan, Notary, Apostille & Mailbox Rentals"
         subtitle="Professional live scan and Business Services Serving All Bay Area Cities"

@@ -1,3 +1,4 @@
+import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { aboutData } from '@/data/about';
@@ -48,6 +49,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main>
+      {/* Business Schema */}
+      <SEOStructuredData type="business" />
       {/* Hero Section - Company Introduction */}
       <section className="py-16 bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

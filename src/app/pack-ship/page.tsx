@@ -1,4 +1,5 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Card } from '@/components/ui/card';
 import { SiDhl, SiFedex, SiUps, SiUsps } from '@icons-pack/react-simple-icons';
 import {
@@ -34,6 +35,17 @@ export const metadata: Metadata = {
 export default function PackShipPage() {
   return (
     <main>
+      {/* Business Schema */}
+      <SEOStructuredData type="business" />
+
+      {/* Service Schema */}
+      <SEOStructuredData
+        type="service"
+        serviceName="Packing & Shipping Services"
+        serviceDescription="Professional packing and shipping services with UPS, FedEx, USPS, and DHL. Expert handling of fragile items, multiple box sizes, and package tracking."
+        price="5"
+      />
+
       {/* Hero Section */}
       <GenericHero
         layout="split-60-40"

@@ -1,4 +1,5 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -38,6 +39,17 @@ export const metadata: Metadata = {
 export default function MailboxRentalPage() {
   return (
     <main>
+      {/* Business Schema */}
+      <SEOStructuredData type="business" />
+
+      {/* Service Schema */}
+      <SEOStructuredData
+        type="service"
+        serviceName="Mailbox Rental Services"
+        serviceDescription="Secure mailbox rental with real street address, 24/7 access, package receiving, and mail forwarding. Perfect for businesses and individuals. Starting at $20/month."
+        price="25"
+      />
+
       {/* Hero Section */}
       <GenericHero
         title={

@@ -81,11 +81,237 @@ export const googleBusinessSchema = {
       addressRegion: 'CA',
       addressCountry: 'US',
     },
+    {
+      '@type': 'City',
+      name: 'Fremont',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Menlo Park',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Redwood City',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Campbell',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Los Altos',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Milpitas',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Foster City',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'San Mateo',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Saratoga',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Los Gatos',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Morgan Hill',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Burlingame',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'San Carlos',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Belmont',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Half Moon Bay',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Hayward',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Union City',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Newark',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Daly City',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Pacifica',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Pleasanton',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Dublin',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Livermore',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'Alameda',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'City',
+      name: 'San Leandro',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Bay Area',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Silicon Valley',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Peninsula',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'South Bay',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
   ],
 
-  // Pricing
+  // Advanced Local Business Attributes
+  isAccessibleForFree: false,
+  smokingAllowed: false,
+  hasWiFi: true,
+  acceptsReservations: false,
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Mail All Center LLC',
+  },
+
+  // Professional Memberships
+  memberOf: [
+    {
+      '@type': 'Organization',
+      name: 'California Association of Notaries',
+    },
+    {
+      '@type': 'Organization',
+      name: 'National Notary Association',
+    },
+  ],
+
+  // Service Delivery Options
+  serviceType: [
+    'Walk-in Service',
+    'Appointment Based Service',
+    'Same-day Service',
+    'Document Processing',
+  ],
+
+  // Accessibility Features
+  accessibilityFeatures: [
+    'Wheelchair Accessible',
+    'Ground Level Access',
+    'Wide Doorways',
+    'Accessible Parking',
+  ],
+
+  // Additional Services
+  additionalServices: [
+    'Language Assistance Available',
+    'Walk-in Appointments',
+    'Same-day Processing',
+    'Digital Receipt Generation',
+  ],
+
+  // Pricing and Payment
   priceRange: '$1-$125',
-  paymentAccepted: ['Cash', 'Credit Card', 'Debit Card', 'Check'],
+  paymentAccepted: [
+    'Cash',
+    'Credit Card',
+    'Debit Card',
+    'Check',
+    'Money Order',
+  ],
   currenciesAccepted: 'USD',
 
   // Services Offered
@@ -99,7 +325,7 @@ export const googleBusinessSchema = {
           '@type': 'Service',
           name: 'Live Scan Fingerprinting',
           description:
-            'DOJ & FBI certified digital fingerprinting for employment, licensing, and background checks',
+            'DOJ & FBI certified digital fingerprinting for employment, licensing, and background checks. Electronic fingerprinting with same-day processing.',
           serviceType: 'Fingerprinting Service',
         },
         price: '17.00',
@@ -110,8 +336,9 @@ export const googleBusinessSchema = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Ink Fingerprinting',
-          description: 'Traditional FBI FD-258 card fingerprinting services',
+          name: 'FBI FD-258 Manual Fingerprinting',
+          description:
+            'Traditional FBI FD-258 and FBI FD-1164 manual ink fingerprinting services for international use and specific agency requirements',
           serviceType: 'Fingerprinting Service',
         },
         price: '25.00',
@@ -135,7 +362,8 @@ export const googleBusinessSchema = {
         itemOffered: {
           '@type': 'Service',
           name: 'Apostille Services',
-          description: 'Document authentication for international use',
+          description:
+            'Professional apostille authentication for birth certificates, diplomas, FBI background checks, marriage certificates, and corporate documents. Hague Convention compliant.',
           serviceType: 'Document Service',
         },
         price: '75.00',
@@ -180,18 +408,7 @@ export const googleBusinessSchema = {
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
       },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Passport Photos',
-          description: 'High-quality passport photos meeting all requirements',
-          serviceType: 'Photo Service',
-        },
-        price: '9.99',
-        priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock',
-      },
+
       {
         '@type': 'Offer',
         itemOffered: {
@@ -212,17 +429,24 @@ export const googleBusinessSchema = {
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '4.9',
-    reviewCount: '145',
+    reviewCount: '150',
     bestRating: '5',
     worstRating: '1',
+    ratingExplanation:
+      'Based on customer reviews for professional live scan, notary, and business services',
   },
 
   // Business Classifications
   knowsAbout: [
     'Live Scan Fingerprinting',
+    'FBI FD-258 Manual Fingerprinting',
+    'FBI FD-1164 Fingerprinting',
     'Ink Fingerprinting',
     'Notary Public Services',
     'Apostille Services',
+    'Birth Certificate Apostille',
+    'Diploma Apostille',
+    'FBI Background Check Apostille',
     'Passport Photos',
     'Mailbox Rental',
     'Packing and Shipping',

@@ -1,4 +1,5 @@
 import { InteractiveMap } from '@/components/InteractiveMap';
+import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, Car, Clock, Mail, MapPin, Phone } from 'lucide-react';
@@ -25,6 +26,8 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+      {/* Business Schema */}
+      <SEOStructuredData type="business" />
       <div className="container mx-auto px-4 py-12">
         {/* Page Header */}
         <div className="text-center mb-8">

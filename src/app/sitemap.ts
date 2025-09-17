@@ -2,87 +2,90 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.mailallcenter.com';
+  const lastModified = new Date();
 
-  const staticPages = [
+  // Combine all pages with intelligent prioritization based on business value
+  return [
+    // Homepage - highest priority
     {
       url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 1,
+      lastModified,
+      changeFrequency: 'daily' as const,
+      priority: 1.0,
     },
+
+    // Core high-demand services
     {
       url: `${baseUrl}/live-scan`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: 'weekly' as const,
-      priority: 0.9,
+      priority: 0.95, // Most searched service
     },
     {
       url: `${baseUrl}/notary`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: 'weekly' as const,
-      priority: 0.9,
+      priority: 0.9, // High-demand service
     },
     {
       url: `${baseUrl}/apostille`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: 'weekly' as const,
+      priority: 0.9, // High-value service
+    },
+
+    // Standard services
+    {
+      url: `${baseUrl}/passport-photos`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/passport-photos`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
+      url: `${baseUrl}/pack-ship`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/mailbox-rental`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/pack-ship`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/printing`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/notary-public`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/apostille`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/about-us`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/contact-us`,
-      lastModified: new Date(),
+      url: `${baseUrl}/printing`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+
+    // Geographic and supporting pages
+    {
+      url: `${baseUrl}/bay-area-services`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8, // Important for local SEO
+    },
+
+    // Information pages
+    {
+      url: `${baseUrl}/about-us`,
+      lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/faq`,
-      lastModified: new Date(),
+      url: `${baseUrl}/contact-us`,
+      lastModified,
       changeFrequency: 'monthly' as const,
-      priority: 0.5,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/faq`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
     },
   ];
-
-  return staticPages;
 }

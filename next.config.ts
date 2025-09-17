@@ -7,9 +7,18 @@ const nextConfig: NextConfig = {
   // Improve SEO and performance
   compress: true,
 
-  // Enable experimental features for better SEO
+  // Enable experimental features for better performance and SEO
   experimental: {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-accordion'],
+    optimizeCss: false, // Disable to avoid critters dependency issue
+  },
+
+  // Move serverComponentsExternalPackages to root level
+  serverExternalPackages: [],
+
+  // Performance optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
 
   // Image optimization for better performance
@@ -40,6 +49,19 @@ const nextConfig: NextConfig = {
           {
             key: 'X-DNS-Prefetch-Control',
             value: 'on',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains; preload',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+          // Performance headers
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },

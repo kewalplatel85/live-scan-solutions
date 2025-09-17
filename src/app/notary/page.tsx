@@ -1,4 +1,5 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { badgeData } from '@/data/badges';
 import { CheckCircle, FileText, Phone, Shield, Users } from 'lucide-react';
@@ -101,6 +102,17 @@ export default function NotaryPublicPage() {
 
   return (
     <main>
+      {/* Business Schema */}
+      <SEOStructuredData type="business" />
+
+      {/* Service Schema */}
+      <SEOStructuredData
+        type="service"
+        serviceName="Notary Public Services"
+        serviceDescription="Licensed notary public services for contracts, real estate, wills, affidavits, power of attorney, and loan documents. Walk-ins welcome with same-day service available."
+        price="5"
+      />
+
       {/* Hero Section */}
       <GenericHero
         layout="split-70-30"

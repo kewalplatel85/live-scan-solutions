@@ -1,5 +1,6 @@
 import { GenericHero } from '@/components/common/GenericHero';
 import { CustomerTypesAccordion } from '@/components/sections/CustomerTypesAccordion';
+import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { badgeData } from '@/data/badges';
@@ -154,16 +155,16 @@ const locations = [
 
 export const metadata: Metadata = {
   title:
-    'Mail All Center: Top-rated Live Scan, Fingerprinting service - Walk-in Welcome',
+    'FBI FD-258 Manual Fingerprinting & FBI FD-1164 | Live Scan Services Mountain View',
   description:
-    'Mail All Center provides professional Live Scan & Ink fingerprinting services in Mountain View, CA and entire Bay Area. Serving Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont,schools, school districts, and organizations like Boy Scouts and AYSO. Same-day processing, walk-ins welcome. DOJ & FBI certified. Employment, licensing, background checks. Starting at $17. Call (650) 961-4646.',
+    'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan & traditional ink fingerprinting for employment, licensing, background checks. DOJ & FBI certified. Same-day processing, walk-ins welcome. Serving Bay Area schools, nonprofits. Starting at $17. Call (650) 961-4646.',
   keywords:
-    'live scan fingerprinting mountain view, live scan fingerprinting bay area, live scan near me, fingerprinting near me, ink fingerprinting mountain view, fingerprinting services bay area, digital fingerprinting mountain view, background check mountain view, employment screening mountain view, DOJ certified fingerprinting, FBI approved fingerprinting, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, live scan menlo park, live scan redwood city, same day fingerprinting, walk-in fingerprinting, Mail All Center fingerprinting, fingerprinting silicon valley, fingerprinting peninsula, fingerprinting south bay, Mountain View School District, Los Altos School District, Sunnyvale School District, Cupertino School District, Menlo Park School District, Palo Alto School District, Santa Clara School District, San Jose School District, Boys Scouts, Sunnyvale Boy Scouts, Redwood City School District, Los Gatos School District, AYSO',
+    'FBI FD-258 manual fingerprinting, FBI FD-1164 fingerprinting, manual ink fingerprinting mountain view, traditional fingerprinting mountain view, live scan fingerprinting mountain view, live scan fingerprinting bay area, live scan near me, fingerprinting near me, ink fingerprinting mountain view, FBI FD-258 card fingerprinting, FBI FD-1164 card, fingerprinting services bay area, digital fingerprinting mountain view, background check mountain view, employment screening mountain view, DOJ certified fingerprinting, FBI approved fingerprinting, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, live scan menlo park, live scan redwood city, same day fingerprinting, walk-in fingerprinting, Mail All Center fingerprinting, fingerprinting silicon valley, fingerprinting peninsula, fingerprinting south bay, Mountain View School District, Los Altos School District, Sunnyvale School District, Cupertino School District, Menlo Park School District, Palo Alto School District, Santa Clara School District, San Jose School District, Boys Scouts, Sunnyvale Boy Scouts, Redwood City School District, Los Gatos School District, AYSO',
   openGraph: {
     title:
-      'Get your Live Scan fingerprinting done fast in Mountain View, CA. Walk-ins welcome. Trusted by local schools, nonprofits & businesses. Only $17 rolling fee!',
+      'FBI FD-258 Manual Fingerprinting & Live Scan | Mountain View CA - Walk-ins Welcome',
     description:
-      'Mail All Center provides professional Live Scan & Ink fingerprinting in Mountain View, CA. DOJ & FBI certified. Walk-ins welcome, same-day processing. Supporting school districts like Mountain View, Palo Alto, Sunnyvale, Cupertino, and organizations like Boy Scouts and AYSO.',
+      'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan & traditional fingerprinting. DOJ & FBI certified. Walk-ins welcome, same-day processing. Supporting Bay Area schools, nonprofits.',
     url: 'https://www.mailallcenter.com/live-scan',
   },
   alternates: {
@@ -174,6 +175,46 @@ export const metadata: Metadata = {
 export default function LiveScanPage() {
   return (
     <main className="min-h-screen">
+      {/* Business Schema */}
+      <SEOStructuredData type="business" />
+
+      {/* Service Schema */}
+      <SEOStructuredData
+        type="service"
+        serviceName="FBI FD-258 Manual Fingerprinting & Live Scan"
+        serviceDescription="Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services. Complete Live Scan and traditional fingerprinting for employment, licensing, and background checks. DOJ & FBI certified."
+        price="17"
+      />
+
+      {/* HowTo Schema for Live Scan Process */}
+      <SEOStructuredData
+        type="howto"
+        howToName="How to Complete Live Scan Fingerprinting"
+        howToDescription="Step-by-step guide to complete your Live Scan fingerprinting at Mail All Center"
+        howToSteps={[
+          {
+            name: 'Bring Valid Photo ID',
+            text: "Bring a government-issued photo ID such as driver's license or passport",
+          },
+          {
+            name: 'Complete Required Forms',
+            text: 'Fill out the Live Scan request form with your personal information and request details',
+          },
+          {
+            name: 'Digital Fingerprint Capture',
+            text: 'Our certified technician will capture your fingerprints using electronic Live Scan equipment',
+          },
+          {
+            name: 'Review and Submit',
+            text: 'Review your information for accuracy and authorize electronic submission to DOJ/FBI',
+          },
+          {
+            name: 'Receive Confirmation',
+            text: 'Get your receipt with confirmation number for tracking your background check status',
+          },
+        ]}
+      />
+
       {/* Hero Section */}
       <GenericHero
         badges={badgeData.liveScanService}
