@@ -3,6 +3,7 @@ import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { mailboxRentalServiceSchema } from '@/data/google-business-schema';
 import {
   Bell,
   CheckCircle,
@@ -26,14 +27,16 @@ export const metadata: Metadata = {
   keywords:
     'mailbox rental mountain view, mailbox rental bay area, mailbox rental near me, private mailbox mountain view, private mailbox bay area, Mail All Center mailbox, mailbox service bay area, package receiving mountain view, mail forwarding mountain view, business mailbox mountain view, virtual mailbox mountain view, secure mailbox rental, private mailbox service, street address rental mountain view, mailbox rental palo alto, mailbox rental sunnyvale, mailbox rental san jose, mailbox rental cupertino, mailbox rental fremont, mailbox rental santa clara, silicon valley mailbox rental, peninsula mailbox service, south bay mailbox rental',
   openGraph: {
+    type: 'website',
     title: 'Mailbox Rental Mountain View | Mail All Center',
     description:
       'Mail All Center offers secure mailbox rental in Mountain View, CA. Real street address, 24/7 access, package receiving.',
-    url: 'https://www.mailallcenter.com/mailbox-rental',
+    url: '/mailbox-rental',
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/mailbox-rental',
+    canonical: '/mailbox-rental',
   },
+  robots: { index: true, follow: true },
 };
 
 export default function MailboxRentalPage() {
@@ -45,9 +48,7 @@ export default function MailboxRentalPage() {
       {/* Service Schema */}
       <SEOStructuredData
         type="service"
-        serviceName="Mailbox Rental Services"
-        serviceDescription="Secure mailbox rental with real street address, 24/7 access, package receiving, and mail forwarding. Perfect for businesses and individuals. Starting at $20/month."
-        price="25"
+        serviceSchema={mailboxRentalServiceSchema}
       />
 
       {/* Hero Section */}

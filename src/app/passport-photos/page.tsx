@@ -2,6 +2,7 @@ import { GenericHero } from '@/components/common/GenericHero';
 import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+import { passportPhotosServiceSchema } from '@/data/google-business-schema';
 import {
   Camera,
   CheckCircle,
@@ -28,11 +29,12 @@ export const metadata: Metadata = {
     title: 'Passport Photos Mountain View | Mail All Center | $9.99',
     description:
       'Mail All Center offers professional passport photos in Mountain View, CA for only $9.99. Same-day service, guaranteed acceptance.',
-    url: 'https://www.mailallcenter.com/passport-photos',
+    url: `/passport-photos`,
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/passport-photos',
+    canonical: `/passport-photos`,
   },
+  robots: { index: true, follow: true },
 };
 
 export default function PassportPhotosPage() {
@@ -44,9 +46,7 @@ export default function PassportPhotosPage() {
       {/* Service Schema */}
       <SEOStructuredData
         type="service"
-        serviceName="Professional Passport Photos"
-        serviceDescription="Professional passport photos for US passports, visas, and international ID documents. Same-day service with guaranteed acceptance or free retake. Starting at $9.99."
-        price="9.99"
+        serviceSchema={passportPhotosServiceSchema}
       />
 
       {/* Hero Section */}

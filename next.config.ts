@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { SITE_URL } from './src/lib/config';
 
 const nextConfig: NextConfig = {
   // Enable static optimization
@@ -71,7 +72,12 @@ const nextConfig: NextConfig = {
   // Redirects for SEO (if needed)
   async redirects() {
     return [
-      // Add any necessary redirects here
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'mailallcenter.com' }],
+        destination: `${SITE_URL}/:path*`,
+        permanent: true,
+      },
     ];
   },
 };

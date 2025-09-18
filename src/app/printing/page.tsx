@@ -2,6 +2,7 @@ import { GenericHero } from '@/components/common/GenericHero';
 import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { printingServiceSchema } from '@/data/google-business-schema';
 import {
   Building,
   Building2,
@@ -220,11 +221,12 @@ export const metadata: Metadata = {
     title: 'Printing Services Mountain View | Mail All Center',
     description:
       'Mail All Center offers complete printing solutions: digital, large format, lamination, fax, copy, and shredding services. Same-day service in Mountain View, CA.',
-    url: 'https://www.mailallcenter.com/printing',
+    url: `/printing`,
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/printing',
+    canonical: `/printing`,
   },
+  robots: { index: true, follow: true },
 };
 
 export default function PrintingPage() {
@@ -234,12 +236,7 @@ export default function PrintingPage() {
       <SEOStructuredData type="business" />
 
       {/* Service Schema */}
-      <SEOStructuredData
-        type="service"
-        serviceName="Printing & Lamination Services"
-        serviceDescription="High-quality printing and lamination services for documents, photos, banners, and marketing materials. Same-day service with professional results."
-        price="5"
-      />
+      <SEOStructuredData type="service" serviceSchema={printingServiceSchema} />
 
       {/* Hero Section */}
       <GenericHero

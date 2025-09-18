@@ -3,6 +3,7 @@ import { CTASection } from '@/components/sections/CTASection';
 import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { SITE_URL } from '@/lib/config';
 import {
   CheckCircle,
   FileText,
@@ -24,14 +25,15 @@ export const metadata: Metadata = {
   keywords:
     'walk-in live scan, FD258, FBI background check, ink fingerprint, walkin live scan, walkin notary public,school voluteers live scan, boys scouts live scan, real estate notary,church live scan, real estate live scan, sunnyvale live scan,bay area business services, business services near me, live scan bay area, live scan near me, fingerprinting bay area, fingerprinting near me, notary bay area, notary near me, passport photos bay area, passport photos near me, apostille bay area, apostille near me, mailbox rental near me, packing shipping near me, printing services near me, south bay business services, mountain view business services, palo alto business services, sunnyvale business services, san jose business services, cupertino business services, fremont business services, santa clara business services, professional services bay area, document services bay area, same day services',
   openGraph: {
+    type: 'website',
     title:
       'Mail All Center – Walk-In Live Scan, Notary, Apostille & Mailbox Rental',
     description:
       'Comprehensive business services throughout the Bay Area: Live Scan, Notary, Passport Photos, Mailbox Rental, Packing & Shipping, Printing. Serving all Bay Area cities.',
-    url: 'https://www.mailallcenter.com/bay-area-services',
+    url: '/bay-area-services',
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/bay-area-services',
+    canonical: '/bay-area-services',
   },
 };
 
@@ -115,10 +117,10 @@ export default function BayAreaServicesPage() {
       <SEOStructuredData
         type="breadcrumb"
         breadcrumbItems={[
-          { name: 'Home', url: 'https://www.mailallcenter.com' },
+          { name: 'Home', url: SITE_URL },
           {
             name: 'Bay Area Services',
-            url: 'https://www.mailallcenter.com/bay-area-services',
+            url: `${SITE_URL}/bay-area-services`,
           },
         ]}
       />

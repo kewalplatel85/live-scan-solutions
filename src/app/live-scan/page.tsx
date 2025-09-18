@@ -4,6 +4,7 @@ import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { badgeData } from '@/data/badges';
+import { liveScanServiceSchema } from '@/data/google-business-schema';
 import {
   // Award,
   CalendarClock,
@@ -155,21 +156,23 @@ const locations = [
 
 export const metadata: Metadata = {
   title:
-    'FBI FD-258 Manual Fingerprinting & FBI FD-1164 | Live Scan Services Mountain View',
+    'Mail All Center: Top-rated Live Scan, Fingerprinting service - Walk-in Welcome',
   description:
     'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan & traditional ink fingerprinting for employment, licensing, background checks. DOJ & FBI certified. Same-day processing, walk-ins welcome. Serving Bay Area schools, nonprofits. Starting at $17. Call (650) 961-4646.',
   keywords:
     'FBI FD-258 manual fingerprinting, FBI FD-1164 fingerprinting, manual ink fingerprinting mountain view, traditional fingerprinting mountain view, live scan fingerprinting mountain view, live scan fingerprinting bay area, live scan near me, fingerprinting near me, ink fingerprinting mountain view, FBI FD-258 card fingerprinting, FBI FD-1164 card, fingerprinting services bay area, digital fingerprinting mountain view, background check mountain view, employment screening mountain view, DOJ certified fingerprinting, FBI approved fingerprinting, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, live scan menlo park, live scan redwood city, same day fingerprinting, walk-in fingerprinting, Mail All Center fingerprinting, fingerprinting silicon valley, fingerprinting peninsula, fingerprinting south bay, Mountain View School District, Los Altos School District, Sunnyvale School District, Cupertino School District, Menlo Park School District, Palo Alto School District, Santa Clara School District, San Jose School District, Boys Scouts, Sunnyvale Boy Scouts, Redwood City School District, Los Gatos School District, AYSO',
   openGraph: {
+    type: 'website',
     title:
-      'FBI FD-258 Manual Fingerprinting & Live Scan | Mountain View CA - Walk-ins Welcome',
+      'Get your Live Scan fingerprinting done fast in Mountain View, CA. Walk-ins welcome. Trusted by local schools, nonprofits & businesses. Only $17 rolling fee!',
     description:
       'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan & traditional fingerprinting. DOJ & FBI certified. Walk-ins welcome, same-day processing. Supporting Bay Area schools, nonprofits.',
-    url: 'https://www.mailallcenter.com/live-scan',
+    url: '/live-scan',
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/live-scan',
+    canonical: '/live-scan',
   },
+  robots: { index: true, follow: true },
 };
 
 export default function LiveScanPage() {
@@ -179,12 +182,7 @@ export default function LiveScanPage() {
       <SEOStructuredData type="business" />
 
       {/* Service Schema */}
-      <SEOStructuredData
-        type="service"
-        serviceName="FBI FD-258 Manual Fingerprinting & Live Scan"
-        serviceDescription="Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services. Complete Live Scan and traditional fingerprinting for employment, licensing, and background checks. DOJ & FBI certified."
-        price="17"
-      />
+      <SEOStructuredData type="service" serviceSchema={liveScanServiceSchema} />
 
       {/* HowTo Schema for Live Scan Process */}
       <SEOStructuredData

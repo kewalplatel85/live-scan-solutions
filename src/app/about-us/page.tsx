@@ -36,13 +36,14 @@ export const metadata: Metadata = {
     'AYSO',
   ],
   openGraph: {
+    type: 'website',
     title: 'About Mail All Center | DOJ & FBI Certified Business Services',
     description:
       "Bay Area's trusted DOJ & FBI certified business services provider since 2010. Live scan, notary, mailbox rental, printing, shipping and more.",
-    url: 'https://www.mailallcenter.com/about-us',
+    url: '/about-us',
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/about-us',
+    canonical: '/about-us',
   },
 };
 

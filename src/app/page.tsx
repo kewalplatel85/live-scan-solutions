@@ -2,6 +2,7 @@ import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { FAQSection } from '@/components/sections/FAQSection';
 import { NewHeroSection } from '@/components/sections/NewHeroSection';
 import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
+import { SITE_URL } from '@/lib/config';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
       'Mail All Center | Complete Business Services Mountain View & Bay Area',
     description:
       'Your trusted business service provider in Mountain View, serving the entire Bay Area. Live Scan, Notary, Passport Photos, Mailbox Rental, Packing & Shipping, Printing. DOJ & FBI certified, 15+ years experience. Same-day service, walk-ins welcome.',
-    url: 'https://www.mailallcenter.com',
+    url: SITE_URL,
     type: 'website',
     locale: 'en_US',
     siteName: 'Mail All Center',
@@ -38,16 +39,16 @@ export const metadata: Metadata = {
     images: ['/assets/Logo/icons8-fingerprint-scan-80.png'],
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com',
+    canonical: SITE_URL,
   },
 };
+export const revalidate = 604800; // 7 days
 
 export default function HomePage() {
   return (
     <main>
       {/* Business Schema using centralized data */}
       <SEOStructuredData type="business" />
-      <SEOStructuredData type="website" />
       <SEOStructuredData type="organization" />
 
       {/* New Hero with clear value proposition */}

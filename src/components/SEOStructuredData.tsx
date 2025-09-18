@@ -1,4 +1,5 @@
 import { googleBusinessSchema } from '@/data/google-business-schema';
+import { SITE_URL } from '@/lib/config';
 import Script from 'next/script';
 
 interface SEOStructuredDataProps {
@@ -39,6 +40,8 @@ interface SEOStructuredDataProps {
   productDescription?: string;
   productPrice?: string;
   productAvailability?: string;
+  // Predefined service schema
+  serviceSchema?: Record<string, unknown>;
 }
 
 export function SEOStructuredData({
@@ -69,6 +72,8 @@ export function SEOStructuredData({
   productDescription,
   productPrice,
   productAvailability,
+  // Predefined service schema
+  serviceSchema,
 }: SEOStructuredDataProps) {
   const getStructuredData = () => {
     // Use centralized business schema as base
@@ -76,6 +81,10 @@ export function SEOStructuredData({
 
     switch (type) {
       case 'service':
+        // Use predefined service schema if provided, otherwise fall back to generic
+        if (serviceSchema) {
+          return serviceSchema;
+        }
         return {
           '@context': 'https://schema.org',
           '@type': 'Service',
@@ -129,25 +138,14 @@ export function SEOStructuredData({
         return {
           '@context': 'https://schema.org',
           '@type': 'WebSite',
-          '@id': 'https://www.mailallcenter.com/#website',
-          url: 'https://www.mailallcenter.com',
+          '@id': `${SITE_URL}/#website`,
+          url: SITE_URL,
           name: 'Mail All Center',
           description:
             'Professional Live Scan Fingerprinting, Notary Public, Apostille, and Business Services in Mountain View, California',
           publisher: {
             '@id': baseBusinessData['@id'],
           },
-          potentialAction: [
-            {
-              '@type': 'SearchAction',
-              target: {
-                '@type': 'EntryPoint',
-                urlTemplate:
-                  'https://www.mailallcenter.com/?s={search_term_string}',
-              },
-              'query-input': 'required name=search_term_string',
-            },
-          ],
           inLanguage: 'en-US',
         };
 

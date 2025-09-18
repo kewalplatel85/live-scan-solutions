@@ -1,6 +1,7 @@
 import { GenericHero } from '@/components/common/GenericHero';
 import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Card } from '@/components/ui/card';
+import { packingShippingServiceSchema } from '@/data/google-business-schema';
 import { SiDhl, SiFedex, SiUps, SiUsps } from '@icons-pack/react-simple-icons';
 import {
   CheckCircle,
@@ -22,14 +23,16 @@ export const metadata: Metadata = {
   keywords:
     'packing services mountain view, shipping services mountain view, Mail All Center shipping, UPS shipping mountain view, FedEx shipping mountain view, USPS shipping mountain view, package packing mountain view, fragile item packing, professional packing services, shipping near me, package services mountain view, shipping center mountain view, pack and ship mountain view, shipping solutions bay area',
   openGraph: {
+    type: 'website',
     title: 'Packing & Shipping Services Mountain View | Mail All Center',
     description:
       'Mail All Center offers professional packing and shipping services with UPS, FedEx, USPS. Expert handling of all package types in Mountain View, CA.',
-    url: 'https://www.mailallcenter.com/pack-ship',
+    url: `/pack-ship`,
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/pack-ship',
+    canonical: `/pack-ship`,
   },
+  robots: { index: true, follow: true },
 };
 
 export default function PackShipPage() {
@@ -41,9 +44,7 @@ export default function PackShipPage() {
       {/* Service Schema */}
       <SEOStructuredData
         type="service"
-        serviceName="Packing & Shipping Services"
-        serviceDescription="Professional packing and shipping services with UPS, FedEx, USPS, and DHL. Expert handling of fragile items, multiple box sizes, and package tracking."
-        price="5"
+        serviceSchema={packingShippingServiceSchema}
       />
 
       {/* Hero Section */}

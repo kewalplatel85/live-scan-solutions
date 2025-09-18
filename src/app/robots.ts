@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/config';
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
@@ -6,19 +7,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/private/', '/admin/', '/_next/', '/api/'],
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: ['/private/', '/admin/', '/_next/', '/api/'],
-      },
-      {
-        userAgent: 'Bingbot',
-        allow: '/',
-        disallow: ['/private/', '/admin/', '/_next/', '/api/'],
+        disallow: ['/private/', '/admin/'],
       },
     ],
-    sitemap: 'https://www.mailallcenter.com/sitemap.xml',
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

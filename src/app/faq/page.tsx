@@ -15,14 +15,16 @@ export const metadata: Metadata = {
   keywords:
     'live scan FAQ, fingerprinting questions, live scan answers, notary FAQ, apostille questions, background check FAQ, fingerprinting help, live scan guide',
   openGraph: {
+    type: 'website',
     title: 'Live Scan FAQ | Fingerprinting Questions Answered',
     description:
       'Get answers to frequently asked questions about Live Scan fingerprinting and notary services.',
-    url: 'https://www.mailallcenter.com/faq',
+    url: '/faq',
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/faq',
+    canonical: '/faq',
   },
+  robots: { index: true, follow: true },
 };
 
 const faqs = [

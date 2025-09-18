@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { apostilleServiceSchema } from '@/data/google-business-schema';
 import {
   ArrowRight,
   Award,
@@ -37,21 +38,23 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'Apostille Services: Birth Certificate, Diploma, FBI Background Check | Mountain View CA',
+    'Professional Apostille Services for International Document Authentication | Mountain View CA',
   description:
-    'Professional apostille services for birth certificates, diplomas, FBI background checks, marriage certificates, power of attorney, corporate documents at Mail All Center, Mountain View. Hague Convention authentication for international use. Same-day processing, expert guidance. Serving entire Bay Area. Call (650) 961-4646.',
+    'Professional apostille services for international document authentication,birth certificates, diplomas, FBI background checks, marriage certificates, power of attorney, corporate documents at Mail All Center, Mountain View. Hague Convention authentication for international use. Same-day processing, expert guidance. Serving entire Bay Area. Call (650) 961-4646.',
   keywords:
     'apostille birth certificate mountain view, apostille diploma mountain view, apostille FBI background check, apostille marriage certificate, apostille power of attorney, apostille corporate documents, apostille services mountain view, Mail All Center apostille, document authentication mountain view, apostille bay area, hague convention mountain view, international documents mountain view, document legalization mountain view, apostille near me, apostille services palo alto, apostille services sunnyvale, California apostille services, Secretary of State apostille',
   openGraph: {
+    type: 'website',
     title:
       'Apostille Birth Certificate, Diploma, FBI Background Check | Mountain View CA',
     description:
       'Professional apostille services for birth certificates, diplomas, FBI background checks, marriage certificates at Mail All Center, Mountain View. Hague Convention authentication for international use. Same-day processing.',
-    url: 'https://www.mailallcenter.com/apostille',
+    url: '/apostille',
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/apostille',
+    canonical: '/apostille',
   },
+  robots: { index: true, follow: true },
 };
 
 const apostilleServices = [
@@ -235,9 +238,7 @@ export default function ApostillePage() {
       {/* Service Schema */}
       <SEOStructuredData
         type="service"
-        serviceName="Apostille Services - Birth Certificate, Diploma, FBI Background Check"
-        serviceDescription="Professional apostille authentication for birth certificates, diplomas, FBI background checks, marriage certificates, and corporate documents. Hague Convention compliant with same-day processing."
-        price="75"
+        serviceSchema={apostilleServiceSchema}
       />
 
       {/* Hero Section */}

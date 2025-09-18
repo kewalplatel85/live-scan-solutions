@@ -2,6 +2,7 @@ import { GenericHero } from '@/components/common/GenericHero';
 import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { badgeData } from '@/data/badges';
+import { notaryServiceSchema } from '@/data/google-business-schema';
 import { CheckCircle, FileText, Phone, Shield, Users } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -13,14 +14,16 @@ export const metadata: Metadata = {
   keywords:
     'notary public mountain view, notary services bay area, notary near me, notary public near me, Mail All Center notary, document notarization mountain view, licensed notary mountain view, mobile notary mountain view, mobile notary bay area, contract notarization, real estate notary mountain view, will notarization, affidavit notary, same day notary, power of attorney notarization, loan document notary, notary public palo alto, notary public sunnyvale, notary public san jose, notary public cupertino, notary public fremont, notary public santa clara, notary services silicon valley, bay area notary services, peninsula notary services, south bay notary',
   openGraph: {
+    type: 'website',
     title: 'Notary Public Services Mountain View | Mail All Center',
     description:
       'Mail All Center provides professional notary public services in Mountain View, CA. Licensed notaries, walk-ins welcome, same-day service.',
-    url: 'https://www.mailallcenter.com/notary',
+    url: '/notary',
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/notary',
+    canonical: '/notary',
   },
+  robots: { index: true, follow: true },
 };
 
 export default function NotaryPublicPage() {
@@ -106,12 +109,7 @@ export default function NotaryPublicPage() {
       <SEOStructuredData type="business" />
 
       {/* Service Schema */}
-      <SEOStructuredData
-        type="service"
-        serviceName="Notary Public Services"
-        serviceDescription="Licensed notary public services for contracts, real estate, wills, affidavits, power of attorney, and loan documents. Walk-ins welcome with same-day service available."
-        price="5"
-      />
+      <SEOStructuredData type="service" serviceSchema={notaryServiceSchema} />
 
       {/* Hero Section */}
       <GenericHero
