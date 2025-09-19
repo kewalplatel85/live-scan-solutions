@@ -1,8 +1,14 @@
-import { SEOStructuredData } from '@/components/SEOStructuredData';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { aboutData } from '@/data/about';
 import { badgeData } from '@/data/badges';
+import { SITE_URL } from '@/lib/config';
 import {
   Award,
   CheckCircle,
@@ -40,18 +46,34 @@ export const metadata: Metadata = {
     title: 'About Mail All Center | DOJ & FBI Certified Business Services',
     description:
       "Bay Area's trusted DOJ & FBI certified business services provider since 2010. Live scan, notary, mailbox rental, printing, shipping and more.",
-    url: '/about-us',
+    url: `${SITE_URL}/about-us`,
   },
   alternates: {
-    canonical: '/about-us',
+    canonical: `${SITE_URL}/about-us`,
   },
 };
+
+const url = `${SITE_URL}/about-us`;
+
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE, // full LocalBusiness node (unchanged from your data file)
+  buildWebPage({
+    url,
+    title: 'About Mail All Center | Mountain View, CA',
+    description:
+      'Learn about Mail All Center—our history, values, certifications, and commitment to fast, friendly service in Mountain View and the Bay Area.',
+  }),
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'About Us', url },
+  ]),
+];
 
 export default function AboutPage() {
   return (
     <main>
-      {/* Business Schema */}
-      <SEOStructuredData type="business" />
+      <SEOGraph id="ld-about-us" nodes={nodes} />
       {/* Hero Section - Company Introduction */}
       <section className="py-16 bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

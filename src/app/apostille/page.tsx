@@ -1,5 +1,10 @@
 import { GenericHero } from '@/components/common/GenericHero';
-import { SEOStructuredData } from '@/components/SEOStructuredData';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import {
   Accordion,
   AccordionContent,
@@ -9,6 +14,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { apostilleServiceSchema } from '@/data/google-business-schema';
+import { SITE_URL } from '@/lib/config';
 import {
   ArrowRight,
   Award,
@@ -49,10 +55,10 @@ export const metadata: Metadata = {
       'Apostille Birth Certificate, Diploma, FBI Background Check | Mountain View CA',
     description:
       'Professional apostille services for birth certificates, diplomas, FBI background checks, marriage certificates at Mail All Center, Mountain View. Hague Convention authentication for international use. Same-day processing.',
-    url: '/apostille',
+    url: `${SITE_URL}/apostille`,
   },
   alternates: {
-    canonical: '/apostille',
+    canonical: `${SITE_URL}/apostille`,
   },
   robots: { index: true, follow: true },
 };
@@ -229,17 +235,27 @@ const faqItems = [
   },
 ];
 
+const url = `${SITE_URL}/apostille`;
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url,
+    title: 'Apostille Services in Mountain View, CA | Mail All Center',
+    description:
+      'Apostille for birth certificates, diplomas, FBI background checks, marriage certificates, and corporate documents.',
+  }),
+  apostilleServiceSchema,
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Apostille', url },
+  ]),
+];
+
 export default function ApostillePage() {
   return (
     <main className="min-h-screen">
-      {/* Business Schema */}
-      <SEOStructuredData type="business" />
-
-      {/* Service Schema */}
-      <SEOStructuredData
-        type="service"
-        serviceSchema={apostilleServiceSchema}
-      />
+      <SEOGraph id="ld-apostille" nodes={nodes} />
 
       {/* Hero Section */}
       <GenericHero

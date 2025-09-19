@@ -1,8 +1,14 @@
 import { GenericHero } from '@/components/common/GenericHero';
-import { SEOStructuredData } from '@/components/SEOStructuredData';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { badgeData } from '@/data/badges';
 import { notaryServiceSchema } from '@/data/google-business-schema';
+import { SITE_URL } from '@/lib/config';
 import { CheckCircle, FileText, Phone, Shield, Users } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -18,98 +24,111 @@ export const metadata: Metadata = {
     title: 'Notary Public Services Mountain View | Mail All Center',
     description:
       'Mail All Center provides professional notary public services in Mountain View, CA. Licensed notaries, walk-ins welcome, same-day service.',
-    url: '/notary',
+    url: `${SITE_URL}/notary`,
   },
   alternates: {
-    canonical: '/notary',
+    canonical: `${SITE_URL}/notary`,
   },
   robots: { index: true, follow: true },
 };
 
+const url = `${SITE_URL}/notary`;
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url,
+    title: 'Notary Public in Mountain View, CA | Mail All Center',
+    description:
+      'Licensed California notary for acknowledgments, jurats, certified copies and more.',
+  }),
+  notaryServiceSchema,
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Notary Public', url },
+  ]),
+];
+
+const processSteps = [
+  {
+    step: 1,
+    title: 'Consultation',
+    description:
+      'Contact us to discuss your document notarization requirements and confirm the necessary identification.',
+    icon: Phone,
+  },
+  {
+    step: 2,
+    title: 'Document Preparation',
+    description:
+      'Ensure your documents are ready for notarization. Our team will guide you through the process.',
+    icon: FileText,
+  },
+  {
+    step: 3,
+    title: 'Identity Verification',
+    description:
+      'Present valid identification for verification. We ensure compliance with legal standards.',
+    icon: Shield,
+  },
+  {
+    step: 4,
+    title: 'Notarization',
+    description:
+      'Our licensed Notary Public will witness the signing of your document and provide the official seal.',
+    icon: CheckCircle,
+  },
+];
+
+const documentTypes = [
+  'Contracts: Legal agreements between two or more parties',
+  'Real Estate Documents: Deeds, mortgages, and other property-related papers',
+  'Affidavits: Written statements confirmed by oath or affirmation, for use as evidence in court',
+  'Power of Attorney: Legal authorization for one person to act on another&apos;s behalf in legal matters',
+  'Wills and Trusts: Legal documents related to the distribution of a person&apos;s estate after death',
+  'Business Documents: Articles of incorporation, business licenses, and partnership agreements',
+];
+
+const notarizationTypes = [
+  {
+    title: 'Acknowledgments',
+    description:
+      'Confirm the identity of the signer and their willingness to sign a document.',
+    icon: Users,
+  },
+  {
+    title: 'Jurats',
+    description:
+      'Requires the signer to swear or affirm that the contents of a document are true.',
+    icon: FileText,
+  },
+  {
+    title: 'Oaths and Affirmations',
+    description:
+      'Legally binding promises made in writing or verbally before a Notary.',
+    icon: Shield,
+  },
+  {
+    title: 'Certified Copies',
+    description:
+      'Notary-certified copies of original documents, ensuring that the copy is an accurate reproduction.',
+    icon: CheckCircle,
+  },
+];
+
+const benefits = [
+  { text: 'Same-day processing' },
+  { text: 'Walk-ins welcome' },
+  { text: 'Licensed Notaries with extensive experience' },
+  { text: 'Confidential handling of sensitive documents' },
+  { text: 'Serving Mountain View and the Bay Area' },
+  { text: 'Ensuring documents meet legal requirements' },
+];
+
 export default function NotaryPublicPage() {
-  const processSteps = [
-    {
-      step: 1,
-      title: 'Consultation',
-      description:
-        'Contact us to discuss your document notarization requirements and confirm the necessary identification.',
-      icon: Phone,
-    },
-    {
-      step: 2,
-      title: 'Document Preparation',
-      description:
-        'Ensure your documents are ready for notarization. Our team will guide you through the process.',
-      icon: FileText,
-    },
-    {
-      step: 3,
-      title: 'Identity Verification',
-      description:
-        'Present valid identification for verification. We ensure compliance with legal standards.',
-      icon: Shield,
-    },
-    {
-      step: 4,
-      title: 'Notarization',
-      description:
-        'Our licensed Notary Public will witness the signing of your document and provide the official seal.',
-      icon: CheckCircle,
-    },
-  ];
-
-  const documentTypes = [
-    'Contracts: Legal agreements between two or more parties',
-    'Real Estate Documents: Deeds, mortgages, and other property-related papers',
-    'Affidavits: Written statements confirmed by oath or affirmation, for use as evidence in court',
-    'Power of Attorney: Legal authorization for one person to act on another&apos;s behalf in legal matters',
-    'Wills and Trusts: Legal documents related to the distribution of a person&apos;s estate after death',
-    'Business Documents: Articles of incorporation, business licenses, and partnership agreements',
-  ];
-
-  const notarizationTypes = [
-    {
-      title: 'Acknowledgments',
-      description:
-        'Confirm the identity of the signer and their willingness to sign a document.',
-      icon: Users,
-    },
-    {
-      title: 'Jurats',
-      description:
-        'Requires the signer to swear or affirm that the contents of a document are true.',
-      icon: FileText,
-    },
-    {
-      title: 'Oaths and Affirmations',
-      description:
-        'Legally binding promises made in writing or verbally before a Notary.',
-      icon: Shield,
-    },
-    {
-      title: 'Certified Copies',
-      description:
-        'Notary-certified copies of original documents, ensuring that the copy is an accurate reproduction.',
-      icon: CheckCircle,
-    },
-  ];
-
-  const benefits = [
-    { text: 'Same-day processing' },
-    { text: 'Walk-ins welcome' },
-    { text: 'Licensed Notaries with extensive experience' },
-    { text: 'Confidential handling of sensitive documents' },
-    { text: 'Serving Mountain View and the Bay Area' },
-    { text: 'Ensuring documents meet legal requirements' },
-  ];
-
   return (
     <main>
-      {/* Business Schema */}
-      <SEOStructuredData type="business" />
-
-      {/* Service Schema */}
-      <SEOStructuredData type="service" serviceSchema={notaryServiceSchema} />
+      <SEOGraph id="ld-notary" nodes={nodes} />
 
       {/* Hero Section */}
       <GenericHero

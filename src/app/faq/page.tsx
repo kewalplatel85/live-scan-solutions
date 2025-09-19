@@ -1,10 +1,17 @@
-import { SEOStructuredData } from '@/components/SEOStructuredData';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildFAQ,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { SITE_URL } from '@/lib/config';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -19,10 +26,10 @@ export const metadata: Metadata = {
     title: 'Live Scan FAQ | Fingerprinting Questions Answered',
     description:
       'Get answers to frequently asked questions about Live Scan fingerprinting and notary services.',
-    url: '/faq',
+    url: `${SITE_URL}/faq`,
   },
   alternates: {
-    canonical: '/faq',
+    canonical: `${SITE_URL}/faq`,
   },
   robots: { index: true, follow: true },
 };
@@ -117,42 +124,51 @@ const faqs = [
   },
 ];
 
+const url = `${SITE_URL}/faq`;
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url,
+    title: 'FAQs | Mail All Center',
+    description:
+      'Common questions about Live Scan, notary, apostille, mailbox rental, printing, and shipping.',
+  }),
+  buildFAQ(faqs.map((f) => ({ question: f.question, answer: f.answer }))),
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'FAQs', url },
+  ]),
+];
+
 export default function FAQ() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      {/* Business Schema */}
-      <SEOStructuredData type="business" />
+    <>
+      <SEOGraph id="ld-faq" nodes={nodes} />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">FAQ</h1>
+            <p className="text-xl text-muted-foreground">
+              Find answers to common questions about Live Scan, Apostille
+              services, and more.
+            </p>
+          </div>
 
-      {/* FAQ Schema */}
-      <SEOStructuredData
-        type="faq"
-        faqItems={faqs.map((faq) => ({
-          question: faq.question,
-          answer: faq.answer,
-        }))}
-      />
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">FAQ</h1>
-          <p className="text-xl text-muted-foreground">
-            Find answers to common questions about Live Scan, Apostille
-            services, and more.
-          </p>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger className="text-left">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
-
-        <Accordion type="single" collapsible className="w-full">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
       </div>
-    </div>
+    </>
   );
 }

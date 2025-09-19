@@ -1,7 +1,13 @@
 import { GenericHero } from '@/components/common/GenericHero';
-import { SEOStructuredData } from '@/components/SEOStructuredData';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import { Card } from '@/components/ui/card';
 import { packingShippingServiceSchema } from '@/data/google-business-schema';
+import { SITE_URL } from '@/lib/config';
 import { SiDhl, SiFedex, SiUps, SiUsps } from '@icons-pack/react-simple-icons';
 import {
   CheckCircle,
@@ -35,17 +41,27 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const url = `${SITE_URL}/pack-ship`;
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url,
+    title: 'Packing & Shipping Services | Mail All Center',
+    description:
+      'Professional packing and shipping services for FedEx, UPS, and USPS.',
+  }),
+  packingShippingServiceSchema,
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Pack & Ship', url },
+  ]),
+];
+
 export default function PackShipPage() {
   return (
     <main>
-      {/* Business Schema */}
-      <SEOStructuredData type="business" />
-
-      {/* Service Schema */}
-      <SEOStructuredData
-        type="service"
-        serviceSchema={packingShippingServiceSchema}
-      />
+      <SEOGraph id="ld-pack-ship" nodes={nodes} />
 
       {/* Hero Section */}
       <GenericHero

@@ -1,9 +1,15 @@
 import { GenericHero } from '@/components/common/GenericHero';
-import { SEOStructuredData } from '@/components/SEOStructuredData';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { mailboxRentalServiceSchema } from '@/data/google-business-schema';
+import { SITE_URL } from '@/lib/config';
 import {
   Bell,
   CheckCircle,
@@ -31,25 +37,35 @@ export const metadata: Metadata = {
     title: 'Mailbox Rental Mountain View | Mail All Center',
     description:
       'Mail All Center offers secure mailbox rental in Mountain View, CA. Real street address, 24/7 access, package receiving.',
-    url: '/mailbox-rental',
+    url: `${SITE_URL}/mailbox-rental`,
   },
   alternates: {
-    canonical: '/mailbox-rental',
+    canonical: `${SITE_URL}/mailbox-rental`,
   },
   robots: { index: true, follow: true },
 };
 
+const url = `${SITE_URL}/mailbox-rental`;
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url,
+    title: 'Mailbox Rental in Mountain View, CA | Mail All Center',
+    description:
+      'Private mailbox rental with real street address, package receiving, and mail forwarding.',
+  }),
+  mailboxRentalServiceSchema,
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Mailbox Rental', url },
+  ]),
+];
+
 export default function MailboxRentalPage() {
   return (
     <main>
-      {/* Business Schema */}
-      <SEOStructuredData type="business" />
-
-      {/* Service Schema */}
-      <SEOStructuredData
-        type="service"
-        serviceSchema={mailboxRentalServiceSchema}
-      />
+      <SEOGraph id="ld-mailbox" nodes={nodes} />
 
       {/* Hero Section */}
       <GenericHero

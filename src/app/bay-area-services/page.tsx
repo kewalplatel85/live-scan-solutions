@@ -1,6 +1,11 @@
 import { GenericHero } from '@/components/common/GenericHero';
 import { CTASection } from '@/components/sections/CTASection';
-import { SEOStructuredData } from '@/components/SEOStructuredData';
+import SEOGraph, {
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+  buildBreadcrumb,
+  buildWebPage,
+} from '@/components/SEOGraph';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SITE_URL } from '@/lib/config';
@@ -16,27 +21,35 @@ import {
   Users,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
+// --- META (kept indexable + canonical) ---
 export const metadata: Metadata = {
   title:
     'Mail All Center – Walk-In Live Scan, Notary, Apostille & Mailbox Rentals',
   description:
     'Mail All Center provides comprehensive business services throughout the Bay Area: Live Scan & Ink Fingerprinting, Notary Public, Apostille, Passport Photos, Mailbox Rental, Packing & Shipping, Printing. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont, Santa Clara, Mountain View. DOJ & FBI certified. Same-day service. Call (650) 961-4646.',
   keywords:
-    'walk-in live scan, FD258, FBI background check, ink fingerprint, walkin live scan, walkin notary public,school voluteers live scan, boys scouts live scan, real estate notary,church live scan, real estate live scan, sunnyvale live scan,bay area business services, business services near me, live scan bay area, live scan near me, fingerprinting bay area, fingerprinting near me, notary bay area, notary near me, passport photos bay area, passport photos near me, apostille bay area, apostille near me, mailbox rental near me, packing shipping near me, printing services near me, south bay business services, mountain view business services, palo alto business services, sunnyvale business services, san jose business services, cupertino business services, fremont business services, santa clara business services, professional services bay area, document services bay area, same day services',
+    'walk-in live scan, FD258, FBI background check, ink fingerprint, walkin live scan, walkin notary public, school volunteers live scan, boys scouts live scan, real estate notary, church live scan, real estate live scan, sunnyvale live scan, bay area business services, business services near me, live scan bay area, live scan near me, fingerprinting bay area, fingerprinting near me, notary bay area, notary near me, passport photos bay area, passport photos near me, apostille bay area, apostille near me, mailbox rental near me, packing shipping near me, printing services near me, south bay business services, mountain view business services, palo alto business services, sunnyvale business services, san jose business services, cupertino business services, fremont business services, santa clara business services, professional services bay area, document services bay area, same day services',
   openGraph: {
     type: 'website',
     title:
       'Mail All Center – Walk-In Live Scan, Notary, Apostille & Mailbox Rental',
     description:
       'Comprehensive business services throughout the Bay Area: Live Scan, Notary, Passport Photos, Mailbox Rental, Packing & Shipping, Printing. Serving all Bay Area cities.',
-    url: '/bay-area-services',
+    url: `${SITE_URL}/bay-area-services`,
   },
   alternates: {
-    canonical: '/bay-area-services',
+    canonical: `${SITE_URL}/bay-area-services`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
   },
 };
 
+// --- DATA (unchanged; we add hrefs for internal links) ---
 const bayAreaCities = [
   { name: 'Mountain View', distance: '0 miles', isMain: true },
   { name: 'Palo Alto', distance: '5 miles' },
@@ -63,6 +76,7 @@ const services = [
       'Walk-ins welcome',
       'All background checks',
     ],
+    href: '/live-scan',
   },
   {
     title: 'Notary Public Services',
@@ -74,6 +88,7 @@ const services = [
       'Legal papers',
       'Mobile notary available',
     ],
+    href: '/notary',
   },
   {
     title: 'Passport Photos',
@@ -81,6 +96,7 @@ const services = [
     icon: Users,
     price: 'Only $9.99',
     features: ['Guaranteed acceptance', 'Same-day service', 'All visa types'],
+    href: '/passport-photos',
   },
   {
     title: 'Mailbox Rental',
@@ -88,6 +104,7 @@ const services = [
     icon: Package,
     price: 'Starting at $20/month',
     features: ['24/7 access', 'Package receiving', 'Mail forwarding'],
+    href: '/mailbox-rental',
   },
   {
     title: 'Packing & Shipping',
@@ -99,6 +116,7 @@ const services = [
       'Professional packing',
       'Insurance available',
     ],
+    href: '/pack-ship',
   },
   {
     title: 'Printing Services',
@@ -106,35 +124,38 @@ const services = [
     icon: FileText,
     price: 'From $0.25/page',
     features: ['Color & B&W printing', 'Large format', 'Lamination'],
+    href: '/printing',
   },
 ];
 
 export default function BayAreaServicesPage() {
+  const url = `${SITE_URL}/bay-area-services`;
+  const pageTitle =
+    'Mail All Center – Walk-In Live Scan, Notary, Apostille & Mailbox Rentals';
+  const pageDesc =
+    'Mail All Center provides comprehensive business services from Mountain View, serving the entire Bay Area including Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont, Santa Clara and beyond. DOJ & FBI certified with over 15 years of trusted service.';
+
+  // --- Single JSON-LD @graph including Business schema ---
+  const nodes = [
+    WEBSITE_NODE,
+    BUSINESS_NODE, // your full LocalBusiness node with hasOfferCatalog, hours, areaServed, etc.
+    buildWebPage({ url, title: pageTitle, description: pageDesc }),
+    buildBreadcrumb([
+      { name: 'Home', url: `${SITE_URL}/` },
+      { name: 'Bay Area Services', url },
+    ]),
+  ];
+
   return (
     <main>
-      {/* SEO Structured Data */}
-      <SEOStructuredData type="business" />
-      <SEOStructuredData
-        type="breadcrumb"
-        breadcrumbItems={[
-          { name: 'Home', url: SITE_URL },
-          {
-            name: 'Bay Area Services',
-            url: `${SITE_URL}/bay-area-services`,
-          },
-        ]}
-      />
-      <SEOStructuredData type="website" />
+      <SEOGraph id="ld-bay-area-services" nodes={nodes} />
+
       <GenericHero
-        title="Mail All Center – Walk-In Live Scan, Notary, Apostille & Mailbox Rentals"
+        title={pageTitle}
         subtitle="Professional live scan and Business Services Serving All Bay Area Cities"
-        description="Mail All Center provides comprehensive business services from our Mountain View location, serving the entire Bay Area including Mountain View,Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont, and beyond. DOJ & FBI certified with over 15 years of trusted service."
+        description={pageDesc}
         buttons={[
-          {
-            text: 'View All Services',
-            href: '#services',
-            variant: 'default',
-          },
+          { text: 'View All Services', href: '#services', variant: 'default' },
           {
             text: 'Call (650) 961-4646',
             href: 'tel:+16509614646',
@@ -202,7 +223,7 @@ export default function BayAreaServicesPage() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section with strong internal links */}
       <section id="services" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -223,7 +244,14 @@ export default function BayAreaServicesPage() {
               <Card key={service.title} className="h-full">
                 <CardHeader>
                   <service.icon className="h-12 w-12 text-blue-600 mb-4" />
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <CardTitle className="text-xl">
+                    <Link
+                      href={service.href}
+                      className="underline underline-offset-4 hover:no-underline"
+                    >
+                      {service.title}
+                    </Link>
+                  </CardTitle>
                   <p className="text-muted-foreground">{service.description}</p>
                   <Badge variant="secondary" className="w-fit">
                     {service.price}
@@ -238,6 +266,14 @@ export default function BayAreaServicesPage() {
                       </li>
                     ))}
                   </ul>
+                  <div className="mt-4">
+                    <Link
+                      href={service.href}
+                      className="text-sm font-medium text-blue-700 underline"
+                    >
+                      Learn more →
+                    </Link>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -245,7 +281,7 @@ export default function BayAreaServicesPage() {
         </div>
       </section>
 
-      {/* Why Choose Us for Bay Area Services */}
+      {/* Why Choose Us */}
       <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">

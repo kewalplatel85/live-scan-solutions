@@ -1,8 +1,14 @@
 import { GenericHero } from '@/components/common/GenericHero';
-import { SEOStructuredData } from '@/components/SEOStructuredData';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { passportPhotosServiceSchema } from '@/data/google-business-schema';
+import { SITE_URL } from '@/lib/config';
 import {
   Camera,
   CheckCircle,
@@ -37,17 +43,27 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const url = `${SITE_URL}/passport-photos`;
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url,
+    title: 'Passport Photos in Mountain View, CA | Mail All Center',
+    description:
+      'Professional passport photos meeting all US State Department requirements.',
+  }),
+  passportPhotosServiceSchema,
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Passport Photos', url },
+  ]),
+];
+
 export default function PassportPhotosPage() {
   return (
     <main>
-      {/* Business Schema */}
-      <SEOStructuredData type="business" />
-
-      {/* Service Schema */}
-      <SEOStructuredData
-        type="service"
-        serviceSchema={passportPhotosServiceSchema}
-      />
+      <SEOGraph id="ld-passport-photos" nodes={nodes} />
 
       {/* Hero Section */}
       <GenericHero

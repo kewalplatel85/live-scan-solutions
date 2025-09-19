@@ -1,10 +1,17 @@
 import { GenericHero } from '@/components/common/GenericHero';
 import { CustomerTypesAccordion } from '@/components/sections/CustomerTypesAccordion';
-import { SEOStructuredData } from '@/components/SEOStructuredData';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildHowTo,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { badgeData } from '@/data/badges';
 import { liveScanServiceSchema } from '@/data/google-business-schema';
+import { SITE_URL } from '@/lib/config';
 import {
   // Award,
   CalendarClock,
@@ -167,51 +174,60 @@ export const metadata: Metadata = {
       'Get your Live Scan fingerprinting done fast in Mountain View, CA. Walk-ins welcome. Trusted by local schools, nonprofits & businesses. Only $17 rolling fee!',
     description:
       'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan & traditional fingerprinting. DOJ & FBI certified. Walk-ins welcome, same-day processing. Supporting Bay Area schools, nonprofits.',
-    url: '/live-scan',
+    url: `${SITE_URL}/live-scan`,
   },
   alternates: {
-    canonical: '/live-scan',
+    canonical: `${SITE_URL}/live-scan`,
   },
   robots: { index: true, follow: true },
 };
 
+const url = `${SITE_URL}/live-scan`;
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url,
+    title: 'Live Scan Fingerprinting in Mountain View, CA | Mail All Center',
+    description:
+      'DOJ & FBI certified digital fingerprinting for employment, licensing, and background checks.',
+  }),
+  liveScanServiceSchema, // your existing schema (unchanged)
+  buildHowTo({
+    name: 'How to Complete Live Scan Fingerprinting',
+    steps: [
+      {
+        name: 'Bring Valid Photo ID',
+        text: "Bring a government-issued ID (driver's license or passport).",
+      },
+      {
+        name: 'Complete Required Forms',
+        text: 'Fill out the Live Scan request form with your details.',
+      },
+      {
+        name: 'Digital Fingerprint Capture',
+        text: 'We capture prints using electronic Live Scan equipment.',
+      },
+      {
+        name: 'Review and Submit',
+        text: 'Authorize electronic submission to DOJ/FBI.',
+      },
+      {
+        name: 'Receive Confirmation',
+        text: 'Take your receipt with a tracking/ATI number.',
+      },
+    ],
+  }),
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Live Scan Fingerprinting', url },
+  ]),
+];
+
 export default function LiveScanPage() {
   return (
     <main className="min-h-screen">
-      {/* Business Schema */}
-      <SEOStructuredData type="business" />
-
-      {/* Service Schema */}
-      <SEOStructuredData type="service" serviceSchema={liveScanServiceSchema} />
-
-      {/* HowTo Schema for Live Scan Process */}
-      <SEOStructuredData
-        type="howto"
-        howToName="How to Complete Live Scan Fingerprinting"
-        howToDescription="Step-by-step guide to complete your Live Scan fingerprinting at Mail All Center"
-        howToSteps={[
-          {
-            name: 'Bring Valid Photo ID',
-            text: "Bring a government-issued photo ID such as driver's license or passport",
-          },
-          {
-            name: 'Complete Required Forms',
-            text: 'Fill out the Live Scan request form with your personal information and request details',
-          },
-          {
-            name: 'Digital Fingerprint Capture',
-            text: 'Our certified technician will capture your fingerprints using electronic Live Scan equipment',
-          },
-          {
-            name: 'Review and Submit',
-            text: 'Review your information for accuracy and authorize electronic submission to DOJ/FBI',
-          },
-          {
-            name: 'Receive Confirmation',
-            text: 'Get your receipt with confirmation number for tracking your background check status',
-          },
-        ]}
-      />
+      <SEOGraph id="ld-live-scan" nodes={nodes} />
 
       {/* Hero Section */}
       <GenericHero

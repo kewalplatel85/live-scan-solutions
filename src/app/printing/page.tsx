@@ -1,8 +1,14 @@
 import { GenericHero } from '@/components/common/GenericHero';
-import { SEOStructuredData } from '@/components/SEOStructuredData';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { printingServiceSchema } from '@/data/google-business-schema';
+import { SITE_URL } from '@/lib/config';
 import {
   Building,
   Building2,
@@ -229,14 +235,27 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const url = `${SITE_URL}/printing`;
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url,
+    title: 'Printing, Copy, Lamination & Shredding | Mail All Center',
+    description:
+      'Professional printing, copying, lamination, and secure document shredding services.',
+  }),
+  printingServiceSchema,
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Printing', url },
+  ]),
+];
+
 export default function PrintingPage() {
   return (
     <main className="min-h-screen">
-      {/* Business Schema */}
-      <SEOStructuredData type="business" />
-
-      {/* Service Schema */}
-      <SEOStructuredData type="service" serviceSchema={printingServiceSchema} />
+      <SEOGraph id="ld-printing" nodes={nodes} />
 
       {/* Hero Section */}
       <GenericHero

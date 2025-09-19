@@ -1,6 +1,5 @@
 import { Footer } from '@/components/Footer';
 import { NavigationHeader } from '@/components/NavigationHeader';
-import { SEOStructuredData } from '@/components/SEOStructuredData';
 import { navigationConfig } from '@/data/navigation';
 import { SITE_URL } from '@/lib/config';
 import type { Metadata } from 'next';
@@ -136,8 +135,6 @@ export default function RootLayout({
           name="msapplication-TileImage"
           content="/assets/Logo/icons8-fingerprint-scan-80.png"
         />
-        {/* Site-wide Website Schema */}
-        <SEOStructuredData type="website" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}

@@ -1,4 +1,9 @@
-import { SEOStructuredData } from '@/components/SEOStructuredData';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import { FAQSection } from '@/components/sections/FAQSection';
 import { NewHeroSection } from '@/components/sections/NewHeroSection';
 import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
@@ -23,7 +28,7 @@ export const metadata: Metadata = {
     siteName: 'Mail All Center',
     images: [
       {
-        url: '/assets/Logo/icons8-fingerprint-scan-80.png',
+        url: `${SITE_URL}/assets/Logo/icons8-fingerprint-scan-80.png`,
         width: 80,
         height: 80,
         alt: 'Mail All Center - Professional Business Services in Mountain View & Bay Area',
@@ -36,7 +41,7 @@ export const metadata: Metadata = {
     title: 'Mail All Center | Business Services Mountain View & Bay Area',
     description:
       'Your trusted business service provider serving Mountain View and entire Bay Area. Live Scan, Notary, Passport Photos, Mailbox Rental, Packing & Shipping, Printing. DOJ & FBI certified, same-day service.',
-    images: ['/assets/Logo/icons8-fingerprint-scan-80.png'],
+    images: [`${SITE_URL}/assets/Logo/icons8-fingerprint-scan-80.png`],
   },
   alternates: {
     canonical: SITE_URL,
@@ -44,12 +49,23 @@ export const metadata: Metadata = {
 };
 export const revalidate = 604800; // 7 days
 
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url: `${SITE_URL}/`,
+    title:
+      'Mail All Center – Live Scan, Notary, Apostille in Mountain View, CA',
+    description:
+      'Live Scan fingerprinting, notary, apostille, passport photos, mailbox rental, printing, and shipping in Mountain View, California.',
+  }),
+  buildBreadcrumb([{ name: 'Home', url: `${SITE_URL}/` }]),
+];
+
 export default function HomePage() {
   return (
     <main>
-      {/* Business Schema using centralized data */}
-      <SEOStructuredData type="business" />
-      <SEOStructuredData type="organization" />
+      <SEOGraph id="ld-home" nodes={nodes} />
 
       {/* New Hero with clear value proposition */}
       <NewHeroSection />
