@@ -1,4 +1,10 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import {
   Accordion,
   AccordionContent,
@@ -7,6 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { apostilleServiceSchema } from '@/data/google-business-schema';
+import { SITE_URL } from '@/lib/config';
 import {
   ArrowRight,
   Award,
@@ -36,20 +44,23 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'Professional Apostille Services for International Document Authentication',
+    'Professional Apostille Services for International Document Authentication | Mountain View CA',
   description:
-    'Mail All Center provides professional apostille services for international document authentication in Mountain View, CA. Birth certificates, diplomas, business documents, marriage certificates. Fast processing, expert guidance. Hague Convention compliance. Serving entire Bay Area. Call (650) 961-4646.',
+    'Professional apostille services for international document authentication,birth certificates, diplomas, FBI background checks, marriage certificates, power of attorney, corporate documents at Mail All Center, Mountain View. Hague Convention authentication for international use. Same-day processing, expert guidance. Serving entire Bay Area. Call (650) 961-4646.',
   keywords:
-    'apostille services mountain view, Mail All Center apostille, document authentication mountain view, apostille bay area, hague convention mountain view, international documents mountain view, birth certificate apostille mountain view, diploma apostille mountain view, business document authentication, document legalization mountain view, apostille near me, apostille services palo alto, apostille services sunnyvale',
+    'apostille birth certificate mountain view, apostille diploma mountain view, apostille FBI background check, apostille marriage certificate, apostille power of attorney, apostille corporate documents, apostille services mountain view, Mail All Center apostille, document authentication mountain view, apostille bay area, hague convention mountain view, international documents mountain view, document legalization mountain view, apostille near me, apostille services palo alto, apostille services sunnyvale, California apostille services, Secretary of State apostille',
   openGraph: {
-    title: 'Apostille Services Mountain View | Mail All Center',
+    type: 'website',
+    title:
+      'Apostille Birth Certificate, Diploma, FBI Background Check | Mountain View CA',
     description:
-      'Mail All Center provides professional apostille services for international document authentication in Mountain View, CA. Fast processing, expert guidance.',
-    url: 'https://www.mailallcenter.com/apostille',
+      'Professional apostille services for birth certificates, diplomas, FBI background checks, marriage certificates at Mail All Center, Mountain View. Hague Convention authentication for international use. Same-day processing.',
+    url: `${SITE_URL}/apostille`,
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/apostille',
+    canonical: `${SITE_URL}/apostille`,
   },
+  robots: { index: true, follow: true },
 };
 
 const apostilleServices = [
@@ -224,9 +235,28 @@ const faqItems = [
   },
 ];
 
+const url = `${SITE_URL}/apostille`;
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url,
+    title: 'Apostille Services in Mountain View, CA | Mail All Center',
+    description:
+      'Apostille for birth certificates, diplomas, FBI background checks, marriage certificates, and corporate documents.',
+  }),
+  apostilleServiceSchema,
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Apostille', url },
+  ]),
+];
+
 export default function ApostillePage() {
   return (
     <main className="min-h-screen">
+      <SEOGraph id="ld-apostille" nodes={nodes} />
+
       {/* Hero Section */}
       <GenericHero
         badges={[

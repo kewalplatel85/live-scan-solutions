@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { SITE_URL } from './src/lib/config';
 
 const nextConfig: NextConfig = {
   // Enable static optimization
@@ -7,9 +8,18 @@ const nextConfig: NextConfig = {
   // Improve SEO and performance
   compress: true,
 
-  // Enable experimental features for better SEO
+  // Enable experimental features for better performance and SEO
   experimental: {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-accordion'],
+    optimizeCss: false, // Disable to avoid critters dependency issue
+  },
+
+  // Move serverComponentsExternalPackages to root level
+  serverExternalPackages: [],
+
+  // Performance optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
 
   // Image optimization for better performance
@@ -41,6 +51,19 @@ const nextConfig: NextConfig = {
             key: 'X-DNS-Prefetch-Control',
             value: 'on',
           },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains; preload',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+          // Performance headers - Reduced cache time for better crawling
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, must-revalidate',
+          },
         ],
       },
     ];
@@ -49,7 +72,12 @@ const nextConfig: NextConfig = {
   // Redirects for SEO (if needed)
   async redirects() {
     return [
-      // Add any necessary redirects here
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'mailallcenter.com' }],
+        destination: `${SITE_URL}/:path*`,
+        permanent: true,
+      },
     ];
   },
 };

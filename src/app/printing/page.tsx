@@ -1,6 +1,14 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { printingServiceSchema } from '@/data/google-business-schema';
+import { SITE_URL } from '@/lib/config';
 import {
   Building,
   Building2,
@@ -219,16 +227,36 @@ export const metadata: Metadata = {
     title: 'Printing Services Mountain View | Mail All Center',
     description:
       'Mail All Center offers complete printing solutions: digital, large format, lamination, fax, copy, and shredding services. Same-day service in Mountain View, CA.',
-    url: 'https://www.mailallcenter.com/printing',
+    url: `/printing`,
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/printing',
+    canonical: `/printing`,
   },
+  robots: { index: true, follow: true },
 };
+
+const url = `${SITE_URL}/printing`;
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url,
+    title: 'Printing, Copy, Lamination & Shredding | Mail All Center',
+    description:
+      'Professional printing, copying, lamination, and secure document shredding services.',
+  }),
+  printingServiceSchema,
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Printing', url },
+  ]),
+];
 
 export default function PrintingPage() {
   return (
     <main className="min-h-screen">
+      <SEOGraph id="ld-printing" nodes={nodes} />
+
       {/* Hero Section */}
       <GenericHero
         badges={[

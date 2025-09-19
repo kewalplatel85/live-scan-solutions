@@ -1,7 +1,15 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { mailboxRentalServiceSchema } from '@/data/google-business-schema';
+import { SITE_URL } from '@/lib/config';
 import {
   Bell,
   CheckCircle,
@@ -25,19 +33,40 @@ export const metadata: Metadata = {
   keywords:
     'mailbox rental mountain view, mailbox rental bay area, mailbox rental near me, private mailbox mountain view, private mailbox bay area, Mail All Center mailbox, mailbox service bay area, package receiving mountain view, mail forwarding mountain view, business mailbox mountain view, virtual mailbox mountain view, secure mailbox rental, private mailbox service, street address rental mountain view, mailbox rental palo alto, mailbox rental sunnyvale, mailbox rental san jose, mailbox rental cupertino, mailbox rental fremont, mailbox rental santa clara, silicon valley mailbox rental, peninsula mailbox service, south bay mailbox rental',
   openGraph: {
+    type: 'website',
     title: 'Mailbox Rental Mountain View | Mail All Center',
     description:
       'Mail All Center offers secure mailbox rental in Mountain View, CA. Real street address, 24/7 access, package receiving.',
-    url: 'https://www.mailallcenter.com/mailbox-rental',
+    url: `${SITE_URL}/mailbox-rental`,
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/mailbox-rental',
+    canonical: `${SITE_URL}/mailbox-rental`,
   },
+  robots: { index: true, follow: true },
 };
+
+const url = `${SITE_URL}/mailbox-rental`;
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url,
+    title: 'Mailbox Rental in Mountain View, CA | Mail All Center',
+    description:
+      'Private mailbox rental with real street address, package receiving, and mail forwarding.',
+  }),
+  mailboxRentalServiceSchema,
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Mailbox Rental', url },
+  ]),
+];
 
 export default function MailboxRentalPage() {
   return (
     <main>
+      <SEOGraph id="ld-mailbox" nodes={nodes} />
+
       {/* Hero Section */}
       <GenericHero
         title={

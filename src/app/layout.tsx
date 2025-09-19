@@ -1,6 +1,7 @@
 import { Footer } from '@/components/Footer';
 import { NavigationHeader } from '@/components/NavigationHeader';
 import { navigationConfig } from '@/data/navigation';
+import { SITE_URL } from '@/lib/config';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Script from 'next/script';
@@ -18,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.mailallcenter.com'),
+  metadataBase: new URL(SITE_URL),
   title:
     'Mail All Center - Live Scan, Notary, Passport Photos & More | Bay Area, Mountain View, CA',
   description:
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
       'Mail All Center - Complete Business Services | Bay Area, Silicon Valley, Mountain View',
     description:
       'Mail All Center provides Live Scan & Ink Fingerprinting, Notary Public, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, and more in Mountain View, CA. DOJ & FBI certified. Serving entire Bay Area including Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont, Santa Clara with same-day service.',
-    url: 'https://www.mailallcenter.com',
+    url: SITE_URL,
     siteName: 'Mail All Center',
     type: 'website',
     locale: 'en_US',
@@ -78,7 +79,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com',
+    canonical: SITE_URL,
   },
   verification: {
     google: 'your-google-site-verification-code',
@@ -160,202 +161,6 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </AppProviders>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'LocalBusiness',
-              '@id': 'https://www.mailallcenter.com/#organization',
-              name: 'Mail All Center',
-              description:
-                'Mail All Center provides comprehensive business services including Live Scan & Ink Fingerprinting, Notary Public, Apostille Services, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, Lamination, Fax & Copy, and Shredding in Mountain View, CA. DOJ & FBI certified.',
-              url: 'https://www.mailallcenter.com',
-              telephone: '(650) 961-4646',
-              email: 'info@livescansolutions.com',
-              address: {
-                '@type': 'PostalAddress',
-                streetAddress: '809 Cuesta Dr, Suite B',
-                addressLocality: 'Mountain View',
-                addressRegion: 'CA',
-                postalCode: '94040',
-                addressCountry: 'US',
-              },
-              geo: {
-                '@type': 'GeoCoordinates',
-                latitude: 37.4089,
-                longitude: -122.0877,
-              },
-              openingHours: ['Mo-Fr 10:00-17:00', 'Sa 10:00-14:00'],
-              priceRange: '$17-$125',
-              areaServed: [
-                'Mountain View, CA',
-                'Palo Alto, CA',
-                'Sunnyvale, CA',
-                'San Jose, CA',
-                'Cupertino, CA',
-                'Santa Clara, CA',
-                'Menlo Park, CA',
-                'Redwood City, CA',
-                'Fremont, CA',
-                'Campbell, CA',
-                'Los Altos, CA',
-                'Milpitas, CA',
-                'Foster City, CA',
-                'San Mateo, CA',
-                'Belmont, CA',
-                'San Carlos, CA',
-                'Atherton, CA',
-                'East Palo Alto, CA',
-                'Newark, CA',
-                'Union City, CA',
-                'Hayward, CA',
-                'San Leandro, CA',
-                'Oakland, CA',
-                'Berkeley, CA',
-                'Daly City, CA',
-                'South San Francisco, CA',
-                'Brisbane, CA',
-                'Burlingame, CA',
-                'Millbrae, CA',
-                'Los Altos Hills, CA',
-                'Saratoga, CA',
-                'Monte Sereno, CA',
-                'Portola Valley, CA',
-                'Woodside, CA',
-                'Half Moon Bay, CA',
-                'Pacifica, CA',
-                'Bay Area, CA',
-                'Silicon Valley, CA',
-                'San Francisco Bay Area, CA',
-                'South Bay, CA',
-                'Peninsula, CA',
-              ],
-              hasOfferCatalog: {
-                '@type': 'OfferCatalog',
-                name: 'Business and Document Services',
-                itemListElement: [
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Live Scan Fingerprinting',
-                      description:
-                        'Electronic fingerprinting for employment, licensing, and background checks',
-                    },
-                    price: '17',
-                    priceCurrency: 'USD',
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Ink Fingerprinting',
-                      description:
-                        'Traditional ink fingerprinting services for all applications',
-                    },
-                    price: '25',
-                    priceCurrency: 'USD',
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Notary Public Services',
-                      description:
-                        'Professional document notarization with licensed notaries',
-                    },
-                    price: '25',
-                    priceCurrency: 'USD',
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Apostille Services',
-                      description:
-                        'Document authentication for international use',
-                    },
-                    price: '75',
-                    priceCurrency: 'USD',
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Passport Photos',
-                      description:
-                        'Professional passport photos meeting all requirements',
-                    },
-                    price: '15',
-                    priceCurrency: 'USD',
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Mailbox Rental',
-                      description:
-                        'Private mailbox rental with package receiving services',
-                    },
-                    price: '20',
-                    priceCurrency: 'USD',
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Packing & Shipping',
-                      description:
-                        'Professional packing and shipping services via UPS, FedEx, USPS',
-                    },
-                    price: '10',
-                    priceCurrency: 'USD',
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Printing Services',
-                      description:
-                        'High-quality printing, copying, and lamination services',
-                    },
-                    price: '0.25',
-                    priceCurrency: 'USD',
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Fax & Copy Services',
-                      description:
-                        'Fax sending and receiving, copying services',
-                    },
-                    price: '2',
-                    priceCurrency: 'USD',
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Shredding Services',
-                      description:
-                        'Secure document shredding for sensitive materials',
-                    },
-                    price: '1',
-                    priceCurrency: 'USD',
-                  },
-                ],
-              },
-              aggregateRating: {
-                '@type': 'AggregateRating',
-                ratingValue: '4.9',
-                reviewCount: '127',
-                bestRating: '5',
-              },
-            }),
-          }}
-        />
       </body>
     </html>
   );

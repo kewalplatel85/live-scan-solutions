@@ -1,5 +1,13 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import { Card } from '@/components/ui/card';
+import { packingShippingServiceSchema } from '@/data/google-business-schema';
+import { SITE_URL } from '@/lib/config';
 import { SiDhl, SiFedex, SiUps, SiUsps } from '@icons-pack/react-simple-icons';
 import {
   CheckCircle,
@@ -21,19 +29,40 @@ export const metadata: Metadata = {
   keywords:
     'packing services mountain view, shipping services mountain view, Mail All Center shipping, UPS shipping mountain view, FedEx shipping mountain view, USPS shipping mountain view, package packing mountain view, fragile item packing, professional packing services, shipping near me, package services mountain view, shipping center mountain view, pack and ship mountain view, shipping solutions bay area',
   openGraph: {
+    type: 'website',
     title: 'Packing & Shipping Services Mountain View | Mail All Center',
     description:
       'Mail All Center offers professional packing and shipping services with UPS, FedEx, USPS. Expert handling of all package types in Mountain View, CA.',
-    url: 'https://www.mailallcenter.com/pack-ship',
+    url: `/pack-ship`,
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/pack-ship',
+    canonical: `/pack-ship`,
   },
+  robots: { index: true, follow: true },
 };
+
+const url = `${SITE_URL}/pack-ship`;
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url,
+    title: 'Packing & Shipping Services | Mail All Center',
+    description:
+      'Professional packing and shipping services for FedEx, UPS, and USPS.',
+  }),
+  packingShippingServiceSchema,
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Pack & Ship', url },
+  ]),
+];
 
 export default function PackShipPage() {
   return (
     <main>
+      <SEOGraph id="ld-pack-ship" nodes={nodes} />
+
       {/* Hero Section */}
       <GenericHero
         layout="split-60-40"

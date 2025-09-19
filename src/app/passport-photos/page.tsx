@@ -1,6 +1,14 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+import { passportPhotosServiceSchema } from '@/data/google-business-schema';
+import { SITE_URL } from '@/lib/config';
 import {
   Camera,
   CheckCircle,
@@ -27,16 +35,36 @@ export const metadata: Metadata = {
     title: 'Passport Photos Mountain View | Mail All Center | $9.99',
     description:
       'Mail All Center offers professional passport photos in Mountain View, CA for only $9.99. Same-day service, guaranteed acceptance.',
-    url: 'https://www.mailallcenter.com/passport-photos',
+    url: `/passport-photos`,
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/passport-photos',
+    canonical: `/passport-photos`,
   },
+  robots: { index: true, follow: true },
 };
+
+const url = `${SITE_URL}/passport-photos`;
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url,
+    title: 'Passport Photos in Mountain View, CA | Mail All Center',
+    description:
+      'Professional passport photos meeting all US State Department requirements.',
+  }),
+  passportPhotosServiceSchema,
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Passport Photos', url },
+  ]),
+];
 
 export default function PassportPhotosPage() {
   return (
     <main>
+      <SEOGraph id="ld-passport-photos" nodes={nodes} />
+
       {/* Hero Section */}
       <GenericHero
         title={

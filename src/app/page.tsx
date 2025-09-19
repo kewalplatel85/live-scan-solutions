@@ -1,6 +1,13 @@
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import { FAQSection } from '@/components/sections/FAQSection';
 import { NewHeroSection } from '@/components/sections/NewHeroSection';
 import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
+import { SITE_URL } from '@/lib/config';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,13 +22,13 @@ export const metadata: Metadata = {
       'Mail All Center | Complete Business Services Mountain View & Bay Area',
     description:
       'Your trusted business service provider in Mountain View, serving the entire Bay Area. Live Scan, Notary, Passport Photos, Mailbox Rental, Packing & Shipping, Printing. DOJ & FBI certified, 15+ years experience. Same-day service, walk-ins welcome.',
-    url: 'https://www.mailallcenter.com',
+    url: SITE_URL,
     type: 'website',
     locale: 'en_US',
     siteName: 'Mail All Center',
     images: [
       {
-        url: '/assets/Logo/icons8-fingerprint-scan-80.png',
+        url: `${SITE_URL}/assets/Logo/icons8-fingerprint-scan-80.png`,
         width: 80,
         height: 80,
         alt: 'Mail All Center - Professional Business Services in Mountain View & Bay Area',
@@ -34,166 +41,31 @@ export const metadata: Metadata = {
     title: 'Mail All Center | Business Services Mountain View & Bay Area',
     description:
       'Your trusted business service provider serving Mountain View and entire Bay Area. Live Scan, Notary, Passport Photos, Mailbox Rental, Packing & Shipping, Printing. DOJ & FBI certified, same-day service.',
-    images: ['/assets/Logo/icons8-fingerprint-scan-80.png'],
+    images: [`${SITE_URL}/assets/Logo/icons8-fingerprint-scan-80.png`],
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com',
+    canonical: SITE_URL,
   },
 };
+export const revalidate = 604800; // 7 days
+
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url: `${SITE_URL}/`,
+    title:
+      'Mail All Center – Live Scan, Notary, Apostille in Mountain View, CA',
+    description:
+      'Live Scan fingerprinting, notary, apostille, passport photos, mailbox rental, printing, and shipping in Mountain View, California.',
+  }),
+  buildBreadcrumb([{ name: 'Home', url: `${SITE_URL}/` }]),
+];
 
 export default function HomePage() {
   return (
     <main>
-      {/* Local Business Structured Data for Home Page */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'LocalBusiness',
-            '@id': 'https://www.mailallcenter.com/#homepage',
-            name: 'Mail All Center',
-            alternateName: 'Mail All Center Mountain View',
-            description:
-              "Bay Area's trusted business service provider offering Live Scan & Ink Fingerprinting, Notary Public, Apostille, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, and more in Mountain View, CA.",
-            url: 'https://www.mailallcenter.com',
-            telephone: '(650) 961-4646',
-            email: 'info@livescansolutions.com',
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: '809 Cuesta Dr, Suite B',
-              addressLocality: 'Mountain View',
-              addressRegion: 'CA',
-              postalCode: '94040',
-              addressCountry: 'US',
-            },
-            geo: {
-              '@type': 'GeoCoordinates',
-              latitude: 37.4089,
-              longitude: -122.0877,
-            },
-            openingHours: ['Mo-Fr 10:00-17:00', 'Sa 10:00-14:00'],
-            priceRange: '$17-$125',
-            paymentAccepted: ['Cash', 'Credit Card', 'Debit Card'],
-            currenciesAccepted: 'USD',
-            areaServed: {
-              '@type': 'State',
-              name: 'California',
-              containsPlace: [
-                {
-                  '@type': 'City',
-                  name: 'Mountain View',
-                  containedInPlace: {
-                    '@type': 'State',
-                    name: 'California',
-                  },
-                },
-                {
-                  '@type': 'City',
-                  name: 'Palo Alto',
-                  containedInPlace: {
-                    '@type': 'State',
-                    name: 'California',
-                  },
-                },
-                {
-                  '@type': 'City',
-                  name: 'Sunnyvale',
-                  containedInPlace: {
-                    '@type': 'State',
-                    name: 'California',
-                  },
-                },
-                {
-                  '@type': 'City',
-                  name: 'San Jose',
-                  containedInPlace: {
-                    '@type': 'State',
-                    name: 'California',
-                  },
-                },
-                {
-                  '@type': 'City',
-                  name: 'Cupertino',
-                  containedInPlace: {
-                    '@type': 'State',
-                    name: 'California',
-                  },
-                },
-                {
-                  '@type': 'City',
-                  name: 'Fremont',
-                  containedInPlace: {
-                    '@type': 'State',
-                    name: 'California',
-                  },
-                },
-              ],
-            },
-            serviceArea: {
-              '@type': 'GeoCircle',
-              geoMidpoint: {
-                '@type': 'GeoCoordinates',
-                latitude: 37.4089,
-                longitude: -122.0877,
-              },
-              geoRadius: '30',
-            },
-            hasOfferCatalog: {
-              '@type': 'OfferCatalog',
-              name: 'Business and Document Services',
-              itemListElement: [
-                {
-                  '@type': 'Offer',
-                  itemOffered: {
-                    '@type': 'Service',
-                    name: 'Live Scan Fingerprinting',
-                    description:
-                      'Electronic fingerprinting for employment, licensing, and background checks',
-                    areaServed: 'Bay Area, California',
-                  },
-                  price: '17',
-                  priceCurrency: 'USD',
-                },
-                {
-                  '@type': 'Offer',
-                  itemOffered: {
-                    '@type': 'Service',
-                    name: 'Notary Public Services',
-                    description:
-                      'Professional document notarization with licensed notaries',
-                    areaServed: 'Bay Area, California',
-                  },
-                  price: '25',
-                  priceCurrency: 'USD',
-                },
-                {
-                  '@type': 'Offer',
-                  itemOffered: {
-                    '@type': 'Service',
-                    name: 'Passport Photos',
-                    description:
-                      'Professional passport photos meeting all requirements',
-                    areaServed: 'Bay Area, California',
-                  },
-                  price: '9.99',
-                  priceCurrency: 'USD',
-                },
-              ],
-            },
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '4.9',
-              reviewCount: '127',
-              bestRating: '5',
-            },
-            sameAs: [
-              'https://www.google.com/maps/place/Mail+All+Center',
-              'https://www.yelp.com/biz/mail-all-center-mountain-view',
-            ],
-          }),
-        }}
-      />
+      <SEOGraph id="ld-home" nodes={nodes} />
 
       {/* New Hero with clear value proposition */}
       <NewHeroSection />

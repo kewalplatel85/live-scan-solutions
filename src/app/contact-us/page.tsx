@@ -1,6 +1,13 @@
 import { InteractiveMap } from '@/components/InteractiveMap';
+import SEOGraph, {
+  buildBreadcrumb,
+  buildWebPage,
+  BUSINESS_NODE,
+  WEBSITE_NODE,
+} from '@/components/SEOGraph';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { SITE_URL } from '@/lib/config';
 import { Calendar, Car, Clock, Mail, MapPin, Phone } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -12,19 +19,37 @@ export const metadata: Metadata = {
   keywords:
     'contact Mail All Center, mountain view fingerprinting location, live scan hours, fingerprinting near me, 809 cuesta dr mountain view, bay area fingerprinting contact, live scan phone number, Mountain View School District, Los Altos School District, Sunnyvale School District, Cupertino School District, Menlo Park School District, Palo Alto School District, Santa Clara School District, San Jose School District, Boys Scouts, Sunnyvale Boy Scouts, Redwood City School District, Los Gatos School District, AYSO',
   openGraph: {
+    type: 'website',
     title: 'Contact Mail All Center | Location & Hours',
     description:
       'Contact Mail All Center in Mountain View, CA. Phone: (650) 961-4646. Professional fingerprinting services.',
-    url: 'https://www.mailallcenter.com/contact',
+    url: `${SITE_URL}/contact-us`,
   },
   alternates: {
-    canonical: 'https://www.mailallcenter.com/contact',
+    canonical: `${SITE_URL}/contact-us`,
   },
 };
+
+const url = `${SITE_URL}/contact-us`;
+const nodes = [
+  WEBSITE_NODE,
+  BUSINESS_NODE,
+  buildWebPage({
+    url,
+    title: 'Contact Mail All Center | Mountain View, CA',
+    description:
+      'Call, email, or visit us. See hours, directions, and parking info.',
+  }),
+  buildBreadcrumb([
+    { name: 'Home', url: `${SITE_URL}/` },
+    { name: 'Contact Us', url },
+  ]),
+];
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+      <SEOGraph id="ld-contact" nodes={nodes} />
       <div className="container mx-auto px-4 py-12">
         {/* Page Header */}
         <div className="text-center mb-8">
