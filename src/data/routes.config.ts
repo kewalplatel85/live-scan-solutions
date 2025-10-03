@@ -2,7 +2,7 @@
 export type RouteCategory = 'home' | 'core' | 'standard' | 'info';
 
 export type RouteDef = {
-  path: string; // "/live-scan"
+  path: string; // "/Live-Scan-Fingerprinting"
   title?: string; // "Live Scan"
   category: RouteCategory;
   // optional per-route override; omit to use the global date
@@ -23,7 +23,7 @@ const CATEGORIES: Record<
 
 export const ROUTES: RouteDef[] = [
   { path: '/', title: 'Home', category: 'home' },
-  { path: '/live-scan', title: 'Live Scan', category: 'core' },
+  { path: '/Live-Scan-Fingerprinting', title: 'Live Scan', category: 'core' },
   { path: '/notary', title: 'Notary', category: 'core' },
   { path: '/apostille', title: 'Apostille', category: 'core' },
   { path: '/passport-photos', title: 'Passport Photos', category: 'standard' },

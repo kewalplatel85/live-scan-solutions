@@ -69,7 +69,7 @@ export default function PackShipPage() {
         title={
           <>
             Professional{' '}
-            <span className="text-primary">Packing & Shipping</span> Services
+            <span className="text-primary">Packing & Shipping</span>
           </>
         }
         subtitle="Your Complete Shipping Solution Center"

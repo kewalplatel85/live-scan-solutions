@@ -76,7 +76,7 @@ const services = [
       'Walk-ins welcome',
       'All background checks',
     ],
-    href: '/live-scan',
+    href: '/Live-Scan-Fingerprinting',
   },
   {
     title: 'Notary Public Services',

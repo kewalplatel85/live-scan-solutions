@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   title:
     'Top-rated Live Scan, Fingerprinting, Notary, Apostille, Passport Photo and Shipping Services | Mail All Center',
   description:
-    'Mail All Center is your trusted business service provider in Mountain View, CA, serving the entire Bay Area. We offer Live Scan & Ink Fingerprinting, Notary Public, Apostille, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, and more. DOJ & FBI certified with over 15 years of experience. Same-day service, walk-ins welcome. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont, Santa Clara, and all Bay Area cities. Supporting school districts like Mountain View, Palo Alto, Sunnyvale, Cupertino, and organizations like Boy Scouts and AYSO. Call (650) 961-4646.',
+    'Mail All Center is your trusted business service provider in Mountain View, CA, serving the entire Bay Area. We offer Live Scan & Ink Fingerprinting, Notary Public, Apostille, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, and more. Listed on the California DOJ website as an approved Live Scan location with over 15 years of experience. Same-day service, walk-ins welcome. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont, Santa Clara, and all Bay Area cities. Supporting school districts like Mountain View, Palo Alto, Sunnyvale, Cupertino, and organizations like Boy Scouts and AYSO. Call (650) 961-4646.',
   keywords:
-    'Mail All Center, Mail All Center Mountain View, business services mountain view, business services bay area, business services near me, live scan fingerprinting mountain view, live scan bay area, live scan near me, fingerprinting near me, notary public mountain view, notary bay area, notary near me, passport photos mountain view, passport photos bay area, passport photos near me, apostille services mountain view, apostille bay area, apostille near me, mailbox rental mountain view, mailbox rental bay area, packing shipping mountain view, packing shipping bay area, printing services mountain view, printing bay area, DOJ FBI certified fingerprinting, same day service mountain view, walk in service bay area, professional services silicon valley, document services peninsula, business center mountain view, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, notary palo alto, notary sunnyvale, notary san jose, fingerprinting silicon valley, business services peninsula, professional services south bay, Mountain View School District, Los Altos School District, Sunnyvale School District, Cupertino School District, Menlo Park School District, Palo Alto School District, Santa Clara School District, San Jose School District, Boys Scouts, Sunnyvale Boy Scouts, Redwood City School District, Los Gatos School District, AYSO',
+    'Mail All Center, Mail All Center Mountain View, business services mountain view, business services bay area, business services near me, live scan fingerprinting mountain view, live scan bay area, live scan near me, fingerprinting near me, notary public mountain view, notary bay area, notary near me, passport photos mountain view, passport photos bay area, passport photos near me, apostille services mountain view, apostille bay area, apostille near me, mailbox rental mountain view, mailbox rental bay area, packing shipping mountain view, packing shipping bay area, printing services mountain view, printing bay area, live scan fingerprint submission services, licensing fingerprinting, employment fingerprinting, same day service mountain view, walk in service bay area, professional services silicon valley, document services peninsula, business center mountain view, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, notary palo alto, notary sunnyvale, notary san jose, fingerprinting silicon valley, business services peninsula, professional services south bay, Mountain View School District, Los Altos School District, Sunnyvale School District, Cupertino School District, Menlo Park School District, Palo Alto School District, Santa Clara School District, San Jose School District, Boys Scouts, Sunnyvale Boy Scouts, Redwood City School District, Los Gatos School District, AYSO',
   openGraph: {
     title:
       'Mail All Center | Complete Business Services Mountain View & Bay Area',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     site: '@MailAllCenter',
     title: 'Mail All Center | Business Services Mountain View & Bay Area',
     description:
-      'Your trusted business service provider serving Mountain View and entire Bay Area. Live Scan, Notary, Passport Photos, Mailbox Rental, Packing & Shipping, Printing. DOJ & FBI certified, same-day service.',
+      'Your trusted business service provider in Mountain View, serving the entire Bay Area. Live Scan fingerprint submission services for licensing and employment, Notary, Passport Photos, Mailbox Rental, Packing & Shipping, Printing. Listed on California DOJ website, 15+ years experience. Same-day service, walk-ins welcome.',
     images: [`${SITE_URL}/assets/Logo/icons8-fingerprint-scan-80.png`],
   },
   alternates: {
@@ -57,7 +57,7 @@ const nodes = [
     title:
       'Mail All Center – Live Scan, Notary, Apostille in Mountain View, CA',
     description:
-      'Live Scan fingerprinting, notary, apostille, passport photos, mailbox rental, printing, and shipping in Mountain View, California.',
+      'Live Scan fingerprint submission services for licensing and employment, notary, apostille, passport photos, mailbox rental, printing, and shipping in Mountain View, California.',
   }),
   buildBreadcrumb([{ name: 'Home', url: `${SITE_URL}/` }]),
 ];

@@ -46,15 +46,15 @@ export const metadata: Metadata = {
   title:
     'Professional Apostille Services for International Document Authentication | Mountain View CA',
   description:
-    'Professional apostille services for international document authentication,birth certificates, diplomas, FBI background checks, marriage certificates, power of attorney, corporate documents at Mail All Center, Mountain View. Hague Convention authentication for international use. Same-day processing, expert guidance. Serving entire Bay Area. Call (650) 961-4646.',
+    'Professional apostille services for international document authentication, birth certificates, diplomas, educational credentials, marriage certificates, power of attorney, corporate documents at Mail All Center, Mountain View. Hague Convention authentication for international use. Same-day processing, expert guidance. Serving entire Bay Area. Call (650) 961-4646.',
   keywords:
-    'apostille birth certificate mountain view, apostille diploma mountain view, apostille FBI background check, apostille marriage certificate, apostille power of attorney, apostille corporate documents, apostille services mountain view, Mail All Center apostille, document authentication mountain view, apostille bay area, hague convention mountain view, international documents mountain view, document legalization mountain view, apostille near me, apostille services palo alto, apostille services sunnyvale, California apostille services, Secretary of State apostille',
+    'apostille birth certificate mountain view, apostille diploma mountain view, apostille educational credentials, apostille marriage certificate, apostille power of attorney, apostille corporate documents, apostille services mountain view, Mail All Center apostille, document authentication mountain view, apostille bay area, hague convention mountain view, international documents mountain view, document legalization mountain view, apostille near me, apostille services palo alto, apostille services sunnyvale, California apostille services, Secretary of State apostille',
   openGraph: {
     type: 'website',
     title:
-      'Apostille Birth Certificate, Diploma, FBI Background Check | Mountain View CA',
+      'Apostille Birth Certificate, Diploma, Educational Documents | Mountain View CA',
     description:
-      'Professional apostille services for birth certificates, diplomas, FBI background checks, marriage certificates at Mail All Center, Mountain View. Hague Convention authentication for international use. Same-day processing.',
+      'Professional apostille services for birth certificates, diplomas, educational credentials, marriage certificates at Mail All Center, Mountain View. Hague Convention authentication for international use. Same-day processing.',
     url: `${SITE_URL}/apostille`,
   },
   alternates: {
@@ -110,7 +110,7 @@ const apostilleServices = [
       'Affidavits',
       'Legal certificates',
       'Custody documents',
-      'Criminal background checks',
+      'Official document submissions',
     ],
   },
 ];
@@ -231,7 +231,12 @@ const faqItems = [
   {
     question: 'Do I need to notarize my documents first?',
     answer:
-      'Some documents may require notarization before apostille. We provide comprehensive services including notarization, translation, and authentication to simplify the entire process.',
+      'Some documents may require notarization before apostille. We provide comprehensive services including notarization, translation, and document preparation to help streamline the entire process.',
+  },
+  {
+    question: 'Are you a government agency?',
+    answer:
+      'No, Mail All Center is a private service provider. We help prepare and submit apostille documents, but we are not a government agency. Final apostilles are always issued by the Secretary of State or relevant government office.',
   },
 ];
 
@@ -243,7 +248,7 @@ const nodes = [
     url,
     title: 'Apostille Services in Mountain View, CA | Mail All Center',
     description:
-      'Apostille for birth certificates, diplomas, FBI background checks, marriage certificates, and corporate documents.',
+      'Apostille for birth certificates, diplomas, educational credentials, marriage certificates, and corporate documents.',
   }),
   apostilleServiceSchema,
   buildBreadcrumb([
@@ -262,7 +267,7 @@ export default function ApostillePage() {
         badges={[
           {
             icon: Globe,
-            text: 'Hague Convention Certified',
+            text: 'Experienced apostille specialists following Hague Convention standards',
             variant: 'secondary',
           },
           {
@@ -283,7 +288,7 @@ export default function ApostillePage() {
             Services
           </>
         }
-        description="Simplifying document authentication for international use. Expert apostille services for personal, educational, and corporate documents with fast, secure processing."
+        description="Expert document preparation services for international use. We assist with apostille processing for personal, educational, and corporate documents with fast, secure handling and professional guidance."
         benefits={[
           { text: 'Fast processing' },
           { text: 'Secure handling' },
@@ -764,6 +769,21 @@ export default function ApostillePage() {
               <a href="/faq" className="text-primary hover:underline">
                 Browse our FAQs for more details
               </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer Disclaimer */}
+      <section className="py-6 bg-muted/30 border-t">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs text-muted-foreground">
+              Mail All Center helps prepare and submit apostille documents; we
+              are not a government agency. Final apostilles are issued by the
+              Secretary of State or relevant office. We assist with document
+              types such as birth certificates, marriage certificates,
+              educational diplomas, and corporate records.
             </p>
           </div>
         </div>
