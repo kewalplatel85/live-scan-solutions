@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   title:
     'Mail All Center - Live Scan, Notary, Passport Photos & More | Bay Area, Mountain View, CA',
   description:
-    'Mail All Center offers comprehensive business services in Mountain View, CA: Live Scan & Ink Fingerprinting, Notary Public, Apostille, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, Lamination, Fax & Copy, and Shredding. DOJ & FBI certified. Serving entire Bay Area since 2010. Walk-ins welcome! Call (650) 961-4646.',
+    'Mail All Center offers comprehensive business services in Mountain View, CA: Live Scan & Ink Fingerprinting, Notary Public, Apostille, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, Lamination, Fax & Copy, and Shredding. Listed on California DOJ website as approved Live Scan location. Serving entire Bay Area since 2010. Walk-ins welcome! Call (650) 961-4646.',
   keywords:
-    'Mail All Center, live scan fingerprinting bay area, live scan near me, fingerprinting near me, notary public mountain view, notary near me, notary bay area, passport photos near me, passport photos bay area, mailbox rental mountain view, mailbox rental bay area, packing shipping mountain view, packing shipping bay area, apostille services bay area, apostille near me, printing services mountain view, printing near me, printing bay area, fingerprinting mountain view, business services near me, document services bay area, DOJ FBI certified fingerprinting, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, live scan menlo park, live scan redwood city, notary palo alto, notary sunnyvale, notary san jose, notary cupertino, notary fremont, notary santa clara, digital fingerprinting california, employment background check, live scan appointment, same day fingerprinting, business services mountain view, lamination services, fax copy services, shredding services, professional fingerprinting, ink fingerprinting, walk in fingerprinting, background check services, licensing fingerprinting, employment fingerprinting, silicon valley fingerprinting, silicon valley notary, silicon valley business services',
+    'Mail All Center, live scan fingerprinting bay area, live scan near me, fingerprinting near me, notary public mountain view, notary near me, notary bay area, passport photos near me, passport photos bay area, mailbox rental mountain view, mailbox rental bay area, packing shipping mountain view, packing shipping bay area, apostille services bay area, apostille near me, printing services mountain view, printing near me, printing bay area, fingerprinting mountain view, business services near me, document services bay area, live scan fingerprint submission services, licensing fingerprinting, employment fingerprinting, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, live scan menlo park, live scan redwood city, notary palo alto, notary sunnyvale, notary san jose, notary cupertino, notary fremont, notary santa clara, digital fingerprinting california, employment background check, live scan appointment, same day fingerprinting, business services mountain view, lamination services, fax copy services, shredding services, professional fingerprinting, ink fingerprinting, walk in fingerprinting, background check services, licensing fingerprinting, employment fingerprinting, silicon valley fingerprinting, silicon valley notary, silicon valley business services',
   authors: [{ name: 'Mail All Center' }],
   creator: 'Mail All Center',
   publisher: 'Mail All Center',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title:
       'Mail All Center - Complete Business Services | Bay Area, Silicon Valley, Mountain View',
     description:
-      'Mail All Center provides Live Scan & Ink Fingerprinting, Notary Public, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, and more in Mountain View, CA. DOJ & FBI certified. Serving entire Bay Area including Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont, Santa Clara with same-day service.',
+      'Mail All Center provides Live Scan & Ink Fingerprinting, Notary Public, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, and more in Mountain View, CA. Listed on California DOJ website as approved Live Scan location. Serving entire Bay Area including Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont, Santa Clara with same-day service.',
     url: SITE_URL,
     siteName: 'Mail All Center',
     type: 'website',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     site: '@MailAllCenter',
     title: 'Mail All Center - Business Services in Bay Area, Silicon Valley',
     description:
-      'Mail All Center offers Live Scan & Ink Fingerprinting, Notary Public, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, and more. DOJ & FBI certified. Serving Bay Area including Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont. Walk-ins welcome!',
+      'Mail All Center offers Live Scan & Ink Fingerprinting, Notary Public, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, and more. Listed on California DOJ website as approved Live Scan location. Serving Bay Area including Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont. Walk-ins welcome!',
     images: ['/assets/Logo/icons8-fingerprint-scan-80.png'],
   },
   viewport: {

@@ -46,7 +46,7 @@ export const aboutValues: ValueItem[] = [
   {
     title: 'Security & Trust',
     description:
-      'DOJ & FBI certified with the highest standards of data protection and confidentiality for all services.',
+      'Our Live Scan fingerprinting services are listed on the California DOJ website with the highest standards of data protection and confidentiality for all services.',
     icon: Shield,
   },
   {
@@ -71,7 +71,7 @@ export const aboutValues: ValueItem[] = [
 
 // About page features list
 export const aboutFeatures: string[] = [
-  'DOJ & FBI Certified for Live Scan Fingerprinting',
+  'Our Live Scan fingerprinting services are listed on the California DOJ website',
   '10+ Essential Business Services Under One Roof',
   'Over 15 Years of Trusted Service in Bay Area',
   'Convenient Mountain View Location with Easy Access',

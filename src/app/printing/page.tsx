@@ -266,8 +266,8 @@ export default function PrintingPage() {
         ]}
         title={
           <>
-            Complete <span className="text-primary">Printing Solutions</span>{' '}
-            for Every Need
+            Complete{' '}
+            <span className="text-primary">Printing Solutions</span>{' '}
           </>
         }
         description="From business cards to large format banners, we provide professional printing services for businesses and individuals. High-quality prints, competitive pricing, and expert service you can trust."

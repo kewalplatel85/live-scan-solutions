@@ -71,8 +71,8 @@ export default function MailboxRentalPage() {
       <GenericHero
         title={
           <>
-            Professional <span className="text-primary">Mailbox Rental</span>{' '}
-            Services
+            Professional{' '}
+            <span className="text-primary">Mailbox Rental</span>{' '}
           </>
         }
         subtitle="Secure mail and package handling for businesses and individuals. Get a real street address with 24/7 access and instant notifications."

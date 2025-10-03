@@ -7,12 +7,12 @@ export const badgeData = {
   liveScanHome: [
     {
       icon: Shield,
-      text: 'DOJ Certified',
+      text: 'DOJ Listed Provider',
       variant: 'secondary' as const,
     },
     {
       icon: Shield,
-      text: 'FBI Authorized',
+      text: 'Licensed Fingerprinting',
       variant: 'secondary' as const,
     },
     {
@@ -27,12 +27,12 @@ export const badgeData = {
   about: [
     {
       icon: Shield,
-      text: 'DOJ Certified',
+      text: 'DOJ Listed Provider',
       variant: 'secondary' as const,
     },
     {
       icon: Shield,
-      text: 'FBI Authorized',
+      text: 'Licensed Fingerprinting',
       variant: 'secondary' as const,
     },
     {
@@ -46,7 +46,7 @@ export const badgeData = {
   contact: [
     {
       icon: Shield,
-      text: 'DOJ Certified',
+      text: 'DOJ Listed Provider',
       variant: 'secondary' as const,
     },
     {
@@ -86,12 +86,12 @@ export const badgeData = {
   liveScanService: [
     {
       icon: Shield,
-      text: 'DOJ Certified',
+      text: 'DOJ Listed Provider',
       variant: 'secondary' as const,
     },
     {
       icon: Shield,
-      text: 'FBI Authorized',
+      text: 'Licensed Fingerprinting',
       variant: 'secondary' as const,
     },
     {

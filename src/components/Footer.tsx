@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const footerLinks = {
   services: [
-    { name: 'Live Scan', href: '/live-scan' },
+    { name: 'Live Scan', href: '/Live-Scan-Fingerprinting' },
     { name: 'Notary Public', href: '/notary' },
     { name: 'Apostille', href: '/apostille' },
     { name: 'Passport Photos', href: '/passport-photos' },
@@ -33,10 +33,9 @@ export const Footer = () => {
                 <Logo size="md" showText={true} animated variant="gradient" />
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                We are an officially certified fingerprinting service provider
-                agency authorized by the Department of Justice and FBI. Serving
-                the Bay Area for over 15 years with professional business
-                services.
+                Mail All Center is listed on the California DOJ website as an
+                approved Live Scan fingerprinting location. Serving the Bay Area
+                for over 15 years with professional business services.
               </p>
               <div className="mb-4">
                 <p className="text-xs text-muted-foreground mb-2">
@@ -122,10 +121,16 @@ export const Footer = () => {
 
         <div className="py-6">
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0">
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Mail All Center. All rights
-              reserved.
-            </p>
+            <div className="text-center space-y-2">
+              <p className="text-sm text-muted-foreground">
+                © {new Date().getFullYear()} Mail All Center. All rights
+                reserved.
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Mail All Center is a private business and is not affiliated with
+                any government agency.
+              </p>
+            </div>
           </div>
         </div>
       </div>

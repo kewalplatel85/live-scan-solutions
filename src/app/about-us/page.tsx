@@ -21,11 +21,11 @@ import {
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Mail All Center | DOJ & FBI Certified Business Services',
+  title: 'About Mail All Center | Trusted Business Services Bay Area',
   description:
-    "Bay Area's trusted DOJ & FBI certified business services provider since 2010. Live scan, notary, mailbox rental, printing, shipping and more. Supporting school districts like Mountain View, Palo Alto, Sunnyvale, Cupertino, and organizations like Boy Scouts and AYSO.",
+    "Bay Area's trusted business services provider since 2010. Our Live Scan fingerprinting services are listed on the California DOJ website. Live scan, notary, mailbox rental, printing, shipping and more. Supporting school districts like Mountain View, Palo Alto, Sunnyvale, Cupertino, and organizations like Boy Scouts and AYSO.",
   keywords: [
-    'DOJ FBI certified business services',
+    'live scan fingerprinting bay area',
     'live scan fingerprinting bay area',
     'Mountain View School District',
     'Los Altos School District',
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: 'website',
-    title: 'About Mail All Center | DOJ & FBI Certified Business Services',
+    title: 'About Mail All Center | Trusted Business Services Bay Area',
     description:
-      "Bay Area's trusted DOJ & FBI certified business services provider since 2010. Live scan, notary, mailbox rental, printing, shipping and more.",
+      "Bay Area's trusted business services provider since 2010. Our Live Scan fingerprinting services are listed on the California DOJ website. Live scan, notary, mailbox rental, printing, shipping and more.",
     url: `${SITE_URL}/about-us`,
   },
   alternates: {
@@ -95,21 +95,39 @@ export default function AboutPage() {
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-4">
               About <span className="text-primary">Mail All Center</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
               Your one-stop business services center offering live and ink
               fingerprinting, notary public, apostille services, passport
               photos, mailbox rental, packing & shipping, printing, lamination,
-              fax & copy, and secure shredding. DOJ & FBI certified with over 15
-              years of trusted service.
+              fax & copy, and secure shredding with over 15 years of trusted
+              service.
             </p>
+
+            {/* DOJ Verification Banner */}
+            <div className="bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg p-4 mb-8">
+              <div className="flex items-center justify-center gap-3 text-center">
+                <Shield className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0" />
+                <p className="text-sm font-medium text-green-800 dark:text-green-200">
+                  Our Live Scan fingerprinting services are{' '}
+                  <a
+                    href="https://oag.ca.gov/fingerprints/locations/mail-all-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-green-600 dark:hover:text-green-300 font-semibold"
+                  >
+                    officially listed on the California DOJ website
+                  </a>
+                </p>
+              </div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Award className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">DOJ & FBI Certified</h3>
+                <h3 className="font-semibold mb-2">DOJ Listed Provider</h3>
                 <p className="text-sm text-muted-foreground">
-                  Officially authorized specialists
+                  Listed on California DOJ website
                 </p>
               </div>
               <div className="text-center">
@@ -163,9 +181,10 @@ export default function AboutPage() {
                   Services, Passport Photos, Mailbox Rental, Packing & Shipping,
                   professional Printing, Lamination, Fax & Copy services, and
                   secure Shredding. Whether you&apos;re a healthcare
-                  professional needing background checks, a business owner
-                  requiring notarization, or someone who needs convenient
-                  mailbox services, we&apos;ve got you covered under one roof.
+                  professional needing fingerprint submissions for licensing and
+                  employment, a business owner requiring notarization, or
+                  someone who needs convenient mailbox services, we&apos;ve got
+                  you covered under one roof.
                 </p>
               </div>
               <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8">
@@ -199,12 +218,12 @@ export default function AboutPage() {
                 </div>
                 <p className="text-muted-foreground text-center text-sm leading-relaxed">
                   To be your trusted one-stop destination for all essential
-                  business services, from DOJ & FBI certified fingerprinting and
-                  notary services to mailbox rental, printing, shipping, and
-                  secure document solutions. We maintain the highest standards
-                  of security, professionalism, and customer care in everything
-                  we do, making complex processes simple and convenient for our
-                  clients.
+                  business services, from Live Scan fingerprint submission
+                  services for licensing and employment and notary services to
+                  mailbox rental, printing, shipping, and secure document
+                  solutions. We maintain the highest standards of security,
+                  professionalism, and customer care in everything we do, making
+                  complex processes simple and convenient for our clients.
                 </p>
               </Card>
 
@@ -219,7 +238,7 @@ export default function AboutPage() {
                   To be the Bay Area&apos;s premier comprehensive business
                   services center, recognized as the go-to destination where
                   individuals and businesses can efficiently handle all their
-                  essential needs - from certified fingerprinting and document
+                  essential needs - from Live Scan fingerprinting and document
                   services to mailbox solutions and office support. We envision
                   a future where quality business services are accessible,
                   convenient, and delivered with unmatched expertise.

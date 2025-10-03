@@ -82,7 +82,7 @@ export default async function Image() {
             maxWidth: 600,
           }}
         >
-          DOJ & FBI Certified • Mountain View, CA • Walk-ins Welcome
+          DOJ Listed Provider • Mountain View, CA • Walk-ins Welcome
         </div>
         <div
           style={{

@@ -9,11 +9,15 @@ import SEOGraph, {
 } from '@/components/SEOGraph';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 import { badgeData } from '@/data/badges';
 import { liveScanServiceSchema } from '@/data/google-business-schema';
 import { SITE_URL } from '@/lib/config';
 import {
-  // Award,
   CalendarClock,
   Check,
   Clock,
@@ -30,32 +34,6 @@ import {
   Zap,
 } from 'lucide-react';
 import type { Metadata } from 'next';
-
-// const liveScanFeatures = [
-//   {
-//     icon: Zap,
-//     title: 'Digital Live Scan',
-//     description: 'Electronic fingerprint capture directly into digital format',
-//     benefits: [
-//       'Cleaner and faster than ink methods',
-//       'Less prone to errors',
-//       'Instant transmission to AFIS systems',
-//       'Real-time quality verification',
-//     ],
-//   },
-//   {
-//     icon: FileText,
-//     title: 'Ink Fingerprinting',
-//     description:
-//       'Traditional FBI FD-258 card fingerprints for specific requirements',
-//     benefits: [
-//       'Authentic FBI FD-258 cards provided',
-//       'DOJ guidelines compliance',
-//       'Hard card backup option',
-//       'International acceptance',
-//     ],
-//   },
-// ];
 
 const serviceOptions = [
   {
@@ -85,60 +63,42 @@ const serviceOptions = [
   },
 ];
 
-// const certifications = [
-//   {
-//     icon: Shield,
-//     title: 'DOJ Certified',
-//     description: 'Authorized by Department of Justice',
-//   },
-//   {
-//     icon: Shield,
-//     title: 'FBI Authorized',
-//     description: 'Official FBI fingerprinting provider',
-//   },
-//   {
-//     icon: Award,
-//     title: 'CJIS Compliant',
-//     description: 'Criminal Justice Information Services certified',
-//   },
-// ];
-
 const pricingPlans = [
   {
     name: 'Individual',
-    price: '$35',
-    description: 'Perfect for personal background checks',
+    price: '$16.99 + fees',
+    description: 'Perfect for personal fingerprint submissions',
     features: [
       'Live Scan fingerprinting',
-      'DOJ processing',
+      'DOJ processing submission',
       'Same-day service',
-      'Digital delivery option',
+      'Digital submission option',
     ],
     popular: false,
   },
   {
     name: 'Employment',
-    price: '$45',
-    description: 'Comprehensive employment screening',
+    price: '$16.99 + fees',
+    description: 'Comprehensive employment fingerprinting',
     features: [
       'Live Scan fingerprinting',
-      'FBI & DOJ processing',
+      'FBI & DOJ processing submission',
       'Priority handling',
-      'Employment verification',
+      'Professional certification',
       'Follow-up support',
     ],
     popular: true,
   },
   {
     name: 'Express',
-    price: '$75',
+    price: '$24.99 + fees',
     description: 'Rush processing for urgent needs',
     features: [
       'Live Scan fingerprinting',
       'Same-day processing',
       'Priority queue',
       'Rush handling',
-      'Expedited delivery',
+      'Expedited submission',
     ],
     popular: false,
   },
@@ -165,24 +125,24 @@ export const metadata: Metadata = {
   title:
     'Mail All Center: Top-rated Live Scan, Fingerprinting service - Walk-in Welcome',
   description:
-    'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan & traditional ink fingerprinting for employment, licensing, background checks. DOJ & FBI certified. Same-day processing, walk-ins welcome. Serving Bay Area schools, nonprofits. Starting at $17. Call (650) 961-4646.',
+    'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan fingerprint submissions for licensing, employment, and certifications. Same-day processing, walk-ins welcome. Serving Bay Area schools, nonprofits. Rolling fee $16.99. Call (650) 961-4646.',
   keywords:
-    'FBI FD-258 manual fingerprinting, FBI FD-1164 fingerprinting, manual ink fingerprinting mountain view, traditional fingerprinting mountain view, live scan fingerprinting mountain view, live scan fingerprinting bay area, live scan near me, fingerprinting near me, ink fingerprinting mountain view, FBI FD-258 card fingerprinting, FBI FD-1164 card, fingerprinting services bay area, digital fingerprinting mountain view, background check mountain view, employment screening mountain view, DOJ certified fingerprinting, FBI approved fingerprinting, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, live scan menlo park, live scan redwood city, same day fingerprinting, walk-in fingerprinting, Mail All Center fingerprinting, fingerprinting silicon valley, fingerprinting peninsula, fingerprinting south bay, Mountain View School District, Los Altos School District, Sunnyvale School District, Cupertino School District, Menlo Park School District, Palo Alto School District, Santa Clara School District, San Jose School District, Boys Scouts, Sunnyvale Boy Scouts, Redwood City School District, Los Gatos School District, AYSO',
+    'FBI FD-258 manual fingerprinting, FBI FD-1164 fingerprinting, manual ink fingerprinting mountain view, traditional fingerprinting mountain view, live scan fingerprinting mountain view, live scan fingerprinting bay area, live scan near me, fingerprinting near me, ink fingerprinting mountain view, FBI FD-258 card fingerprinting, FBI FD-1164 card, fingerprinting services bay area, digital fingerprinting mountain view, fingerprint submissions mountain view, licensing fingerprinting mountain view, fingerprinting silicon valley, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, live scan menlo park, live scan redwood city, same day fingerprinting, walk-in fingerprinting, Mail All Center fingerprinting, fingerprinting peninsula, fingerprinting south bay, Mountain View School District, Los Altos School District, Sunnyvale School District, Cupertino School District, Menlo Park School District, Palo Alto School District, Santa Clara School District, San Jose School District, Boys Scouts, Sunnyvale Boy Scouts, Redwood City School District, Los Gatos School District, AYSO',
   openGraph: {
     type: 'website',
     title:
-      'Get your Live Scan fingerprinting done fast in Mountain View, CA. Walk-ins welcome. Trusted by local schools, nonprofits & businesses. Only $17 rolling fee!',
+      'Get your Live Scan fingerprinting done fast in Mountain View, CA. Walk-ins welcome. Trusted by local schools, nonprofits & businesses. Rolling fee $16.99!',
     description:
-      'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan & traditional fingerprinting. DOJ & FBI certified. Walk-ins welcome, same-day processing. Supporting Bay Area schools, nonprofits.',
-    url: `${SITE_URL}/live-scan`,
+      'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan fingerprint submissions for licensing, employment, and certifications. Walk-ins welcome, same-day processing. Supporting Bay Area schools, nonprofits.',
+    url: `${SITE_URL}/Live-Scan-Fingerprinting`,
   },
   alternates: {
-    canonical: `${SITE_URL}/live-scan`,
+    canonical: `${SITE_URL}/Live-Scan-Fingerprinting`,
   },
   robots: { index: true, follow: true },
 };
 
-const url = `${SITE_URL}/live-scan`;
+const url = `${SITE_URL}/Live-Scan-Fingerprinting`;
 const nodes = [
   WEBSITE_NODE,
   BUSINESS_NODE,
@@ -190,9 +150,9 @@ const nodes = [
     url,
     title: 'Live Scan Fingerprinting in Mountain View, CA | Mail All Center',
     description:
-      'DOJ & FBI certified digital fingerprinting for employment, licensing, and background checks.',
+      'Live Scan fingerprint submissions for licensing, employment, and certifications. Listed on California DOJ website as approved location.',
   }),
-  liveScanServiceSchema, // your existing schema (unchanged)
+  liveScanServiceSchema,
   buildHowTo({
     name: 'How to Complete Live Scan Fingerprinting',
     steps: [
@@ -210,7 +170,7 @@ const nodes = [
       },
       {
         name: 'Review and Submit',
-        text: 'Authorize electronic submission to DOJ/FBI.',
+        text: 'Authorize electronic submission to DOJ/FBI for processing.',
       },
       {
         name: 'Receive Confirmation',
@@ -238,7 +198,7 @@ export default function LiveScanPage() {
             Fingerprinting
           </>
         }
-        description="Certified digital and ink fingerprinting services for employment, licensing, and background checks. Trusted by businesses and individuals across the Bay Area."
+        description="Live Scan fingerprint submissions for licensing, employment, and certifications. Trusted by businesses and individuals across the Bay Area."
         benefits={[
           { text: 'Same-day processing' },
           { text: 'Walk-ins welcome' },
@@ -320,12 +280,24 @@ export default function LiveScanPage() {
                   >
                     Rolling fee lowest in town
                   </Badge>
-                  <Badge
-                    variant="default"
-                    className="bg-green-600 text-white hover:bg-green-700 dark:bg-green-600 dark:text-white dark:hover:bg-green-700"
-                  >
-                    $17
-                  </Badge>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Badge
+                        variant="default"
+                        className="bg-green-600 text-white hover:bg-green-700 dark:bg-green-600 dark:text-white dark:hover:bg-green-700"
+                      >
+                        $16.99
+                      </Badge>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p className="text-xs">
+                        Rolling fee: $16.99 (plus applicable DOJ/FBI submission
+                        fees)
+                        <br />
+                        Government submission fees vary by application type.
+                      </p>
+                    </TooltipContent>
+                  </Tooltip>
                 </div>
                 <div className="mt-2">
                   <h3 className="text-lg font-semibold mb-3">
@@ -347,7 +319,7 @@ export default function LiveScanPage() {
                     <li className="flex items-center">
                       <Zap className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
                       <span className="text-sm">
-                        Instant electronic transmission
+                        Electronic submission to DOJ/FBI
                       </span>
                     </li>
                     <li className="flex items-center">
@@ -370,16 +342,20 @@ export default function LiveScanPage() {
                 </Badge>
                 <div className="mt-2">
                   <h3 className="text-lg font-semibold mb-3">
-                    Identity History Check
+                    FBI Identity Summary
                   </h3>
                   <ul className="space-y-2">
                     <li className="flex items-center">
                       <Shield className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
-                      <span className="text-sm">Complete criminal history</span>
+                      <span className="text-sm">
+                        FBI identity summary report
+                      </span>
                     </li>
                     <li className="flex items-center">
                       <Check className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
-                      <span className="text-sm">National FBI database</span>
+                      <span className="text-sm">
+                        National FBI database search
+                      </span>
                     </li>
                     <li className="flex items-center">
                       <Clock className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
@@ -436,9 +412,26 @@ export default function LiveScanPage() {
                 </div>
               </Card>
             </div>
+
+            {/* California DOJ Approval Banner */}
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <Shield className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+              <p className="text-sm text-blue-700 dark:text-blue-300">
+                <strong>Mail All Center is listed on the </strong>
+                <a
+                  href="https://oag.ca.gov/fingerprints/locations/mail-all-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:no-underline font-medium"
+                >
+                  California DOJ website as an approved Live Scan location
+                </a>
+              </p>
+            </div>
           </div>
         }
       />
+
       <CustomerTypesAccordion />
 
       {/* Service Options */}
@@ -523,6 +516,8 @@ export default function LiveScanPage() {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Choose the service package that best fits your needs. All packages
               include professional fingerprinting with expert assistance.
+              Fingerprint submissions are sent to DOJ/FBI for processing
+              (results are returned by the agency, not by us).
             </p>
           </div>
 
@@ -541,10 +536,6 @@ export default function LiveScanPage() {
                 )}
                 <CardHeader className="text-center">
                   <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                  {/* FUTURE: Add a feature flag and uncomment this section */}
-                  {/* <div className="text-4xl font-bold text-primary my-4">
-                    {plan.price}
-                  </div> */}
                   <p className="text-muted-foreground">{plan.description}</p>
                 </CardHeader>
                 <CardContent>

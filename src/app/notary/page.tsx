@@ -14,16 +14,17 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'Trusted Notary Public & Fast Apostille Services in Bay Area| Walk-In & Mobile Notary Available',
+    'Licensed Private Notary Public Services in Bay Area | Walk-In & Mobile Notary Available',
   description:
-    'Mail All Center offers professional notary public services in Mountain View, CA and entire Bay Area. Licensed notaries for contracts, real estate, wills, affidavits, power of attorney, loan documents. Walk-ins welcome, same-day service. Mobile notary available. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont. Call (650) 961-4646.',
+    'Mail All Center provides licensed private notary public services in Mountain View, CA and entire Bay Area. Professional notaries for contracts, real estate, wills, affidavits, power of attorney, loan documents. Confidential same-day service, walk-ins welcome. Mobile notary available. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont. Call (650) 961-4646.',
   keywords:
     'notary public mountain view, notary services bay area, notary near me, notary public near me, Mail All Center notary, document notarization mountain view, licensed notary mountain view, mobile notary mountain view, mobile notary bay area, contract notarization, real estate notary mountain view, will notarization, affidavit notary, same day notary, power of attorney notarization, loan document notary, notary public palo alto, notary public sunnyvale, notary public san jose, notary public cupertino, notary public fremont, notary public santa clara, notary services silicon valley, bay area notary services, peninsula notary services, south bay notary',
   openGraph: {
     type: 'website',
-    title: 'Notary Public Services Mountain View | Mail All Center',
+    title:
+      'Licensed Private Notary Public Services Mountain View | Mail All Center',
     description:
-      'Mail All Center provides professional notary public services in Mountain View, CA. Licensed notaries, walk-ins welcome, same-day service.',
+      'Mail All Center provides licensed private notary public services in Mountain View, CA. Professional notaries, confidential service, walk-ins welcome, same-day availability.',
     url: `${SITE_URL}/notary`,
   },
   alternates: {
@@ -38,9 +39,10 @@ const nodes = [
   BUSINESS_NODE,
   buildWebPage({
     url,
-    title: 'Notary Public in Mountain View, CA | Mail All Center',
+    title:
+      'Licensed Private Notary Public in Mountain View, CA | Mail All Center',
     description:
-      'Licensed California notary for acknowledgments, jurats, certified copies and more.',
+      'Licensed California private notary for acknowledgments, jurats, certified copies and more. Confidential professional service.',
   }),
   notaryServiceSchema,
   buildBreadcrumb([
@@ -52,30 +54,30 @@ const nodes = [
 const processSteps = [
   {
     step: 1,
-    title: 'Consultation',
+    title: 'Initial Consultation',
     description:
-      'Contact us to discuss your document notarization requirements and confirm the necessary identification.',
+      'Contact our licensed private notaries to discuss your document notarization requirements and confirm necessary identification.',
     icon: Phone,
   },
   {
     step: 2,
     title: 'Document Preparation',
     description:
-      'Ensure your documents are ready for notarization. Our team will guide you through the process.',
+      'Prepare your documents for notarization. Our experienced team will guide you through the requirements for proper completion.',
     icon: FileText,
   },
   {
     step: 3,
     title: 'Identity Verification',
     description:
-      'Present valid identification for verification. We ensure compliance with legal standards.',
+      'Present valid identification for verification. Our licensed notaries ensure compliance with California notary laws.',
     icon: Shield,
   },
   {
     step: 4,
-    title: 'Notarization',
+    title: 'Professional Notarization',
     description:
-      'Our licensed Notary Public will witness the signing of your document and provide the official seal.',
+      'Our licensed private Notary Public will witness document signing and provide the official notary seal with complete confidentiality.',
     icon: CheckCircle,
   },
 ];
@@ -84,8 +86,8 @@ const documentTypes = [
   'Contracts: Legal agreements between two or more parties',
   'Real Estate Documents: Deeds, mortgages, and other property-related papers',
   'Affidavits: Written statements confirmed by oath or affirmation, for use as evidence in court',
-  'Power of Attorney: Legal authorization for one person to act on another&apos;s behalf in legal matters',
-  'Wills and Trusts: Legal documents related to the distribution of a person&apos;s estate after death',
+  "Power of Attorney: Legal authorization for one person to act on another's behalf in legal matters",
+  "Wills and Trusts: Legal documents related to the distribution of a person's estate after death",
   'Business Documents: Articles of incorporation, business licenses, and partnership agreements',
 ];
 
@@ -117,12 +119,12 @@ const notarizationTypes = [
 ];
 
 const benefits = [
-  { text: 'Same-day processing' },
-  { text: 'Walk-ins welcome' },
-  { text: 'Licensed Notaries with extensive experience' },
-  { text: 'Confidential handling of sensitive documents' },
-  { text: 'Serving Mountain View and the Bay Area' },
-  { text: 'Ensuring documents meet legal requirements' },
+  { text: 'Same-day processing available' },
+  { text: 'Walk-ins welcome - no appointment needed' },
+  { text: 'Licensed private notaries with extensive experience' },
+  { text: 'Confidential handling of all sensitive documents' },
+  { text: 'Serving Mountain View and entire Bay Area' },
+  { text: 'Professional service ensuring legal compliance' },
 ];
 
 export default function NotaryPublicPage() {
@@ -136,11 +138,10 @@ export default function NotaryPublicPage() {
         badges={badgeData.notaryPublic}
         title={
           <>
-            Professional <span className="text-primary">Notary Public</span>{' '}
-            Services in Mountain View
+            Licensed <span className="text-primary">Notary</span> Services
           </>
         }
-        description="Accurate, efficient, and secure document notarization with licensed professionals. Walk-ins welcome or book online for guaranteed service."
+        description="Professional, confidential document notarization with licensed private notaries. Same-day service available. Walk-ins welcome or book online for guaranteed service."
         benefits={benefits}
         ctaText="Please call us to schedule your appointment"
         buttons={[
@@ -211,11 +212,11 @@ export default function NotaryPublicPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our Simple 4-Step Notary Process
+              Our Simple 4-Step Private Notary Process
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We make document notarization straightforward and efficient with
-              our proven process.
+              our proven professional process at our private notary office.
             </p>
           </div>
 
@@ -250,12 +251,13 @@ export default function NotaryPublicPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why You Need a Notary Public
+              Why Choose Our Private Notary Services
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Legal documents often require notarization to ensure authenticity
-              and prevent fraud. Our certified notaries handle a wide range of
-              documents with precision and legal compliance.
+              and prevent fraud. Our licensed private notaries handle a wide
+              range of documents with precision, confidentiality, and full legal
+              compliance.
             </p>
           </div>
 

@@ -30,7 +30,7 @@ export const businessSchema = {
   slogan:
     'Your Trusted Partner for Professional Live Scan, Notary, and Business Services',
   description:
-    'Professional Live Scan Fingerprinting, Notary Public, Apostille, and Business Services in Mountain View, California. DOJ & FBI certified digital fingerprinting, document authentication, passport photos, mailbox rental, and more.',
+    'Professional Live Scan Fingerprinting, Notary Public, Apostille, and Business Services in Mountain View, California. Listed on California DOJ website as approved Live Scan location, document authentication, passport photos, mailbox rental, and more.',
   sameAs: [
     'https://www.google.com/search?q=mailallcenter&sca_esv=5781ecd08cb21da5&sxsrf=AE3TifM9xceaUdw8wBPPYfF3mabCLiY89w%3A1758176841214&source=hp&ei=SabLaOiYC6ea0PEPwcaIqAQ&iflsig=AOw8s4IAAAAAaMu0Wd-xSgCGdJObBz6teZsESk6b3ERF&ved=0ahUKEwio4ciQ1-GPAxUnDTQIHUEjAkUQ4dUDCBo&uact=5&oq=mailallcenter&gs_lp=Egdnd3Mtd2l6Ig1tYWlsYWxsY2VudGVyMgcQABiABBgNMgcQABiABBgNMg0QLhiABBjHARgNGK8BMg0QLhiABBjHARgNGK8BMgcQABiABBgNMgcQABiABBgNMgcQABiABBgNMg0QLhiABBjHARgNGK8BMgcQABiABBgNMgcQABiABBgNSOMmUJMDWIokcAF4AJABAJgB5wKgAdgNqgEHNS42LjEuMbgBA8gBAPgBAZgCDqAC9A2oAgrCAgcQIxgnGOoCwgIEECMYJ8ICERAuGIAEGJECGNEDGMcBGIoFwgILEAAYgAQYsQMYgwHCAgsQLhiABBixAxiDAcICDhAuGIAEGLEDGNEDGMcBwgIREC4YgAQYsQMY0QMYgwEYxwHCAg4QLhiABBixAxiDARiKBcICBRAuGIAEwgIUEC4YgAQYkQIYsQMY0QMYxwEYigXCAggQLhiABBixA8ICBRAAGIAEwgIOEAAYgAQYsQMYgwEYigXCAggQABiABBixA8ICCxAAGIAEGJECGIoFwgIKEAAYgAQYsQMYCsICDRAuGIAEGMcBGAoYrwHCAgcQABiABBgKwgIHEC4YgAQYCsICERAAGIAEGJECGLEDGIMBGIoFwgILEC4YgAQYxwEYrwHCAg0QABiABBixAxiDARgKwgIKEC4YgAQYsQMYCsICDRAuGIAEGLEDGNQCGArCAgYQABgDGArCAgIQJsICCBAAGIAEGKIEwgIFEAAY7wXCAggQABiiBBiJBZgDAvEFKrX0HIr85WGSBwc1LjcuMS4xoAevkQGyBwc0LjcuMS4xuAfxDcIHBTYuNi4yyAcW&sclient=gws-wiz',
     'https://www.google.com/maps/dir/?api=1&destination=809+Cuesta+Dr+Suite+B,+Mountain+View,+CA+94040',
@@ -242,7 +242,7 @@ export const businessSchema = {
           '@type': 'Service',
           name: 'Live Scan Fingerprinting',
           description:
-            'DOJ & FBI certified digital fingerprinting for employment, licensing, and background checks. Electronic fingerprinting with same-day processing.',
+            'Live Scan fingerprint submission services for employment, licensing, and background checks. Electronic fingerprinting with same-day processing.',
           serviceType: 'Fingerprinting Service',
         },
         price: 17,
@@ -402,7 +402,7 @@ export const businessSchema = {
 export const liveScanServiceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  '@id': `${SITE_URL}/live-scan#service`,
+  '@id': `${SITE_URL}/Live-Scan-Fingerprinting#service`,
   name: 'Live Scan Fingerprinting',
   alternateName: [
     'Digital Fingerprinting',
@@ -410,7 +410,7 @@ export const liveScanServiceSchema = {
     'DOJ Fingerprinting',
   ],
   description:
-    'DOJ & FBI certified digital fingerprinting for employment, licensing, and background checks. Electronic fingerprinting with same-day processing available.',
+    'Live Scan fingerprint submission services for employment, licensing, and background checks. Electronic fingerprinting with same-day processing available.',
   serviceType: 'Fingerprinting Service',
   category: 'Background Check Services',
   provider: {

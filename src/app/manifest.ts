@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Mail All Center - Complete Business Services in Mountain View, CA',
     short_name: 'Mail All Center',
     description:
-      'Mail All Center offers Live Scan & Ink Fingerprinting, Notary Public, Apostille Services, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, and more in Mountain View, CA. DOJ & FBI certified.',
+      'Mail All Center offers Live Scan & Ink Fingerprinting, Notary Public, Apostille Services, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, and more in Mountain View, CA. Listed on California DOJ website as approved Live Scan location.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

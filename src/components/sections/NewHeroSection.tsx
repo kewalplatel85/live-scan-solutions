@@ -24,9 +24,9 @@ import {
 import Link from 'next/link';
 
 const trustBadges = [
-  { icon: Shield, text: 'DOJ Certified', variant: 'secondary' as const },
-  { icon: Award, text: 'FBI Approved', variant: 'secondary' as const },
+  { icon: Shield, text: 'DOJ Listed Provider', variant: 'secondary' as const },
   { icon: Star, text: '4.9/5 Rating', variant: 'outline' as const },
+  { icon: Award, text: '15+ Years Experience', variant: 'secondary' as const },
 ];
 
 const keyBenefits = [
@@ -69,6 +69,22 @@ export const NewHeroSection = () => {
               ))}
             </div>
 
+            {/* DOJ Listing Reference */}
+            <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg p-3">
+              <p className="text-sm text-blue-800 dark:text-blue-200">
+                Mail All Center is listed on the{' '}
+                <a
+                  href="https://oag.ca.gov/fingerprints/locations/mail-all-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold underline hover:text-blue-600 dark:hover:text-blue-300"
+                >
+                  California DOJ website
+                </a>{' '}
+                as an approved Live Scan fingerprinting location.
+              </p>
+            </div>
+
             {/* Main Headline - More Compact */}
             <div className="space-y-4">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
@@ -79,9 +95,10 @@ export const NewHeroSection = () => {
               </h1>
 
               <p className="text-lg text-muted-foreground max-w-lg">
-                From live scan fingerprinting to notary services, we handle all
-                your document needs quickly and professionally. Serving Mountain
-                View, Palo Alto, Sunnyvale, San Jose, and entire Bay Area.
+                From Live Scan fingerprint submission services for licensing and
+                employment to notary services, we handle all your document needs
+                quickly and professionally. Serving Mountain View, Palo Alto,
+                Sunnyvale, San Jose, and entire Bay Area.
               </p>
             </div>
 
@@ -142,7 +159,7 @@ export const NewHeroSection = () => {
                 {
                   name: 'Live Scan & Ink Fingerprinting',
                   icon: Fingerprint,
-                  href: '/live-scan',
+                  href: '/Live-Scan-Fingerprinting',
                   color: 'text-blue-600',
                   bgColor: 'bg-blue-50 dark:bg-blue-950/20',
                 },
