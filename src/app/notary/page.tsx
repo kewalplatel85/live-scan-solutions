@@ -212,7 +212,8 @@ export default function NotaryPublicPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              How Our 4-Step Notary Public Process Works | Walk-In & Mobile Notary Near Me
+              How Our 4-Step Notary Process Works | Walk-In & Mobile Notary Near
+              Me
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We make document notarization straightforward and efficient with
