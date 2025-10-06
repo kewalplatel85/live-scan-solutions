@@ -180,7 +180,9 @@ export const CustomerTypesAccordion = () => {
     <section id="who-we-serve" className="py-12 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Who We Serve</h2>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">
+            DOJ/FBI Approved Live Scan & Ink Fingerprints Near Me
+          </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
             From healthcare to education, legal to business - we provide
             fingerprinting services for professionals across all industries
