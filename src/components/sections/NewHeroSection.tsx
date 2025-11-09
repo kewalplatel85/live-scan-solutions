@@ -88,17 +88,20 @@ export const NewHeroSection = () => {
             {/* Main Headline - More Compact */}
             <div className="space-y-4">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                Bay Area&apos;s Trusted{' '}
+                Your One-Stop Center for{' '}
                 <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                  Business Services
-                </span>
+                  Live Scan, Notary, Apostille & Passport Photo Services
+                </span>{' '}
+                in Mountain View, CA
               </h1>
 
               <p className="text-lg text-muted-foreground max-w-lg">
-                From Live Scan fingerprint submission services for licensing and
-                employment to notary services, we handle all your document needs
-                quickly and professionally. Serving Mountain View, Palo Alto,
-                Sunnyvale, San Jose, and entire Bay Area.
+                Welcome to Mail All Center, your trusted neighborhood
+                destination for Live Scan Fingerprinting, Notary Public,
+                Apostille, Passport Photo, Private Mailbox Rental, and Shipping
+                Services. Conveniently located in Mountain View, California, we
+                proudly serve the entire Bay Area, including Sunnyvale,
+                Cupertino, Palo Alto, Los Altos, and San Jose.
               </p>
             </div>
 
