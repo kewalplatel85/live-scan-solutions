@@ -6,7 +6,7 @@ import SEOGraph, {
 } from '@/components/SEOGraph';
 import { FAQSection } from '@/components/sections/FAQSection';
 import { NewHeroSection } from '@/components/sections/NewHeroSection';
-import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
+import { ServicesSection } from '@/components/sections/ServicesSection';
 import { SITE_URL } from '@/lib/config';
 import type { Metadata } from 'next';
 
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'Mail All Center, Mail All Center Mountain View, business services mountain view, business services bay area, business services near me, live scan fingerprinting mountain view, live scan bay area, live scan near me, fingerprinting near me, notary public mountain view, notary bay area, notary near me, passport photos mountain view, passport photos bay area, passport photos near me, apostille services mountain view, apostille bay area, apostille near me, mailbox rental mountain view, mailbox rental bay area, packing shipping mountain view, packing shipping bay area, printing services mountain view, printing bay area, live scan fingerprint submission services, licensing fingerprinting, employment fingerprinting, same day service mountain view, walk in service bay area, professional services silicon valley, document services peninsula, business center mountain view, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, notary palo alto, notary sunnyvale, notary san jose, fingerprinting silicon valley, business services peninsula, professional services south bay, Mountain View School District, Los Altos School District, Sunnyvale School District, Cupertino School District, Menlo Park School District, Palo Alto School District, Santa Clara School District, San Jose School District, Boys Scouts, Sunnyvale Boy Scouts, Redwood City School District, Los Gatos School District, AYSO',
   openGraph: {
     title:
-      'Mail All Center | Complete Business Services Mountain View & Bay Area',
+      'Top-rated Live Scan, Fingerprinting, Notary, Apostille, Passport Photo and Shipping Services  Mail All Center',
     description:
       'Your trusted business service provider in Mountain View, serving the entire Bay Area. Live Scan, Notary, Passport Photos, Mailbox Rental, Packing & Shipping, Printing. DOJ & FBI certified, 15+ years experience. Same-day service, walk-ins welcome.',
     url: SITE_URL,
@@ -70,8 +70,8 @@ export default function HomePage() {
       {/* New Hero with clear value proposition */}
       <NewHeroSection />
 
-      {/* Why choose us - trust indicators */}
-      <WhyChooseUsSection />
+      {/* Services Section - SEO optimized with detailed service cards */}
+      <ServicesSection />
 
       {/* Bay Area Coverage */}
       <section className="py-12 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 dark:from-gray-900/50 dark:to-gray-800/50">
