@@ -11,10 +11,12 @@ import {
   ArrowRight,
   Award,
   Camera,
+  ExternalLink,
   FileText,
   Fingerprint,
   Mailbox,
   Package,
+  Plane,
   Printer,
 } from 'lucide-react';
 import Link from 'next/link';
@@ -83,6 +85,16 @@ const servicesData = [
     badge: 'Professional',
     keywords: 'Printing, Copying, Shredding, Document Services',
   },
+  {
+    icon: Plane,
+    title: 'TSA PreCheck® Enrollment by IDEMIA',
+    description:
+      'Official TSA PreCheck® enrollment center. Expedite your airport security screening with TSA PreCheck. Enjoy faster, more convenient travel through dedicated screening lanes at 200+ airports.',
+    href: 'https://tsaenrollmentbyidemia.tsa.dhs.gov/',
+    badge: 'TSA Authorized',
+    keywords: 'TSA PreCheck, Trusted Traveler, Airport Security, IDEMIA',
+    isExternal: true,
+  },
 ];
 
 export const ServicesSection = () => {
@@ -131,15 +143,31 @@ export const ServicesSection = () => {
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
-                <Link href={service.href}>
-                  <Button
-                    variant="ghost"
-                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                {service.isExternal ? (
+                  <a
+                    href={service.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
+                    <Button
+                      variant="ghost"
+                      className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                    >
+                      Enroll Now
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </Button>
+                  </a>
+                ) : (
+                  <Link href={service.href}>
+                    <Button
+                      variant="ghost"
+                      className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                    >
+                      Learn More
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                )}
               </CardContent>
             </Card>
           ))}

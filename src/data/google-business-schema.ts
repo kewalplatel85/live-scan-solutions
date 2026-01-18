@@ -339,6 +339,17 @@ export const businessSchema = {
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
       },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'TSA PreCheck® Enrollment by IDEMIA',
+          description:
+            'Official TSA PreCheck® enrollment center. Expedite your airport security screening and enjoy faster travel through dedicated screening lanes at 200+ airports nationwide.',
+          serviceType: 'TSA Enrollment Service',
+        },
+        availability: 'https://schema.org/InStock',
+      },
     ],
   },
 
@@ -373,6 +384,11 @@ export const businessSchema = {
     'Lamination Services',
     'Fax and Copy Services',
     'Shredding Services',
+    'TSA PreCheck Enrollment',
+    'TSA PreCheck Enrollment by IDEMIA',
+    'Trusted Traveler Program',
+    'Airport Security Screening',
+    'TSA Authorized Enrollment Center',
   ],
 
   // Certifications
@@ -391,6 +407,14 @@ export const businessSchema = {
       recognizedBy: {
         '@type': 'Organization',
         name: 'Federal Bureau of Investigation',
+      },
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'TSA Authorized Enrollment Provider',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'Transportation Security Administration (TSA)',
       },
     },
   ],
