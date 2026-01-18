@@ -1,0 +1,75 @@
+{
+  "name": "Your Business Name",
+  "url": "https://maps.google.com/?cid=YOUR_CID",
+  "rating": 4.8,
+  "user_ratings_total": 125,
+  "html_attributions": [],
+  "reviews": [
+    {
+      "author_name": "John Smith",
+      "author_url": "https://www.google.com/maps/contrib/123456789/reviews",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a/default-user",
+      "rating": 5,
+      "relative_time_description": "2 weeks ago",
+      "text": "Excellent service! The team was professional, friendly, and efficient. I highly recommend them to anyone looking for quality service. Will definitely be coming back!",
+      "time": 1734400000,
+      "id": "google-1734400000",
+      "role": "",
+      "tags": ["Google Review", "Verified"],
+      "date": "2024-12-17T00:00:00.000Z"
+    },
+    {
+      "author_name": "Sarah Johnson",
+      "author_url": "https://www.google.com/maps/contrib/987654321/reviews",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a/default-user",
+      "rating": 5,
+      "relative_time_description": "1 month ago",
+      "text": "Outstanding experience from start to finish. The staff was incredibly helpful and went above and beyond to meet my needs. The quality of service exceeded my expectations.",
+      "time": 1733000000,
+      "id": "google-1733000000",
+      "role": "",
+      "tags": ["Google Review", "Verified"],
+      "date": "2024-11-30T00:00:00.000Z"
+    },
+    {
+      "author_name": "Michael Chen",
+      "author_url": "https://www.google.com/maps/contrib/456789123/reviews",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a/default-user",
+      "rating": 5,
+      "relative_time_description": "2 months ago",
+      "text": "Great place! Very professional and knowledgeable team. They took the time to explain everything and made sure I was completely satisfied. Highly recommended!",
+      "time": 1731500000,
+      "id": "google-1731500000",
+      "role": "",
+      "tags": ["Google Review", "Verified"],
+      "date": "2024-11-13T00:00:00.000Z"
+    },
+    {
+      "author_name": "Emily Davis",
+      "author_url": "https://www.google.com/maps/contrib/321654987/reviews",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a/default-user",
+      "rating": 4,
+      "relative_time_description": "3 months ago",
+      "text": "Good service overall. The process was smooth and the staff was friendly. Would recommend to others looking for reliable service.",
+      "time": 1729000000,
+      "id": "google-1729000000",
+      "role": "",
+      "tags": ["Google Review", "Verified"],
+      "date": "2024-10-15T00:00:00.000Z"
+    },
+    {
+      "author_name": "David Wilson",
+      "author_url": "https://www.google.com/maps/contrib/789123456/reviews",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a/default-user",
+      "rating": 5,
+      "relative_time_description": "4 months ago",
+      "text": "Absolutely fantastic! Fast, efficient, and professional service. The team made the entire experience stress-free. I'll definitely be returning and recommending to friends and family.",
+      "time": 1726500000,
+      "id": "google-1726500000",
+      "role": "",
+      "tags": ["Google Review", "Verified"],
+      "date": "2024-09-16T00:00:00.000Z"
+    }
+  ]
+}
+
