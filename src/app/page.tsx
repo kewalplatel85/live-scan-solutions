@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import SEOGraph, {
   buildBreadcrumb,
   buildWebPage,
@@ -8,7 +10,7 @@ import { FAQSection } from '@/components/sections/FAQSection';
 import { NewHeroSection } from '@/components/sections/NewHeroSection';
 import { ServicesSection } from '@/components/sections/ServicesSection';
 import { SITE_URL } from '@/lib/config';
-import type { Metadata } from 'next';
+// import { HomePageReviews } from '@/modules/google-reviews';
 
 export const metadata: Metadata = {
   title:
@@ -167,6 +169,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      {/* <HomePageReviews /> */}
       <FAQSection />
     </main>
   );
