@@ -137,7 +137,7 @@
 
 import { OAuth2Client } from 'google-auth-library';
 
-export const revalidate = 60 * 60 * 6; // cache 6 hours on Vercel
+export const revalidate = 21600; // cache 6 hours on Vercel (60 * 60 * 6)
 export const dynamic = 'force-dynamic';
 
 const getAccessToken = async () => {
