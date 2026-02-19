@@ -102,7 +102,7 @@ export const Footer = () => {
               <div className="space-y-2 text-sm text-muted-foreground">
                 <div className="flex justify-between">
                   <span>Mon - Fri:</span>
-                  <span>10AM - 5PM PST</span>
+                  <span>10AM - 6PM PST</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Saturday:</span>

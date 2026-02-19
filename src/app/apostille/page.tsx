@@ -288,6 +288,7 @@ export default function ApostillePage() {
             Services
           </>
         }
+        subtitle="The Bay Area’s Trusted Apostille Services"
         description="Expert document preparation services for international use. We assist with apostille processing for personal, educational, and corporate documents with fast, secure handling and professional guidance."
         benefits={[
           { text: 'Fast processing' },
@@ -314,7 +315,7 @@ export default function ApostillePage() {
         quickInfo={[
           {
             icon: Clock,
-            text: 'Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST | Sun: Closed',
+            text: 'Mon-Fri: 10AM-6PM PST | Sat: 10AM-2PM PST | Sun: Closed',
           },
           {
             icon: MapPin,

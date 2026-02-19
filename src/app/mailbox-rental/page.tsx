@@ -111,7 +111,7 @@ export default function MailboxRentalPage() {
         quickInfo={[
           {
             icon: Clock,
-            text: 'Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST | Sun: Closed',
+            text: 'Mon-Fri: 10AM-6PM PST | Sat: 10AM-2PM PST | Sun: Closed',
           },
           {
             icon: MapPin,
@@ -603,7 +603,7 @@ export default function MailboxRentalPage() {
               </div>
               <div className="flex items-center justify-center gap-2">
                 <Clock className="w-4 h-4 flex-shrink-0" />
-                <span>Mon-Fri: 10AM-5PM | Sat: 10AM-2PM | Sun: Closed</span>
+                <span>Mon-Fri: 10AM-6PM | Sat: 10AM-2PM | Sun: Closed</span>
               </div>
             </div>
           </div>
