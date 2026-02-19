@@ -194,10 +194,11 @@ export default function LiveScanPage() {
         badges={badgeData.liveScanService}
         title={
           <>
-            Professional <span className="text-primary">Live Scan & Ink</span>{' '}
-            Fingerprinting
+            Live Scan & FD-258 Ink{' '}
+            <span className="text-primary">Fingerprinting Services</span>
           </>
         }
+        subtitle="Only $16.99 Rolling Fee - Cheapest in Bay Area"
         description="Live Scan fingerprint submissions for licensing, employment, and certifications. Trusted by businesses and individuals across the Bay Area."
         benefits={[
           { text: 'Same-day processing' },
@@ -226,7 +227,7 @@ export default function LiveScanPage() {
         quickInfo={[
           {
             icon: Clock,
-            text: 'Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST | Sun: Closed',
+            text: 'Mon-Fri: 10AM-6PM PST | Sat: 10AM-2PM PST | Sun: Closed',
           },
           { icon: MapPin, text: 'Bay Area Locations' },
           {

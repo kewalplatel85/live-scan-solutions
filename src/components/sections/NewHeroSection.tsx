@@ -31,9 +31,9 @@ const trustBadges = [
 
 const keyBenefits = [
   { text: 'Same-day processing', icon: Zap },
-  { text: 'Walk-ins welcome', icon: Users },
+  { text: 'Walk-ins / Mobile Service', icon: Users },
   { text: 'Electronic transmission', icon: CheckCircle },
-  { text: 'Trusted by 15,000+ customers', icon: Award },
+  { text: 'Trusted by local community', icon: Award },
 ];
 
 const quickStats = [
@@ -88,21 +88,15 @@ export const NewHeroSection = () => {
             {/* Main Headline - More Compact */}
             <div className="space-y-4">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                Your One-Stop Center for{' '}
+                Live Scan, Notary Public,{' '}
                 <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                  Live Scan, Notary, Apostille & Passport Photo Services
+                  Apostille & Passport Photo Services
                 </span>{' '}
-                in Mountain View, CA
+                in Bay Area
               </h1>
-
-              <p className="text-lg text-muted-foreground max-w-lg">
-                Welcome to Mail All Center, your trusted neighborhood
-                destination for Live Scan Fingerprinting, Notary Public,
-                Apostille, Passport Photo, Private Mailbox Rental, and Shipping
-                Services. Conveniently located in Mountain View, California, we
-                proudly serve the entire Bay Area, including Sunnyvale,
-                Cupertino, Palo Alto, Los Altos, and San Jose.
-              </p>
+              <h2 className="text-2xl lg:text-3xl font-semibold text-muted-foreground">
+                Fast. Reliable. Local — Everything You Need in One Stop
+              </h2>
             </div>
 
             {/* Key Benefits - Compact List */}
@@ -142,7 +136,7 @@ export const NewHeroSection = () => {
             {/* Hours */}
             <div className="flex items-center text-sm text-muted-foreground">
               <Clock className="h-4 w-4 mr-2" />
-              <span>Mon-Fri: 10AM-5PM | Sat: 10AM-2PM</span>
+              <span>Mon-Fri: 10AM-6PM | Sat: 10AM-2PM</span>
             </div>
           </div>
 

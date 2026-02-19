@@ -138,7 +138,8 @@ export default function NotaryPublicPage() {
         badges={badgeData.notaryPublic}
         title={
           <>
-            Licensed <span className="text-primary">Notary</span> Services
+            Licensed <span className="text-primary">Notary Public</span>{' '}
+            Services
           </>
         }
         description="Professional, confidential document notarization with licensed private notaries. Same-day service available. Walk-ins welcome or book online for guaranteed service."

@@ -296,7 +296,7 @@ export default function PrintingPage() {
         quickInfo={[
           {
             icon: Clock,
-            text: 'Mon-Fri: 10AM-5PM PST | Sat: 10AM-2PM PST | Sun: Closed',
+            text: 'Mon-Fri: 10AM-6PM PST | Sat: 10AM-2PM PST | Sun: Closed',
           },
           { icon: MapPin, text: 'Mountain View & Bay Area' },
         ]}
