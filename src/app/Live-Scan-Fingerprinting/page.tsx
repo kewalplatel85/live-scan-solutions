@@ -24,6 +24,7 @@ import {
   CreditCard,
   Globe,
   HardDrive,
+  Info,
   MapPin,
   Phone,
   Shield,
@@ -66,7 +67,8 @@ const serviceOptions = [
 const pricingPlans = [
   {
     name: 'Individual',
-    price: '$16.99 + fees',
+    price: 'Starting at $16.99',
+    priceSuffix: '+ government fees',
     description: 'Perfect for personal fingerprint submissions',
     features: [
       'Live Scan fingerprinting',
@@ -78,7 +80,8 @@ const pricingPlans = [
   },
   {
     name: 'Employment',
-    price: '$16.99 + fees',
+    price: 'Starting at $16.99',
+    priceSuffix: '+ government fees',
     description: 'Comprehensive employment fingerprinting',
     features: [
       'Live Scan fingerprinting',
@@ -91,7 +94,8 @@ const pricingPlans = [
   },
   {
     name: 'Express',
-    price: '$24.99 + fees',
+    price: 'Starting at $24.99',
+    priceSuffix: '+ government fees',
     description: 'Rush processing for urgent needs',
     features: [
       'Live Scan fingerprinting',
@@ -125,15 +129,15 @@ export const metadata: Metadata = {
   title:
     'Mail All Center: Top-rated Live Scan, Fingerprinting service - Walk-in Welcome',
   description:
-    'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan fingerprint submissions for licensing, employment, and certifications. Same-day processing, walk-ins welcome. Serving Bay Area schools, nonprofits. Rolling fee $16.99. Call (650) 961-4646.',
+    'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan fingerprint submissions for licensing, employment, and certifications. Same-day processing, walk-ins welcome. Serving Bay Area schools, nonprofits. Rolling fee starting at $16.99. Additional government fees may apply. Call (650) 961-4646.',
   keywords:
     'FBI FD-258 manual fingerprinting, FBI FD-1164 fingerprinting, manual ink fingerprinting mountain view, traditional fingerprinting mountain view, live scan fingerprinting mountain view, live scan fingerprinting bay area, live scan near me, fingerprinting near me, ink fingerprinting mountain view, FBI FD-258 card fingerprinting, FBI FD-1164 card, fingerprinting services bay area, digital fingerprinting mountain view, fingerprint submissions mountain view, licensing fingerprinting mountain view, fingerprinting silicon valley, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, live scan menlo park, live scan redwood city, same day fingerprinting, walk-in fingerprinting, Mail All Center fingerprinting, fingerprinting peninsula, fingerprinting south bay, Mountain View School District, Los Altos School District, Sunnyvale School District, Cupertino School District, Menlo Park School District, Palo Alto School District, Santa Clara School District, San Jose School District, Boys Scouts, Sunnyvale Boy Scouts, Redwood City School District, Los Gatos School District, AYSO',
   openGraph: {
     type: 'website',
     title:
-      'Get your Live Scan fingerprinting done fast in Mountain View, CA. Walk-ins welcome. Trusted by local schools, nonprofits & businesses. Rolling fee $16.99!',
+      'Get your Live Scan fingerprinting done fast in Mountain View, CA. Walk-ins welcome. Trusted by local schools, nonprofits & businesses. Rolling fee starting at $16.99.',
     description:
-      'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan fingerprint submissions for licensing, employment, and certifications. Walk-ins welcome, same-day processing. Supporting Bay Area schools, nonprofits.',
+      'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan fingerprint submissions for licensing, employment, and certifications. Walk-ins welcome, same-day processing. Additional government fees may apply based on application type.',
     url: `${SITE_URL}/Live-Scan-Fingerprinting`,
   },
   alternates: {
@@ -198,8 +202,9 @@ export default function LiveScanPage() {
             <span className="text-primary">Fingerprinting Services</span>
           </>
         }
-        subtitle="Only $16.99 Rolling Fee - Cheapest in Bay Area"
+        subtitle="Starting at $16.99 Rolling Fee* — Lowest in Bay Area"
         description="Live Scan fingerprint submissions for licensing, employment, and certifications. Trusted by businesses and individuals across the Bay Area."
+        disclaimerText="*Rolling fee only. Additional DOJ/FBI government submission fees apply and vary by application type. Contact us for a complete fee estimate."
         benefits={[
           { text: 'Same-day processing' },
           { text: 'Walk-ins welcome' },
@@ -285,17 +290,19 @@ export default function LiveScanPage() {
                     <TooltipTrigger asChild>
                       <Badge
                         variant="default"
-                        className="bg-green-600 text-white hover:bg-green-700 dark:bg-green-600 dark:text-white dark:hover:bg-green-700"
+                        className="bg-green-600 text-white hover:bg-green-700 dark:bg-green-600 dark:text-white dark:hover:bg-green-700 flex items-center gap-1"
                       >
-                        $16.99
+                        From $16.99
+                        <Info className="w-3 h-3 opacity-80" />
                       </Badge>
                     </TooltipTrigger>
-                    <TooltipContent>
+                    <TooltipContent className="max-w-xs">
                       <p className="text-xs">
-                        Rolling fee: $16.99 (plus applicable DOJ/FBI submission
-                        fees)
+                        <strong>Rolling fee starts at $16.99.</strong>
                         <br />
-                        Government submission fees vary by application type.
+                        Additional DOJ/FBI government submission fees apply and
+                        vary by application type. Contact us for a full fee
+                        breakdown.
                       </p>
                     </TooltipContent>
                   </Tooltip>
@@ -504,6 +511,20 @@ export default function LiveScanPage() {
               );
             })}
           </div>
+          <div className="text-center text-xs text-muted-foreground mt-6 max-w-2xl mx-auto">
+            <p>
+              Prices shown reflect our rolling fee only. Additional government
+              (DOJ/FBI) submission fees are required and vary by application
+              type. Contact us at{' '}
+              <a
+                href="tel:650-961-4646"
+                className="text-primary hover:underline font-medium"
+              >
+                (650) 961-4646
+              </a>{' '}
+              for a complete fee estimate for your specific application.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -537,7 +558,17 @@ export default function LiveScanPage() {
                 )}
                 <CardHeader className="text-center">
                   <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                  <p className="text-muted-foreground">{plan.description}</p>
+                  <div className="mt-2">
+                    <span className="text-2xl font-bold">{plan.price}</span>
+                    {plan.priceSuffix && (
+                      <span className="text-sm text-muted-foreground ml-1">
+                        {plan.priceSuffix}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-muted-foreground text-sm mt-1">
+                    {plan.description}
+                  </p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3 mb-6">

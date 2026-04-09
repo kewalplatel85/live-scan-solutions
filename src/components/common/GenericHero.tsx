@@ -43,6 +43,7 @@ export interface HeroProps {
   title: string | ReactNode;
   subtitle?: string;
   description: string;
+  disclaimerText?: string; // Small print disclaimer (e.g. pricing caveats)
 
   // Benefits/features list
   benefits?: BenefitItem[];
@@ -69,6 +70,7 @@ export const GenericHero = ({
   title,
   subtitle,
   description,
+  disclaimerText,
   benefits = [],
   ctaText,
   buttons = [],
@@ -155,6 +157,11 @@ export const GenericHero = ({
               >
                 {description}
               </p>
+              {disclaimerText && (
+                <p className="text-xs text-muted-foreground/80 mt-1 max-w-2xl">
+                  {disclaimerText}
+                </p>
+              )}
             </div>
 
             {/* Benefits */}
