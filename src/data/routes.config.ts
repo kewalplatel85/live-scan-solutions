@@ -1,4 +1,6 @@
 // src/data/routes.config.ts
+import { APOSTILLE_CITIES } from '@/data/city-pages/apostille-cities';
+
 export type RouteCategory = 'home' | 'core' | 'standard' | 'info';
 
 export type RouteDef = {
@@ -38,6 +40,13 @@ export const ROUTES: RouteDef[] = [
   { path: '/about-us', title: 'About', category: 'info' },
   { path: '/contact-us', title: 'Contact', category: 'info' },
   { path: '/faq', title: 'FAQ', category: 'info' },
+
+  // Apostille city landing pages (auto-generated from city data)
+  ...APOSTILLE_CITIES.map((city) => ({
+    path: `/apostille/${city.slug}`,
+    title: `Apostille ${city.name}`,
+    category: 'core' as RouteCategory,
+  })),
 ];
 
 // helpers you can reuse in sitemap, nav, breadcrumbs, etc.
