@@ -1,6 +1,7 @@
 import { GenericHero } from '@/components/common/GenericHero';
 import SEOGraph, {
   buildBreadcrumb,
+  buildFAQ,
   buildWebPage,
   BUSINESS_NODE,
   WEBSITE_NODE,
@@ -12,14 +13,20 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { APOSTILLE_CITIES } from '@/data/city-pages/apostille-cities';
+import {
+  APOSTILLE_CITIES,
+  getApostilleCityBySlug,
+  getApostilleCityUrl,
+} from '@/data/city-pages/apostille-cities';
 import { apostilleServiceSchema } from '@/data/google-business-schema';
 import { SITE_URL } from '@/lib/config';
 import {
   ArrowRight,
   Award,
   Building2,
+  Car,
   Check,
   CheckCircle2,
   Clock,
@@ -31,6 +38,7 @@ import {
   Handshake,
   Languages,
   MapPin,
+  Navigation,
   Phone,
   Scale,
   Send,
@@ -43,28 +51,46 @@ import {
 } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title:
-    'Professional Apostille Services for International Document Authentication | Mountain View CA',
-  description:
-    'Professional apostille services for international document authentication, birth certificates, diplomas, educational credentials, marriage certificates, power of attorney, corporate documents at Mail All Center, Mountain View. Hague Convention authentication for international use. Same-day processing, expert guidance. Serving entire Bay Area. Call (650) 961-4646.',
-  keywords:
-    'apostille birth certificate mountain view, apostille diploma mountain view, apostille educational credentials, apostille marriage certificate, apostille power of attorney, apostille corporate documents, apostille services mountain view, Mail All Center apostille, document authentication mountain view, apostille bay area, hague convention mountain view, international documents mountain view, document legalization mountain view, apostille near me, apostille services palo alto, apostille services sunnyvale, California apostille services, Secretary of State apostille',
-  openGraph: {
-    type: 'website',
-    title:
-      'Apostille Birth Certificate, Diploma, Educational Documents | Mountain View CA',
-    description:
-      'Professional apostille services for birth certificates, diplomas, educational credentials, marriage certificates at Mail All Center, Mountain View. Hague Convention authentication for international use. Same-day processing.',
-    url: `${SITE_URL}/apostille`,
-  },
-  alternates: {
-    canonical: `${SITE_URL}/apostille`,
-  },
-  robots: { index: true, follow: true },
-};
+// ---------------------------------------------------------------------------
+// Static params — pre-render all city pages at build time
+// ---------------------------------------------------------------------------
+export function generateStaticParams() {
+  return APOSTILLE_CITIES.map((city) => ({ city: city.slug }));
+}
 
+// ---------------------------------------------------------------------------
+// Dynamic metadata — unique title, description, OG per city
+// ---------------------------------------------------------------------------
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ city: string }>;
+}): Promise<Metadata> {
+  const { city: slug } = await params;
+  const city = getApostilleCityBySlug(slug);
+  if (!city) return {};
+
+  const url = getApostilleCityUrl(slug);
+  return {
+    title: city.metaTitle,
+    description: city.metaDescription,
+    keywords: city.keywords,
+    openGraph: {
+      type: 'website',
+      title: city.metaTitle,
+      description: city.metaDescription,
+      url,
+    },
+    alternates: { canonical: url },
+    robots: { index: true, follow: true },
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Shared data (same as main apostille page)
+// ---------------------------------------------------------------------------
 const apostilleServices = [
   {
     icon: FileUser,
@@ -214,57 +240,58 @@ const serviceOptions = [
   },
 ];
 
-const faqItems = [
-  {
-    question: 'What is an Apostille?',
-    answer:
-      'An apostille is a form of authentication issued to documents for use in countries that participate in the Hague Convention. It verifies the authenticity of the document for international use.',
-  },
-  {
-    question: 'Which countries accept apostille?',
-    answer:
-      'All countries that are members of the Hague Convention accept apostille. This includes most European countries, many Asian countries, Australia, and others. For non-Hague countries, documents require embassy legalization.',
-  },
-  {
-    question: 'How long does the apostille process take?',
-    answer:
-      'Standard processing typically takes 5-10 business days, while expedited service can be completed in 2-3 business days. Processing times may vary depending on the document type and state requirements.',
-  },
-  {
-    question: 'Do I need to notarize my documents first?',
-    answer:
-      'Some documents may require notarization before apostille. We provide comprehensive services including notarization, translation, and document preparation to help streamline the entire process.',
-  },
-  {
-    question: 'Are you a government agency?',
-    answer:
-      'No, Mail All Center is a private service provider. We help prepare and submit apostille documents, but we are not a government agency. Final apostilles are always issued by the Secretary of State or relevant government office.',
-  },
-];
+// ---------------------------------------------------------------------------
+// Page Component
+// ---------------------------------------------------------------------------
+export default async function ApostilleCityPage({
+  params,
+}: {
+  params: Promise<{ city: string }>;
+}) {
+  const { city: slug } = await params;
+  const city = getApostilleCityBySlug(slug);
+  if (!city) notFound();
 
-const url = `${SITE_URL}/apostille`;
-const nodes = [
-  WEBSITE_NODE,
-  BUSINESS_NODE,
-  buildWebPage({
-    url,
-    title: 'Apostille Services in Mountain View, CA | Mail All Center',
-    description:
-      'Apostille for birth certificates, diplomas, educational credentials, marriage certificates, and corporate documents.',
-  }),
-  apostilleServiceSchema,
-  buildBreadcrumb([
-    { name: 'Home', url: `${SITE_URL}/` },
-    { name: 'Apostille', url },
-  ]),
-];
+  const url = getApostilleCityUrl(slug);
 
-export default function ApostillePage() {
+  // Build structured data nodes
+  const cityServiceSchema = {
+    ...apostilleServiceSchema,
+    '@id': `${url}#service`,
+    name: `Apostille Services for ${city.name}, ${city.state}`,
+    description: `Professional apostille document authentication services for residents and businesses in ${city.name}, ${city.county}, California.`,
+    areaServed: {
+      '@type': 'City',
+      name: city.name,
+      addressRegion: city.state,
+      addressCountry: 'US',
+    },
+  };
+
+  const nodes = [
+    WEBSITE_NODE,
+    BUSINESS_NODE,
+    buildWebPage({
+      url,
+      title: `Apostille Services in ${city.name}, CA | Mail All Center`,
+      description: city.metaDescription,
+    }),
+    cityServiceSchema,
+    buildBreadcrumb([
+      { name: 'Home', url: `${SITE_URL}/` },
+      { name: 'Apostille', url: `${SITE_URL}/apostille` },
+      { name: `Apostille in ${city.name}`, url },
+    ]),
+    buildFAQ(city.faqs),
+  ];
+
   return (
     <main className="min-h-screen">
-      <SEOGraph id="ld-apostille" nodes={nodes} />
+      <SEOGraph id={`ld-apostille-${slug}`} nodes={nodes} />
 
-      {/* Hero Section */}
+      {/* ================================================================ */}
+      {/* Hero Section                                                     */}
+      {/* ================================================================ */}
       <GenericHero
         badges={[
           {
@@ -286,22 +313,22 @@ export default function ApostillePage() {
         ]}
         title={
           <>
-            Professional <span className="text-primary">Apostille</span>{' '}
-            Services
+            <span className="text-primary">Apostille</span> Services in{' '}
+            {city.name}, CA
           </>
         }
-        subtitle="The Bay Area’s Trusted Apostille Services"
-        description="Expert document preparation services for international use. We assist with apostille processing for personal, educational, and corporate documents with fast, secure handling and professional guidance."
+        subtitle={city.heroSubtitle}
+        description={`Expert apostille document preparation services for ${city.name} residents and businesses. We assist with apostille processing for personal, educational, and corporate documents with fast, secure handling — just ${city.driveTime} from ${city.name}.`}
         benefits={[
-          { text: 'Fast processing' },
-          { text: 'Secure handling' },
-          { text: 'Expert guidance' },
+          { text: `Only ${city.driveTime} from ${city.name}` },
+          { text: 'Same-day consultation' },
           { text: 'All document types' },
+          { text: 'Expert guidance' },
         ]}
         ctaText="Please call us to schedule your appointment"
         buttons={[
           {
-            text: 'Apostille Your Documents Today',
+            text: 'Get Your Apostille Today',
             href: '/contact-us',
             variant: 'default',
             size: 'lg',
@@ -321,12 +348,12 @@ export default function ApostillePage() {
           },
           {
             icon: MapPin,
-            text: 'Bay Area Locations',
+            text: `809 Cuesta Dr, Suite B, Mountain View · ${city.driveTime} from ${city.name}`,
           },
         ]}
         rightContent={
           <div className="space-y-4 md:space-y-6">
-            {/* First Row - Service Cards Side by Side */}
+            {/* Service & Additional Services Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <Card className="relative p-4 md:p-6">
                 <Badge
@@ -393,7 +420,7 @@ export default function ApostillePage() {
               </Card>
             </div>
 
-            {/* Second Row - Pricing and Requirements */}
+            {/* Processing Times & Requirements */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <Card className="relative p-4 md:p-6">
                 <Badge
@@ -488,17 +515,42 @@ export default function ApostillePage() {
         }
       />
 
-      {/* Document Types Section */}
+      {/* ================================================================ */}
+      {/* Unique Intro Content — critical for SEO uniqueness               */}
+      {/* ================================================================ */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">
+              {city.introHeading}
+            </h2>
+            <div className="space-y-6">
+              {city.introContent.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-lg text-muted-foreground leading-relaxed"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================ */}
+      {/* Document Types Section                                           */}
+      {/* ================================================================ */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Documents We Apostille in California – Fast Apostille Services
-              Near Me
-            </h1>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Documents We Apostille for {city.name} Residents
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We provide apostille services for a wide range of document types
-              to meet your international requirements.
+              to meet the international requirements of {city.name} residents
+              and businesses.
             </p>
           </div>
 
@@ -564,16 +616,18 @@ export default function ApostillePage() {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* ================================================================ */}
+      {/* Process Steps                                                    */}
+      {/* ================================================================ */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our Step-by-Step Process
+              Our Step-by-Step Apostille Process
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We&apos;ve streamlined the apostille process to make it simple and
-              efficient for our clients.
+              We&apos;ve streamlined the apostille process for {city.name}{' '}
+              residents to make it simple and efficient.
             </p>
           </div>
 
@@ -656,12 +710,84 @@ export default function ApostillePage() {
         </div>
       </section>
 
-      {/* Service Options */}
+      {/* ================================================================ */}
+      {/* Why Choose Us — city-specific                                    */}
+      {/* ================================================================ */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Service Options
+              Why {city.name} Residents Choose Mail All Center
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              The most convenient and trusted apostille service for {city.name}{' '}
+              residents.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {city.whyChooseUs.map((reason, index) => {
+              const reasonColors = [
+                {
+                  bg: 'bg-blue-50 dark:bg-blue-950/50',
+                  icon: 'text-blue-600 dark:text-blue-400',
+                  border: 'border-blue-200 dark:border-blue-800',
+                },
+                {
+                  bg: 'bg-emerald-50 dark:bg-emerald-950/50',
+                  icon: 'text-emerald-600 dark:text-emerald-400',
+                  border: 'border-emerald-200 dark:border-emerald-800',
+                },
+                {
+                  bg: 'bg-violet-50 dark:bg-violet-950/50',
+                  icon: 'text-violet-600 dark:text-violet-400',
+                  border: 'border-violet-200 dark:border-violet-800',
+                },
+                {
+                  bg: 'bg-amber-50 dark:bg-amber-950/50',
+                  icon: 'text-amber-600 dark:text-amber-400',
+                  border: 'border-amber-200 dark:border-amber-800',
+                },
+              ];
+              const color = reasonColors[index % reasonColors.length];
+              const icons = [Car, GraduationCap, Building2, Award];
+              const Icon = icons[index % icons.length];
+
+              return (
+                <Card
+                  key={index}
+                  className="p-6 hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div
+                      className={`w-12 h-12 ${color.bg} rounded-xl flex items-center justify-center flex-shrink-0 border ${color.border}`}
+                    >
+                      <Icon className={`w-6 h-6 ${color.icon}`} />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-1">
+                        {reason.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {reason.description}
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================ */}
+      {/* Service Options (Pricing) — same as main page                    */}
+      {/* ================================================================ */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Apostille Service Options for {city.name}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Choose the service level that best fits your timeline and needs.
@@ -675,19 +801,16 @@ export default function ApostillePage() {
                   bg: 'bg-slate-50 dark:bg-slate-950/50',
                   icon: 'text-slate-600 dark:text-slate-400',
                   border: 'border-slate-200 dark:border-slate-800',
-                  gradient: 'from-slate-500 to-slate-600',
                 },
                 {
                   bg: 'bg-orange-50 dark:bg-orange-950/50',
                   icon: 'text-orange-600 dark:text-orange-400',
                   border: 'border-orange-200 dark:border-orange-800',
-                  gradient: 'from-orange-500 to-orange-600',
                 },
                 {
                   bg: 'bg-indigo-50 dark:bg-indigo-950/50',
                   icon: 'text-indigo-600 dark:text-indigo-400',
                   border: 'border-indigo-200 dark:border-indigo-800',
-                  gradient: 'from-indigo-500 to-indigo-600',
                 },
               ];
               const serviceColor = serviceColors[index % serviceColors.length];
@@ -742,21 +865,100 @@ export default function ApostillePage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* ================================================================ */}
+      {/* Directions & Location                                            */}
+      {/* ================================================================ */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                How to Reach Us from {city.name}
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Conveniently located just {city.driveTime} from {city.name}.
+              </p>
+            </div>
+
+            <Card className="p-6 md:p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="w-10 h-10 bg-blue-50 dark:bg-blue-950/50 rounded-lg flex items-center justify-center border border-blue-200 dark:border-blue-800">
+                      <Navigation className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <h3 className="text-lg font-semibold">
+                      Driving Directions
+                    </h3>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    {city.drivingDirections}
+                  </p>
+                  <Button variant="outline" size="sm" asChild>
+                    <a
+                      href="https://www.google.com/maps/dir/?api=1&destination=809+Cuesta+Dr+Suite+B,+Mountain+View,+CA+94040"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <MapPin className="w-4 h-4 mr-2" />
+                      Get Directions on Google Maps
+                    </a>
+                  </Button>
+                </div>
+
+                <div>
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="w-10 h-10 bg-emerald-50 dark:bg-emerald-950/50 rounded-lg flex items-center justify-center border border-emerald-200 dark:border-emerald-800">
+                      <MapPin className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                    </div>
+                    <h3 className="text-lg font-semibold">Our Location</h3>
+                  </div>
+                  <div className="space-y-3 text-sm text-muted-foreground">
+                    <p className="font-medium text-foreground">
+                      Mail All Center
+                    </p>
+                    <p>809 Cuesta Dr, Suite B</p>
+                    <p>Mountain View, CA 94040</p>
+                    <p className="flex items-center">
+                      <Phone className="w-4 h-4 mr-2" />
+                      <a
+                        href="tel:650-961-4646"
+                        className="text-primary hover:underline"
+                      >
+                        (650) 961-4646
+                      </a>
+                    </p>
+                    <div className="pt-2 border-t">
+                      <p className="font-medium text-foreground mb-1">Hours</p>
+                      <p>Mon-Fri: 10AM - 6PM PST</p>
+                      <p>Saturday: 10AM - 2PM PST</p>
+                      <p>Sunday: Closed</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================ */}
+      {/* City-Specific FAQs                                               */}
+      {/* ================================================================ */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Frequently Asked Questions
+              Apostille FAQs for {city.name} Residents
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
-              Get answers to common questions about apostille services.
+              Answers to common apostille questions from {city.name} residents.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <Accordion type="single" collapsible className="w-full">
-              {faqItems.map((faq, index) => (
+              {city.faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
                   <AccordionTrigger className="text-left">
                     {faq.question}
@@ -778,37 +980,45 @@ export default function ApostillePage() {
         </div>
       </section>
 
-      {/* Cities We Serve — Hub for city landing pages (SEO internal linking) */}
-      {APOSTILLE_CITIES.length > 0 && (
-        <section className="py-12 bg-muted/50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-2xl font-bold mb-4">
-                Apostille Services Across the Bay Area
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                Mail All Center proudly serves residents and businesses across
-                the Bay Area with professional apostille services. Visit our
-                city-specific pages for local information.
-              </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                {APOSTILLE_CITIES.map((city) => (
-                  <Link
-                    key={city.slug}
-                    href={`/apostille/${city.slug}`}
-                    className="inline-flex items-center px-4 py-2 rounded-full border border-border bg-background hover:bg-primary/5 hover:border-primary/30 transition-colors duration-200 text-sm font-medium"
-                  >
-                    <MapPin className="w-3 h-3 mr-2 text-primary" />
-                    Apostille in {city.name}
-                  </Link>
-                ))}
-              </div>
+      {/* ================================================================ */}
+      {/* Nearby Cities / Internal Linking                                  */}
+      {/* ================================================================ */}
+      <section className="py-12 bg-muted/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl font-bold mb-4">
+              Also Serving Nearby Cities
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              In addition to {city.name}, Mail All Center provides apostille
+              services to residents across the Bay Area.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {city.nearbyCities.map((nearby) => (
+                <Link
+                  key={nearby.slug}
+                  href={`/apostille/${nearby.slug}`}
+                  className="inline-flex items-center px-4 py-2 rounded-full border border-border bg-background hover:bg-primary/5 hover:border-primary/30 transition-colors duration-200 text-sm font-medium"
+                >
+                  <MapPin className="w-3 h-3 mr-2 text-primary" />
+                  Apostille in {nearby.name}
+                </Link>
+              ))}
+              <Link
+                href="/apostille"
+                className="inline-flex items-center px-4 py-2 rounded-full border border-primary/30 bg-primary/5 hover:bg-primary/10 transition-colors duration-200 text-sm font-medium text-primary"
+              >
+                <ArrowRight className="w-3 h-3 mr-2" />
+                View All Apostille Services
+              </Link>
             </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
-      {/* Footer Disclaimer */}
+      {/* ================================================================ */}
+      {/* Footer Disclaimer                                                */}
+      {/* ================================================================ */}
       <section className="py-6 bg-muted/30 border-t">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
@@ -817,7 +1027,8 @@ export default function ApostillePage() {
               are not a government agency. Final apostilles are issued by the
               Secretary of State or relevant office. We assist with document
               types such as birth certificates, marriage certificates,
-              educational diplomas, and corporate records.
+              educational diplomas, and corporate records. Serving {city.name},{' '}
+              {city.county}, and the greater Bay Area.
             </p>
           </div>
         </div>
