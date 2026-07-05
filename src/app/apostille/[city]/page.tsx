@@ -1,4 +1,6 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import { ApostilleCountries } from '@/components/sections/ApostilleCountries';
+import { ApostilleCTA } from '@/components/sections/ApostilleCTA';
 import SEOGraph, {
   buildBreadcrumb,
   buildFAQ,
@@ -617,6 +619,11 @@ export default async function ApostilleCityPage({
       </section>
 
       {/* ================================================================ */}
+      {/* Hague Convention Countries                                       */}
+      {/* ================================================================ */}
+      <ApostilleCountries cityName={city.name} />
+
+      {/* ================================================================ */}
       {/* Process Steps                                                    */}
       {/* ================================================================ */}
       <section className="py-16 bg-background">
@@ -1015,6 +1022,11 @@ export default async function ApostilleCityPage({
           </div>
         </div>
       </section>
+
+      {/* ================================================================ */}
+      {/* Final CTA                                                        */}
+      {/* ================================================================ */}
+      <ApostilleCTA cityName={city.name} />
 
       {/* ================================================================ */}
       {/* Footer Disclaimer                                                */}
