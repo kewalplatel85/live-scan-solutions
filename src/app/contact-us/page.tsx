@@ -7,6 +7,7 @@ import SEOGraph, {
 } from '@/components/SEOGraph';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { COMPANY } from '@/config/company';
 import { SITE_URL } from '@/lib/config';
 import { Calendar, Car, Clock, Mail, MapPin, Phone } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -89,10 +90,10 @@ export default function ContactPage() {
                     Email
                   </h3>
                   <a
-                    href="mailto:info@mailallcenter.com"
+                    href={COMPANY.emailMailto}
                     className="text-primary hover:text-primary/80 transition-colors font-medium"
                   >
-                    info@mailallcenter.com
+                    {COMPANY.email}
                   </a>
                   <p className="text-sm text-muted-foreground mt-1">
                     We respond within 24 hours
@@ -110,10 +111,10 @@ export default function ContactPage() {
                     Phone
                   </h3>
                   <a
-                    href="tel:+16509614646"
+                    href={COMPANY.phoneTel}
                     className="text-primary hover:text-primary/80 transition-colors font-medium text-lg"
                   >
-                    +1 (650) 961-4646
+                    {COMPANY.phoneFormatted}
                   </a>
                   <p className="text-sm text-muted-foreground mt-1">
                     Available during business hours
@@ -132,21 +133,27 @@ export default function ContactPage() {
                   </h3>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center py-2 px-3 bg-muted/30 rounded-lg">
-                      <span className="font-medium">Mon - Fri</span>
+                      <span className="font-medium">
+                        {COMPANY.hours.weekdays.label}
+                      </span>
                       <span className="text-primary font-semibold">
-                        10AM - 6PM PST
+                        {COMPANY.hours.weekdays.display}
                       </span>
                     </div>
                     <div className="flex justify-between items-center py-2 px-3 bg-muted/30 rounded-lg">
-                      <span className="font-medium">Saturday</span>
+                      <span className="font-medium">
+                        {COMPANY.hours.saturday.label}
+                      </span>
                       <span className="text-primary font-semibold">
-                        10AM - 2PM PST
+                        {COMPANY.hours.saturday.display}
                       </span>
                     </div>
                     <div className="flex justify-between items-center py-2 px-3 bg-muted/30 rounded-lg">
-                      <span className="font-medium">Sunday</span>
+                      <span className="font-medium">
+                        {COMPANY.hours.sunday.label}
+                      </span>
                       <span className="text-muted-foreground font-semibold">
-                        Closed
+                        {COMPANY.hours.sunday.display}
                       </span>
                     </div>
                   </div>
@@ -176,13 +183,16 @@ export default function ContactPage() {
                     Address
                   </h3>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=809+Cuesta+Dr+Suite+B,+Mountain+View,+CA+94040"
+                    href={COMPANY.address.mapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:text-primary/80 transition-colors leading-relaxed cursor-pointer"
                   >
-                    <p className="font-medium">809 Cuesta Dr, Suite B</p>
-                    <p className="font-medium">Mountain View, CA 94040</p>
+                    <p className="font-medium">{COMPANY.address.street}</p>
+                    <p className="font-medium">
+                      {COMPANY.address.city}, {COMPANY.address.state}{' '}
+                      {COMPANY.address.zip}
+                    </p>
                   </a>
                   <p className="text-sm text-muted-foreground mt-1">
                     Click to view on map
@@ -241,7 +251,7 @@ export default function ContactPage() {
                 size="lg"
                 className="h-12 px-8 text-lg font-semibold"
               >
-                <Link href="tel:+16509614646">
+                <Link href={COMPANY.phoneTel}>
                   <Phone className="mr-3 h-5 w-5" />
                   Call Now
                 </Link>
@@ -252,7 +262,7 @@ export default function ContactPage() {
                 size="lg"
                 className="h-12 px-8 text-lg font-semibold border-2"
               >
-                <Link href="mailto:info@mailallcenter.com">
+                <Link href={COMPANY.emailMailto}>
                   <Mail className="mr-3 h-5 w-5" />
                   Send Us a Message
                 </Link>
@@ -277,7 +287,7 @@ export default function ContactPage() {
               className="h-12 px-8 text-lg font-semibold mx-auto"
             >
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=809+Cuesta+Dr+Suite+B,+Mountain+View,+CA+94040"
+                href={COMPANY.address.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -287,7 +297,7 @@ export default function ContactPage() {
             </Button>
           </CardHeader>
           <CardContent>
-            <InteractiveMap address="809 Cuesta Dr, Suite B, Mountain View, CA 94040" />
+            <InteractiveMap address={COMPANY.address.full} />
           </CardContent>
         </Card>
       </div>

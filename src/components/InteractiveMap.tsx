@@ -1,3 +1,5 @@
+import { COMPANY } from '@/config/company';
+
 interface InteractiveMapProps {
   address?: string;
   latitude?: number;
@@ -7,9 +9,9 @@ interface InteractiveMapProps {
 }
 
 export const InteractiveMap = ({
-  address = '809 Cuesta Dr, Suite B, Mountain View, CA 94040',
-  latitude: _latitude = 37.4089,
-  longitude: _longitude = -122.0877,
+  address = COMPANY.address.full,
+  latitude: _latitude = COMPANY.address.geo.lat,
+  longitude: _longitude = COMPANY.address.geo.lng,
   className = '',
   height = 'h-96',
 }: InteractiveMapProps) => {

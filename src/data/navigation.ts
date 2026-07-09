@@ -1,4 +1,5 @@
 import { NavigationConfigWithoutDropdown } from '@/components/types/navigation';
+import { COMPANY } from '@/config/company';
 
 export const navigationConfig: NavigationConfigWithoutDropdown = {
   primaryItems: [
@@ -15,7 +16,7 @@ export const navigationConfig: NavigationConfigWithoutDropdown = {
     { name: 'Contact Us', href: '/contact-us' },
   ],
   contactInfo: {
-    phone: '650-961-4646',
-    label: '650-961-4646',
+    phone: COMPANY.phone,
+    label: COMPANY.phone,
   },
 };

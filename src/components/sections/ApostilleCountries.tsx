@@ -4,6 +4,7 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import { COMPANY } from '@/config/company';
 import {
   HAGUE_COUNTRIES,
   NON_HAGUE_COUNTRIES,
@@ -177,7 +178,7 @@ export function ApostilleCountries({ cityName }: ApostilleCountriesProps) {
               </div>
 
               <Link
-                href="tel:650-961-4646"
+                href={COMPANY.phoneTel}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium transition-colors flex-shrink-0"
               >
                 <Phone className="w-3.5 h-3.5" />

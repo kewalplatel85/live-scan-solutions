@@ -1,5 +1,6 @@
 import { Logo } from '@/components/Logo';
 import { Button } from '@/components/ui/button';
+import { COMPANY } from '@/config/company';
 import { Clock, Mail, Phone } from 'lucide-react';
 import Link from 'next/link';
 
@@ -48,7 +49,7 @@ export const Footer = () => {
               <div className="mb-4">
                 <p className="text-xs text-footer-muted mb-2">
                   <strong className="text-footer-foreground">Address:</strong>{' '}
-                  809 Cuesta Dr, Suite B, Mountain View, CA 94040
+                  {COMPANY.address.full}
                 </p>
               </div>
               <div className="flex flex-col space-y-2">
@@ -58,9 +59,9 @@ export const Footer = () => {
                   className="border-footer-border bg-footer-border/30 hover:bg-footer-border/60 text-footer-foreground hover:text-white justify-start"
                   asChild
                 >
-                  <Link href="tel:650-961-4646">
+                  <Link href={COMPANY.phoneTel}>
                     <Phone className="mr-2 h-4 w-4" />
-                    650-961-4646
+                    {COMPANY.phone}
                   </Link>
                 </Button>
                 <Button
@@ -69,9 +70,9 @@ export const Footer = () => {
                   className="border-footer-border bg-footer-border/30 hover:bg-footer-border/60 text-footer-foreground hover:text-white justify-start"
                   asChild
                 >
-                  <Link href="mailto:info@mailallcenter.com">
+                  <Link href={COMPANY.emailMailto}>
                     <Mail className="mr-2 h-4 w-4" />
-                    info@mailallcenter.com
+                    {COMPANY.email}
                   </Link>
                 </Button>
               </div>
@@ -123,16 +124,22 @@ export const Footer = () => {
               </h3>
               <div className="space-y-2 text-sm text-footer-muted">
                 <div className="flex justify-between">
-                  <span>Mon - Fri:</span>
-                  <span className="text-footer-foreground">10AM - 6PM PST</span>
+                  <span>{COMPANY.hours.weekdays.label}:</span>
+                  <span className="text-footer-foreground">
+                    {COMPANY.hours.weekdays.display}
+                  </span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Saturday:</span>
-                  <span className="text-footer-foreground">10AM - 2PM PST</span>
+                  <span>{COMPANY.hours.saturday.label}:</span>
+                  <span className="text-footer-foreground">
+                    {COMPANY.hours.saturday.display}
+                  </span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Sunday:</span>
-                  <span className="text-footer-foreground">Closed</span>
+                  <span>{COMPANY.hours.sunday.label}:</span>
+                  <span className="text-footer-foreground">
+                    {COMPANY.hours.sunday.display}
+                  </span>
                 </div>
               </div>
             </div>
@@ -145,12 +152,12 @@ export const Footer = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0">
             <div className="text-center space-y-2">
               <p className="text-sm text-footer-muted">
-                © {new Date().getFullYear()} Mail All Center. All rights
+                © {new Date().getFullYear()} {COMPANY.name}. All rights
                 reserved.
               </p>
               {/* Bumped from /60 to text-footer-muted for WCAG AA compliance */}
               <p className="text-xs text-footer-muted">
-                Mail All Center is a private business and is not affiliated with
+                {COMPANY.name} is a private business and is not affiliated with
                 any government agency.
               </p>
             </div>

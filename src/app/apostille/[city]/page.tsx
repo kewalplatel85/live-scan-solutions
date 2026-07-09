@@ -17,6 +17,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { COMPANY } from '@/config/company';
 import {
   APOSTILLE_CITIES,
   getApostilleCityBySlug,
@@ -336,8 +337,8 @@ export default async function ApostilleCityPage({
             size: 'lg',
           },
           {
-            text: 'Call (650) 961-4646',
-            href: 'tel:650-961-4646',
+            text: `Call ${COMPANY.phone}`,
+            href: COMPANY.phoneTel,
             icon: Phone,
             variant: 'outline',
             size: 'lg',
@@ -350,7 +351,7 @@ export default async function ApostilleCityPage({
           },
           {
             icon: MapPin,
-            text: `809 Cuesta Dr, Suite B, Mountain View · ${city.driveTime} from ${city.name}`,
+            text: `${COMPANY.address.street}, Mountain View · ${city.driveTime} from ${city.name}`,
           },
         ]}
         rightContent={
@@ -924,22 +925,34 @@ export default async function ApostilleCityPage({
                     <p className="font-medium text-foreground">
                       Mail All Center
                     </p>
-                    <p>809 Cuesta Dr, Suite B</p>
-                    <p>Mountain View, CA 94040</p>
+                    <p>{COMPANY.address.street}</p>
+                    <p>
+                      {COMPANY.address.city}, {COMPANY.address.state}{' '}
+                      {COMPANY.address.zip}
+                    </p>
                     <p className="flex items-center">
                       <Phone className="w-4 h-4 mr-2" />
                       <a
-                        href="tel:650-961-4646"
+                        href={COMPANY.phoneTel}
                         className="text-primary hover:underline"
                       >
-                        (650) 961-4646
+                        {COMPANY.phoneFormatted}
                       </a>
                     </p>
                     <div className="pt-2 border-t">
                       <p className="font-medium text-foreground mb-1">Hours</p>
-                      <p>Mon-Fri: 10AM - 6PM PST</p>
-                      <p>Saturday: 10AM - 2PM PST</p>
-                      <p>Sunday: Closed</p>
+                      <p>
+                        {COMPANY.hours.weekdays.label}:{' '}
+                        {COMPANY.hours.weekdays.display}
+                      </p>
+                      <p>
+                        {COMPANY.hours.saturday.label}:{' '}
+                        {COMPANY.hours.saturday.display}
+                      </p>
+                      <p>
+                        {COMPANY.hours.sunday.label}:{' '}
+                        {COMPANY.hours.sunday.display}
+                      </p>
                     </div>
                   </div>
                 </div>

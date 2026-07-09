@@ -8,6 +8,7 @@ import SEOGraph, {
 } from '@/components/SEOGraph';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { COMPANY } from '@/config/company';
 import { SITE_URL } from '@/lib/config';
 import {
   CheckCircle,
@@ -157,8 +158,8 @@ export default function BayAreaServicesPage() {
         buttons={[
           { text: 'View All Services', href: '#services', variant: 'default' },
           {
-            text: 'Call (650) 961-4646',
-            href: 'tel:+16509614646',
+            text: `Call ${COMPANY.phone}`,
+            href: COMPANY.phoneTel,
             variant: 'outline',
           },
         ]}
@@ -212,8 +213,7 @@ export default function BayAreaServicesPage() {
 
           <div className="text-center">
             <p className="text-muted-foreground">
-              <strong>Address:</strong> 809 Cuesta Dr, Suite B, Mountain View,
-              CA 94040
+              <strong>Address:</strong> {COMPANY.address.full}
             </p>
             <p className="text-muted-foreground mt-2">
               Conveniently located near major highways for easy access from
