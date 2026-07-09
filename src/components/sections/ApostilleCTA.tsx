@@ -3,6 +3,7 @@
 // Renders a visually prominent CTA with call + contact buttons.
 
 import { Button } from '@/components/ui/button';
+import { COMPANY } from '@/config/company';
 import { FileCheck2, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
 
@@ -56,9 +57,9 @@ export function ApostilleCTA({ cityName }: ApostilleCTAProps) {
             className="text-base px-8 py-6 bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
             asChild
           >
-            <Link href="tel:650-961-4646">
+            <Link href={COMPANY.phoneTel}>
               <Phone className="mr-2 h-5 w-5" />
-              Call (650) 961-4646
+              Call {COMPANY.phoneFormatted}
             </Link>
           </Button>
         </div>
@@ -66,7 +67,7 @@ export function ApostilleCTA({ cityName }: ApostilleCTAProps) {
         {/* Location info */}
         <div className="inline-flex items-center gap-2 text-sm opacity-80">
           <MapPin className="w-4 h-4" />
-          <span>809 Cuesta Dr, Suite B, Mountain View, CA 94040</span>
+          <span>{COMPANY.address.full}</span>
         </div>
       </div>
     </section>

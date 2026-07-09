@@ -9,6 +9,7 @@ import SEOGraph, {
 import { FAQSection } from '@/components/sections/FAQSection';
 import { NewHeroSection } from '@/components/sections/NewHeroSection';
 import { ServicesSection } from '@/components/sections/ServicesSection';
+import { COMPANY } from '@/config/company';
 import { SITE_URL } from '@/lib/config';
 // import { HomePageReviews } from '@/modules/google-reviews';
 
@@ -152,16 +153,16 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="text-primary hover:underline font-semibold"
                 >
-                  809 Cuesta Dr, Suite B, Mountain View, CA 94040
+                  {COMPANY.address.full}
                 </a>
               </p>
               <p className="text-sm text-muted-foreground">
                 Call{' '}
                 <a
-                  href="tel:+16509614646"
+                  href={COMPANY.phoneTel}
                   className="text-primary hover:underline font-semibold"
                 >
-                  (650) 961-4646
+                  {COMPANY.phoneFormatted}
                 </a>{' '}
                 for service in your area
               </p>

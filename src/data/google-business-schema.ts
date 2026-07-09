@@ -1,6 +1,7 @@
 // SEO Structured Data Schemas for Mail All Center
 // Generated following Google Rich Results Test and Schema.org Validator requirements
 
+import { COMPANY } from '@/config/company';
 import { SITE_URL } from '@/lib/config';
 
 // Business JSON-LD Schema (used on homepage and site-wide)
@@ -15,51 +16,43 @@ export const businessSchema = {
     'ProfessionalService',
   ],
   '@id': `${SITE_URL}/#organization`,
-  name: 'Mail All Center',
+  name: COMPANY.name,
   alternateName: [
     'Mail All Center Mountain View',
     'Live Scan Solutions',
     'Mountain View Live Scan',
   ],
   url: SITE_URL,
-  telephone: '+1-650-961-4646',
-  email: 'info@mailallcenter.com',
+  telephone: COMPANY.phoneE164,
+  email: COMPANY.email,
 
   // Business Information
-  foundingDate: '2010-01-01',
-  slogan:
-    'Your Trusted Partner for Professional Live Scan, Notary, and Business Services',
+  foundingDate: `${COMPANY.foundingYear}-01-01`,
+  slogan: COMPANY.tagline,
   description:
     'Professional Live Scan Fingerprinting, Notary Public, Apostille, and Business Services in Mountain View, California. Listed on California DOJ website as approved Live Scan location, document authentication, passport photos, mailbox rental, and more.',
-  sameAs: [
-    'https://www.google.com/search?q=mailallcenter&sca_esv=5781ecd08cb21da5&sxsrf=AE3TifM9xceaUdw8wBPPYfF3mabCLiY89w%3A1758176841214&source=hp&ei=SabLaOiYC6ea0PEPwcaIqAQ&iflsig=AOw8s4IAAAAAaMu0Wd-xSgCGdJObBz6teZsESk6b3ERF&ved=0ahUKEwio4ciQ1-GPAxUnDTQIHUEjAkUQ4dUDCBo&uact=5&oq=mailallcenter&gs_lp=Egdnd3Mtd2l6Ig1tYWlsYWxsY2VudGVyMgcQABiABBgNMgcQABiABBgNMg0QLhiABBjHARgNGK8BMg0QLhiABBjHARgNGK8BMgcQABiABBgNMgcQABiABBgNMgcQABiABBgNMg0QLhiABBjHARgNGK8BMgcQABiABBgNMgcQABiABBgNSOMmUJMDWIokcAF4AJABAJgB5wKgAdgNqgEHNS42LjEuMbgBA8gBAPgBAZgCDqAC9A2oAgrCAgcQIxgnGOoCwgIEECMYJ8ICERAuGIAEGJECGNEDGMcBGIoFwgILEAAYgAQYsQMYgwHCAgsQLhiABBixAxiDAcICDhAuGIAEGLEDGNEDGMcBwgIREC4YgAQYsQMY0QMYgwEYxwHCAg4QLhiABBixAxiDARiKBcICBRAuGIAEwgIUEC4YgAQYkQIYsQMY0QMYxwEYigXCAggQLhiABBixA8ICBRAAGIAEwgIOEAAYgAQYsQMYgwEYigXCAggQABiABBixA8ICCxAAGIAEGJECGIoFwgIKEAAYgAQYsQMYCsICDRAuGIAEGMcBGAoYrwHCAgcQABiABBgKwgIHEC4YgAQYCsICERAAGIAEGJECGLEDGIMBGIoFwgILEC4YgAQYxwEYrwHCAg0QABiABBixAxiDARgKwgIKEC4YgAQYsQMYCsICDRAuGIAEGLEDGNQCGArCAgYQABgDGArCAgIQJsICCBAAGIAEGKIEwgIFEAAY7wXCAggQABiiBBiJBZgDAvEFKrX0HIr85WGSBwc1LjcuMS4xoAevkQGyBwc0LjcuMS4xuAfxDcIHBTYuNi4yyAcW&sclient=gws-wiz',
-    'https://www.google.com/maps/dir/?api=1&destination=809+Cuesta+Dr+Suite+B,+Mountain+View,+CA+94040',
-    'https://www.yelp.com/biz/mail-all-center-mountain-view-9',
-    'https://www.mapquest.com/us/california/mail-all-center-11725516',
-    'https://oag.ca.gov/fingerprints/locations/mail-all-center',
-  ],
+  sameAs: [...COMPANY.sameAs],
 
   // Location Information
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '809 Cuesta Dr, Suite B',
-    addressLocality: 'Mountain View',
-    addressRegion: 'CA',
-    postalCode: '94040',
-    addressCountry: 'US',
+    streetAddress: COMPANY.address.street,
+    addressLocality: COMPANY.address.city,
+    addressRegion: COMPANY.address.state,
+    postalCode: COMPANY.address.zip,
+    addressCountry: COMPANY.address.country,
   },
 
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 37.4089,
-    longitude: -122.0877,
+    latitude: COMPANY.address.geo.lat,
+    longitude: COMPANY.address.geo.lng,
   },
-  hasMap:
-    'https://www.google.com/maps/place/Mail+All+Center+-+Live+Scan,+Fingerprinting,+Notary+%26+Apostille/@37.372944,-122.0904646,17z/data=!3m2!4b1!5s0x808fb12bb56363e1:0xd088afecb64126dc!4m6!3m5!1s0x808fb151a6503caf:0xbf74aa58e146623c!8m2!3d37.372944!4d-122.0878897!16s%2Fg%2F11t7s0wkk7',
+  hasMap: COMPANY.address.placeUrl,
   contactPoint: [
     {
       '@type': 'ContactPoint',
-      telephone: '+1-650-961-4646',
+      telephone: COMPANY.phoneE164,
       contactType: 'customer service',
       areaServed: 'US',
       availableLanguage: ['en', 'es'],
@@ -73,14 +66,14 @@ export const businessSchema = {
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '10:00',
-      closes: '17:00',
+      opens: COMPANY.hours.weekdays.opens,
+      closes: COMPANY.hours.weekdays.closes,
     },
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: 'Saturday',
-      opens: '10:00',
-      closes: '14:00',
+      opens: COMPANY.hours.saturday.opens,
+      closes: COMPANY.hours.saturday.closes,
     },
   ],
 

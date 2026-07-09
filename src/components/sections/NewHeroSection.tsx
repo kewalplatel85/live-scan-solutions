@@ -1,6 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { COMPANY } from '@/config/company';
 import {
   Award,
   BadgeCheck,
@@ -115,9 +116,9 @@ export const NewHeroSection = () => {
             {/* Primary CTA */}
             <div className="flex flex-col sm:flex-row gap-3">
               <Button size="lg" className="text-base px-6" asChild>
-                <Link href="tel:(650)961-4646">
+                <Link href={COMPANY.phoneTel}>
                   <Phone className="mr-2 h-4 w-4" />
-                  Call (650) 961-4646
+                  Call {COMPANY.phoneFormatted}
                 </Link>
               </Button>
               <Button

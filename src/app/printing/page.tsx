@@ -7,6 +7,7 @@ import SEOGraph, {
 } from '@/components/SEOGraph';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { COMPANY } from '@/config/company';
 import { printingServiceSchema } from '@/data/google-business-schema';
 import { SITE_URL } from '@/lib/config';
 import {
@@ -286,8 +287,8 @@ export default function PrintingPage() {
             size: 'lg',
           },
           {
-            text: 'Call (650) 961-4646',
-            href: 'tel:650-961-4646',
+            text: `Call ${COMPANY.phone}`,
+            href: COMPANY.phoneTel,
             icon: Phone,
             variant: 'outline',
             size: 'lg',

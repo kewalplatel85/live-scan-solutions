@@ -14,6 +14,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { COMPANY } from '@/config/company';
 import { badgeData } from '@/data/badges';
 import { liveScanServiceSchema } from '@/data/google-business-schema';
 import { SITE_URL } from '@/lib/config';
@@ -222,8 +223,8 @@ export default function LiveScanPage() {
             size: 'lg',
           },
           {
-            text: 'Call (650) 961-4646',
-            href: 'tel:650-961-4646',
+            text: `Call ${COMPANY.phone}`,
+            href: COMPANY.phoneTel,
             icon: Phone,
             variant: 'outline',
             size: 'lg',
@@ -517,10 +518,10 @@ export default function LiveScanPage() {
               (DOJ/FBI) submission fees are required and vary by application
               type. Contact us at{' '}
               <a
-                href="tel:650-961-4646"
+                href={COMPANY.phoneTel}
                 className="text-primary hover:underline font-medium"
               >
-                (650) 961-4646
+                {COMPANY.phoneFormatted}
               </a>{' '}
               for a complete fee estimate for your specific application.
             </p>

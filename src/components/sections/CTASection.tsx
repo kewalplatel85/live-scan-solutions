@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { COMPANY } from '@/config/company';
 import { Phone } from 'lucide-react';
 import Link from 'next/link';
 
@@ -12,7 +13,7 @@ interface CTASectionProps {
 export const CTASection = ({
   title = 'Ready to Get Started?',
   description = 'Experience the difference of working with certified professionals who care about your needs. Contact us today for fast, secure, and reliable fingerprinting services.',
-  phoneNumber = '650-961-4646',
+  phoneNumber = COMPANY.phone,
   className = '',
 }: CTASectionProps) => {
   return (

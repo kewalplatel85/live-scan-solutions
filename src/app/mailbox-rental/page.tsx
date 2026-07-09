@@ -8,6 +8,7 @@ import SEOGraph, {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { COMPANY } from '@/config/company';
 import { mailboxRentalServiceSchema } from '@/data/google-business-schema';
 import { SITE_URL } from '@/lib/config';
 import {
@@ -101,8 +102,8 @@ export default function MailboxRentalPage() {
             size: 'lg',
           },
           {
-            text: 'Call (650) 961-4646',
-            href: 'tel:650-961-4646',
+            text: `Call ${COMPANY.phone}`,
+            href: COMPANY.phoneTel,
             icon: Phone,
             variant: 'outline',
             size: 'lg',
@@ -589,7 +590,7 @@ export default function MailboxRentalPage() {
                 won&apos;t last long - secure your professional mailbox today.
               </p>
               <Button size="lg" asChild>
-                <Link href="tel:650-961-4646">
+                <Link href={COMPANY.phoneTel}>
                   <Phone className="mr-2 h-4 w-4" />
                   Reserve Your Mailbox Now
                 </Link>
@@ -599,11 +600,17 @@ export default function MailboxRentalPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-muted-foreground">
               <div className="flex items-center justify-center gap-2">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
-                <span>809 Cuesta Dr, Suite B, Mountain View, CA 94040</span>
+                <span>{COMPANY.address.full}</span>
               </div>
               <div className="flex items-center justify-center gap-2">
                 <Clock className="w-4 h-4 flex-shrink-0" />
-                <span>Mon-Fri: 10AM-6PM | Sat: 10AM-2PM | Sun: Closed</span>
+                <span>
+                  {COMPANY.hours.weekdays.label}:{' '}
+                  {COMPANY.hours.weekdays.display.replace(' PST', '')} |{' '}
+                  {COMPANY.hours.saturday.label}:{' '}
+                  {COMPANY.hours.saturday.display.replace(' PST', '')} |{' '}
+                  {COMPANY.hours.sunday.label}: {COMPANY.hours.sunday.display}
+                </span>
               </div>
             </div>
           </div>
