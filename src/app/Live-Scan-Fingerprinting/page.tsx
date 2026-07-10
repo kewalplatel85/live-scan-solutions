@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/tooltip';
 import { COMPANY } from '@/config/company';
 import { badgeData } from '@/data/badges';
+import { LIVESCAN_CITIES } from '@/data/city-pages/livescan-cities';
 import { liveScanServiceSchema } from '@/data/google-business-schema';
 import { SITE_URL } from '@/lib/config';
 import {
@@ -36,7 +37,7 @@ import {
   Zap,
 } from 'lucide-react';
 import type { Metadata } from 'next';
-
+import Link from 'next/link';
 const serviceOptions = [
   {
     icon: UserCheck,
@@ -107,23 +108,6 @@ const pricingPlans = [
     ],
     popular: false,
   },
-];
-
-const locations = [
-  'Palo Alto',
-  'Sunnyvale',
-  'Los Altos',
-  'Cupertino',
-  'Menlo Park',
-  'Santa Clara',
-  'San Jose',
-  'Milpitas',
-  'Redwood City',
-  'Mountain View',
-  'Fremont',
-  'Campbell',
-  'Saratoga',
-  'Morgan Hill',
 ];
 
 export const metadata: Metadata = {
@@ -588,30 +572,30 @@ export default function LiveScanPage() {
       </section>
 
       {/* Locations Section */}
-      <section id="bay-area-locations" className="py-16 bg-muted/50">
+      <section id="bay-area-locations" className="py-16 bg-background border-t">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Bay Area Locations
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl font-bold mb-4">
+              Live Scan Services Across the Bay Area
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We proudly serve communities across the Bay Area with our
-              professional fingerprinting services.
+            <p className="text-muted-foreground mb-6">
+              Mail All Center proudly serves residents and businesses across the
+              Bay Area with professional Live Scan fingerprinting services.
+              Visit our city-specific pages for local information.
             </p>
-          </div>
 
-          <div className="flex flex-wrap justify-center gap-3">
-            {locations.map((location, index) => (
-              <div
-                key={index}
-                className="inline-flex items-center px-4 py-2 bg-muted/30 rounded-full border border-muted"
-              >
-                <MapPin className="w-3 h-3 mr-2 text-primary" />
-                <span className="text-sm font-medium text-foreground">
-                  {location}
-                </span>
-              </div>
-            ))}
+            <div className="flex flex-wrap justify-center gap-3">
+              {LIVESCAN_CITIES.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/Live-Scan-Fingerprinting/${city.slug}`}
+                  className="inline-flex items-center px-4 py-2 rounded-full border border-border bg-background hover:bg-primary/5 hover:border-primary/30 transition-colors duration-200 text-sm font-medium"
+                >
+                  <MapPin className="w-3 h-3 mr-2 text-primary" />
+                  Live Scan in {city.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

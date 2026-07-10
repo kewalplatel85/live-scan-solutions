@@ -1,5 +1,6 @@
 // src/data/routes.config.ts
 import { APOSTILLE_CITIES } from '@/data/city-pages/apostille-cities';
+import { LIVESCAN_CITIES } from '@/data/city-pages/livescan-cities';
 
 export type RouteCategory = 'home' | 'core' | 'standard' | 'info';
 
@@ -45,6 +46,13 @@ export const ROUTES: RouteDef[] = [
   ...APOSTILLE_CITIES.map((city) => ({
     path: `/apostille/${city.slug}`,
     title: `Apostille ${city.name}`,
+    category: 'core' as RouteCategory,
+  })),
+
+  // Live Scan city landing pages (auto-generated from city data)
+  ...LIVESCAN_CITIES.map((city) => ({
+    path: `/Live-Scan-Fingerprinting/${city.slug}`,
+    title: `Live Scan ${city.name}`,
     category: 'core' as RouteCategory,
   })),
 ];
