@@ -38,6 +38,7 @@ export const ROUTES: RouteDef[] = [
     title: 'Bay Area Services',
     category: 'standard',
   },
+  { path: '/book', title: 'Book Appointment', category: 'core' },
   { path: '/about-us', title: 'About', category: 'info' },
   { path: '/contact-us', title: 'Contact', category: 'info' },
   { path: '/faq', title: 'FAQ', category: 'info' },

@@ -43,8 +43,9 @@ const nextConfig: NextConfig = {
         source: '/(.*)',
         headers: [
           {
-            key: 'X-Frame-Options',
-            value: 'DENY',
+            key: 'Content-Security-Policy',
+            value:
+              "frame-ancestors 'self' https://cal.com https://app.cal.com https://*.cal.com",
           },
           {
             key: 'X-Content-Type-Options',
