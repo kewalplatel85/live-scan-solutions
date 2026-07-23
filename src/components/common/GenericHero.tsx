@@ -206,7 +206,7 @@ export const GenericHero = ({
                             key={index}
                             size={button.size || 'lg'}
                             variant={button.variant || 'default'}
-                            className={button.className || 'text-lg px-8 py-6'}
+                            className={button.className}
                             asChild
                           >
                             <Link href={button.href}>

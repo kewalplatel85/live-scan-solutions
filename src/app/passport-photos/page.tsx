@@ -11,6 +11,7 @@ import { COMPANY } from '@/config/company';
 import { passportPhotosServiceSchema } from '@/data/google-business-schema';
 import { SITE_URL } from '@/lib/config';
 import {
+  CalendarCheck,
   Camera,
   CheckCircle,
   Clock,
@@ -101,8 +102,9 @@ export default function PassportPhotosPage() {
         ]}
         buttons={[
           {
-            text: 'Get Your Photos Today',
-            href: '/contact-us',
+            text: 'Book Now',
+            href: '/book',
+            icon: CalendarCheck,
             variant: 'default',
             size: 'lg',
           },

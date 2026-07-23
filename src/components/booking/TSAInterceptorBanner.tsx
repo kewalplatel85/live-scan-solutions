@@ -1,78 +1,46 @@
-'use client';
+import { AlertTriangle, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 
-import { Button } from '@/components/ui/button';
-import { AlertTriangle, ExternalLink, X } from 'lucide-react';
-import { useCallback, useEffect, useState } from 'react';
-
-const SESSION_KEY = 'mac_tsa_banner_dismissed';
-
+/**
+ * Permanent (non-dismissible) TSA PreCheck routing notice.
+ * Placed at the top of the /book hero so users looking for TSA
+ * are redirected immediately before scanning services.
+ */
 export function TSAInterceptorBanner() {
-  const [dismissed, setDismissed] = useState(true); // start hidden to prevent SSR flash
-
-  useEffect(() => {
-    const wasDismissed = sessionStorage.getItem(SESSION_KEY) === 'true';
-    if (!wasDismissed) {
-      setDismissed(false);
-    }
-  }, []);
-
-  const handleDismiss = useCallback(() => {
-    sessionStorage.setItem(SESSION_KEY, 'true');
-    setDismissed(true);
-  }, []);
-
-  if (dismissed) return null;
-
   return (
     <div
-      role="alert"
+      role="note"
       aria-label="TSA PreCheck enrollment routing notice"
-      className="relative rounded-xl border border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950/40 px-5 py-4 shadow-sm"
+      className="rounded-xl border border-amber-200 dark:border-amber-700 bg-amber-50 dark:bg-amber-950/40 px-4 py-3"
     >
-      {/* Dismiss button */}
-      <button
-        onClick={handleDismiss}
-        aria-label="Dismiss TSA PreCheck notice"
-        className="absolute top-3 right-3 text-amber-600 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-200 transition-colors rounded-md p-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
-      >
-        <X className="w-4 h-4" />
-      </button>
-
-      <div className="flex items-start gap-4 pr-6">
-        {/* Icon */}
-        <div className="flex-shrink-0 mt-0.5">
-          <div className="w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/60 border border-amber-200 dark:border-amber-700 flex items-center justify-center">
-            <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400" />
-          </div>
+      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        {/* Icon + text */}
+        <div className="flex items-start sm:items-center gap-2.5 flex-1 min-w-0">
+          <AlertTriangle
+            className="w-4 h-4 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5 sm:mt-0"
+            aria-hidden="true"
+          />
+          <p className="text-sm text-amber-800 dark:text-amber-200 leading-snug">
+            <span className="font-semibold">
+              Looking for TSA PreCheck® Enrollment?
+            </span>{' '}
+            Federal guidelines require scheduling through the official{' '}
+            <strong>IDEMIA government registry</strong> — not available through
+            this store booking system.
+          </p>
         </div>
 
-        {/* Content */}
-        <div className="flex-1 min-w-0">
-          <p className="text-sm font-semibold text-amber-900 dark:text-amber-100 mb-1">
-            Looking for TSA PreCheck® Enrollment?
-          </p>
-          <p className="text-sm text-amber-800 dark:text-amber-200 leading-relaxed mb-3">
-            Federal guidelines require scheduling directly through the official{' '}
-            <strong>IDEMIA government registry</strong>. Store-managed slots
-            below cannot process TSA credentials — you must book through the
-            Department of Homeland Security.
-          </p>
-          <Button
-            asChild
-            size="sm"
-            className="bg-amber-600 hover:bg-amber-700 text-white border-0 font-semibold"
-          >
-            <a
-              href="https://universalenroll.dhs.gov/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Book TSA PreCheck enrollment at universalenroll.dhs.gov (opens in new tab)"
-            >
-              <ExternalLink className="w-4 h-4 mr-2" />
-              Book at IDEMIA Official Registry
-            </a>
-          </Button>
-        </div>
+        {/* CTA link */}
+        <Link
+          href="https://tsaenrollmentbyidemia.tsa.dhs.gov/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Book TSA PreCheck at universalenroll.dhs.gov (opens in new tab)"
+          className="flex-shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100 underline underline-offset-2 transition-colors sm:ml-auto"
+        >
+          Book at IDEMIA
+          <ExternalLink className="w-3 h-3" aria-hidden="true" />
+        </Link>
       </div>
     </div>
   );

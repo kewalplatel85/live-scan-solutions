@@ -2,7 +2,7 @@ import { LogoLink } from '@/components/Logo';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { Phone } from 'lucide-react';
+import { CalendarCheck, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 interface BrandHeaderProps {
@@ -31,6 +31,16 @@ export const BrandHeader = ({ className, contactInfo }: BrandHeaderProps) => {
 
           {/* Right side - Contact Button and Theme Toggle (positioned absolutely) */}
           <div className="absolute right-4 sm:right-6 lg:right-8 flex items-center space-x-3">
+            <Button
+              size="sm"
+              className="hidden lg:inline-flex font-semibold text-sm px-4 py-2 rounded-md shadow-sm hover:shadow-md transition-shadow"
+              asChild
+            >
+              <Link href="/book">
+                <CalendarCheck className="w-4 h-4 mr-1.5" />
+                Book Now
+              </Link>
+            </Button>
             {contactInfo && (
               <Button
                 variant="outline"

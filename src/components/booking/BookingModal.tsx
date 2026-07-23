@@ -18,7 +18,6 @@ import {
   CalendarCheck,
   CheckCircle2,
   Clock,
-  DollarSign,
   X,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
@@ -109,7 +108,6 @@ export function BookingModal({
                 className="flex items-center gap-3 mt-0.5"
               >
                 <span className="flex items-center gap-1 text-xs font-medium">
-                  <DollarSign className="w-3 h-3" aria-hidden="true" />
                   {service.priceLabel}
                 </span>
                 <span className="text-muted-foreground/50">·</span>

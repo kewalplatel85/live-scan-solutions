@@ -5,6 +5,7 @@ import { COMPANY } from '@/config/company';
 import {
   Award,
   BadgeCheck,
+  CalendarCheck,
   Camera,
   CheckCircle,
   Clock,
@@ -116,6 +117,17 @@ export const NewHeroSection = () => {
             {/* Primary CTA */}
             <div className="flex flex-col sm:flex-row gap-3">
               <Button size="lg" className="text-base px-6" asChild>
+                <Link href="/book">
+                  <CalendarCheck className="mr-2 h-4 w-4" />
+                  Book Now
+                </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-base px-6"
+                asChild
+              >
                 <Link href={COMPANY.phoneTel}>
                   <Phone className="mr-2 h-4 w-4" />
                   Call {COMPANY.phoneFormatted}

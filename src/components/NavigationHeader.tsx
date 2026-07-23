@@ -167,20 +167,9 @@ export const NavigationHeader = ({
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
             {/* Primary navigation items */}
-            {config.primaryItems.map((item) =>
-              item.highlight ? (
-                <Button
-                  key={item.name}
-                  size="sm"
-                  className="ml-2 font-semibold text-sm px-4 py-2 rounded-md shadow-sm hover:shadow-md transition-shadow"
-                  asChild
-                >
-                  <Link href={item.href!}>
-                    <CalendarCheck className="w-4 h-4 mr-1.5" />
-                    {item.name}
-                  </Link>
-                </Button>
-              ) : (
+            {config.primaryItems
+              .filter((item) => !item.highlight)
+              .map((item) => (
                 <Link
                   key={item.name}
                   href={item.href!}
@@ -193,8 +182,7 @@ export const NavigationHeader = ({
                 >
                   {item.name}
                 </Link>
-              )
-            )}
+              ))}
 
             {/* Dropdown sections */}
             {config.dropdownSections &&
