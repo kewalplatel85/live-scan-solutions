@@ -7,6 +7,8 @@ export interface NavigationItem {
   description?: string;
   isSeparator?: boolean;
   isHeading?: boolean;
+  /** When true, renders as a primary CTA button (e.g., "Book Now") */
+  highlight?: boolean;
 }
 
 export interface MegaMenuColumn {

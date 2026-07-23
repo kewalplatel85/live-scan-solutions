@@ -7,7 +7,13 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { navigationConfig } from '@/data/navigation';
 import { cn } from '@/lib/utils';
-import { ChevronDown, ChevronRight, Menu, Phone } from 'lucide-react';
+import {
+  CalendarCheck,
+  ChevronDown,
+  ChevronRight,
+  Menu,
+  Phone,
+} from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
@@ -161,20 +167,22 @@ export const NavigationHeader = ({
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
             {/* Primary navigation items */}
-            {config.primaryItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href!}
-                className={cn(
-                  'px-3 py-2 text-sm font-medium transition-colors rounded-md',
-                  getActiveState.activePrimary === item.name
-                    ? 'text-primary bg-primary/10'
-                    : 'text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
-                )}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {config.primaryItems
+              .filter((item) => !item.highlight)
+              .map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href!}
+                  className={cn(
+                    'px-3 py-2 text-sm font-medium transition-colors rounded-md',
+                    getActiveState.activePrimary === item.name
+                      ? 'text-primary bg-primary/10'
+                      : 'text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
+                  )}
+                >
+                  {item.name}
+                </Link>
+              ))}
 
             {/* Dropdown sections */}
             {config.dropdownSections &&
@@ -395,21 +403,33 @@ export const NavigationHeader = ({
                       )}
                     <div className="space-y-1">
                       {/* Primary navigation items */}
-                      {config.primaryItems.map((item) => (
-                        <Link
-                          key={item.name}
-                          href={item.href!}
-                          className={cn(
-                            'block px-3 py-3 text-base font-medium rounded-md transition-colors',
-                            getActiveState.activePrimary === item.name
-                              ? 'text-primary bg-primary/10 border border-primary/20'
-                              : 'text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
-                          )}
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
+                      {config.primaryItems.map((item) =>
+                        item.highlight ? (
+                          <Link
+                            key={item.name}
+                            href={item.href!}
+                            className="flex items-center gap-2 px-3 py-3 text-base font-semibold rounded-md transition-colors text-primary-foreground bg-primary hover:bg-primary/90"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            <CalendarCheck className="w-5 h-5" />
+                            {item.name}
+                          </Link>
+                        ) : (
+                          <Link
+                            key={item.name}
+                            href={item.href!}
+                            className={cn(
+                              'block px-3 py-3 text-base font-medium rounded-md transition-colors',
+                              getActiveState.activePrimary === item.name
+                                ? 'text-primary bg-primary/10 border border-primary/20'
+                                : 'text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
+                            )}
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
+                        )
+                      )}
 
                       {/* Mobile dropdown sections */}
                       {config.dropdownSections &&

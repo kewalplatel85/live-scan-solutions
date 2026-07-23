@@ -10,7 +10,14 @@ import { COMPANY } from '@/config/company';
 import { badgeData } from '@/data/badges';
 import { notaryServiceSchema } from '@/data/google-business-schema';
 import { SITE_URL } from '@/lib/config';
-import { CheckCircle, FileText, Phone, Shield, Users } from 'lucide-react';
+import {
+  CalendarCheck,
+  CheckCircle,
+  FileText,
+  Phone,
+  Shield,
+  Users,
+} from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -145,11 +152,11 @@ export default function NotaryPublicPage() {
         }
         description="Professional, confidential document notarization with licensed private notaries. Same-day service available. Walk-ins welcome or book online for guaranteed service."
         benefits={benefits}
-        ctaText="Please call us to schedule your appointment"
         buttons={[
           {
-            text: 'Get Documents Notarized',
-            href: '/contact-us',
+            text: 'Book Now',
+            href: '/book',
+            icon: CalendarCheck,
             variant: 'default',
             size: 'lg',
           },

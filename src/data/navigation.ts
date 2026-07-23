@@ -14,6 +14,7 @@ export const navigationConfig: NavigationConfigWithoutDropdown = {
     { name: 'About Us', href: '/about-us' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact Us', href: '/contact-us' },
+    { name: 'Book Now', href: '/book', highlight: true },
   ],
   contactInfo: {
     phone: COMPANY.phone,

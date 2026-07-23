@@ -20,6 +20,7 @@ import { LIVESCAN_CITIES } from '@/data/city-pages/livescan-cities';
 import { liveScanServiceSchema } from '@/data/google-business-schema';
 import { SITE_URL } from '@/lib/config';
 import {
+  CalendarCheck,
   CalendarClock,
   Check,
   Clock,
@@ -198,11 +199,11 @@ export default function LiveScanPage() {
           { text: 'Trusted by local schools and churches' },
           { text: 'Group discount' },
         ]}
-        ctaText="Please call us to schedule your appointment"
         buttons={[
           {
-            text: 'Get Your Fingerprinting Today',
-            href: '/contact-us',
+            text: 'Book Now',
+            href: '/book',
+            icon: CalendarCheck,
             variant: 'default',
             size: 'lg',
           },
