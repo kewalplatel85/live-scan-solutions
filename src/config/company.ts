@@ -34,8 +34,8 @@ export const COMPANY = {
     placeUrl:
       'https://www.google.com/maps/place/Mail+All+Center+-+Live+Scan,+Fingerprinting,+Notary+%26+Apostille/@37.372944,-122.0904646,17z/data=!3m2!4b1!5s0x808fb12bb56363e1:0xd088afecb64126dc!4m6!3m5!1s0x808fb151a6503caf:0xbf74aa58e146623c!8m2!3d37.372944!4d-122.0878897!16s%2Fg%2F11t7s0wkk7',
     geo: {
-      lat: 37.4089,
-      lng: -122.0877,
+      lat: 37.372944,
+      lng: -122.0878897,
     },
   },
 
@@ -45,7 +45,7 @@ export const COMPANY = {
       label: 'Mon - Fri',
       display: '10AM - 6PM PST',
       opens: '10:00',
-      closes: '17:00',
+      closes: '18:00',
     },
     saturday: {
       label: 'Saturday',

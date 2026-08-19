@@ -23,108 +23,69 @@ import {
   CalendarCheck,
   CalendarClock,
   Check,
-  Clock,
   CreditCard,
-  Globe,
-  HardDrive,
   Info,
   MapPin,
   Phone,
   Shield,
-  Smartphone,
   Truck,
   UserCheck,
-  Wifi,
-  Zap,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 const serviceOptions = [
   {
     icon: UserCheck,
     title: 'Walk-In Service',
-    description: 'No appointment needed - fast and convenient',
+    description: 'Visit during business hours—no appointment required',
     badge: 'Most Popular',
-    features: ['Immediate service', 'Quick turnaround', 'Professional staff'],
+    features: [
+      'No appointment required',
+      'Same-day fingerprint submission',
+      'Professional assistance',
+    ],
   },
   {
     icon: CalendarClock,
     title: 'Scheduled Appointments',
-    description: 'Book your preferred time slot',
+    description: 'Reserve a convenient time for your visit',
     badge: 'Recommended',
     features: [
-      'Private consultation',
-      'Guaranteed time',
-      'After-hours available',
+      'Reserved time',
+      'One-on-one assistance',
+      'After-hours by request',
     ],
   },
   {
     icon: Truck,
     title: 'Mobile Service',
-    description: 'On-site fingerprinting at your location',
-    badge: 'Enterprise',
-    features: ['Group sessions', 'Corporate rates', 'HR support'],
-  },
-];
-
-const pricingPlans = [
-  {
-    name: 'Individual',
-    price: 'Starting at $16.99',
-    priceSuffix: '+ government fees',
-    description: 'Perfect for personal fingerprint submissions',
+    description: 'On-site Live Scan for organizations and groups',
+    badge: 'Group Service',
     features: [
-      'Live Scan fingerprinting',
-      'DOJ processing submission',
-      'Same-day service',
-      'Digital submission option',
+      'Schools, churches, and employers',
+      'Coordinated group sessions',
+      'Corporate invoicing available',
     ],
-    popular: false,
-  },
-  {
-    name: 'Employment',
-    price: 'Starting at $16.99',
-    priceSuffix: '+ government fees',
-    description: 'Comprehensive employment fingerprinting',
-    features: [
-      'Live Scan fingerprinting',
-      'FBI & DOJ processing submission',
-      'Priority handling',
-      'Professional certification',
-      'Follow-up support',
-    ],
-    popular: true,
-  },
-  {
-    name: 'Express',
-    price: 'Starting at $24.99',
-    priceSuffix: '+ government fees',
-    description: 'Rush processing for urgent needs',
-    features: [
-      'Live Scan fingerprinting',
-      'Same-day processing',
-      'Priority queue',
-      'Rush handling',
-      'Expedited submission',
-    ],
-    popular: false,
   },
 ];
 
 export const metadata: Metadata = {
-  title:
-    'Mail All Center: Top-rated Live Scan, Fingerprinting service - Walk-in Welcome',
+  title: 'Live Scan Fingerprinting in Mountain View, CA | Walk-Ins Welcome',
   description:
-    'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan fingerprint submissions for licensing, employment, and certifications. Same-day processing, walk-ins welcome. Serving Bay Area schools, nonprofits. Rolling fee starting at $16.99. Additional government fees may apply. Call (650) 961-4646.',
-  keywords:
-    'FBI FD-258 manual fingerprinting, FBI FD-1164 fingerprinting, manual ink fingerprinting mountain view, traditional fingerprinting mountain view, live scan fingerprinting mountain view, live scan fingerprinting bay area, live scan near me, fingerprinting near me, ink fingerprinting mountain view, FBI FD-258 card fingerprinting, FBI FD-1164 card, fingerprinting services bay area, digital fingerprinting mountain view, fingerprint submissions mountain view, licensing fingerprinting mountain view, fingerprinting silicon valley, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, live scan menlo park, live scan redwood city, same day fingerprinting, walk-in fingerprinting, Mail All Center fingerprinting, fingerprinting peninsula, fingerprinting south bay, Mountain View School District, Los Altos School District, Sunnyvale School District, Cupertino School District, Menlo Park School District, Palo Alto School District, Santa Clara School District, San Jose School District, Boys Scouts, Sunnyvale Boy Scouts, Redwood City School District, Los Gatos School District, AYSO',
+    'DOJ-listed Live Scan and FD-258 ink fingerprinting in Mountain View, CA. Walk-ins from nearby cities are welcome, with mobile group service available.',
   openGraph: {
     type: 'website',
-    title:
-      'Get your Live Scan fingerprinting done fast in Mountain View, CA. Walk-ins welcome. Trusted by local schools, nonprofits & businesses. Rolling fee starting at $16.99.',
+    title: 'Live Scan Fingerprinting in Mountain View, CA | Mail All Center',
     description:
-      'Professional FBI FD-258 manual ink fingerprinting and FBI FD-1164 services at Mail All Center, Mountain View. Live Scan fingerprint submissions for licensing, employment, and certifications. Walk-ins welcome, same-day processing. Additional government fees may apply based on application type.',
+      'Walk into our Mountain View location for Live Scan and FD-258 ink fingerprinting, or schedule mobile group service for your organization.',
     url: `${SITE_URL}/Live-Scan-Fingerprinting`,
+    images: [
+      {
+        url: '/assets/services/live-scan-service.jpg',
+        alt: 'Professional Live Scan fingerprinting service',
+      },
+    ],
   },
   alternates: {
     canonical: `${SITE_URL}/Live-Scan-Fingerprinting`,
@@ -140,31 +101,27 @@ const nodes = [
     url,
     title: 'Live Scan Fingerprinting in Mountain View, CA | Mail All Center',
     description:
-      'Live Scan fingerprint submissions for licensing, employment, and certifications. Listed on California DOJ website as approved location.',
+      'DOJ-listed Live Scan and FD-258 ink fingerprinting in Mountain View, welcoming walk-ins from nearby cities and offering mobile group service.',
   }),
   liveScanServiceSchema,
   buildHowTo({
-    name: 'How to Complete Live Scan Fingerprinting',
+    name: 'How Live Scan and Ink Fingerprinting Works',
     steps: [
       {
-        name: 'Bring Valid Photo ID',
-        text: "Bring a government-issued ID (driver's license or passport).",
+        name: 'Bring Your Documents',
+        text: 'Bring a valid photo ID and your completed request form.',
       },
       {
-        name: 'Complete Required Forms',
-        text: 'Fill out the Live Scan request form with your details.',
+        name: 'Capture Fingerprints',
+        text: 'Complete digital Live Scan or manual FD-258 ink fingerprinting.',
       },
       {
-        name: 'Digital Fingerprint Capture',
-        text: 'We capture prints using electronic Live Scan equipment.',
+        name: 'Quality Review',
+        text: 'We carefully review each fingerprint capture for quality.',
       },
       {
-        name: 'Review and Submit',
-        text: 'Authorize electronic submission to DOJ/FBI for processing.',
-      },
-      {
-        name: 'Receive Confirmation',
-        text: 'Take your receipt with a tracking/ATI number.',
+        name: 'Submit or Take Your Card',
+        text: 'We electronically submit your Live Scan or provide your completed fingerprint card.',
       },
     ],
   }),
@@ -176,28 +133,31 @@ const nodes = [
 
 export default function LiveScanPage() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <SEOGraph id="ld-live-scan" nodes={nodes} />
 
       {/* Hero Section */}
       <GenericHero
+        className="!py-10 md:!py-14"
         badges={badgeData.liveScanService}
         title={
           <>
-            Live Scan & FD-258 Ink{' '}
-            <span className="text-primary">Fingerprinting Services</span>
+            Live Scan & FD-258{' '}
+            <span className="text-primary">
+              Fingerprinting in Mountain View
+            </span>
           </>
         }
-        subtitle="Starting at $16.99 Rolling Fee* — Lowest in Bay Area"
-        description="Live Scan fingerprint submissions for licensing, employment, and certifications. Trusted by businesses and individuals across the Bay Area."
+        subtitle="Rolling Fees Starting at $16.99*"
+        description="DOJ-listed Live Scan and professional FD-258 ink fingerprinting for employment, licensing, volunteering, and personal records. Customers from anywhere in the Bay Area are welcome to walk into our Mountain View location, or organizations can schedule mobile group service."
         disclaimerText="*Rolling fee only. Additional DOJ/FBI government submission fees apply and vary by application type. Contact us for a complete fee estimate."
         benefits={[
-          { text: 'Same-day processing' },
-          { text: 'Walk-ins welcome' },
-          { text: 'Mobile service available' },
+          { text: 'Same-day electronic submission' },
+          { text: 'Walk-ins from all nearby cities welcome' },
+          { text: 'Mobile service for groups' },
           { text: 'Expert assistance' },
           { text: 'Trusted by local schools and churches' },
-          { text: 'Group discount' },
+          { text: 'Group rates available' },
         ]}
         buttons={[
           {
@@ -217,230 +177,237 @@ export default function LiveScanPage() {
         ]}
         quickInfo={[
           {
-            icon: Clock,
-            text: 'Mon-Fri: 10AM-6PM PST | Sat: 10AM-2PM PST | Sun: Closed',
-          },
-          { icon: MapPin, text: 'Bay Area Locations' },
-          {
             icon: CreditCard,
             text: 'Payment: Credit Cards • Cash • Corporate Invoicing • Vouchers',
           },
         ]}
         rightContent={
-          <div className="space-y-4 md:space-y-6">
-            {/* First Row - Service Cards (2 columns) */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              <Card className="relative p-4 md:p-6">
-                <Badge
-                  variant="outline"
-                  className="absolute -top-3 left-4 bg-purple-50 border-purple-200 text-purple-700 hover:bg-purple-100 dark:bg-purple-950 dark:border-purple-800 dark:text-purple-300 dark:hover:bg-purple-900"
-                >
-                  FBI FD-258
-                </Badge>
-                <div className="mt-2">
-                  <h3 className="text-lg font-semibold mb-3">
-                    Ink Fingerprinting
-                  </h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-center">
-                      <Shield className="w-4 h-4 mr-3 text-purple-600 flex-shrink-0" />
-                      <span className="text-sm">
-                        Authentic FBI cards provided
-                      </span>
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-4 h-4 mr-3 text-purple-600 flex-shrink-0" />
-                      <span className="text-sm">DOJ guidelines compliance</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Globe className="w-4 h-4 mr-3 text-purple-600 flex-shrink-0" />
-                      <span className="text-sm">International acceptance</span>
-                    </li>
-                    <li className="flex items-center">
-                      <HardDrive className="w-4 h-4 mr-3 text-purple-600 flex-shrink-0" />
-                      <span className="text-sm">Hard card backup option</span>
-                    </li>
-                  </ul>
+          <div className="space-y-4 md:space-y-5">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <article className="group overflow-hidden rounded-2xl border bg-card shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src="/assets/services/live-scan-service.jpg"
+                    alt="Technician assisting a customer with digital Live Scan fingerprinting"
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                  <div className="absolute left-4 top-4 flex flex-wrap gap-2">
+                    <Badge className="bg-green-600 text-white hover:bg-green-600">
+                      Digital Submission
+                    </Badge>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Badge className="flex items-center gap-1 bg-white text-gray-900 hover:bg-white">
+                          From $16.99
+                          <Info className="h-3 w-3" />
+                        </Badge>
+                      </TooltipTrigger>
+                      <TooltipContent className="max-w-xs">
+                        <p className="text-xs">
+                          Rolling fee starts at $16.99. Additional DOJ/FBI
+                          government fees vary by application type.
+                        </p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                    <h3 className="text-xl font-bold">Live Scan</h3>
+                    <p className="mt-1 text-sm text-white/85">
+                      Electronic fingerprint capture and submission
+                    </p>
+                  </div>
                 </div>
-              </Card>
+                <ul className="grid gap-2 p-4 text-sm">
+                  <li className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-green-600" />
+                    Real-time quality verification
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-green-600" />
+                    DOJ/FBI electronic submission
+                  </li>
+                </ul>
+              </article>
 
-              <Card className="relative p-4 md:p-6">
-                <div className="flex items-center gap-2 absolute -top-3 left-4">
-                  <Badge
-                    variant="secondary"
-                    className="bg-green-50 border-green-200 text-green-700 hover:bg-green-100 dark:bg-green-950 dark:border-green-800 dark:text-green-300 dark:hover:bg-green-900"
-                  >
-                    Rolling fee lowest in town
+              <article className="group overflow-hidden rounded-2xl border bg-card shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src="/assets/services/ink-fingerprinting-service.jpg"
+                    alt="Technician completing manual FD-258 ink fingerprinting on a fingerprint card"
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                  <Badge className="absolute left-4 top-4 bg-purple-600 text-white hover:bg-purple-600">
+                    FBI FD-258 Card
                   </Badge>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Badge
-                        variant="default"
-                        className="bg-green-600 text-white hover:bg-green-700 dark:bg-green-600 dark:text-white dark:hover:bg-green-700 flex items-center gap-1"
-                      >
-                        From $16.99
-                        <Info className="w-3 h-3 opacity-80" />
-                      </Badge>
-                    </TooltipTrigger>
-                    <TooltipContent className="max-w-xs">
-                      <p className="text-xs">
-                        <strong>Rolling fee starts at $16.99.</strong>
-                        <br />
-                        Additional DOJ/FBI government submission fees apply and
-                        vary by application type. Contact us for a full fee
-                        breakdown.
-                      </p>
-                    </TooltipContent>
-                  </Tooltip>
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                    <h3 className="text-xl font-bold">Ink Fingerprinting</h3>
+                    <p className="mt-1 text-sm text-white/85">
+                      Expert manual rolling on official fingerprint cards
+                    </p>
+                  </div>
                 </div>
-                <div className="mt-2">
-                  <h3 className="text-lg font-semibold mb-3">
-                    Live Scan Services
-                  </h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-center">
-                      <Smartphone className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
-                      <span className="text-sm">
-                        Digital fingerprint capture
-                      </span>
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
-                      <span className="text-sm">
-                        Real-time quality verification
-                      </span>
-                    </li>
-                    <li className="flex items-center">
-                      <Zap className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
-                      <span className="text-sm">
-                        Electronic submission to DOJ/FBI
-                      </span>
-                    </li>
-                    <li className="flex items-center">
-                      <Wifi className="w-4 h-4 mr-3 text-green-600 flex-shrink-0" />
-                      <span className="text-sm">AFIS system integration</span>
-                    </li>
-                  </ul>
+                <ul className="grid gap-2 p-4 text-sm">
+                  <li className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-purple-600" />
+                    FD-258 cards available
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-purple-600" />
+                    Domestic and international use
+                  </li>
+                </ul>
+              </article>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <Card className="p-5">
+                <div className="flex items-start gap-3">
+                  <Shield className="mt-0.5 h-6 w-6 flex-shrink-0 text-orange-600" />
+                  <div>
+                    <h3 className="font-semibold">FBI Identity History</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      FD-1164 fingerprinting for identity history summaries,
+                      immigration, and adoption.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+              <Card className="p-5">
+                <div className="flex items-start gap-3">
+                  <MapPin className="mt-0.5 h-6 w-6 flex-shrink-0 text-blue-600" />
+                  <div>
+                    <h3 className="font-semibold">Serving the Bay Area</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Mountain View, Palo Alto, Sunnyvale, Los Altos, Cupertino,
+                      San Jose, and nearby cities.
+                    </p>
+                  </div>
                 </div>
               </Card>
             </div>
 
-            {/* Second Row - FBI FD-1164 and Service Locations */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              <Card className="relative p-4 md:p-6">
-                <Badge
-                  variant="outline"
-                  className="absolute -top-3 left-4 bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-100 dark:bg-orange-950 dark:border-orange-800 dark:text-orange-300 dark:hover:bg-orange-900"
-                >
-                  FBI FD-1164
-                </Badge>
-                <div className="mt-2">
-                  <h3 className="text-lg font-semibold mb-3">
-                    FBI Identity Summary
-                  </h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-center">
-                      <Shield className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
-                      <span className="text-sm">
-                        FBI identity summary report
-                      </span>
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
-                      <span className="text-sm">
-                        National FBI database search
-                      </span>
-                    </li>
-                    <li className="flex items-center">
-                      <Clock className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
-                      <span className="text-sm">24-48 hour processing</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Globe className="w-4 h-4 mr-3 text-orange-600 flex-shrink-0" />
-                      <span className="text-sm">Immigration & adoption</span>
-                    </li>
-                  </ul>
-                </div>
-              </Card>
-
-              <Card className="relative p-4 md:p-6">
-                <Badge
-                  variant="outline"
-                  className="absolute -top-3 left-4 bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 dark:bg-blue-950 dark:border-blue-800 dark:text-blue-300 dark:hover:bg-blue-900"
-                >
-                  Bay Area Coverage
-                </Badge>
-                <div className="mt-2">
-                  <h3 className="text-lg font-semibold mb-3">
-                    Service Locations
-                  </h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-center">
-                      <MapPin className="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" />
-                      <span className="text-sm">
-                        Palo Alto • Sunnyvale • Los Altos
-                      </span>
-                    </li>
-                    <li className="flex items-center">
-                      <MapPin className="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" />
-                      <span className="text-sm">
-                        Cupertino • Menlo Park • Santa Clara
-                      </span>
-                    </li>
-                    <li className="flex items-center">
-                      <MapPin className="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" />
-                      <span className="text-sm">
-                        San Jose • Mountain View • Fremont
-                      </span>
-                    </li>
-                    <li className="flex items-center">
-                      <MapPin className="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" />
-                      <a
-                        href="#bay-area-locations"
-                        className="text-sm text-primary hover:text-primary/80 underline underline-offset-2 transition-colors"
-                      >
-                        And 5 more Bay Area cities
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </Card>
-            </div>
-
-            {/* California DOJ Approval Banner */}
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-              <Shield className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+            <div className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-6 py-3 dark:border-blue-800 dark:bg-blue-950/20">
+              <Shield className="h-5 w-5 text-blue-600 dark:text-blue-400" />
               <p className="text-sm text-blue-700 dark:text-blue-300">
                 <strong>Mail All Center is listed on the </strong>
                 <a
                   href="https://oag.ca.gov/fingerprints/locations/mail-all-center"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:no-underline font-medium"
+                  className="font-medium underline hover:no-underline"
                 >
                   California DOJ website as an approved Live Scan location
                 </a>
               </p>
             </div>
+            <p className="text-center text-xs text-muted-foreground">
+              Illustrative service imagery.
+            </p>
           </div>
         }
       />
 
-      <CustomerTypesAccordion />
-
-      {/* Service Options */}
-      <section className="py-16 bg-muted/50">
+      {/* Fingerprinting process */}
+      <section className="border-y bg-background py-10 md:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Flexible Service Options
+          <div className="mx-auto mb-8 max-w-4xl text-center">
+            <Badge variant="secondary" className="mb-3">
+              What to Expect
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:whitespace-nowrap">
+              Your Fingerprinting Visit in Four Simple Steps
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Choose the service option that best fits your schedule and needs.
+            <p className="mt-3 text-lg text-muted-foreground">
+              Our team guides you through an accurate, comfortable Live Scan or
+              ink fingerprinting visit.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid items-stretch gap-5 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+            <div className="group relative min-h-[300px] overflow-hidden rounded-3xl border shadow-md lg:min-h-full">
+              <Image
+                src="/assets/services/live-scan-appointment.jpg"
+                alt="Customer checking in for a professional Live Scan fingerprinting appointment"
+                fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                <Badge className="mb-3 bg-white text-gray-900 hover:bg-white">
+                  Walk-ins Welcome
+                </Badge>
+                <h3 className="text-2xl font-bold">A Simple, Guided Visit</h3>
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-white/85">
+                  Bring your photo ID and request form. Our experienced team
+                  will guide you through the rest.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              {[
+                {
+                  title: 'Bring Your Documents',
+                  description:
+                    'Valid photo ID and your completed request form.',
+                },
+                {
+                  title: 'Capture Fingerprints',
+                  description:
+                    'Digital Live Scan or manual FD-258 ink card service.',
+                },
+                {
+                  title: 'Quality Review',
+                  description:
+                    'We carefully check each capture before completion.',
+                },
+                {
+                  title: 'Submit or Take Your Card',
+                  description:
+                    'Electronic submission or your completed fingerprint card.',
+                },
+              ].map((step, index) => (
+                <div
+                  key={step.title}
+                  className="relative rounded-2xl border bg-card p-5 shadow-sm transition-shadow hover:shadow-md"
+                >
+                  <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground">
+                    {index + 1}
+                  </div>
+                  <h3 className="font-semibold">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Options */}
+      <section className="bg-muted/50 py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-9 text-center">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+              Flexible Service Options
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              Walk in, reserve an appointment, or arrange mobile Live Scan for
+              your organization.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {serviceOptions.map((option, index) => {
               // Define unique colors for each service option
               const iconColors = [
@@ -457,7 +424,7 @@ export default function LiveScanPage() {
               return (
                 <Card
                   key={index}
-                  className="xl:p-6 relative hover:shadow-lg transition-shadow duration-200"
+                  className="relative transition-shadow duration-200 hover:shadow-lg"
                 >
                   {option.badge && (
                     <Badge
@@ -467,11 +434,11 @@ export default function LiveScanPage() {
                       {option.badge}
                     </Badge>
                   )}
-                  <CardHeader>
+                  <CardHeader className="pb-4">
                     <div
-                      className={`w-16 h-16 ${iconColors[index]} border rounded-full flex items-center justify-center mx-auto mb-4`}
+                      className={`mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full border ${iconColors[index]}`}
                     >
-                      <option.icon className={`w-8 h-8 ${textColors[index]}`} />
+                      <option.icon className={`h-7 w-7 ${textColors[index]}`} />
                     </div>
                     <CardTitle className="text-xl text-center">
                       {option.title}
@@ -480,7 +447,7 @@ export default function LiveScanPage() {
                       {option.description}
                     </p>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="pt-0">
                     <ul className="space-y-2">
                       {option.features.map((feature, featureIndex) => (
                         <li
@@ -497,7 +464,58 @@ export default function LiveScanPage() {
               );
             })}
           </div>
-          <div className="text-center text-xs text-muted-foreground mt-6 max-w-2xl mx-auto">
+
+          <div className="mt-8 overflow-hidden rounded-3xl border bg-card shadow-md">
+            <div className="grid items-center lg:grid-cols-2">
+              <div className="relative min-h-[280px] lg:min-h-[330px]">
+                <Image
+                  src="/assets/services/mobile-live-scan-service.jpg"
+                  alt="Mobile Live Scan fingerprinting setup serving a group at an organization"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 sm:p-8">
+                <Badge variant="secondary" className="mb-4">
+                  Mobile Group Service
+                </Badge>
+                <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                  We Bring Live Scan to Your Organization
+                </h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">
+                  Make fingerprinting convenient for your team with a
+                  professional on-site setup at your school, church, nonprofit,
+                  or workplace.
+                </p>
+                <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                  {[
+                    'Portable professional equipment',
+                    'Efficient group scheduling',
+                    'Bay Area mobile coverage',
+                    'Dedicated coordination support',
+                  ].map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-2 text-sm"
+                    >
+                      <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={COMPANY.phoneTel}
+                  className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                >
+                  <Phone className="h-4 w-4" />
+                  Call to Schedule Mobile Service
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="mx-auto mt-4 max-w-2xl text-center text-xs text-muted-foreground">
             <p>
               Prices shown reflect our rolling fee only. Additional government
               (DOJ/FBI) submission fees are required and vary by application
@@ -514,75 +532,20 @@ export default function LiveScanPage() {
         </div>
       </section>
 
-      {/* Service Packages Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Service Packages
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Choose the service package that best fits your needs. All packages
-              include professional fingerprinting with expert assistance.
-              Fingerprint submissions are sent to DOJ/FBI for processing
-              (results are returned by the agency, not by us).
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan, index) => (
-              <Card
-                key={index}
-                className={`relative ${
-                  plan.popular ? 'border-primary ring-2 ring-primary/20' : ''
-                }`}
-              >
-                {plan.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    Most Popular
-                  </Badge>
-                )}
-                <CardHeader className="text-center">
-                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                  <div className="mt-2">
-                    <span className="text-2xl font-bold">{plan.price}</span>
-                    {plan.priceSuffix && (
-                      <span className="text-sm text-muted-foreground ml-1">
-                        {plan.priceSuffix}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-muted-foreground text-sm mt-1">
-                    {plan.description}
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-6">
-                    {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
-                        <Check className="w-4 h-4 mr-3 text-green-600" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CustomerTypesAccordion />
 
       {/* Locations Section */}
-      <section id="bay-area-locations" className="py-16 bg-background border-t">
+      <section id="bay-area-locations" className="border-t bg-muted/30 py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-4">
-              Live Scan Services Across the Bay Area
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="mb-4 text-3xl font-bold">
+              Find Live Scan Near You in Mountain View and Nearby Cities
             </h2>
-            <p className="text-muted-foreground mb-6">
-              Mail All Center proudly serves residents and businesses across the
-              Bay Area with professional Live Scan fingerprinting services.
-              Visit our city-specific pages for local information.
+            <p className="mb-6 text-muted-foreground">
+              Customers throughout the Bay Area can visit Mail All Center in
+              Mountain View for walk-in Live Scan and FD-258 ink fingerprinting.
+              Mobile group service is also available for organizations across
+              the region.
             </p>
 
             <div className="flex flex-wrap justify-center gap-3">
@@ -600,6 +563,6 @@ export default function LiveScanPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

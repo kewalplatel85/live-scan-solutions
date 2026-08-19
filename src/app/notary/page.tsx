@@ -5,39 +5,53 @@ import SEOGraph, {
   BUSINESS_NODE,
   WEBSITE_NODE,
 } from '@/components/SEOGraph';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { COMPANY } from '@/config/company';
 import { badgeData } from '@/data/badges';
 import { notaryServiceSchema } from '@/data/google-business-schema';
 import { SITE_URL } from '@/lib/config';
 import {
+  Building2,
   CalendarCheck,
+  Check,
   CheckCircle,
+  Clock,
+  FileCheck2,
   FileText,
+  Home,
+  IdCard,
+  MapPin,
+  PenLine,
   Phone,
-  Shield,
-  Users,
+  Scale,
+  ShieldCheck,
+  Truck,
+  UserCheck,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title:
-    'Licensed Private Notary Public Services in Bay Area | Walk-In & Mobile Notary Available',
+  title: 'Notary Public in Mountain View, CA | Walk-In & Mobile Service',
   description:
-    'Mail All Center provides licensed private notary public services in Mountain View, CA and entire Bay Area. Professional notaries for contracts, real estate, wills, affidavits, power of attorney, loan documents. Confidential same-day service, walk-ins welcome. Mobile notary available. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont. Call (650) 961-4646.',
-  keywords:
-    'notary public mountain view, notary services bay area, notary near me, notary public near me, Mail All Center notary, document notarization mountain view, licensed notary mountain view, mobile notary mountain view, mobile notary bay area, contract notarization, real estate notary mountain view, will notarization, affidavit notary, same day notary, power of attorney notarization, loan document notary, notary public palo alto, notary public sunnyvale, notary public san jose, notary public cupertino, notary public fremont, notary public santa clara, notary services silicon valley, bay area notary services, peninsula notary services, south bay notary',
+    'California commissioned Notary Public in Mountain View. Walk in, book an appointment, or request mobile notary service for your home or organization.',
   openGraph: {
     type: 'website',
-    title:
-      'Licensed Private Notary Public Services Mountain View | Mail All Center',
+    title: 'Notary Public in Mountain View, CA | Mail All Center',
     description:
-      'Mail All Center provides licensed private notary public services in Mountain View, CA. Professional notaries, confidential service, walk-ins welcome, same-day availability.',
+      'Clear, convenient document notarization in Mountain View. Walk-ins, appointments, and mobile notary service are available.',
     url: `${SITE_URL}/notary`,
+    images: [
+      {
+        url: '/assets/services/notary-service.jpg',
+        alt: 'Customer meeting with a Notary Public for document notarization',
+      },
+    ],
   },
-  alternates: {
-    canonical: `${SITE_URL}/notary`,
-  },
+  alternates: { canonical: `${SITE_URL}/notary` },
   robots: { index: true, follow: true },
 };
 
@@ -47,10 +61,9 @@ const nodes = [
   BUSINESS_NODE,
   buildWebPage({
     url,
-    title:
-      'Licensed Private Notary Public in Mountain View, CA | Mail All Center',
+    title: 'Notary Public in Mountain View, CA | Mail All Center',
     description:
-      'Licensed California private notary for acknowledgments, jurats, certified copies and more. Confidential professional service.',
+      'California commissioned Notary Public offering walk-in, scheduled, and mobile document notarization in Mountain View and nearby communities.',
   }),
   notaryServiceSchema,
   buildBreadcrumb([
@@ -59,102 +72,150 @@ const nodes = [
   ]),
 ];
 
+const visitOptions = [
+  {
+    icon: UserCheck,
+    title: 'Walk In',
+    description:
+      'Stop by during regular business hours. No appointment is required.',
+    detail: COMPANY.hours.summary,
+    badge: 'Most Convenient',
+  },
+  {
+    icon: CalendarCheck,
+    title: 'Book an Appointment',
+    description:
+      'Reserve a time when you want a scheduled visit and less waiting.',
+    detail: 'Book online in advance',
+    badge: 'Reserved Time',
+  },
+  {
+    icon: Truck,
+    title: 'Mobile Notary',
+    description:
+      'Ask us to meet at your home, office, or organization when travel is difficult.',
+    detail: 'Call for availability and travel fees',
+    badge: 'We Come to You',
+  },
+];
+
+const preparationItems = [
+  {
+    icon: FileText,
+    title: 'Your Document',
+    description:
+      'Bring the complete document and leave no required information blank.',
+  },
+  {
+    icon: IdCard,
+    title: 'Acceptable Photo ID',
+    description:
+      'Bring a current identification document acceptable under California law.',
+  },
+  {
+    icon: UserCheck,
+    title: 'Every Signer in Person',
+    description:
+      'Each person whose signature is notarized must personally appear before the notary.',
+  },
+  {
+    icon: FileCheck2,
+    title: 'Required Notarial Act',
+    description:
+      'Know whether the receiving agency requires an acknowledgment, jurat, or another act.',
+  },
+];
+
 const processSteps = [
   {
-    step: 1,
-    title: 'Initial Consultation',
-    description:
-      'Contact our licensed private notaries to discuss your document notarization requirements and confirm necessary identification.',
-    icon: Phone,
-  },
-  {
-    step: 2,
-    title: 'Document Preparation',
-    description:
-      'Prepare your documents for notarization. Our experienced team will guide you through the requirements for proper completion.',
     icon: FileText,
+    title: 'Bring Your Document & ID',
+    description:
+      'Arrive with the document, acceptable identification, and all required signers.',
   },
   {
-    step: 3,
-    title: 'Identity Verification',
+    icon: ShieldCheck,
+    title: 'Identity Is Verified',
     description:
-      'Present valid identification for verification. Our licensed notaries ensure compliance with California notary laws.',
-    icon: Shield,
+      'The notary checks identity and records the required journal information.',
   },
   {
-    step: 4,
-    title: 'Professional Notarization',
+    icon: PenLine,
+    title: 'Sign or Acknowledge',
     description:
-      'Our licensed private Notary Public will witness document signing and provide the official notary seal with complete confidentiality.',
+      'Complete the signature, acknowledgment, oath, or affirmation required for the act.',
+  },
+  {
     icon: CheckCircle,
+    title: 'Notarization Is Completed',
+    description:
+      'The correct certificate is completed and the official notary seal is applied.',
   },
 ];
 
-const documentTypes = [
-  'Contracts: Legal agreements between two or more parties',
-  'Real Estate Documents: Deeds, mortgages, and other property-related papers',
-  'Affidavits: Written statements confirmed by oath or affirmation, for use as evidence in court',
-  "Power of Attorney: Legal authorization for one person to act on another's behalf in legal matters",
-  "Wills and Trusts: Legal documents related to the distribution of a person's estate after death",
-  'Business Documents: Articles of incorporation, business licenses, and partnership agreements',
-];
-
-const notarizationTypes = [
+const notarialActs = [
   {
+    icon: UserCheck,
     title: 'Acknowledgments',
     description:
-      'Confirm the identity of the signer and their willingness to sign a document.',
-    icon: Users,
+      'The signer confirms their identity and acknowledges signing the document voluntarily.',
   },
   {
+    icon: PenLine,
     title: 'Jurats',
     description:
-      'Requires the signer to swear or affirm that the contents of a document are true.',
-    icon: FileText,
+      'The signer takes an oath or affirmation and signs the document in the notary’s presence.',
   },
   {
-    title: 'Oaths and Affirmations',
+    icon: Scale,
+    title: 'Oaths & Affirmations',
     description:
-      'Legally binding promises made in writing or verbally before a Notary.',
-    icon: Shield,
+      'The notary administers a verbal promise that a statement or testimony is truthful.',
   },
   {
-    title: 'Certified Copies',
+    icon: FileCheck2,
+    title: 'Power of Attorney Copies',
     description:
-      'Notary-certified copies of original documents, ensuring that the copy is an accurate reproduction.',
-    icon: CheckCircle,
+      'California notaries may certify a copy of a power of attorney when requirements are met.',
   },
 ];
 
-const benefits = [
-  { text: 'Same-day processing available' },
-  { text: 'Walk-ins welcome - no appointment needed' },
-  { text: 'Licensed private notaries with extensive experience' },
-  { text: 'Confidential handling of all sensitive documents' },
-  { text: 'Serving Mountain View and entire Bay Area' },
-  { text: 'Professional service ensuring legal compliance' },
+const commonDocuments = [
+  'Powers of attorney',
+  'Real estate documents',
+  'Affidavits and sworn statements',
+  'Trust and estate documents',
+  'Business agreements',
+  'School and consent forms',
+  'Financial documents',
+  'Travel authorization forms',
 ];
 
 export default function NotaryPublicPage() {
   return (
-    <main>
+    <main className="min-h-screen">
       <SEOGraph id="ld-notary" nodes={nodes} />
 
-      {/* Hero Section */}
       <GenericHero
-        layout="split-70-30"
+        className="!py-10 md:!py-14"
         badges={badgeData.notaryPublic}
         title={
           <>
-            Licensed <span className="text-primary">Notary Public</span>{' '}
-            Services
+            Notary Public Services in{' '}
+            <span className="text-primary">Mountain View</span>
           </>
         }
-        description="Professional, confidential document notarization with licensed private notaries. Same-day service available. Walk-ins welcome or book online for guaranteed service."
-        benefits={benefits}
+        subtitle="Walk In, Book a Time, or Request Mobile Service"
+        description="Bring your document and acceptable photo ID to our Mountain View office for clear, professional notarization. Walk-ins are welcome, appointments are available, and mobile service can be arranged for homes and organizations."
+        benefits={[
+          { text: 'California commissioned Notary Public' },
+          { text: 'Walk-ins welcome' },
+          { text: 'Appointments available' },
+          { text: 'Mobile notary by request' },
+        ]}
         buttons={[
           {
-            text: 'Book Now',
+            text: 'Book Notary Service',
             href: '/book',
             icon: CalendarCheck,
             variant: 'default',
@@ -168,85 +229,72 @@ export default function NotaryPublicPage() {
             size: 'lg',
           },
         ]}
+        quickInfo={[
+          { icon: Clock, text: COMPANY.hours.summary },
+          { icon: MapPin, text: COMPANY.address.full },
+        ]}
         rightContent={
-          <Card className="h-full">
-            <CardHeader className="text-center pb-4">
-              <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                <FileText className="h-6 w-6 text-primary" />
+          <div className="overflow-hidden rounded-3xl border bg-card shadow-lg">
+            <div className="relative aspect-[4/3] min-h-[320px]">
+              <Image
+                src="/assets/services/notary-service.jpg"
+                alt="Customer meeting with a California Notary Public for document notarization"
+                fill
+                priority
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                <Badge className="mb-3 bg-white text-gray-900 hover:bg-white">
+                  Walk-Ins Welcome
+                </Badge>
+                <p className="text-xl font-bold">Simple, In-Person Service</p>
+                <p className="mt-2 text-sm leading-relaxed text-white/85">
+                  Bring your document, photo ID, and every person who needs a
+                  signature notarized.
+                </p>
               </div>
-              <CardTitle className="text-lg mb-2">Notarization Types</CardTitle>
-              <p className="text-xs text-muted-foreground">
-                We handle all types with precision
-              </p>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <div className="space-y-3">
-                {notarizationTypes.map((type, index) => {
-                  const Icon = type.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="flex items-center space-x-3 p-2 rounded-lg bg-muted/20 hover:bg-muted/40 transition-colors"
-                    >
-                      <div className="w-7 h-7 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Icon className="h-3.5 w-3.5 text-primary" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <span className="text-sm font-medium text-foreground leading-tight">
-                          {type.title}
-                        </span>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="mt-4 pt-3 border-t">
-                <div className="text-center">
-                  <div className="text-sm font-medium text-foreground mb-1">
-                    Need Service Today?
-                  </div>
-                  <div className="text-xs text-muted-foreground">
-                    Walk-ins welcome • Same-day processing
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         }
       />
 
-      {/* Process Section */}
-      <section className="py-16 bg-background">
+      <section className="border-y bg-background py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              How Our 4-Step Notary Process Works | Walk-In & Mobile Notary Near
-              Me
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We make document notarization straightforward and efficient with
-              our proven professional process at our private notary office.
+          <div className="mx-auto mb-9 max-w-3xl text-center">
+            <Badge variant="secondary" className="mb-3">
+              Choose What Works for You
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              Three Easy Ways to Get Notary Service
+            </h2>
+            <p className="mt-3 text-lg text-muted-foreground">
+              Visit our Mountain View office or ask about mobile service at your
+              location.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {processSteps.map((step) => {
-              const Icon = step.icon;
+          <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
+            {visitOptions.map((option) => {
+              const Icon = option.icon;
               return (
-                <Card key={step.step} className="text-center h-full gap-0">
-                  <CardHeader className="pb-4">
-                    <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <Card key={option.title} className="relative h-full pt-3">
+                  <Badge className="absolute -top-3 left-5" variant="secondary">
+                    {option.badge}
+                  </Badge>
+                  <CardHeader className="pb-3 pt-5">
+                    <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/20 bg-primary/10">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
-                    <div className="text-sm font-medium text-primary mb-2">
-                      Step {step.step}
-                    </div>
-                    <CardTitle className="text-lg">{step.title}</CardTitle>
+                    <CardTitle>{option.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {step.description}
+                  <CardContent>
+                    <p className="leading-relaxed text-muted-foreground">
+                      {option.description}
+                    </p>
+                    <p className="mt-4 border-t pt-4 text-sm font-medium">
+                      {option.detail}
                     </p>
                   </CardContent>
                 </Card>
@@ -256,44 +304,231 @@ export default function NotaryPublicPage() {
         </div>
       </section>
 
-      {/* Document Types Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="bg-muted/40 py-12 md:py-14">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Our Private Notary Services
+          <div className="mx-auto grid max-w-6xl items-center gap-9 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <Badge variant="secondary" className="mb-3">
+                Before You Arrive
+              </Badge>
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+                What to Bring for Notarization
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+                Preparing these items helps avoid delays and makes your visit
+                easier.
+              </p>
+              <div className="mt-7 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-950 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-100">
+                <strong>Important:</strong> If you do not know which notarial
+                act your document needs, ask the person or agency receiving the
+                document before your visit. A Notary Public cannot choose the
+                act or provide legal advice.
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {preparationItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Card key={item.title} className="h-full">
+                    <CardContent className="p-5">
+                      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                        <Icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <h3 className="font-semibold">{item.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {item.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-background py-12 md:py-14">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-9 max-w-4xl text-center">
+            <Badge variant="secondary" className="mb-3">
+              What to Expect
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              Your Notary Visit in Four Simple Steps
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Legal documents often require notarization to ensure authenticity
-              and prevent fraud. Our licensed private notaries handle a wide
-              range of documents with precision, confidentiality, and full legal
-              compliance.
+            <p className="mt-3 text-lg text-muted-foreground">
+              Most routine notarizations follow this straightforward process.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {documentTypes.map((type, index) => {
-              const [title, description] = type.split(': ');
+          <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map((step, index) => {
+              const Icon = step.icon;
               return (
                 <div
-                  key={index}
-                  className="flex items-start space-x-3 bg-card p-4 rounded-lg shadow-sm"
+                  key={step.title}
+                  className="relative rounded-2xl border bg-card p-5 shadow-sm"
                 >
-                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle className="h-4 w-4 text-primary" />
+                  <div className="mb-4 flex items-center justify-between">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                      <Icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <span className="text-3xl font-bold text-primary/15">
+                      {index + 1}
+                    </span>
                   </div>
-                  <div className="min-w-0">
-                    <h3 className="font-semibold text-foreground mb-1 text-sm">
-                      {title}
-                    </h3>
-                    <p className="text-xs text-muted-foreground leading-tight">
-                      {description}
-                    </p>
-                  </div>
+                  <h3 className="font-semibold">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {step.description}
+                  </p>
                 </div>
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="border-y bg-muted/40 py-12 md:py-14">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-9 max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              Common Notarial Acts We Perform
+            </h2>
+            <p className="mt-3 text-lg text-muted-foreground">
+              The document’s receiving agency or your attorney should tell you
+              which act is required.
+            </p>
+          </div>
+
+          <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2">
+            {notarialActs.map((act) => {
+              const Icon = act.icon;
+              return (
+                <Card key={act.title} className="h-full">
+                  <CardContent className="flex gap-4 p-5 sm:p-6">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-primary/20 bg-primary/10">
+                      <Icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold">{act.title}</h3>
+                      <p className="mt-2 leading-relaxed text-muted-foreground">
+                        {act.description}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-background py-12 md:py-14">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="rounded-3xl border bg-card p-6 shadow-sm sm:p-8">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                Documents Customers Commonly Bring
+              </h2>
+              <p className="mt-3 text-muted-foreground">
+                We can notarize signatures on many document types when the
+                document contains or is accompanied by the proper notarial
+                certificate.
+              </p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {commonDocuments.map((document) => (
+                  <div
+                    key={document}
+                    className="flex items-center gap-3 rounded-xl bg-muted/50 p-3"
+                  >
+                    <Check className="h-4 w-4 flex-shrink-0 text-green-600" />
+                    <span className="text-sm font-medium">{document}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-3xl bg-primary p-6 text-primary-foreground shadow-sm sm:p-8">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/15">
+                <Truck className="h-6 w-6" />
+              </div>
+              <Badge className="mt-5 bg-white text-primary hover:bg-white">
+                Mobile Notary
+              </Badge>
+              <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">
+                Need Us to Come to You?
+              </h2>
+              <p className="mt-3 leading-relaxed text-primary-foreground/85">
+                Mobile service may be arranged at a home, office, care facility,
+                or organization in Mountain View and nearby cities. Availability
+                and travel fees depend on the location and time.
+              </p>
+              <Button variant="secondary" size="lg" className="mt-6" asChild>
+                <a href={COMPANY.phoneTel}>
+                  <Phone className="mr-2 h-5 w-5" />
+                  Call {COMPANY.phoneFormatted}
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t bg-muted/40 py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl rounded-3xl border bg-card p-7 text-center shadow-sm sm:p-10">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
+              <FileCheck2 className="h-7 w-7 text-primary" />
+            </div>
+            <h2 className="mt-5 text-3xl font-bold tracking-tight">
+              Ready to Have Your Document Notarized?
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-lg text-muted-foreground">
+              Walk into our Mountain View office, reserve a time online, or call
+              to ask about mobile availability.
+            </p>
+            <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+              <Button size="lg" asChild>
+                <Link href="/book">
+                  <CalendarCheck className="mr-2 h-5 w-5" />
+                  Book Notary Service
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <a
+                  href={COMPANY.address.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MapPin className="mr-2 h-5 w-5" />
+                  Get Directions
+                </a>
+              </Button>
+            </div>
+            <div className="mt-6 flex flex-col items-center justify-center gap-2 text-sm text-muted-foreground sm:flex-row sm:gap-5">
+              <span className="inline-flex items-center gap-2">
+                <Building2 className="h-4 w-4" />
+                {COMPANY.address.full}
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <Home className="h-4 w-4" />
+                Walk-ins welcome
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t bg-background py-6">
+        <div className="container mx-auto px-4 text-center text-xs leading-relaxed text-muted-foreground sm:px-6 lg:px-8">
+          <p className="mx-auto max-w-4xl">
+            A Notary Public verifies identity and completes the requested
+            notarial act; a notary does not verify a document’s truthfulness,
+            accuracy, or legal validity and cannot provide legal advice. Every
+            signer must personally appear before the notary under current
+            California law.
+          </p>
         </div>
       </section>
     </main>

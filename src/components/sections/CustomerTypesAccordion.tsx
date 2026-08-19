@@ -35,8 +35,8 @@ const customerCategories = [
       'Elderly Care Employees',
       'Emergency Medical Systems',
       'Home Healthcare Agencies',
-      'Massage Therapist',
-      'Nursing License',
+      'Massage Therapists',
+      'Nursing Licensure',
       'Osteopathic Physicians',
       'Pharmacy Technicians',
       'Physical Therapists and Assistants',
@@ -52,11 +52,11 @@ const customerCategories = [
     bulletColor: 'bg-blue-600',
     types: [
       'Charter Schools',
-      'Child Care',
+      'Childcare Employment',
       'Foster Parents',
       'Post-Secondary Education',
       'Private and Charter Schools',
-      'School-district Employment',
+      'School District Employment',
       'Teaching License',
     ],
   },
@@ -70,12 +70,12 @@ const customerCategories = [
     bulletColor: 'bg-purple-600',
     types: [
       'ATF (Alcohol, Tobacco and Firearms)',
-      'Bar examination',
+      'Bar Examination',
       'Bureau of Alcohol & Drug Abuse',
       'Department of Agriculture Employment',
       'Department of Motor Vehicles',
       'Department of Wildlife',
-      'FFL (Federal firearm License)',
+      'Federal Firearms License (FFL)',
       'Immigration',
       'Lawyers/State Bar',
       'Sealing Criminal Records',
@@ -90,7 +90,7 @@ const customerCategories = [
     bgColor: 'bg-green-50 dark:bg-green-900/20',
     bulletColor: 'bg-green-600',
     types: [
-      'Accounting professionals',
+      'Accounting Professionals',
       'Contractors',
       'CPA',
       'Escrow Title Officers',
@@ -130,7 +130,7 @@ const customerCategories = [
       'Cannabis Compliance Board',
       'Chiropractic Examiners',
       'Dentists and Dental Hygienists',
-      'Dietitian',
+      'Dietitians',
       'Gaming License or Employment',
       'HCQC',
       'Psychology',
@@ -148,82 +148,79 @@ const customerCategories = [
       'Adoption',
       'Churches',
       'City or County Employment',
-      'Document Prep',
+      'Document Preparation',
       'Housing Authority Employment or Application',
       'Kinship Care',
       'Long-term Care Administrators',
       'Manufactured Housing',
       'Social Workers',
-      'Traveling Outside USA',
+      'International Travel',
       'Volunteers',
     ],
   },
 ];
 
 export const CustomerTypesAccordion = () => {
-  const [openItems, setOpenItems] = useState<string[]>([]);
+  const [openItem, setOpenItem] = useState<string | null>(null);
 
   const toggleItem = (title: string) => {
-    setOpenItems((prev) =>
-      prev.includes(title)
-        ? prev.filter((item) => item !== title)
-        : [...prev, title]
-    );
+    setOpenItem((current) => (current === title ? null : title));
   };
 
-  const totalCustomers = customerCategories.reduce(
+  const totalUseCases = customerCategories.reduce(
     (sum, cat) => sum + cat.count,
     0
   );
 
   return (
-    <section id="who-we-serve" className="py-12 bg-muted/30">
+    <section id="who-we-serve" className="border-y bg-background py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            DOJ/FBI Approved Live Scan & Ink Fingerprints Near Me
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
-            From healthcare to education, legal to business - we provide
-            fingerprinting services for professionals across all industries
-            requiring background checks.
+        <div className="mb-8 text-center">
+          <h2 className="mb-3 text-3xl font-bold md:text-4xl">
+            Live Scan for Professionals, Volunteers, and Organizations
+          </h2>
+          <p className="mx-auto mb-4 max-w-3xl text-lg text-muted-foreground">
+            We provide Live Scan and ink fingerprinting for people across
+            healthcare, education, government, business, transportation, and
+            community service.
           </p>
           <Badge variant="secondary" className="text-sm">
-            {totalCustomers}+ Professional Categories
+            {totalUseCases} Common Fingerprinting Needs
           </Badge>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="mx-auto grid max-w-7xl items-start gap-3 md:grid-cols-2 xl:grid-cols-3">
           {customerCategories.map((category) => {
             const Icon = category.icon;
-            const isOpen = openItems.includes(category.title);
+            const isOpen = openItem === category.title;
 
             return (
               <Collapsible
                 key={category.title}
                 open={isOpen}
                 onOpenChange={() => toggleItem(category.title)}
+                className={isOpen ? 'md:col-span-2 xl:col-span-3' : undefined}
               >
-                <Card className="overflow-hidden hover:shadow-md transition-shadow">
+                <Card className="overflow-hidden transition-shadow hover:shadow-md">
                   <CollapsibleTrigger className="w-full">
-                    <div className="p-2 flex items-center justify-between hover:bg-muted/50 transition-colors">
-                      <div className="flex items-center space-x-4">
+                    <div className="flex min-h-[72px] items-center justify-between gap-3 p-3 transition-colors hover:bg-muted/50">
+                      <div className="flex min-w-0 items-center gap-3">
                         <div
-                          className={`w-12 h-12 rounded-lg ${category.bgColor} flex items-center justify-center`}
+                          className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg ${category.bgColor}`}
                         >
                           <Icon className={`h-6 w-6 ${category.color}`} />
                         </div>
-                        <div className="text-left">
-                          <h3 className="text-lg font-semibold">
-                            {category.title}
-                          </h3>
-                          <p className="text-sm text-muted-foreground">
+                        <div className="min-w-0 text-left">
+                          <h3 className="font-semibold">{category.title}</h3>
+                          <p className="mt-0.5 line-clamp-1 text-xs text-muted-foreground sm:text-sm">
                             {category.description}
                           </p>
                         </div>
                       </div>
-                      <div className="flex items-center space-x-3">
-                        <Badge variant="outline">{category.count} types</Badge>
+                      <div className="flex flex-shrink-0 items-center gap-2">
+                        <Badge variant="outline" className="hidden sm:flex">
+                          {category.count} types
+                        </Badge>
                         <ChevronDown
                           className={`h-5 w-5 text-muted-foreground transition-transform ${
                             isOpen ? 'rotate-180' : ''
@@ -234,9 +231,9 @@ export const CustomerTypesAccordion = () => {
                   </CollapsibleTrigger>
 
                   <CollapsibleContent>
-                    <CardContent className="pt-0 pb-6">
+                    <CardContent className="pb-5 pt-0">
                       <div className="border-t pt-4">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                           {category.types.map((type, typeIndex) => (
                             <div
                               key={typeIndex}
@@ -260,13 +257,13 @@ export const CustomerTypesAccordion = () => {
           })}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-6">
-            Don&apos;t see your profession listed? We serve all industries
-            requiring background checks.
+        <div className="mt-8 text-center">
+          <p className="mb-4 text-muted-foreground">
+            Don&apos;t see your profession listed? Contact us to confirm the
+            fingerprinting service required for your application.
           </p>
           <Button asChild>
-            <Link href="/contact-us">Contact Us for Your Specific Needs</Link>
+            <Link href="/contact-us">Ask About Your Fingerprinting Need</Link>
           </Button>
         </div>
       </div>
