@@ -66,7 +66,7 @@ export const badgeData = {
   notaryPublic: [
     {
       icon: Shield,
-      text: 'Licensed Notary',
+      text: 'California Commissioned',
       variant: 'secondary' as const,
     },
     {

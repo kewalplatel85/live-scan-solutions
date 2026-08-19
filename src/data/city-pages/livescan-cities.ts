@@ -1339,6 +1339,620 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
       { slug: 'palo-alto', name: 'Palo Alto' },
     ],
   },
+
+  // ───────────────────────────────────────────────────────────────────────
+  // Santa Clara
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'santa-clara',
+    name: 'Santa Clara',
+    county: 'Santa Clara County',
+    state: 'CA',
+    distanceFromStore: '11 miles',
+    driveTime: '18 minutes',
+    population: '~128,000 residents',
+    metaTitle: 'Live Scan Fingerprinting Santa Clara, CA | Walk-Ins Welcome',
+    metaDescription:
+      'DOJ-listed Live Scan and FD-258 ink fingerprinting for Santa Clara residents. Walk into our nearby Mountain View location or schedule mobile group service.',
+    keywords:
+      'live scan santa clara, fingerprinting santa clara, live scan near me santa clara, FD-258 santa clara, mobile live scan santa clara',
+    heroSubtitle: 'Walk-In and Mobile Live Scan Fingerprinting for Santa Clara',
+    introHeading:
+      'Convenient Live Scan Fingerprinting for Santa Clara Residents',
+    introContent: [
+      'Santa Clara residents often need fingerprinting for employment, professional licensing, education, childcare, healthcare, and volunteer positions. Mail All Center provides DOJ-listed Live Scan and FD-258 ink fingerprinting at our Mountain View office, approximately 18 minutes from central Santa Clara.',
+      'Walk-ins are welcome during business hours, and organizations can arrange mobile group service at Santa Clara schools, churches, nonprofits, and workplaces. Our team helps each applicant review the request form, complete fingerprint capture, and understand what happens after submission.',
+      'The El Camino Real corridor connects Santa Clara directly with Mountain View, making our office practical for residents near Santa Clara University, Central Park, and the city’s western neighborhoods. Larger teams near Mission College or the North Santa Clara employment district may prefer a scheduled mobile session to reduce employee travel time.',
+    ],
+    targetAudience: [
+      {
+        category: 'Education & Childcare',
+        description:
+          'Teachers, aides, coaches, childcare workers, and volunteers',
+        institutions: [
+          'Santa Clara Unified School District',
+          'Mission College',
+          'Santa Clara University programs',
+          'Local preschools and childcare centers',
+        ],
+      },
+      {
+        category: 'Community Volunteers',
+        description:
+          'Volunteers serving youth, faith, recreation, and nonprofit programs',
+        institutions: [
+          'Santa Clara community organizations',
+          'Youth sports leagues',
+          'Church volunteer programs',
+          'Scouting and mentoring programs',
+        ],
+      },
+      {
+        category: 'Healthcare Professionals',
+        description:
+          'Caregivers, nurses, pharmacy staff, and licensed healthcare workers',
+        institutions: [
+          'Santa Clara medical offices',
+          'Home healthcare agencies',
+          'Senior care communities',
+          'Pharmacies and therapy practices',
+        ],
+      },
+      {
+        category: 'Real Estate & Notaries',
+        description:
+          'Applicants and renewals for California professional licenses',
+        institutions: [
+          'Real estate license applicants',
+          'Notary commission applicants',
+          'Insurance professionals',
+          'Mortgage professionals',
+        ],
+      },
+    ],
+    whyChooseUs: [
+      {
+        title: 'Nearby Mountain View Walk-In Location',
+        description:
+          'Reach our office from Santa Clara by El Camino Real, Central Expressway, or US-101, with free parking available on-site.',
+      },
+      {
+        title: 'DOJ-Listed Live Scan Provider',
+        description:
+          'Mail All Center appears on the California DOJ list of public Live Scan locations.',
+      },
+      {
+        title: 'Mobile Service in Santa Clara',
+        description:
+          'Schools, churches, nonprofits, and employers can schedule an organized on-site fingerprinting session for groups.',
+      },
+    ],
+    drivingDirections:
+      'From central Santa Clara, travel west toward Mountain View using El Camino Real or Central Expressway. Continue to Mountain View and turn toward Cuesta Dr. Mail All Center is located at 809 Cuesta Dr, Suite B, with free parking available on-site. US-101 also provides a convenient route from northern Santa Clara.',
+    localLandmarks: [
+      'Santa Clara University',
+      'Mission College',
+      'Levi’s Stadium',
+      'Santa Clara Central Park',
+      'El Camino Real',
+    ],
+    nearbyHighways: ['US-101', 'Interstate 880', 'Central Expressway'],
+    faqs: [
+      {
+        question: 'Where can Santa Clara residents get Live Scan?',
+        answer:
+          'Santa Clara residents can walk into Mail All Center at 809 Cuesta Dr, Suite B in Mountain View. Appointments are also available, and groups can request mobile service in Santa Clara.',
+      },
+      {
+        question: 'What should I bring for Live Scan?',
+        answer:
+          'Bring a valid government-issued photo ID and the completed Request for Live Scan Service form supplied by your employer, licensing agency, school, or organization.',
+      },
+      {
+        question: 'Do you offer mobile Live Scan in Santa Clara?',
+        answer:
+          'Yes. We provide mobile group service for Santa Clara schools, churches, nonprofits, and employers. Call (650) 961-4646 to discuss group size and scheduling.',
+      },
+    ],
+    nearbyCities: [
+      { slug: 'sunnyvale', name: 'Sunnyvale' },
+      { slug: 'cupertino', name: 'Cupertino' },
+      { slug: 'san-jose', name: 'San Jose' },
+      { slug: 'milpitas', name: 'Milpitas' },
+      { slug: 'mountain-view', name: 'Mountain View' },
+    ],
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  // Redwood City
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'redwood-city',
+    name: 'Redwood City',
+    county: 'San Mateo County',
+    state: 'CA',
+    distanceFromStore: '13 miles',
+    driveTime: '20 minutes',
+    population: '~82,000 residents',
+    metaTitle: 'Live Scan Fingerprinting Redwood City, CA | Walk-Ins Welcome',
+    metaDescription:
+      'Live Scan and FD-258 ink fingerprinting for Redwood City residents. Visit our Mountain View walk-in location or arrange mobile service for your group.',
+    keywords:
+      'live scan redwood city, fingerprinting redwood city, live scan near me redwood city, FD-258 redwood city, mobile live scan redwood city',
+    heroSubtitle:
+      'Professional Live Scan and Ink Fingerprinting Near Redwood City',
+    introHeading:
+      'Live Scan Fingerprinting for Redwood City and the Mid-Peninsula',
+    introContent: [
+      'Redwood City residents may need Live Scan for school employment, county programs, healthcare work, professional licensing, caregiving, and volunteer service. Mail All Center offers DOJ-listed electronic Live Scan and FD-258 ink fingerprinting at our Mountain View location, about 20 minutes south via US-101.',
+      'Our walk-in service is convenient for individual applicants, while mobile group fingerprinting helps Redwood City employers and community organizations coordinate multiple participants at one location. Applicants receive assistance with fingerprint capture and a receipt after electronic submission.',
+      'As the San Mateo County seat, Redwood City serves applicants connected with public agencies, courts, schools, and community programs across the Mid-Peninsula. Our location is a straightforward southbound trip for people coming from downtown, Woodside Road, or the Sequoia Station area, without requiring travel into San Jose.',
+    ],
+    targetAudience: [
+      {
+        category: 'Education & Childcare',
+        description:
+          'School employees, childcare workers, coaches, and parent volunteers',
+        institutions: [
+          'Redwood City School District',
+          'Sequoia Union High School District',
+          'Cañada College programs',
+          'Local childcare and after-school programs',
+        ],
+      },
+      {
+        category: 'Community Volunteers',
+        description:
+          'Youth leaders, nonprofit volunteers, mentors, and faith-community volunteers',
+        institutions: [
+          'Redwood City nonprofit organizations',
+          'Youth sports programs',
+          'Community mentoring programs',
+          'Local churches and faith communities',
+        ],
+      },
+      {
+        category: 'Healthcare Professionals',
+        description:
+          'Healthcare employees, caregivers, therapists, and pharmacy staff',
+        institutions: [
+          'Redwood City medical offices',
+          'Kaiser Permanente Redwood City area',
+          'Home healthcare agencies',
+          'Senior living communities',
+        ],
+      },
+      {
+        category: 'Real Estate & Notaries',
+        description:
+          'Professionals completing California licensing requirements',
+        institutions: [
+          'Real estate professionals',
+          'Notary commission applicants',
+          'Insurance professionals',
+          'Property managers',
+        ],
+      },
+    ],
+    whyChooseUs: [
+      {
+        title: 'Straightforward US-101 Access',
+        description:
+          'Our Mountain View office is approximately 20 minutes south of Redwood City via US-101, with free parking on arrival.',
+      },
+      {
+        title: 'Walk-Ins and Appointments',
+        description:
+          'Visit during business hours without an appointment or reserve a preferred time in advance.',
+      },
+      {
+        title: 'Mobile Service for Redwood City Groups',
+        description:
+          'Coordinate on-site Live Scan for employees or volunteers at your Redwood City organization.',
+      },
+    ],
+    drivingDirections:
+      'From downtown Redwood City, take US-101 South toward Mountain View. Exit near Shoreline Blvd, continue toward central Mountain View, and follow local streets to Cuesta Dr. Mail All Center is at 809 Cuesta Dr, Suite B. Free parking is available at the business complex.',
+    localLandmarks: [
+      'Downtown Redwood City',
+      'San Mateo County Government Center',
+      'Sequoia High School',
+      'Redwood City Caltrain Station',
+      'Woodside Road',
+    ],
+    nearbyHighways: ['US-101', 'Interstate 280', 'State Route 84'],
+    faqs: [
+      {
+        question: 'How far is Mail All Center from Redwood City?',
+        answer:
+          'Our Mountain View office is approximately 13 miles from central Redwood City. The drive is commonly about 20 minutes via US-101, depending on traffic.',
+      },
+      {
+        question: 'Are Redwood City residents welcome as walk-ins?',
+        answer:
+          'Yes. Walk-ins from Redwood City and throughout the Peninsula are welcome during business hours. Bring your valid photo ID and completed request form.',
+      },
+      {
+        question: 'Can you come to a Redwood City workplace or nonprofit?',
+        answer:
+          'Yes. Mobile Live Scan is available for qualifying groups at Redwood City workplaces, schools, churches, and nonprofits. Call (650) 961-4646 to schedule.',
+      },
+    ],
+    nearbyCities: [
+      { slug: 'menlo-park', name: 'Menlo Park' },
+      { slug: 'palo-alto', name: 'Palo Alto' },
+      { slug: 'mountain-view', name: 'Mountain View' },
+      { slug: 'los-altos', name: 'Los Altos' },
+      { slug: 'sunnyvale', name: 'Sunnyvale' },
+    ],
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  // Campbell
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'campbell',
+    name: 'Campbell',
+    county: 'Santa Clara County',
+    state: 'CA',
+    distanceFromStore: '14 miles',
+    driveTime: '20 minutes',
+    population: '~44,000 residents',
+    metaTitle: 'Live Scan Fingerprinting Campbell, CA | Walk-Ins Welcome',
+    metaDescription:
+      'Live Scan and FD-258 ink fingerprinting for Campbell residents. Walk into our Mountain View office or schedule mobile service for your organization.',
+    keywords:
+      'live scan campbell, fingerprinting campbell, live scan near me campbell, FD-258 campbell, mobile live scan campbell',
+    heroSubtitle: 'Walk-In and Mobile Live Scan Service for Campbell',
+    introHeading:
+      'Convenient Fingerprinting for Campbell Residents and Organizations',
+    introContent: [
+      'Campbell teachers, childcare employees, healthcare professionals, license applicants, and volunteers regularly need fingerprint-based background checks. Mail All Center provides DOJ-listed Live Scan and FD-258 ink fingerprinting from our Mountain View office, roughly 20 minutes away by CA-85.',
+      'Individuals can walk in or schedule a preferred time. Campbell schools, churches, nonprofits, and employers can also request mobile group service, allowing participants to complete fingerprinting at a coordinated on-site session.',
+      'Campbell’s CA-85 access makes Mountain View a convenient option for West Valley applicants traveling from downtown Campbell, the Pruneyard area, or neighborhoods near San Tomas Expressway. Organizations with staff spread across Campbell and neighboring Los Gatos can coordinate one mobile event at a central workplace or community facility.',
+    ],
+    targetAudience: [
+      {
+        category: 'Education & Childcare',
+        description:
+          'Teachers, school staff, childcare workers, coaches, and volunteers',
+        institutions: [
+          'Campbell Union School District',
+          'Campbell Union High School District',
+          'West Valley College programs',
+          'Local childcare and preschool programs',
+        ],
+      },
+      {
+        category: 'Community Volunteers',
+        description:
+          'Community volunteers, youth leaders, mentors, and coaches',
+        institutions: [
+          'Campbell community organizations',
+          'Youth recreation programs',
+          'Church volunteer programs',
+          'Scouting organizations',
+        ],
+      },
+      {
+        category: 'Healthcare Professionals',
+        description:
+          'Caregivers, healthcare workers, therapists, and pharmacy staff',
+        institutions: [
+          'Campbell medical practices',
+          'Home healthcare agencies',
+          'Senior care communities',
+          'Therapy and wellness practices',
+        ],
+      },
+      {
+        category: 'Real Estate & Notaries',
+        description: 'Applicants for state-regulated professional licenses',
+        institutions: [
+          'Real estate license applicants',
+          'Notary commission applicants',
+          'Insurance professionals',
+          'Mortgage professionals',
+        ],
+      },
+    ],
+    whyChooseUs: [
+      {
+        title: 'Convenient CA-85 Route',
+        description:
+          'Travel north from Campbell on CA-85 to reach our Mountain View walk-in location, with free parking available.',
+      },
+      {
+        title: 'Two Fingerprinting Methods',
+        description:
+          'Complete electronic Live Scan submission or professional FD-258 ink fingerprint cards at one location.',
+      },
+      {
+        title: 'On-Site Campbell Group Service',
+        description:
+          'Bring mobile Live Scan to a Campbell school, church, nonprofit, or workplace for an organized group session.',
+      },
+    ],
+    drivingDirections:
+      'From downtown Campbell, take CA-85 North toward Mountain View. Exit near El Camino Real and continue toward Cuesta Dr. Mail All Center is located at 809 Cuesta Dr, Suite B in Mountain View. Allow approximately 20 minutes in normal traffic, with additional time during commute hours.',
+    localLandmarks: [
+      'Downtown Campbell',
+      'Campbell Community Center',
+      'Pruneyard Shopping Center',
+      'Campbell Avenue',
+      'Campbell VTA Station',
+    ],
+    nearbyHighways: ['State Route 85', 'State Route 17', 'Interstate 280'],
+    faqs: [
+      {
+        question: 'Do Campbell residents need an appointment for Live Scan?',
+        answer:
+          'No. Campbell residents are welcome to walk into our Mountain View office during business hours. You may also reserve an appointment if you prefer.',
+      },
+      {
+        question: 'Do you provide FD-258 ink fingerprint cards?',
+        answer:
+          'Yes. We provide professional manual ink fingerprinting on FD-258 cards for applications that require a physical fingerprint card.',
+      },
+      {
+        question: 'Is mobile Live Scan available in Campbell?',
+        answer:
+          'Yes. Campbell organizations can call (650) 961-4646 to arrange mobile group fingerprinting at their location.',
+      },
+    ],
+    nearbyCities: [
+      { slug: 'los-gatos', name: 'Los Gatos' },
+      { slug: 'san-jose', name: 'San Jose' },
+      { slug: 'cupertino', name: 'Cupertino' },
+      { slug: 'sunnyvale', name: 'Sunnyvale' },
+      { slug: 'mountain-view', name: 'Mountain View' },
+    ],
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  // Los Gatos
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'los-gatos',
+    name: 'Los Gatos',
+    county: 'Santa Clara County',
+    state: 'CA',
+    distanceFromStore: '16 miles',
+    driveTime: '25 minutes',
+    population: '~34,000 residents',
+    metaTitle: 'Live Scan Fingerprinting Los Gatos, CA | Walk-Ins Welcome',
+    metaDescription:
+      'Live Scan and FD-258 ink fingerprinting for Los Gatos residents. Visit our Mountain View walk-in location or schedule mobile group fingerprinting.',
+    keywords:
+      'live scan los gatos, fingerprinting los gatos, live scan near me los gatos, FD-258 los gatos, mobile live scan los gatos',
+    heroSubtitle: 'Professional Live Scan Service Near Los Gatos',
+    introHeading: 'Live Scan and Ink Fingerprinting for Los Gatos Applicants',
+    introContent: [
+      'Los Gatos residents need fingerprinting for many education, healthcare, caregiving, professional licensing, and volunteer applications. Mail All Center offers DOJ-listed Live Scan and FD-258 ink fingerprinting at our Mountain View office, approximately 25 minutes north by CA-85.',
+      'Our walk-in option works well for individuals and families, while mobile group service supports Los Gatos schools, churches, nonprofits, and employers. We help applicants complete accurate fingerprint capture and explain the electronic submission receipt.',
+      'For applicants in the western and northern parts of Los Gatos, CA-85 provides a direct connection to Mountain View without crossing central San Jose. Families associated with local schools and youth programs can visit individually, while organizations serving many volunteers can request a coordinated session closer to home.',
+    ],
+    targetAudience: [
+      {
+        category: 'Education & Childcare',
+        description:
+          'Teachers, aides, coaches, childcare employees, and school volunteers',
+        institutions: [
+          'Los Gatos Union School District',
+          'Los Gatos-Saratoga Union High School District',
+          'Local private schools',
+          'Preschools and childcare programs',
+        ],
+      },
+      {
+        category: 'Community Volunteers',
+        description:
+          'Youth leaders, mentors, coaches, and faith-community volunteers',
+        institutions: [
+          'Los Gatos community organizations',
+          'Youth sports programs',
+          'Church volunteer programs',
+          'Scouting and mentoring organizations',
+        ],
+      },
+      {
+        category: 'Healthcare Professionals',
+        description:
+          'Healthcare employees, caregivers, therapists, and pharmacy workers',
+        institutions: [
+          'El Camino Health Los Gatos area',
+          'Los Gatos medical practices',
+          'Home healthcare providers',
+          'Senior living communities',
+        ],
+      },
+      {
+        category: 'Real Estate & Notaries',
+        description:
+          'Professionals completing California licensing requirements',
+        institutions: [
+          'Real estate professionals',
+          'Notary commission applicants',
+          'Insurance professionals',
+          'Financial service applicants',
+        ],
+      },
+    ],
+    whyChooseUs: [
+      {
+        title: 'Accessible from Los Gatos by CA-85',
+        description:
+          'Our Mountain View office is reachable by a direct northbound drive on CA-85 and offers free parking.',
+      },
+      {
+        title: 'Walk-In Convenience',
+        description:
+          'Complete your fingerprinting during business hours without waiting for an appointment date.',
+      },
+      {
+        title: 'Mobile Service for Los Gatos Groups',
+        description:
+          'Schedule coordinated on-site Live Scan for staff or volunteers at your Los Gatos organization.',
+      },
+    ],
+    drivingDirections:
+      'From Los Gatos, take CA-85 North toward Mountain View. Exit near El Camino Real and continue to Cuesta Dr. Mail All Center is at 809 Cuesta Dr, Suite B. The trip is approximately 25 minutes in normal traffic, and free parking is available at our location.',
+    localLandmarks: [
+      'Downtown Los Gatos',
+      'Los Gatos High School',
+      'Vasona Lake County Park',
+      'Los Gatos Creek Trail',
+      'El Camino Health Los Gatos area',
+    ],
+    nearbyHighways: ['State Route 85', 'State Route 17', 'Interstate 280'],
+    faqs: [
+      {
+        question: 'Where is the nearest Mail All Center Live Scan location?',
+        answer:
+          'Mail All Center is located at 809 Cuesta Dr, Suite B in Mountain View, approximately 16 miles from Los Gatos via CA-85 North.',
+      },
+      {
+        question: 'Can Los Gatos residents walk in for fingerprinting?',
+        answer:
+          'Yes. Walk-ins are welcome during business hours. Bring a valid photo ID and the request form supplied by the agency requiring your fingerprints.',
+      },
+      {
+        question: 'Can you provide on-site Live Scan in Los Gatos?',
+        answer:
+          'Yes. We offer mobile Live Scan for qualifying groups at Los Gatos schools, churches, nonprofits, and workplaces. Call (650) 961-4646 for scheduling.',
+      },
+    ],
+    nearbyCities: [
+      { slug: 'campbell', name: 'Campbell' },
+      { slug: 'san-jose', name: 'San Jose' },
+      { slug: 'cupertino', name: 'Cupertino' },
+      { slug: 'sunnyvale', name: 'Sunnyvale' },
+      { slug: 'mountain-view', name: 'Mountain View' },
+    ],
+  },
+
+  // ───────────────────────────────────────────────────────────────────────
+  // Milpitas
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    slug: 'milpitas',
+    name: 'Milpitas',
+    county: 'Santa Clara County',
+    state: 'CA',
+    distanceFromStore: '15 miles',
+    driveTime: '25 minutes',
+    population: '~80,000 residents',
+    metaTitle: 'Live Scan Fingerprinting Milpitas, CA | Walk-Ins Welcome',
+    metaDescription:
+      'Live Scan and FD-258 ink fingerprinting for Milpitas residents. Walk into our Mountain View location or schedule mobile service for your group.',
+    keywords:
+      'live scan milpitas, fingerprinting milpitas, live scan near me milpitas, FD-258 milpitas, mobile live scan milpitas',
+    heroSubtitle: 'Walk-In and Mobile Live Scan Service for Milpitas',
+    introHeading:
+      'Professional Fingerprinting for Milpitas Residents and Employers',
+    introContent: [
+      'Milpitas applicants may need Live Scan for employment, education, childcare, healthcare, licensing, security, or volunteer service. Mail All Center provides DOJ-listed electronic Live Scan and FD-258 ink fingerprinting at our Mountain View office, accessible from Milpitas by CA-237 and US-101.',
+      'Walk-ins are welcome for individual applicants. For teams and volunteer groups, our mobile service brings professional Live Scan equipment to Milpitas workplaces, schools, churches, and nonprofit locations by advance arrangement.',
+      'CA-237 links Milpitas with the North Bayshore and Mountain View employment corridors, which is useful for applicants who commute west for work. A mobile session can be especially practical for larger teams near McCarthy Ranch, the Great Mall district, or Milpitas school campuses that want to process participants together.',
+    ],
+    targetAudience: [
+      {
+        category: 'Education & Childcare',
+        description:
+          'Teachers, school staff, childcare workers, coaches, and volunteers',
+        institutions: [
+          'Milpitas Unified School District',
+          'Milpitas High School programs',
+          'Local private schools',
+          'Preschools and childcare centers',
+        ],
+      },
+      {
+        category: 'Community Volunteers',
+        description:
+          'Youth volunteers, coaches, mentors, and community-program leaders',
+        institutions: [
+          'Milpitas community organizations',
+          'Youth recreation programs',
+          'Church volunteer programs',
+          'Scouting and mentoring programs',
+        ],
+      },
+      {
+        category: 'Healthcare Professionals',
+        description:
+          'Caregivers, nurses, therapists, pharmacy staff, and medical workers',
+        institutions: [
+          'Milpitas medical practices',
+          'Home healthcare providers',
+          'Senior living communities',
+          'Pharmacies and therapy practices',
+        ],
+      },
+      {
+        category: 'Real Estate & Notaries',
+        description:
+          'Applicants for real estate, notary, insurance, and related licenses',
+        institutions: [
+          'Real estate license applicants',
+          'Notary commission applicants',
+          'Insurance professionals',
+          'Mortgage professionals',
+        ],
+      },
+    ],
+    whyChooseUs: [
+      {
+        title: 'Accessible from CA-237',
+        description:
+          'Travel west from Milpitas toward Mountain View, with free parking available when you arrive.',
+      },
+      {
+        title: 'Walk-In Live Scan and FD-258 Cards',
+        description:
+          'Choose electronic Live Scan submission or professional ink fingerprint cards based on your application.',
+      },
+      {
+        title: 'Mobile Service in Milpitas',
+        description:
+          'Employers and community organizations can arrange an efficient on-site group fingerprinting session.',
+      },
+    ],
+    drivingDirections:
+      'From Milpitas, take CA-237 West toward Mountain View. Continue toward US-101 or local Mountain View connections, then follow signs toward Cuesta Dr. Mail All Center is located at 809 Cuesta Dr, Suite B. Allow approximately 25 minutes in normal traffic.',
+    localLandmarks: [
+      'Milpitas City Hall',
+      'Great Mall',
+      'Milpitas BART Station',
+      'Milpitas High School',
+      'McCarthy Ranch',
+    ],
+    nearbyHighways: ['State Route 237', 'Interstate 880', 'US-101'],
+    faqs: [
+      {
+        question: 'Are Milpitas residents welcome as walk-ins?',
+        answer:
+          'Yes. Milpitas residents can walk into our Mountain View location during business hours with a valid photo ID and completed fingerprint request form.',
+      },
+      {
+        question: 'How do I get to Mail All Center from Milpitas?',
+        answer:
+          'CA-237 West provides a direct route toward Mountain View. Our office is at 809 Cuesta Dr, Suite B, with free parking available.',
+      },
+      {
+        question: 'Do you bring mobile Live Scan equipment to Milpitas?',
+        answer:
+          'Yes. Mobile group service is available for Milpitas employers, schools, churches, and nonprofits. Call (650) 961-4646 to discuss availability.',
+      },
+    ],
+    nearbyCities: [
+      { slug: 'santa-clara', name: 'Santa Clara' },
+      { slug: 'san-jose', name: 'San Jose' },
+      { slug: 'sunnyvale', name: 'Sunnyvale' },
+      { slug: 'fremont', name: 'Fremont' },
+      { slug: 'mountain-view', name: 'Mountain View' },
+    ],
+  },
 ];
 
 // Helper to find a city by slug

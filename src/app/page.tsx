@@ -1,68 +1,108 @@
-import type { Metadata } from 'next';
-
+import { FAQSection } from '@/components/sections/FAQSection';
+import { NewHeroSection } from '@/components/sections/NewHeroSection';
+import { ServicesSection } from '@/components/sections/ServicesSection';
 import SEOGraph, {
   buildBreadcrumb,
   buildWebPage,
   BUSINESS_NODE,
   WEBSITE_NODE,
 } from '@/components/SEOGraph';
-import { FAQSection } from '@/components/sections/FAQSection';
-import { NewHeroSection } from '@/components/sections/NewHeroSection';
-import { ServicesSection } from '@/components/sections/ServicesSection';
+import { Button } from '@/components/ui/button';
 import { COMPANY } from '@/config/company';
 import { SITE_URL } from '@/lib/config';
-// import { HomePageReviews } from '@/modules/google-reviews';
+import {
+  Award,
+  Building2,
+  CalendarCheck,
+  CheckCircle,
+  Clock,
+  MapPin,
+  Phone,
+  Truck,
+} from 'lucide-react';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title:
-    'Top-rated Live Scan, Fingerprinting, Notary, Apostille, Passport Photo and Shipping Services | Mail All Center',
+  title: 'Live Scan, Notary & Passport Photos in Mountain View, CA',
   description:
-    'Mail All Center is your trusted business service provider in Mountain View, CA, serving the entire Bay Area. We offer Live Scan & Ink Fingerprinting, Notary Public, Apostille, Passport Photos, Mailbox Rental, Packing & Shipping, Printing, and more. Listed on the California DOJ website as an approved Live Scan location with over 15 years of experience. Same-day service, walk-ins welcome. Serving Palo Alto, Sunnyvale, San Jose, Cupertino, Fremont, Santa Clara, and all Bay Area cities. Supporting school districts like Mountain View, Palo Alto, Sunnyvale, Cupertino, and organizations like Boy Scouts and AYSO. Call (650) 961-4646.',
-  keywords:
-    'Mail All Center, Mail All Center Mountain View, business services mountain view, business services bay area, business services near me, live scan fingerprinting mountain view, live scan bay area, live scan near me, fingerprinting near me, notary public mountain view, notary bay area, notary near me, passport photos mountain view, passport photos bay area, passport photos near me, apostille services mountain view, apostille bay area, apostille near me, mailbox rental mountain view, mailbox rental bay area, packing shipping mountain view, packing shipping bay area, printing services mountain view, printing bay area, live scan fingerprint submission services, licensing fingerprinting, employment fingerprinting, same day service mountain view, walk in service bay area, professional services silicon valley, document services peninsula, business center mountain view, live scan palo alto, live scan sunnyvale, live scan san jose, live scan cupertino, live scan fremont, live scan santa clara, notary palo alto, notary sunnyvale, notary san jose, fingerprinting silicon valley, business services peninsula, professional services south bay, Mountain View School District, Los Altos School District, Sunnyvale School District, Cupertino School District, Menlo Park School District, Palo Alto School District, Santa Clara School District, San Jose School District, Boys Scouts, Sunnyvale Boy Scouts, Redwood City School District, Los Gatos School District, AYSO',
+    'Live Scan fingerprinting, Notary Public, apostille, passport photos, shipping, mailbox, and printing services in Mountain View. Walk-ins welcome.',
   openGraph: {
-    title:
-      'Top-rated Live Scan, Fingerprinting, Notary, Apostille, Passport Photo and Shipping Services  Mail All Center',
+    title: 'Mail All Center | Professional Services in Mountain View',
     description:
-      'Your trusted business service provider in Mountain View, serving the entire Bay Area. Live Scan, Notary, Passport Photos, Mailbox Rental, Packing & Shipping, Printing. DOJ & FBI certified, 15+ years experience. Same-day service, walk-ins welcome.',
+      'Live Scan, Notary Public, apostille, passport photos, shipping, mailbox, and printing services—all in one convenient Mountain View location.',
     url: SITE_URL,
     type: 'website',
     locale: 'en_US',
     siteName: 'Mail All Center',
     images: [
       {
-        url: `${SITE_URL}/assets/Logo/icons8-fingerprint-scan-80.png`,
-        width: 80,
-        height: 80,
-        alt: 'Mail All Center - Professional Business Services in Mountain View & Bay Area',
+        url: `${SITE_URL}/assets/services/live-scan-service.jpg`,
+        alt: 'Professional Live Scan service at Mail All Center in Mountain View',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@MailAllCenter',
-    title: 'Mail All Center | Business Services Mountain View & Bay Area',
+    title: 'Mail All Center | Mountain View, CA',
     description:
-      'Your trusted business service provider in Mountain View, serving the entire Bay Area. Live Scan fingerprint submission services for licensing and employment, Notary, Passport Photos, Mailbox Rental, Packing & Shipping, Printing. Listed on California DOJ website, 15+ years experience. Same-day service, walk-ins welcome.',
-    images: [`${SITE_URL}/assets/Logo/icons8-fingerprint-scan-80.png`],
+      'Live Scan, Notary, apostille, passport photos, shipping, mailbox, and printing services in one location.',
+    images: [`${SITE_URL}/assets/services/live-scan-service.jpg`],
   },
-  alternates: {
-    canonical: SITE_URL,
-  },
+  alternates: { canonical: SITE_URL },
+  robots: { index: true, follow: true },
 };
-export const revalidate = 604800; // 7 days
+
+export const revalidate = 604800;
 
 const nodes = [
   WEBSITE_NODE,
   BUSINESS_NODE,
   buildWebPage({
     url: `${SITE_URL}/`,
-    title:
-      'Mail All Center – Live Scan, Notary, Apostille in Mountain View, CA',
+    title: 'Mail All Center – Professional Services in Mountain View, CA',
     description:
-      'Live Scan fingerprint submission services for licensing and employment, notary, apostille, passport photos, mailbox rental, printing, and shipping in Mountain View, California.',
+      'Live Scan fingerprinting, Notary Public, apostille, passport photos, mailbox rental, printing, packing, and shipping in Mountain View, California.',
   }),
   buildBreadcrumb([{ name: 'Home', url: `${SITE_URL}/` }]),
+];
+
+const reasons = [
+  {
+    icon: Award,
+    title: '15+ Years of Experience',
+    description:
+      'Experienced help with important identification, document, and business-service tasks.',
+  },
+  {
+    icon: Building2,
+    title: 'Multiple Services, One Stop',
+    description:
+      'Complete fingerprinting, notarization, photos, shipping, and document services in one place.',
+  },
+  {
+    icon: CheckCircle,
+    title: 'Clear, Friendly Assistance',
+    description:
+      'We explain what to bring and guide you through the service process step by step.',
+  },
+  {
+    icon: Truck,
+    title: 'Walk-In & Mobile Options',
+    description:
+      'Walk into our office or ask about mobile Live Scan and notary availability.',
+  },
+];
+
+const nearbyCities = [
+  'Mountain View',
+  'Sunnyvale',
+  'Palo Alto',
+  'Los Altos',
+  'Cupertino',
+  'Santa Clara',
+  'San Jose',
+  'Menlo Park',
 ];
 
 export default function HomePage() {
@@ -70,107 +110,140 @@ export default function HomePage() {
     <main>
       <SEOGraph id="ld-home" nodes={nodes} />
 
-      {/* New Hero with clear value proposition */}
       <NewHeroSection />
-
-      {/* Services Section - SEO optimized with detailed service cards */}
       <ServicesSection />
 
-      {/* Bay Area Coverage */}
-      <section className="py-12 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 dark:from-gray-900/50 dark:to-gray-800/50">
-        <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <div className="flex items-center justify-center gap-3 mb-3">
-              <div className="p-2 bg-primary/10 rounded-lg">
-                <svg
-                  className="w-6 h-6 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-              </div>
-              <h2 className="text-2xl md:text-3xl font-bold">
-                Serving the Entire Bay Area
+      <section className="border-y bg-background py-12 md:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl items-start gap-9 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+                Why Mail All Center
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+                Professional Help Without the Confusion
               </h2>
-            </div>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Conveniently located in Mountain View with easy access from all
-              major Bay Area cities
-            </p>
-          </div>
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+                Whether you need fingerprints, a notarized document, passport
+                photos, or business services, our goal is to make the next step
+                easy to understand.
+              </p>
 
-          <div className="w-full max-w-7xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3 text-center">
-              {[
-                'Mountain View',
-                'Palo Alto',
-                'Sunnyvale',
-                'Los Altos',
-                'Cupertino',
-                'Menlo Park',
-                'Santa Clara',
-                'San Jose',
-                'Campbell',
-                'Saratoga',
-                'Morgan Hill',
-                'Milpitas',
-                'Fremont',
-                'Redwood City',
-                'San Mateo',
-                'Foster City',
-              ].map((city) => (
-                <div
-                  key={city}
-                  className="py-2 px-2 bg-white/80 dark:bg-gray-800/80 rounded-lg border border-gray-200/50 dark:border-gray-700/50 hover:bg-white dark:hover:bg-gray-800 transition-colors"
-                >
-                  <span className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
-                    {city}
-                  </span>
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {reasons.map((reason) => {
+                  const Icon = reason.icon;
+                  return (
+                    <div
+                      key={reason.title}
+                      className="rounded-2xl border bg-card p-5 shadow-sm"
+                    >
+                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                        <Icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <h3 className="mt-4 font-semibold">{reason.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {reason.description}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <aside className="overflow-hidden rounded-3xl bg-primary text-primary-foreground shadow-lg">
+              <div className="p-6 sm:p-8">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary-foreground/75">
+                  Plan Your Visit
+                </p>
+                <h2 className="mt-3 text-3xl font-bold tracking-tight">
+                  Visit Our Mountain View Location
+                </h2>
+                <p className="mt-3 leading-relaxed text-primary-foreground/85">
+                  Walk-ins are welcome for many services. Book ahead when you
+                  prefer a reserved time or call us with questions.
+                </p>
+
+                <div className="mt-7 space-y-4 rounded-2xl border border-white/20 bg-white/10 p-5">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold">Address</p>
+                      <p className="mt-1 text-sm text-primary-foreground/80">
+                        {COMPANY.address.full}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Clock className="mt-0.5 h-5 w-5 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold">Hours</p>
+                      <p className="mt-1 text-sm text-primary-foreground/80">
+                        {COMPANY.hours.summary}
+                      </p>
+                      <p className="mt-0.5 text-sm text-primary-foreground/80">
+                        Sunday: Closed
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Phone className="mt-0.5 h-5 w-5 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold">Phone</p>
+                      <a
+                        href={COMPANY.phoneTel}
+                        className="mt-1 block text-sm text-primary-foreground/80 underline hover:no-underline"
+                      >
+                        {COMPANY.phoneFormatted}
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              ))}
-            </div>
 
-            <div className="text-center mt-8 space-y-2">
-              <p className="text-sm text-muted-foreground">
-                <strong>Address:</strong>{' '}
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=809+Cuesta+Dr+Suite+B+Mountain+View+CA+94040"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline font-semibold"
-                >
-                  {COMPANY.address.full}
-                </a>
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Call{' '}
-                <a
-                  href={COMPANY.phoneTel}
-                  className="text-primary hover:underline font-semibold"
-                >
-                  {COMPANY.phoneFormatted}
-                </a>{' '}
-                for service in your area
-              </p>
-            </div>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <Button variant="secondary" size="lg" asChild>
+                    <Link href="/book">
+                      <CalendarCheck className="mr-2 h-5 w-5" />
+                      Book Now
+                    </Link>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-white/30 bg-transparent text-white hover:bg-white hover:text-primary"
+                    asChild
+                  >
+                    <a
+                      href={COMPANY.address.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <MapPin className="mr-2 h-5 w-5" />
+                      Directions
+                    </a>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="border-t border-white/15 bg-black/10 px-6 py-5 sm:px-8">
+                <p className="text-sm font-semibold">
+                  Serving nearby communities
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {nearbyCities.map((city) => (
+                    <span
+                      key={city}
+                      className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs"
+                    >
+                      {city}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
-      {/* <HomePageReviews /> */}
+
       <FAQSection />
     </main>
   );

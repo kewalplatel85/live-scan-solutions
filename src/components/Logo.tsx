@@ -153,7 +153,7 @@ export const Logo = ({
           </span>
           {size === 'lg' && (
             <span className="text-xs text-gray-600 dark:text-gray-400 font-medium tracking-wider uppercase">
-              Professional Services
+              Live Scan | Notary Public | Passport Photo
             </span>
           )}
         </div>

@@ -55,6 +55,7 @@ import {
   Zap,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -148,6 +149,315 @@ const categoryColors = [
   },
 ];
 
+type CityLayout = 'split' | 'editorial' | 'spotlight';
+
+interface CityVisualProfile {
+  layout: CityLayout;
+  image: string;
+  imageAlt: string;
+  eyebrow: string;
+  localPromise: string;
+  accent: string;
+  accentSoft: string;
+  accentBorder: string;
+}
+
+const cityVisualProfiles: Record<string, CityVisualProfile> = {
+  'mountain-view': {
+    layout: 'editorial',
+    image: '/assets/services/live-scan-service.jpg',
+    imageAlt:
+      'Electronic Live Scan fingerprinting appointment near downtown Mountain View',
+    eyebrow: 'Our Mountain View storefront',
+    localPromise:
+      'The easiest option for nearby walk-ins, with free parking and mobile group service available throughout Mountain View.',
+    accent: 'text-blue-700 dark:text-blue-300',
+    accentSoft: 'bg-blue-50 dark:bg-blue-950/40',
+    accentBorder: 'border-blue-200 dark:border-blue-800',
+  },
+  sunnyvale: {
+    layout: 'split',
+    image: '/assets/services/city-pages/education-live-scan.jpg',
+    imageAlt:
+      'Mobile Live Scan fingerprinting for an adult education employee serving Sunnyvale',
+    eyebrow: 'Education and volunteer checks',
+    localPromise:
+      'Sunnyvale applicants can walk in at our nearby office, while schools and youth programs can arrange an on-site group visit.',
+    accent: 'text-amber-700 dark:text-amber-300',
+    accentSoft: 'bg-amber-50 dark:bg-amber-950/40',
+    accentBorder: 'border-amber-200 dark:border-amber-800',
+  },
+  'palo-alto': {
+    layout: 'spotlight',
+    image: '/assets/services/city-pages/healthcare-live-scan.jpg',
+    imageAlt:
+      'Live Scan fingerprint capture for an adult healthcare professional from Palo Alto',
+    eyebrow: 'For licensed professionals',
+    localPromise:
+      'A practical fingerprinting stop for healthcare, education, research, and professional-license applicants traveling from Palo Alto.',
+    accent: 'text-emerald-700 dark:text-emerald-300',
+    accentSoft: 'bg-emerald-50 dark:bg-emerald-950/40',
+    accentBorder: 'border-emerald-200 dark:border-emerald-800',
+  },
+  'san-jose': {
+    layout: 'editorial',
+    image: '/assets/services/city-pages/mobile-group-live-scan.jpg',
+    imageAlt:
+      'On-site group Live Scan fingerprinting service available for San Jose organizations',
+    eyebrow: 'Mobile service for larger teams',
+    localPromise:
+      'San Jose organizations can reduce employee travel by scheduling our portable Live Scan equipment at their workplace or campus.',
+    accent: 'text-violet-700 dark:text-violet-300',
+    accentSoft: 'bg-violet-50 dark:bg-violet-950/40',
+    accentBorder: 'border-violet-200 dark:border-violet-800',
+  },
+  'menlo-park': {
+    layout: 'split',
+    image: '/assets/services/ink-fingerprinting-service.jpg',
+    imageAlt:
+      'Professional FD-258 ink fingerprint card service for a Menlo Park applicant',
+    eyebrow: 'Digital and ink card options',
+    localPromise:
+      'Menlo Park clients can complete California electronic submissions or request properly rolled FD-258 cards for out-of-state needs.',
+    accent: 'text-rose-700 dark:text-rose-300',
+    accentSoft: 'bg-rose-50 dark:bg-rose-950/40',
+    accentBorder: 'border-rose-200 dark:border-rose-800',
+  },
+  cupertino: {
+    layout: 'spotlight',
+    image: '/assets/services/city-pages/education-live-scan.jpg',
+    imageAlt:
+      'Electronic fingerprinting for an adult school employee serving Cupertino families',
+    eyebrow: 'Supporting Cupertino schools',
+    localPromise:
+      'We help Cupertino educators, coaches, tutors, and volunteers complete required fingerprint checks with minimal interruption to their day.',
+    accent: 'text-orange-700 dark:text-orange-300',
+    accentSoft: 'bg-orange-50 dark:bg-orange-950/40',
+    accentBorder: 'border-orange-200 dark:border-orange-800',
+  },
+  'los-altos': {
+    layout: 'editorial',
+    image: '/assets/services/live-scan-appointment.jpg',
+    imageAlt:
+      'Convenient Live Scan appointment for a Los Altos resident near Mountain View',
+    eyebrow: 'A nearby fingerprinting stop',
+    localPromise:
+      'Los Altos residents are only a short drive from our storefront and may walk in with their completed Request for Live Scan Service form.',
+    accent: 'text-cyan-700 dark:text-cyan-300',
+    accentSoft: 'bg-cyan-50 dark:bg-cyan-950/40',
+    accentBorder: 'border-cyan-200 dark:border-cyan-800',
+  },
+  fremont: {
+    layout: 'split',
+    image: '/assets/services/city-pages/mobile-group-live-scan.jpg',
+    imageAlt:
+      'Organized on-site fingerprinting session for a Fremont employer or nonprofit group',
+    eyebrow: 'Group service across the South Bay',
+    localPromise:
+      'For Fremont teams, a coordinated mobile visit can be more convenient than sending each applicant across the Bay individually.',
+    accent: 'text-teal-700 dark:text-teal-300',
+    accentSoft: 'bg-teal-50 dark:bg-teal-950/40',
+    accentBorder: 'border-teal-200 dark:border-teal-800',
+  },
+  'santa-clara': {
+    layout: 'spotlight',
+    image: '/assets/services/city-pages/healthcare-live-scan.jpg',
+    imageAlt:
+      'Professional electronic fingerprinting for a licensed Santa Clara applicant',
+    eyebrow: 'Fast checks for busy professionals',
+    localPromise:
+      'Santa Clara applicants can combine a nearby visit with same-day digital capture, or request mobile service for a qualifying workplace group.',
+    accent: 'text-indigo-700 dark:text-indigo-300',
+    accentSoft: 'bg-indigo-50 dark:bg-indigo-950/40',
+    accentBorder: 'border-indigo-200 dark:border-indigo-800',
+  },
+  'redwood-city': {
+    layout: 'editorial',
+    image: '/assets/services/ink-fingerprinting-service.jpg',
+    imageAlt:
+      'FD-258 ink fingerprint card preparation for a Redwood City resident',
+    eyebrow: 'Correct method for every request',
+    localPromise:
+      'Redwood City clients receive help identifying whether their agency requires California Live Scan submission or a physical FD-258 fingerprint card.',
+    accent: 'text-fuchsia-700 dark:text-fuchsia-300',
+    accentSoft: 'bg-fuchsia-50 dark:bg-fuchsia-950/40',
+    accentBorder: 'border-fuchsia-200 dark:border-fuchsia-800',
+  },
+  campbell: {
+    layout: 'split',
+    image: '/assets/services/city-pages/education-live-scan.jpg',
+    imageAlt:
+      'Adult school and youth-program employee receiving mobile fingerprinting for Campbell',
+    eyebrow: 'Ready for school and youth programs',
+    localPromise:
+      'Campbell schools, childcare providers, and enrichment programs can bring a qualifying group together for one organized on-site appointment.',
+    accent: 'text-lime-700 dark:text-lime-300',
+    accentSoft: 'bg-lime-50 dark:bg-lime-950/40',
+    accentBorder: 'border-lime-200 dark:border-lime-800',
+  },
+  'los-gatos': {
+    layout: 'spotlight',
+    image: '/assets/services/live-scan-appointment.jpg',
+    imageAlt:
+      'Personal Live Scan fingerprinting appointment for a Los Gatos applicant',
+    eyebrow: 'Personal service, clear guidance',
+    localPromise:
+      'Los Gatos applicants get a straightforward visit, careful fingerprint capture, and guidance on what to bring before submission.',
+    accent: 'text-sky-700 dark:text-sky-300',
+    accentSoft: 'bg-sky-50 dark:bg-sky-950/40',
+    accentBorder: 'border-sky-200 dark:border-sky-800',
+  },
+  milpitas: {
+    layout: 'editorial',
+    image: '/assets/services/city-pages/mobile-group-live-scan.jpg',
+    imageAlt:
+      'Mobile group Live Scan setup serving a Milpitas workplace or community organization',
+    eyebrow: 'On-site service for Milpitas groups',
+    localPromise:
+      'Milpitas employers and community organizations can schedule a technician to process multiple people at one convenient location.',
+    accent: 'text-purple-700 dark:text-purple-300',
+    accentSoft: 'bg-purple-50 dark:bg-purple-950/40',
+    accentBorder: 'border-purple-200 dark:border-purple-800',
+  },
+};
+
+function CityIntroduction({
+  city,
+  profile,
+}: {
+  city: NonNullable<ReturnType<typeof getLiveScanCityBySlug>>;
+  profile: CityVisualProfile;
+}) {
+  const copy = (
+    <div className="space-y-5">
+      {city.introContent.map((paragraph, index) => (
+        <p
+          key={index}
+          className="text-lg text-muted-foreground leading-relaxed"
+        >
+          {paragraph}
+        </p>
+      ))}
+    </div>
+  );
+
+  if (profile.layout === 'editorial') {
+    return (
+      <section className="py-12 md:py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="relative aspect-[16/7] min-h-72 overflow-hidden rounded-3xl shadow-sm">
+              <Image
+                src={profile.image}
+                alt={profile.imageAlt}
+                fill
+                sizes="(min-width: 1280px) 1152px, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 left-0 max-w-xl p-6 md:p-9 text-white">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/80 mb-2">
+                  {profile.eyebrow}
+                </p>
+                <p className="text-lg md:text-xl font-medium leading-relaxed">
+                  {profile.localPromise}
+                </p>
+              </div>
+            </div>
+            <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-14 mt-10 items-start">
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+                {city.introHeading}
+              </h2>
+              {copy}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (profile.layout === 'spotlight') {
+    return (
+      <section className={`py-12 md:py-16 ${profile.accentSoft}`}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-14 items-center">
+            <div
+              className={`relative aspect-[4/5] max-h-[620px] overflow-hidden rounded-[2rem] border ${profile.accentBorder}`}
+            >
+              <Image
+                src={profile.image}
+                alt={profile.imageAlt}
+                fill
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <p
+                className={`text-sm font-semibold uppercase tracking-[0.16em] mb-3 ${profile.accent}`}
+              >
+                {profile.eyebrow}
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-7 leading-tight">
+                {city.introHeading}
+              </h2>
+              {copy}
+              <div
+                className={`mt-7 rounded-2xl border p-5 ${profile.accentBorder} bg-background/80`}
+              >
+                <p className="font-medium leading-relaxed">
+                  {profile.localPromise}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="py-12 md:py-16 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-9 lg:gap-14 items-center">
+          <div>
+            <p
+              className={`text-sm font-semibold uppercase tracking-[0.16em] mb-3 ${profile.accent}`}
+            >
+              {profile.eyebrow}
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-7 leading-tight">
+              {city.introHeading}
+            </h2>
+            {copy}
+            <p
+              className={`mt-7 border-l-4 pl-5 font-medium leading-relaxed ${profile.accentBorder}`}
+            >
+              {profile.localPromise}
+            </p>
+          </div>
+          <div
+            className={`relative aspect-[4/3] overflow-hidden rounded-3xl border ${profile.accentBorder}`}
+          >
+            <Image
+              src={profile.image}
+              alt={profile.imageAlt}
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+            <div
+              className={`absolute left-5 top-5 rounded-full border px-4 py-2 text-sm font-semibold backdrop-blur ${profile.accentSoft} ${profile.accentBorder}`}
+            >
+              Serving {city.name}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ---------------------------------------------------------------------------
 // Page Component
 // ---------------------------------------------------------------------------
@@ -161,6 +471,8 @@ export default async function LiveScanCityPage({
   if (!city) notFound();
 
   const url = getLiveScanCityUrl(slug);
+  const visualProfile =
+    cityVisualProfiles[slug] ?? cityVisualProfiles['mountain-view'];
 
   // Build structured data nodes
   const cityServiceSchema = {
@@ -466,25 +778,7 @@ export default async function LiveScanCityPage({
       {/* ================================================================ */}
       {/* Unique Intro Content — critical for SEO uniqueness               */}
       {/* ================================================================ */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              {city.introHeading}
-            </h2>
-            <div className="space-y-6">
-              {city.introContent.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="text-lg text-muted-foreground leading-relaxed"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CityIntroduction city={city} profile={visualProfile} />
 
       {/* ================================================================ */}
       {/* Hyper-Local Target Audience Breakdown (the SEO "hook")           */}

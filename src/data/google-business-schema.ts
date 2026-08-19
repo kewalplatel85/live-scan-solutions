@@ -459,7 +459,7 @@ export const notaryServiceSchema = {
   '@id': `${SITE_URL}/notary#service`,
   name: 'Notary Public Services',
   description:
-    'Licensed California notary public services for all document types including acknowledgments, jurats, and certified copies.',
+    'California commissioned Notary Public services including acknowledgments, jurats, oaths, affirmations, and certified copies of powers of attorney when permitted by law.',
   serviceType: 'Notary Service',
   provider: {
     '@type': 'LocalBusiness',
@@ -470,12 +470,6 @@ export const notaryServiceSchema = {
     name: 'Bay Area',
     addressRegion: 'CA',
     addressCountry: 'US',
-  },
-  offers: {
-    '@type': 'Offer',
-    price: 25,
-    priceCurrency: 'USD',
-    availability: 'https://schema.org/InStock',
   },
 };
 
