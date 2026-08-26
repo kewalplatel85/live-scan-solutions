@@ -16,7 +16,6 @@ import {
 } from '@/components/ui/tooltip';
 import { COMPANY } from '@/config/company';
 import { badgeData } from '@/data/badges';
-import { LIVESCAN_CITIES } from '@/data/city-pages/livescan-cities';
 import { liveScanServiceSchema } from '@/data/google-business-schema';
 import { SITE_URL } from '@/lib/config';
 import {
@@ -33,7 +32,6 @@ import {
 } from 'lucide-react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 const serviceOptions = [
   {
     icon: UserCheck,
@@ -71,12 +69,12 @@ const serviceOptions = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Live Scan Fingerprinting in Mountain View, CA | Walk-Ins Welcome',
+  title: 'Fast Live Scan & FD-258 Fingerprinting | Walk-Ins Welcome',
   description:
     'DOJ-listed Live Scan and FD-258 ink fingerprinting in Mountain View, CA. Walk-ins from nearby cities are welcome, with mobile group service available.',
   openGraph: {
     type: 'website',
-    title: 'Live Scan Fingerprinting in Mountain View, CA | Mail All Center',
+    title: 'Fast Live Scan & FD-258 Fingerprinting | Walk-Ins Welcome',
     description:
       'Walk into our Mountain View location for Live Scan and FD-258 ink fingerprinting, or schedule mobile group service for your organization.',
     url: `${SITE_URL}/Live-Scan-Fingerprinting`,
@@ -99,7 +97,7 @@ const nodes = [
   BUSINESS_NODE,
   buildWebPage({
     url,
-    title: 'Live Scan Fingerprinting in Mountain View, CA | Mail All Center',
+    title: 'Fast Live Scan & FD-258 Fingerprinting | Walk-Ins Welcome',
     description:
       'DOJ-listed Live Scan and FD-258 ink fingerprinting in Mountain View, welcoming walk-ins from nearby cities and offering mobile group service.',
   }),
@@ -539,36 +537,6 @@ export default function LiveScanPage() {
       </section>
 
       <CustomerTypesAccordion />
-
-      {/* Locations Section */}
-      <section id="bay-area-locations" className="border-t bg-muted/30 py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="mb-4 text-3xl font-bold">
-              Find Live Scan Near You in Mountain View and Nearby Cities
-            </h2>
-            <p className="mb-6 text-muted-foreground">
-              Customers throughout the Bay Area can visit Mail All Center in
-              Mountain View for walk-in Live Scan and FD-258 ink fingerprinting.
-              Mobile group service is also available for organizations across
-              the region.
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-3">
-              {LIVESCAN_CITIES.map((city) => (
-                <Link
-                  key={city.slug}
-                  href={`/Live-Scan-Fingerprinting/${city.slug}`}
-                  className="inline-flex items-center px-4 py-2 rounded-full border border-border bg-background hover:bg-primary/5 hover:border-primary/30 transition-colors duration-200 text-sm font-medium"
-                >
-                  <MapPin className="w-3 h-3 mr-2 text-primary" />
-                  Live Scan in {city.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

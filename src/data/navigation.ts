@@ -1,10 +1,29 @@
 import { NavigationConfigWithoutDropdown } from '@/components/types/navigation';
 import { COMPANY } from '@/config/company';
+import { LIVESCAN_CITIES } from '@/data/city-pages/livescan-cities';
 
 export const navigationConfig: NavigationConfigWithoutDropdown = {
   primaryItems: [
     { name: 'Home', href: '/' },
-    { name: 'Live Scan', href: '/Live-Scan-Fingerprinting' },
+    {
+      name: 'Live Scan',
+      href: '/Live-Scan-Fingerprinting',
+      hasSubmenu: true,
+      submenu: [
+        {
+          name: 'Live Scan Overview',
+          href: '/Live-Scan-Fingerprinting',
+        },
+        {
+          name: 'Live Scan FAQs',
+          href: '/faq',
+        },
+        ...LIVESCAN_CITIES.map((city) => ({
+          name: city.name,
+          href: `/Live-Scan-Fingerprinting/${city.slug}`,
+        })),
+      ],
+    },
     { name: 'Notary Public', href: '/notary' },
     { name: 'Apostille', href: '/apostille' },
     { name: 'Passport Photos', href: '/passport-photos' },

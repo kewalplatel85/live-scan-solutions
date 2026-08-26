@@ -69,8 +69,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     driveTime: 'Walk-in',
     population: '~82,000 residents',
 
-    metaTitle:
-      'Certified Live Scan Fingerprinting Mountain View, CA | Mail All Center',
+    metaTitle: 'Walk-In Live Scan in Mountain View | Fast DOJ & FBI Service',
     metaDescription:
       'DOJ & FBI approved Live Scan fingerprinting for Mountain View residents. Fast walk-ins, mobile group services, and FD-258 ink cards starting at $16.99.',
     keywords:
@@ -230,8 +229,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     driveTime: '10 minutes',
     population: '~155,000 residents',
 
-    metaTitle:
-      'Certified Live Scan Fingerprinting Sunnyvale, CA | Mail All Center',
+    metaTitle: 'Live Scan Near Sunnyvale | Walk-Ins & Mobile Group Service',
     metaDescription:
       'DOJ & FBI approved Live Scan fingerprinting for Sunnyvale residents. Fast walk-ins, mobile group services, and FD-258 ink cards starting at $16.99.',
     keywords:
@@ -388,8 +386,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     driveTime: '10 minutes',
     population: '~68,000 residents',
 
-    metaTitle:
-      'Certified Live Scan Fingerprinting Palo Alto, CA | Mail All Center',
+    metaTitle: 'Live Scan Near Palo Alto | Fast Walk-Ins & FD-258 Cards',
     metaDescription:
       'DOJ & FBI approved Live Scan fingerprinting for Palo Alto residents. Fast walk-ins, mobile group services, and FD-258 ink cards starting at $16.99.',
     keywords:
@@ -547,8 +544,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     driveTime: '20 minutes',
     population: '~1 million residents',
 
-    metaTitle:
-      'Certified Live Scan Fingerprinting San Jose, CA | Mail All Center',
+    metaTitle: 'Live Scan Near San Jose | Walk-Ins & Mobile Service',
     metaDescription:
       'DOJ & FBI approved Live Scan fingerprinting for San Jose residents. Fast walk-ins, mobile group services, and FD-258 ink cards starting at $16.99.',
     keywords:
@@ -711,8 +707,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     driveTime: '12 minutes',
     population: '~33,000 residents',
 
-    metaTitle:
-      'Certified Live Scan Fingerprinting Menlo Park, CA | Mail All Center',
+    metaTitle: 'Live Scan Near Menlo Park | Walk-Ins, FD-258 & Group Service',
     metaDescription:
       'DOJ & FBI approved Live Scan fingerprinting for Menlo Park residents. Fast walk-ins, mobile group services, and FD-258 ink cards starting at $16.99.',
     keywords:
@@ -869,8 +864,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     driveTime: '15 minutes',
     population: '~60,000 residents',
 
-    metaTitle:
-      'Certified Live Scan Fingerprinting Cupertino, CA | Mail All Center',
+    metaTitle: 'Live Scan Near Cupertino | Walk-Ins & Mobile Service',
     metaDescription:
       'DOJ & FBI approved Live Scan fingerprinting for Cupertino residents. Fast walk-ins, mobile group services, and FD-258 ink cards starting at $16.99.',
     keywords:
@@ -1032,8 +1026,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     driveTime: '8 minutes',
     population: '~31,000 residents',
 
-    metaTitle:
-      'Certified Live Scan Fingerprinting Los Altos, CA | Mail All Center',
+    metaTitle: 'Live Scan Near Los Altos | Easy Walk-Ins & FD-258 Cards',
     metaDescription:
       'DOJ & FBI approved Live Scan fingerprinting for Los Altos residents. Fast walk-ins, mobile group services, and FD-258 ink cards starting at $16.99.',
     keywords:
@@ -1193,8 +1186,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     driveTime: '30 minutes',
     population: '~230,000 residents',
 
-    metaTitle:
-      'Certified Live Scan Fingerprinting Fremont, CA | Mail All Center',
+    metaTitle: 'Mobile Live Scan in Fremont | On-Site Group Fingerprinting',
     metaDescription:
       'DOJ & FBI approved Live Scan fingerprinting for Fremont residents. Fast walk-ins, mobile group services, and FD-258 ink cards starting at $16.99.',
     keywords:
@@ -1351,7 +1343,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     distanceFromStore: '11 miles',
     driveTime: '18 minutes',
     population: '~128,000 residents',
-    metaTitle: 'Live Scan Fingerprinting Santa Clara, CA | Walk-Ins Welcome',
+    metaTitle: 'Live Scan Near Santa Clara | Walk-Ins & Mobile Group Service',
     metaDescription:
       'DOJ-listed Live Scan and FD-258 ink fingerprinting for Santa Clara residents. Walk into our nearby Mountain View location or schedule mobile group service.',
     keywords:
@@ -1474,7 +1466,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     distanceFromStore: '13 miles',
     driveTime: '20 minutes',
     population: '~82,000 residents',
-    metaTitle: 'Live Scan Fingerprinting Redwood City, CA | Walk-Ins Welcome',
+    metaTitle: 'Live Scan Near Redwood City | Fast Walk-Ins & FD-258 Cards',
     metaDescription:
       'Live Scan and FD-258 ink fingerprinting for Redwood City residents. Visit our Mountain View walk-in location or arrange mobile service for your group.',
     keywords:
@@ -1598,7 +1590,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     distanceFromStore: '14 miles',
     driveTime: '20 minutes',
     population: '~44,000 residents',
-    metaTitle: 'Live Scan Fingerprinting Campbell, CA | Walk-Ins Welcome',
+    metaTitle: 'Live Scan Near Campbell | Walk-Ins & Mobile Fingerprinting',
     metaDescription:
       'Live Scan and FD-258 ink fingerprinting for Campbell residents. Walk into our Mountain View office or schedule mobile service for your organization.',
     keywords:
@@ -1720,7 +1712,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     distanceFromStore: '16 miles',
     driveTime: '25 minutes',
     population: '~34,000 residents',
-    metaTitle: 'Live Scan Fingerprinting Los Gatos, CA | Walk-Ins Welcome',
+    metaTitle: 'Live Scan Near Los Gatos | Fast Service for Work & Licensing',
     metaDescription:
       'Live Scan and FD-258 ink fingerprinting for Los Gatos residents. Visit our Mountain View walk-in location or schedule mobile group fingerprinting.',
     keywords:
@@ -1842,7 +1834,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     distanceFromStore: '15 miles',
     driveTime: '25 minutes',
     population: '~80,000 residents',
-    metaTitle: 'Live Scan Fingerprinting Milpitas, CA | Walk-Ins Welcome',
+    metaTitle: 'Live Scan Near Milpitas | Walk-Ins, FD-258 & Mobile Groups',
     metaDescription:
       'Live Scan and FD-258 ink fingerprinting for Milpitas residents. Walk into our Mountain View location or schedule mobile service for your group.',
     keywords:

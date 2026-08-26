@@ -169,20 +169,59 @@ export const NavigationHeader = ({
             {/* Primary navigation items */}
             {config.primaryItems
               .filter((item) => !item.highlight)
-              .map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href!}
-                  className={cn(
-                    'px-3 py-2 text-sm font-medium transition-colors rounded-md',
-                    getActiveState.activePrimary === item.name
-                      ? 'text-primary bg-primary/10'
-                      : 'text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
-                  )}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              .map((item) =>
+                item.hasSubmenu && item.submenu ? (
+                  <div key={item.name} className="group relative">
+                    <Link
+                      href={item.href!}
+                      aria-haspopup="true"
+                      className={cn(
+                        'flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                        getActiveState.activePrimary === item.name
+                          ? 'bg-primary/10 text-primary'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-primary dark:text-gray-200 dark:hover:bg-gray-800'
+                      )}
+                    >
+                      {item.name}
+                      <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
+                    </Link>
+                    <div className="invisible absolute left-0 top-full z-50 mt-1 w-[34rem] rounded-xl border border-gray-200 bg-white p-4 opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 dark:border-gray-700 dark:bg-gray-800">
+                      <p className="mb-2 px-2 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                        Live Scan by city
+                      </p>
+                      <div className="grid grid-cols-3 gap-1">
+                        {item.submenu.map((subItem, index) => (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.href!}
+                            className={cn(
+                              'rounded-md px-2 py-2 text-sm transition-colors hover:bg-gray-100 hover:text-primary dark:hover:bg-gray-700',
+                              index < 2
+                                ? 'font-semibold text-primary'
+                                : 'text-gray-700 dark:text-gray-200'
+                            )}
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href!}
+                    className={cn(
+                      'rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                      getActiveState.activePrimary === item.name
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-gray-700 hover:bg-gray-100 hover:text-primary dark:text-gray-200 dark:hover:bg-gray-800'
+                    )}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
 
             {/* Dropdown sections */}
             {config.dropdownSections &&
@@ -414,6 +453,60 @@ export const NavigationHeader = ({
                             <CalendarCheck className="w-5 h-5" />
                             {item.name}
                           </Link>
+                        ) : item.hasSubmenu && item.submenu ? (
+                          <div key={item.name}>
+                            <div
+                              className={cn(
+                                'flex items-center rounded-md transition-colors',
+                                getActiveState.activePrimary === item.name
+                                  ? 'border border-primary/20 bg-primary/10 text-primary'
+                                  : 'text-gray-700 hover:bg-gray-100 hover:text-primary dark:text-gray-200 dark:hover:bg-gray-800'
+                              )}
+                            >
+                              <Link
+                                href={item.href!}
+                                className="flex-1 px-3 py-3 text-base font-medium"
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {item.name}
+                              </Link>
+                              <button
+                                type="button"
+                                aria-label={`Show ${item.name} cities`}
+                                aria-expanded={
+                                  mobileSubmenus[item.name] ?? false
+                                }
+                                onClick={() => toggleMobileSubmenu(item.name)}
+                                className="self-stretch px-4"
+                              >
+                                <ChevronDown
+                                  className={cn(
+                                    'h-4 w-4 transition-transform duration-200',
+                                    mobileSubmenus[item.name] && 'rotate-180'
+                                  )}
+                                />
+                              </button>
+                            </div>
+                            {mobileSubmenus[item.name] && (
+                              <div className="mt-1 grid grid-cols-2 gap-1 pl-3">
+                                {item.submenu.map((subItem, index) => (
+                                  <Link
+                                    key={subItem.name}
+                                    href={subItem.href!}
+                                    className={cn(
+                                      'rounded-md px-3 py-2 text-sm transition-colors hover:bg-gray-100 hover:text-primary dark:hover:bg-gray-800',
+                                      index < 2
+                                        ? 'font-semibold text-primary'
+                                        : 'text-gray-600 dark:text-gray-300'
+                                    )}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
+                          </div>
                         ) : (
                           <Link
                             key={item.name}

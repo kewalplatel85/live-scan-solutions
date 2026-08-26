@@ -4,16 +4,11 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@/components/ui/collapsible';
-import {
   Building2,
-  ChevronDown,
   GraduationCap,
   Heart,
   Scale,
+  Search,
   ShieldCheck,
   Truck,
   Users,
@@ -161,21 +156,37 @@ const customerCategories = [
 ];
 
 export const CustomerTypesAccordion = () => {
-  const [openItem, setOpenItem] = useState<string | null>(null);
-
-  const toggleItem = (title: string) => {
-    setOpenItem((current) => (current === title ? null : title));
-  };
+  const [activeCategory, setActiveCategory] = useState(
+    customerCategories[0].title
+  );
+  const [searchQuery, setSearchQuery] = useState('');
 
   const totalUseCases = customerCategories.reduce(
     (sum, cat) => sum + cat.count,
     0
   );
+  const selectedCategory =
+    customerCategories.find((category) => category.title === activeCategory) ??
+    customerCategories[0];
+  const normalizedQuery = searchQuery.trim().toLowerCase();
+  const searchResults = normalizedQuery
+    ? customerCategories.flatMap((category) =>
+        category.types
+          .filter((type) => type.toLowerCase().includes(normalizedQuery))
+          .map((type) => ({ type, category: category.title }))
+      )
+    : [];
+  const visibleNeeds = normalizedQuery
+    ? searchResults
+    : selectedCategory.types.map((type) => ({
+        type,
+        category: selectedCategory.title,
+      }));
 
   return (
     <section id="who-we-serve" className="border-y bg-background py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 text-center">
+        <div className="mx-auto mb-8 max-w-3xl text-center">
           <h2 className="mb-3 text-3xl font-bold md:text-4xl">
             Live Scan for Professionals, Volunteers, and Organizations
           </h2>
@@ -189,72 +200,110 @@ export const CustomerTypesAccordion = () => {
           </Badge>
         </div>
 
-        <div className="mx-auto grid max-w-7xl items-start gap-3 md:grid-cols-2 xl:grid-cols-3">
-          {customerCategories.map((category) => {
-            const Icon = category.icon;
-            const isOpen = openItem === category.title;
+        <div className="mx-auto mb-6 max-w-2xl">
+          <label htmlFor="fingerprinting-need-search" className="sr-only">
+            Search fingerprinting needs
+          </label>
+          <div className="relative">
+            <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
+            <input
+              id="fingerprinting-need-search"
+              type="search"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              placeholder="Search your profession or fingerprinting need"
+              className="h-12 w-full rounded-xl border bg-card pl-12 pr-4 text-base shadow-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+            />
+          </div>
+        </div>
 
-            return (
-              <Collapsible
-                key={category.title}
-                open={isOpen}
-                onOpenChange={() => toggleItem(category.title)}
-                className={isOpen ? 'md:col-span-2 xl:col-span-3' : undefined}
-              >
-                <Card className="overflow-hidden transition-shadow hover:shadow-md">
-                  <CollapsibleTrigger className="w-full">
-                    <div className="flex min-h-[72px] items-center justify-between gap-3 p-3 transition-colors hover:bg-muted/50">
-                      <div className="flex min-w-0 items-center gap-3">
-                        <div
-                          className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg ${category.bgColor}`}
-                        >
-                          <Icon className={`h-6 w-6 ${category.color}`} />
-                        </div>
-                        <div className="min-w-0 text-left">
-                          <h3 className="font-semibold">{category.title}</h3>
-                          <p className="mt-0.5 line-clamp-1 text-xs text-muted-foreground sm:text-sm">
-                            {category.description}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex flex-shrink-0 items-center gap-2">
-                        <Badge variant="outline" className="hidden sm:flex">
-                          {category.count} types
-                        </Badge>
-                        <ChevronDown
-                          className={`h-5 w-5 text-muted-foreground transition-transform ${
-                            isOpen ? 'rotate-180' : ''
-                          }`}
-                        />
-                      </div>
-                    </div>
-                  </CollapsibleTrigger>
+        <div className="mx-auto grid max-w-7xl items-start gap-5 lg:grid-cols-[0.85fr_1.4fr]">
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
+            {customerCategories.map((category) => {
+              const Icon = category.icon;
+              const isActive =
+                !normalizedQuery && selectedCategory.title === category.title;
 
-                  <CollapsibleContent>
-                    <CardContent className="pb-5 pt-0">
-                      <div className="border-t pt-4">
-                        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                          {category.types.map((type, typeIndex) => (
-                            <div
-                              key={typeIndex}
-                              className="flex items-center space-x-3 p-2 rounded-md hover:bg-muted/50 transition-colors"
-                            >
-                              <div
-                                className={`w-2 h-2 rounded-full ${category.bulletColor} flex-shrink-0`}
-                              />
-                              <span className="text-sm font-medium">
-                                {type}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </CollapsibleContent>
-                </Card>
-              </Collapsible>
-            );
-          })}
+              return (
+                <button
+                  key={category.title}
+                  type="button"
+                  onClick={() => {
+                    setActiveCategory(category.title);
+                    setSearchQuery('');
+                  }}
+                  aria-pressed={isActive}
+                  className={`flex items-center gap-3 rounded-xl border p-3 text-left transition-colors ${
+                    isActive
+                      ? 'border-primary bg-primary/5 shadow-sm'
+                      : 'bg-card hover:border-primary/40 hover:bg-muted/40'
+                  }`}
+                >
+                  <span
+                    className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg ${category.bgColor}`}
+                  >
+                    <Icon className={`h-6 w-6 ${category.color}`} />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-semibold">
+                      {category.title}
+                    </span>
+                    <span className="mt-0.5 block text-xs text-muted-foreground sm:text-sm">
+                      {category.description}
+                    </span>
+                  </span>
+                  <Badge variant="outline">{category.count}</Badge>
+                </button>
+              );
+            })}
+          </div>
+
+          <Card className="overflow-hidden shadow-sm">
+            <CardContent className="p-5 sm:p-6">
+              <div className="mb-5 flex flex-wrap items-end justify-between gap-2 border-b pb-4">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+                    {normalizedQuery ? 'Search results' : 'Selected category'}
+                  </p>
+                  <h3 className="mt-1 text-2xl font-bold">
+                    {normalizedQuery
+                      ? `Matches for “${searchQuery.trim()}”`
+                      : selectedCategory.title}
+                  </h3>
+                </div>
+                <Badge variant="secondary">
+                  {visibleNeeds.length}{' '}
+                  {visibleNeeds.length === 1 ? 'match' : 'needs'}
+                </Badge>
+              </div>
+
+              {visibleNeeds.length > 0 ? (
+                <ul className="grid gap-2 sm:grid-cols-2">
+                  {visibleNeeds.map((need) => (
+                    <li
+                      key={`${need.category}-${need.type}`}
+                      className="rounded-lg border bg-background p-3"
+                    >
+                      <span className="font-medium">{need.type}</span>
+                      {normalizedQuery && (
+                        <span className="mt-1 block text-xs text-muted-foreground">
+                          {need.category}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <div className="rounded-xl bg-muted/50 p-6 text-center">
+                  <p className="font-semibold">No exact match found</p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    Try a broader term or contact us so we can confirm which
+                    fingerprinting service your agency requires.
+                  </p>
+                </div>
+              )}
+            </CardContent>
+          </Card>
         </div>
 
         <div className="mt-8 text-center">
