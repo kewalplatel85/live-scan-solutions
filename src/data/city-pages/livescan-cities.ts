@@ -25,6 +25,7 @@ export interface LiveScanCityData {
   keywords: string;
 
   // Hero section
+  heroTitle: string;
   heroSubtitle: string;
 
   // Unique intro content (2-3 paragraphs for content uniqueness)
@@ -75,6 +76,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     keywords:
       'live scan mountain view, fingerprinting mountain view, live scan fingerprinting mountain view ca, live scan near me mountain view, fingerprinting near me mountain view, doj fingerprinting mountain view, fbi fingerprinting mountain view, background check mountain view, fd-258 mountain view, ink fingerprinting mountain view, mobile fingerprinting mountain view, mountain view live scan, certified live scan mountain view, live scan provider mountain view, mountain view fingerprint services',
 
+    heroTitle: 'Walk-In Live Scan & FD-258 Fingerprinting in Mountain View',
     heroSubtitle:
       'Walk-In Live Scan & Ink Fingerprinting — Right Here in Mountain View',
 
@@ -235,6 +237,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     keywords:
       'live scan sunnyvale, fingerprinting sunnyvale, live scan fingerprinting sunnyvale ca, live scan near me sunnyvale, fingerprinting near me sunnyvale, doj fingerprinting sunnyvale, fbi fingerprinting sunnyvale, background check sunnyvale, fd-258 sunnyvale, ink fingerprinting sunnyvale, mobile fingerprinting sunnyvale, sunnyvale live scan, certified live scan sunnyvale, sunnyvale school district fingerprinting, sunnyvale background check',
 
+    heroTitle: 'Fast Live Scan Near Sunnyvale for Work, Licensing & Volunteers',
     heroSubtitle: "Sunnyvale's Trusted Live Scan Fingerprinting Provider",
 
     introHeading:
@@ -392,6 +395,8 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     keywords:
       'live scan palo alto, fingerprinting palo alto, live scan fingerprinting palo alto ca, live scan near me palo alto, fingerprinting near me palo alto, doj fingerprinting palo alto, fbi fingerprinting palo alto, background check palo alto, fd-258 palo alto, ink fingerprinting palo alto, mobile fingerprinting palo alto, palo alto live scan, palo alto unified school district fingerprinting, stanford fingerprinting, palo alto background check',
 
+    heroTitle:
+      'Convenient Live Scan Near Palo Alto for Schools, Work & Licensing',
     heroSubtitle: "Palo Alto's Nearby Certified Live Scan Provider",
 
     introHeading:
@@ -550,6 +555,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     keywords:
       'live scan san jose, fingerprinting san jose, live scan fingerprinting san jose ca, live scan near me san jose, fingerprinting near me san jose, doj fingerprinting san jose, fbi fingerprinting san jose, background check san jose, fd-258 san jose, ink fingerprinting san jose, mobile fingerprinting san jose, san jose live scan, san jose unified school district fingerprinting, sjsu fingerprinting, san jose background check, east side union high school district',
 
+    heroTitle: 'Affordable Live Scan Near San Jose with Mobile Group Service',
     heroSubtitle: "San Jose's Affordable Certified Live Scan Provider",
 
     introHeading:
@@ -713,6 +719,8 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     keywords:
       'live scan menlo park, fingerprinting menlo park, live scan fingerprinting menlo park ca, live scan near me menlo park, fingerprinting near me menlo park, doj fingerprinting menlo park, fbi fingerprinting menlo park, background check menlo park, fd-258 menlo park, ink fingerprinting menlo park, mobile fingerprinting menlo park, menlo park live scan, stanford fingerprinting, meta menlo park fingerprinting, menlo park background check',
 
+    heroTitle:
+      'Live Scan Near Menlo Park for Professionals, Schools & Volunteers',
     heroSubtitle: "Menlo Park's Nearby Certified Live Scan Provider",
 
     introHeading:
@@ -870,6 +878,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     keywords:
       'live scan cupertino, fingerprinting cupertino, live scan fingerprinting cupertino ca, live scan near me cupertino, fingerprinting near me cupertino, doj fingerprinting cupertino, fbi fingerprinting cupertino, background check cupertino, fd-258 cupertino, ink fingerprinting cupertino, mobile fingerprinting cupertino, cupertino live scan, cupertino union school district fingerprinting, cupertino background check, apple park fingerprinting',
 
+    heroTitle: 'Live Scan Near Cupertino for Schools, Tech Teams & Volunteers',
     heroSubtitle: "Cupertino's Convenient Certified Live Scan Provider",
 
     introHeading:
@@ -1032,6 +1041,8 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     keywords:
       'live scan los altos, fingerprinting los altos, live scan fingerprinting los altos ca, live scan near me los altos, fingerprinting near me los altos, doj fingerprinting los altos, fbi fingerprinting los altos, background check los altos, fd-258 los altos, ink fingerprinting los altos, mobile fingerprinting los altos, los altos live scan, los altos school district fingerprinting, mountain view los altos fingerprinting, los altos background check',
 
+    heroTitle:
+      'Nearby Live Scan for Los Altos Families, Schools & Professionals',
     heroSubtitle: "Los Altos' Nearest Certified Live Scan Provider",
 
     introHeading:
@@ -1192,6 +1203,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     keywords:
       'live scan fremont, fingerprinting fremont, live scan fingerprinting fremont ca, live scan near me fremont, fingerprinting near me fremont, doj fingerprinting fremont, fbi fingerprinting fremont, background check fremont, fd-258 fremont, ink fingerprinting fremont, mobile fingerprinting fremont, fremont live scan, fremont unified school district fingerprinting, tesla fremont fingerprinting, fremont background check, ohlone college fingerprinting',
 
+    heroTitle: 'Mobile & Walk-In Live Scan for Fremont Teams and Applicants',
     heroSubtitle: "Fremont's Trusted Nearby Certified Live Scan Provider",
 
     introHeading:
@@ -1348,6 +1360,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
       'DOJ-listed Live Scan and FD-258 ink fingerprinting for Santa Clara residents. Walk into our nearby Mountain View location or schedule mobile group service.',
     keywords:
       'live scan santa clara, fingerprinting santa clara, live scan near me santa clara, FD-258 santa clara, mobile live scan santa clara',
+    heroTitle: 'Live Scan for Santa Clara Work, Licensing & Volunteer Needs',
     heroSubtitle: 'Walk-In and Mobile Live Scan Fingerprinting for Santa Clara',
     introHeading:
       'Convenient Live Scan Fingerprinting for Santa Clara Residents',
@@ -1471,6 +1484,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
       'Live Scan and FD-258 ink fingerprinting for Redwood City residents. Visit our Mountain View walk-in location or arrange mobile service for your group.',
     keywords:
       'live scan redwood city, fingerprinting redwood city, live scan near me redwood city, FD-258 redwood city, mobile live scan redwood city',
+    heroTitle: 'Live Scan Near Redwood City for County, School & Career Needs',
     heroSubtitle:
       'Professional Live Scan and Ink Fingerprinting Near Redwood City',
     introHeading:
@@ -1595,6 +1609,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
       'Live Scan and FD-258 ink fingerprinting for Campbell residents. Walk into our Mountain View office or schedule mobile service for your organization.',
     keywords:
       'live scan campbell, fingerprinting campbell, live scan near me campbell, FD-258 campbell, mobile live scan campbell',
+    heroTitle: 'Flexible Live Scan for Campbell Applicants and Organizations',
     heroSubtitle: 'Walk-In and Mobile Live Scan Service for Campbell',
     introHeading:
       'Convenient Fingerprinting for Campbell Residents and Organizations',
@@ -1717,6 +1732,8 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
       'Live Scan and FD-258 ink fingerprinting for Los Gatos residents. Visit our Mountain View walk-in location or schedule mobile group fingerprinting.',
     keywords:
       'live scan los gatos, fingerprinting los gatos, live scan near me los gatos, FD-258 los gatos, mobile live scan los gatos',
+    heroTitle:
+      'Professional Live Scan for Los Gatos Work, Licensing & Volunteers',
     heroSubtitle: 'Professional Live Scan Service Near Los Gatos',
     introHeading: 'Live Scan and Ink Fingerprinting for Los Gatos Applicants',
     introContent: [
@@ -1839,6 +1856,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
       'Live Scan and FD-258 ink fingerprinting for Milpitas residents. Walk into our Mountain View location or schedule mobile service for your group.',
     keywords:
       'live scan milpitas, fingerprinting milpitas, live scan near me milpitas, FD-258 milpitas, mobile live scan milpitas',
+    heroTitle: 'Live Scan for Milpitas Employers, Schools & License Applicants',
     heroSubtitle: 'Walk-In and Mobile Live Scan Service for Milpitas',
     introHeading:
       'Professional Fingerprinting for Milpitas Residents and Employers',

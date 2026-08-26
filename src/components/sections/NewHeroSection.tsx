@@ -46,7 +46,7 @@ export const NewHeroSection = () => {
             </div>
 
             <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
-              Live Scan, Notary, Apostille & More —{' '}
+              Live Scan, Notary, Apostille, Shipping & Passport Photos —{' '}
               <span className="text-primary">All in One Place</span>
             </h1>
 

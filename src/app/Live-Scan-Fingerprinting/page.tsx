@@ -140,10 +140,8 @@ export default function LiveScanPage() {
         badges={badgeData.liveScanService}
         title={
           <>
-            Live Scan & FD-258{' '}
-            <span className="text-primary">
-              Fingerprinting in Mountain View
-            </span>
+            Fast Live Scan & FD-258 Fingerprinting —{' '}
+            <span className="text-primary">Walk-Ins Welcome</span>
           </>
         }
         subtitle="Rolling Fees Starting at $16.99*"
@@ -309,9 +307,6 @@ export default function LiveScanPage() {
                 </a>
               </p>
             </div>
-            <p className="text-center text-xs text-muted-foreground">
-              Illustrative service imagery.
-            </p>
           </div>
         }
       />

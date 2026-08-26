@@ -539,13 +539,7 @@ export default async function LiveScanCityPage({
             iconClassName: 'fill-yellow-400 text-yellow-400',
           },
         ]}
-        title={
-          <>
-            Official Live Scan{' '}
-            <span className="text-primary">Fingerprinting Services</span> for{' '}
-            {city.name}
-          </>
-        }
+        title={city.heroTitle}
         subtitle={city.heroSubtitle}
         description={`DOJ-listed, FBI-approved Live Scan fingerprinting and FD-258 ink card services for ${city.name} residents and organizations. Walk-in or mobile service available — just ${city.driveTime} from ${city.name}.`}
         disclaimerText="*Rolling fee only. Additional DOJ/FBI government submission fees apply and vary by application type. Contact us for a complete fee estimate."
