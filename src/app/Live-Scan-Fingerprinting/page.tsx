@@ -233,7 +233,10 @@ export default function LiveScanPage() {
                 </ul>
               </article>
 
-              <article className="group overflow-hidden rounded-2xl border bg-card shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <article
+                id="fd-258"
+                className="group scroll-mt-24 overflow-hidden rounded-2xl border bg-card shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src="/assets/services/ink-fingerprinting-service.jpg"
@@ -465,7 +468,10 @@ export default function LiveScanPage() {
             })}
           </div>
 
-          <div className="mt-8 overflow-hidden rounded-3xl border bg-card shadow-md">
+          <div
+            id="mobile-live-scan"
+            className="mt-8 scroll-mt-24 overflow-hidden rounded-3xl border bg-card shadow-md"
+          >
             <div className="grid items-center lg:grid-cols-2">
               <div className="relative min-h-[280px] lg:min-h-[330px]">
                 <Image

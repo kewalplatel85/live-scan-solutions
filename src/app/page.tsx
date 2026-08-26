@@ -24,13 +24,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Live Scan, Notary & Passport Photos in Mountain View, CA',
+  title: 'Live Scan, Notary, Apostille, Shipping & Passport Photos',
   description:
-    'Live Scan fingerprinting, Notary Public, apostille, passport photos, shipping, mailbox, and printing services in Mountain View. Walk-ins welcome.',
+    'Live Scan, mobile Live Scan, FD-258 ink fingerprints, notary, apostille, passport photos, shipping, mailbox rental, and printing. Walk-ins welcome.',
   openGraph: {
-    title: 'Mail All Center | Professional Services in Mountain View',
+    title: 'Live Scan, Notary, Apostille, Shipping & Passport Photos',
     description:
-      'Live Scan, Notary Public, apostille, passport photos, shipping, mailbox, and printing services—all in one convenient Mountain View location.',
+      'Live Scan, mobile Live Scan, FD-258 ink fingerprints, notary, apostille, passport photos, shipping, mailbox rental, and printing. Walk-ins welcome.',
     url: SITE_URL,
     type: 'website',
     locale: 'en_US',
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mail All Center | Mountain View, CA',
+    title: 'Live Scan, Notary, Apostille, Shipping & Passport Photos',
     description:
-      'Live Scan, Notary, apostille, passport photos, shipping, mailbox, and printing services in one location.',
+      'Live Scan, mobile Live Scan, FD-258 ink fingerprints, notary, apostille, passport photos, shipping, mailbox rental, and printing. Walk-ins welcome.',
     images: [`${SITE_URL}/assets/services/live-scan-service.jpg`],
   },
   alternates: { canonical: SITE_URL },
@@ -62,9 +62,32 @@ const nodes = [
     url: `${SITE_URL}/`,
     title: 'Mail All Center – Professional Services in Mountain View, CA',
     description:
-      'Live Scan fingerprinting, Notary Public, apostille, passport photos, mailbox rental, printing, packing, and shipping in Mountain View, California.',
+      'Live Scan, mobile Live Scan, FD-258 ink fingerprint cards, Notary Public, apostille, passport photos, shipping, mailbox rental, and printing in Mountain View, serving the Bay Area.',
   }),
   buildBreadcrumb([{ name: 'Home', url: `${SITE_URL}/` }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': `${SITE_URL}/#key-services`,
+    name: 'Mail All Center key services',
+    itemListElement: [
+      ['Live Scan Fingerprinting', '/Live-Scan-Fingerprinting'],
+      ['Mobile Live Scan', '/Live-Scan-Fingerprinting#mobile-live-scan'],
+      ['FD-258 Fingerprint Cards', '/Live-Scan-Fingerprinting#fd-258'],
+      ['Ink Fingerprint Card Service', '/Live-Scan-Fingerprinting#fd-258'],
+      ['Notary Public', '/notary'],
+      ['Apostille Service', '/apostille'],
+      ['Passport Photos', '/passport-photos'],
+      ['Shipping Service', '/pack-ship'],
+      ['Mailbox Rental', '/mailbox-rental'],
+      ['Printing Service', '/printing'],
+    ].map(([name, path], index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name,
+      url: `${SITE_URL}${path}`,
+    })),
+  },
 ];
 
 const reasons = [

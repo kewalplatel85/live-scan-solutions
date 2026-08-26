@@ -46,14 +46,15 @@ export const NewHeroSection = () => {
             </div>
 
             <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
-              Live Scan, Notary, Apostille & Passport Photos in{' '}
-              <span className="text-primary">Mountain View</span>
+              Live Scan, Notary, Apostille & More —{' '}
+              <span className="text-primary">All in One Place</span>
             </h1>
 
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-              Complete important personal and business tasks in one convenient
-              location. Get professional help, clear instructions, and friendly
-              service without visiting multiple offices.
+              From Live Scan and FD-258 ink fingerprint cards to passport
+              photos, shipping, mailbox rental, and printing, get trusted help
+              with essential personal and business services. Mobile Live Scan is
+              also available for qualifying groups throughout the Bay Area.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">

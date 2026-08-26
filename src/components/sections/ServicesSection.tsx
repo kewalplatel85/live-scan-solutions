@@ -19,13 +19,33 @@ import Link from 'next/link';
 const primaryServices = [
   {
     icon: Fingerprint,
-    title: 'Live Scan & Ink Fingerprinting',
+    title: 'Live Scan Fingerprinting',
     description:
-      'Electronic Live Scan submission and professional FD-258 ink fingerprint cards for employment, licensing, volunteering, and personal records.',
+      'Electronic fingerprint submission for employment, licensing, volunteering, and background-check requirements.',
     href: '/Live-Scan-Fingerprinting',
     badge: 'DOJ Listed Location',
     image: '/assets/services/live-scan-service.jpg',
     alt: 'Technician assisting a customer with electronic Live Scan fingerprinting',
+  },
+  {
+    icon: Fingerprint,
+    title: 'Mobile Live Scan',
+    description:
+      'On-site Live Scan fingerprinting for qualifying schools, employers, nonprofits, and other groups across the Bay Area.',
+    href: '/Live-Scan-Fingerprinting#mobile-live-scan',
+    badge: 'Bay Area Mobile Service',
+    image: '/assets/services/mobile-live-scan-service.jpg',
+    alt: 'Mobile Live Scan fingerprinting equipment set up for an organization in the Bay Area',
+  },
+  {
+    icon: Fingerprint,
+    title: 'FD-258 & Ink Fingerprint Cards',
+    description:
+      'Professionally rolled fingerprints on FBI FD-258 and other ink fingerprint cards for agencies that require a physical card.',
+    href: '/Live-Scan-Fingerprinting#fd-258',
+    badge: 'Physical Fingerprint Cards',
+    image: '/assets/services/ink-fingerprinting-service.jpg',
+    alt: 'Technician completing an FD-258 ink fingerprint card in Mountain View',
   },
   {
     icon: FileText,
@@ -104,7 +124,7 @@ export const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 xl:grid-cols-3">
           {primaryServices.map((service) => {
             const Icon = service.icon;
             return (
@@ -161,10 +181,12 @@ export const ServicesSection = () => {
 
         <div className="mx-auto mt-10 max-w-7xl rounded-3xl border bg-background p-5 shadow-sm sm:p-7">
           <div className="mb-5">
-            <h3 className="text-2xl font-bold">More Everyday Services</h3>
+            <h3 className="text-2xl font-bold">
+              Shipping, Mailbox Rental & Printing
+            </h3>
             <p className="mt-1 text-muted-foreground">
-              Mail, shipping, printing, and travel-enrollment support are also
-              available.
+              Complete essential mailing, package, and document tasks at our
+              Mountain View location.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
