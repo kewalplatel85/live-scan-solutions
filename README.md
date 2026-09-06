@@ -20,6 +20,24 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Mobile Live Scan quote email
+
+The quote form sends requests through Zoho SMTP. Configure these environment
+variables locally in `.env.local` and in the Vercel project settings. Never
+commit the real password.
+
+```bash
+ZOHO_SMTP_HOST=smtppro.zoho.com
+ZOHO_SMTP_PORT=465
+ZOHO_SMTP_USER=info@mailallcenter.com
+ZOHO_SMTP_PASSWORD=your-zoho-app-password
+MOBILE_QUOTE_TO_EMAIL=info@mailallcenter.com
+```
+
+Use the exact SMTP host shown in the Zoho Mail account's server configuration.
+Accounts with two-factor authentication should use a Zoho application-specific
+password.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

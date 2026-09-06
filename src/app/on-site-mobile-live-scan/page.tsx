@@ -1,4 +1,5 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import { MobileLiveScanQuoteForm } from '@/components/MobileLiveScanQuoteForm';
 import SEOGraph, {
   buildBreadcrumb,
   buildFAQ,
@@ -175,7 +176,8 @@ export default function MobileLiveScanPage() {
       <SEOGraph id="ld-mobile-live-scan" nodes={nodes} />
 
       <GenericHero
-        className="!py-10 md:!py-14"
+        className="!py-8 md:!py-10"
+        badgeContainerClassName="lg:flex-nowrap"
         badges={[
           { icon: Truck, text: 'We Come to Your Organization' },
           { icon: MapPin, text: 'Bay Area Mobile Service' },
@@ -183,12 +185,12 @@ export default function MobileLiveScanPage() {
         ]}
         title={
           <>
-            Mobile Live Scan Fingerprinting —{' '}
-            <span className="text-primary">Professional On-Site Service</span>
+            On-Site Mobile Live Scan —{' '}
+            <span className="text-primary">For Groups of 5 to 500</span>
           </>
         }
-        subtitle="Convenient fingerprinting for organizations and groups"
-        description="Reduce employee travel and coordinate fingerprinting in one place. Mail All Center brings professional Live Scan equipment and an experienced technician to qualifying workplaces, schools, churches, nonprofits, and other Bay Area organizations."
+        subtitle="We bring professional fingerprinting to your organization"
+        description="Schedule one coordinated session at your workplace, school, church, nonprofit, or agency. Our experienced technician brings professional Live Scan equipment throughout our Bay Area service region."
         benefits={[
           { text: 'Portable professional equipment' },
           { text: 'Coordinated group scheduling' },
@@ -205,8 +207,8 @@ export default function MobileLiveScanPage() {
             size: 'lg',
           },
           {
-            text: 'Request Mobile Service',
-            href: '/contact-us',
+            text: 'Request a Group Quote',
+            href: '#mobile-quote',
             icon: CalendarCheck,
             variant: 'outline',
             size: 'lg',
@@ -224,6 +226,9 @@ export default function MobileLiveScanPage() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+              <Badge className="absolute left-4 top-4 bg-white text-slate-900 hover:bg-white">
+                Group Discounts Available
+              </Badge>
               <div className="absolute inset-x-0 bottom-0 p-6 text-white">
                 <p className="text-xl font-bold">
                   One location. One coordinated session.
@@ -236,6 +241,8 @@ export default function MobileLiveScanPage() {
           </div>
         }
       />
+
+      <MobileLiveScanQuoteForm />
 
       <section className="border-y bg-muted/35 py-12 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -406,7 +413,7 @@ export default function MobileLiveScanPage() {
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link href="/contact-us">Contact Us</Link>
+              <Link href="#mobile-quote">Request a Group Quote</Link>
             </Button>
           </div>
         </div>

@@ -38,6 +38,7 @@ export interface HeroProps {
 
   // Badges
   badges?: BadgeItem[];
+  badgeContainerClassName?: string;
 
   // Main content
   title: string | ReactNode;
@@ -67,6 +68,7 @@ export const GenericHero = ({
   layout = 'split',
   className = '',
   badges = [],
+  badgeContainerClassName = '',
   title,
   subtitle,
   description,
@@ -124,7 +126,9 @@ export const GenericHero = ({
           >
             {/* Badges */}
             {badges.length > 0 && (
-              <div className={badgeContainerClass}>
+              <div
+                className={`${badgeContainerClass} ${badgeContainerClassName}`}
+              >
                 {badges.map((badge, index) => (
                   <Badge
                     key={index}
