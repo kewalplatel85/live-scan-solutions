@@ -7,6 +7,7 @@ import Link from 'next/link';
 const footerLinks = {
   services: [
     { name: 'Live Scan', href: '/Live-Scan-Fingerprinting' },
+    { name: 'Mobile Live Scan', href: '/on-site-mobile-live-scan' },
     { name: 'Notary Public', href: '/notary' },
     { name: 'Apostille', href: '/apostille' },
     { name: 'Passport Photos', href: '/passport-photos' },

@@ -32,6 +32,7 @@ import {
 } from 'lucide-react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 const serviceOptions = [
   {
     icon: UserCheck,
@@ -510,6 +511,12 @@ export default function LiveScanPage() {
                   <Phone className="h-4 w-4" />
                   Call to Schedule Mobile Service
                 </a>
+                <Link
+                  href="/on-site-mobile-live-scan"
+                  className="mt-3 inline-flex min-h-11 items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-semibold shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground sm:ml-3 sm:mt-6"
+                >
+                  Learn About Mobile Live Scan
+                </Link>
               </div>
             </div>
           </div>

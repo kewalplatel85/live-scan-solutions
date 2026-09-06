@@ -32,7 +32,7 @@ const primaryServices = [
     title: 'Mobile Live Scan',
     description:
       'On-site Live Scan fingerprinting for qualifying schools, employers, nonprofits, and other groups across the Bay Area.',
-    href: '/Live-Scan-Fingerprinting#mobile-live-scan',
+    href: '/on-site-mobile-live-scan',
     badge: 'Bay Area Mobile Service',
     image: '/assets/services/mobile-live-scan-service.jpg',
     alt: 'Mobile Live Scan fingerprinting equipment set up for an organization in the Bay Area',

@@ -15,6 +15,10 @@ export const navigationConfig: NavigationConfigWithoutDropdown = {
           href: '/Live-Scan-Fingerprinting',
         },
         {
+          name: 'Mobile Live Scan',
+          href: '/on-site-mobile-live-scan',
+        },
+        {
           name: 'Live Scan FAQs',
           href: '/faq',
         },

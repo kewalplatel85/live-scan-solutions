@@ -27,6 +27,11 @@ const CATEGORIES: Record<
 export const ROUTES: RouteDef[] = [
   { path: '/', title: 'Home', category: 'home' },
   { path: '/Live-Scan-Fingerprinting', title: 'Live Scan', category: 'core' },
+  {
+    path: '/on-site-mobile-live-scan',
+    title: 'Mobile Live Scan',
+    category: 'core',
+  },
   { path: '/notary', title: 'Notary', category: 'core' },
   { path: '/apostille', title: 'Apostille', category: 'core' },
   { path: '/passport-photos', title: 'Passport Photos', category: 'standard' },

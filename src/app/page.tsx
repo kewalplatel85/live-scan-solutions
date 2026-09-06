@@ -72,7 +72,7 @@ const nodes = [
     name: 'Mail All Center key services',
     itemListElement: [
       ['Live Scan Fingerprinting', '/Live-Scan-Fingerprinting'],
-      ['Mobile Live Scan', '/Live-Scan-Fingerprinting#mobile-live-scan'],
+      ['Mobile Live Scan', '/on-site-mobile-live-scan'],
       ['FD-258 Fingerprint Cards', '/Live-Scan-Fingerprinting#fd-258'],
       ['Ink Fingerprint Card Service', '/Live-Scan-Fingerprinting#fd-258'],
       ['Notary Public', '/notary'],
