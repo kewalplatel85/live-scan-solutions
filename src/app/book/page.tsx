@@ -106,7 +106,7 @@ const faqItems = [
   {
     question: 'Do I need an appointment, or can I walk in?',
     answer:
-      'Walk-ins are always welcome during business hours (Mon–Fri 10AM–6PM, Sat 10AM–2PM). Booking online is optional but helps reduce your wait time and guarantees your slot.',
+      'Walk-ins are always welcome during business hours (Mon–Fri 9:30AM–6PM, Sat 10AM–2PM). Booking online is optional but helps reduce your wait time and guarantees your slot.',
   },
   {
     question: 'How far in advance should I book?',
@@ -200,8 +200,8 @@ export default function BookPage() {
                     aria-hidden="true"
                   />
                   <span>
-                    Mon–Fri: 10AM–6PM &nbsp;·&nbsp; Sat: 10AM–2PM &nbsp;·&nbsp;
-                    Sun: Closed
+                    Mon–Fri: 9:30AM–6PM &nbsp;·&nbsp; Sat: 10AM–2PM
+                    &nbsp;·&nbsp; Sun: Closed
                   </span>
                 </div>
                 <div className="flex items-start gap-2">
@@ -318,7 +318,7 @@ export default function BookPage() {
                   Business Hours
                 </span>
               </div>
-              <p className="font-bold text-base">Mon – Fri: 10AM – 6PM</p>
+              <p className="font-bold text-base">Mon – Fri: 9:30AM – 6PM</p>
               <p className="text-sm opacity-80 mt-0.5">Saturday: 10AM – 2PM</p>
               <p className="text-sm opacity-60 mt-0.5">Sunday: Closed</p>
             </div>

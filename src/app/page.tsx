@@ -24,13 +24,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Live Scan, Notary, Apostille, Shipping & Passport Photos',
+  title: 'Live Scan, Notary, Passport Photos & Apostille | Mountain View',
   description:
-    'Live Scan, mobile Live Scan, FD-258 ink fingerprints, notary, apostille, passport photos, shipping, mailbox rental, and printing. Walk-ins welcome.',
+    'Live Scan fingerprinting, Notary Public, passport photos, and apostille services in Mountain View, CA. Walk-ins welcome at Mail All Center.',
   openGraph: {
-    title: 'Live Scan, Notary, Apostille, Shipping & Passport Photos',
+    title:
+      'Live Scan, Notary Public, Passport Photos & Apostille | Mail All Center',
     description:
-      'Live Scan, mobile Live Scan, FD-258 ink fingerprints, notary, apostille, passport photos, shipping, mailbox rental, and printing. Walk-ins welcome.',
+      'Professional Live Scan fingerprinting, Notary Public, passport photos, and apostille services in Mountain View, CA. Walk-ins welcome.',
     url: SITE_URL,
     type: 'website',
     locale: 'en_US',
@@ -44,9 +45,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Live Scan, Notary, Apostille, Shipping & Passport Photos',
+    title:
+      'Live Scan, Notary Public, Passport Photos & Apostille | Mail All Center',
     description:
-      'Live Scan, mobile Live Scan, FD-258 ink fingerprints, notary, apostille, passport photos, shipping, mailbox rental, and printing. Walk-ins welcome.',
+      'Professional Live Scan, Notary Public, passport photos, and apostille services in Mountain View, CA.',
     images: [`${SITE_URL}/assets/services/live-scan-service.jpg`],
   },
   alternates: { canonical: SITE_URL },
@@ -60,9 +62,10 @@ const nodes = [
   BUSINESS_NODE,
   buildWebPage({
     url: `${SITE_URL}/`,
-    title: 'Mail All Center – Professional Services in Mountain View, CA',
+    title:
+      'Live Scan, Notary Public, Passport Photos & Apostille in Mountain View, CA',
     description:
-      'Live Scan, mobile Live Scan, FD-258 ink fingerprint cards, Notary Public, apostille, passport photos, shipping, mailbox rental, and printing in Mountain View, serving the Bay Area.',
+      'Professional Live Scan fingerprinting, Notary Public, passport photos, and apostille services at Mail All Center in Mountain View, California.',
   }),
   buildBreadcrumb([{ name: 'Home', url: `${SITE_URL}/` }]),
   {

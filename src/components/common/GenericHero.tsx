@@ -175,7 +175,7 @@ export const GenericHero = ({
                   const Icon = benefit.icon || CheckCircle;
                   return (
                     <div key={index} className="flex items-center space-x-3">
-                      <Icon className="h-5 w-5 text-green-600" />
+                      <Icon className="h-5 w-5 text-success" />
                       <span className="text-sm font-medium">
                         {benefit.text}
                       </span>

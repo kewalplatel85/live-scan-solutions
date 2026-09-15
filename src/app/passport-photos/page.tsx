@@ -1,4 +1,5 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import { PassportPhotoLocationPersonalization } from '@/components/PassportPhotoLocationPersonalization';
 import SEOGraph, {
   buildBreadcrumb,
   buildWebPage,
@@ -119,7 +120,7 @@ export default function PassportPhotosPage() {
         quickInfo={[
           {
             icon: Clock,
-            text: 'Mon-Fri: 10AM-6PM PST | Sat: 10AM-2PM PST | Sun: Closed',
+            text: 'Mon-Fri: 9:30AM-6PM PST | Sat: 10AM-2PM PST | Sun: Closed',
           },
           {
             icon: MapPin,
@@ -242,6 +243,8 @@ export default function PassportPhotosPage() {
           </Card>
         }
       />
+
+      <PassportPhotoLocationPersonalization />
 
       {/* Price Comparison Section */}
       <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-background">

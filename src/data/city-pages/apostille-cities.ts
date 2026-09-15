@@ -119,7 +119,7 @@ export const APOSTILLE_CITIES: ApostilleCityData[] = [
         question:
           'Do I need an appointment for apostille services in Mountain View?',
         answer:
-          'No appointment needed — walk-ins are welcome Monday through Friday from 10AM to 6PM and Saturday from 10AM to 2PM. For complex document needs or multiple documents, we recommend calling (650) 961-4646 to ensure the best service.',
+          'No appointment needed — walk-ins are welcome Monday through Friday from 9:30AM to 6PM and Saturday from 10AM to 2PM. For complex document needs or multiple documents, we recommend calling (650) 961-4646 to ensure the best service.',
       },
       {
         question:
@@ -238,7 +238,7 @@ export const APOSTILLE_CITIES: ApostilleCityData[] = [
         question:
           'Do I need an appointment for apostille services from Palo Alto?',
         answer:
-          'No appointment is necessary — walk-ins are welcome! However, for complex document needs or multiple documents, we recommend calling (650) 961-4646 to ensure we can provide the best service. Our hours are Monday-Friday 10AM-6PM and Saturday 10AM-2PM.',
+          'No appointment is necessary — walk-ins are welcome! However, for complex document needs or multiple documents, we recommend calling (650) 961-4646 to ensure we can provide the best service. Our hours are Monday-Friday 9:30AM-6PM and Saturday 10AM-2PM.',
       },
       {
         question:
@@ -451,7 +451,7 @@ export const APOSTILLE_CITIES: ApostilleCityData[] = [
       {
         question: 'Do I need to come in person from Fremont?',
         answer:
-          'While we welcome walk-ins, we also accept documents via secure mail for customers who prefer not to make the drive. Call (650) 961-4646 to discuss the best option for your situation. Our hours are Monday-Friday 10AM-6PM and Saturday 10AM-2PM.',
+          'While we welcome walk-ins, we also accept documents via secure mail for customers who prefer not to make the drive. Call (650) 961-4646 to discuss the best option for your situation. Our hours are Monday-Friday 9:30AM-6PM and Saturday 10AM-2PM.',
       },
     ],
 
@@ -553,7 +553,7 @@ export const APOSTILLE_CITIES: ApostilleCityData[] = [
       {
         question: 'What are your hours for Los Altos area customers?',
         answer:
-          'We are open Monday through Friday from 10AM to 6PM and Saturday from 10AM to 2PM. No appointment needed — walk-ins are welcome. For complex document needs, we recommend calling ahead at (650) 961-4646.',
+          'We are open Monday through Friday from 9:30AM to 6PM and Saturday from 10AM to 2PM. No appointment needed — walk-ins are welcome. For complex document needs, we recommend calling ahead at (650) 961-4646.',
       },
     ],
 

@@ -347,7 +347,7 @@ export default async function ApostilleCityPage({
         quickInfo={[
           {
             icon: Clock,
-            text: 'Mon-Fri: 10AM-6PM PST | Sat: 10AM-2PM PST | Sun: Closed',
+            text: 'Mon-Fri: 9:30AM-6PM PST | Sat: 10AM-2PM PST | Sun: Closed',
           },
           {
             icon: MapPin,

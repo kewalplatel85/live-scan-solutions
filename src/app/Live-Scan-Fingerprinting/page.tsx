@@ -1,5 +1,5 @@
 import { GenericHero } from '@/components/common/GenericHero';
-import { CustomerTypesAccordion } from '@/components/sections/CustomerTypesAccordion';
+import { LiveScanFormsFinder } from '@/components/LiveScanFormsFinder';
 import SEOGraph, {
   buildBreadcrumb,
   buildHowTo,
@@ -66,6 +66,39 @@ const serviceOptions = [
       'Coordinated group sessions',
       'Corporate invoicing available',
     ],
+  },
+];
+
+const fd258CommonUses = [
+  {
+    title: 'FBI Identity History Summary',
+    description:
+      'Personal FBI background checks and record-review requests submitted with a fingerprint card.',
+  },
+  {
+    title: 'Out-of-State Licensing',
+    description:
+      'Professional licenses in another state when that licensing board requests an FD-258 card.',
+  },
+  {
+    title: 'Federal Firearms Licensing',
+    description:
+      'ATF applications that require fingerprints from an applicant or responsible person.',
+  },
+  {
+    title: 'Federal & Regulated Employment',
+    description:
+      'Government, banking, or regulated positions when the requesting agency specifies FD-258.',
+  },
+  {
+    title: 'International Requirements',
+    description:
+      'Foreign authorities, visas, residency, or overseas employment when ink cards are required.',
+  },
+  {
+    title: 'Adoption & Agency Requests',
+    description:
+      'Domestic or international adoption and other agency-directed fingerprint card submissions.',
   },
 ];
 
@@ -145,7 +178,7 @@ export default function LiveScanPage() {
             <span className="text-primary">Walk-Ins Welcome</span>
           </>
         }
-        subtitle="Rolling Fees Starting at $16.99*"
+        subtitle="Rolling Fee: $17*"
         description="DOJ-listed Live Scan and professional FD-258 ink fingerprinting for employment, licensing, volunteering, and personal records. Customers from anywhere in the Bay Area are welcome to walk into our Mountain View location, or organizations can schedule mobile group service."
         disclaimerText="*Rolling fee only. Additional DOJ/FBI government submission fees apply and vary by application type. Contact us for a complete fee estimate."
         benefits={[
@@ -193,20 +226,20 @@ export default function LiveScanPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                   <div className="absolute left-4 top-4 flex flex-wrap gap-2">
-                    <Badge className="bg-green-600 text-white hover:bg-green-600">
+                    <Badge className="bg-primary text-primary-foreground hover:bg-primary">
                       Digital Submission
                     </Badge>
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Badge className="flex items-center gap-1 bg-white text-gray-900 hover:bg-white">
-                          From $16.99
+                          $17
                           <Info className="h-3 w-3" />
                         </Badge>
                       </TooltipTrigger>
                       <TooltipContent className="max-w-xs">
                         <p className="text-xs">
-                          Rolling fee starts at $16.99. Additional DOJ/FBI
-                          government fees vary by application type.
+                          Rolling fee is $17. Additional DOJ/FBI government fees
+                          vary by application type.
                         </p>
                       </TooltipContent>
                     </Tooltip>
@@ -220,20 +253,17 @@ export default function LiveScanPage() {
                 </div>
                 <ul className="grid gap-2 p-4 text-sm">
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-green-600" />
+                    <Check className="h-4 w-4 text-success" />
                     Real-time quality verification
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-green-600" />
+                    <Check className="h-4 w-4 text-success" />
                     DOJ/FBI electronic submission
                   </li>
                 </ul>
               </article>
 
-              <article
-                id="fd-258"
-                className="group scroll-mt-24 overflow-hidden rounded-2xl border bg-card shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
+              <article className="group overflow-hidden rounded-2xl border bg-card shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src="/assets/services/ink-fingerprinting-service.jpg"
@@ -244,7 +274,7 @@ export default function LiveScanPage() {
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-                  <Badge className="absolute left-4 top-4 bg-purple-600 text-white hover:bg-purple-600">
+                  <Badge className="absolute left-4 top-4 bg-primary text-primary-foreground hover:bg-primary">
                     FBI FD-258 Card
                   </Badge>
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white">
@@ -256,11 +286,11 @@ export default function LiveScanPage() {
                 </div>
                 <ul className="grid gap-2 p-4 text-sm">
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-purple-600" />
+                    <Check className="h-4 w-4 text-primary" />
                     FD-258 cards available
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-purple-600" />
+                    <Check className="h-4 w-4 text-primary" />
                     Domestic and international use
                   </li>
                 </ul>
@@ -270,7 +300,7 @@ export default function LiveScanPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <Card className="p-5">
                 <div className="flex items-start gap-3">
-                  <Shield className="mt-0.5 h-6 w-6 flex-shrink-0 text-orange-600" />
+                  <Shield className="mt-0.5 h-6 w-6 flex-shrink-0 text-primary" />
                   <div>
                     <h3 className="font-semibold">FBI Identity History</h3>
                     <p className="mt-1 text-sm text-muted-foreground">
@@ -282,7 +312,7 @@ export default function LiveScanPage() {
               </Card>
               <Card className="p-5">
                 <div className="flex items-start gap-3">
-                  <MapPin className="mt-0.5 h-6 w-6 flex-shrink-0 text-blue-600" />
+                  <MapPin className="mt-0.5 h-6 w-6 flex-shrink-0 text-primary" />
                   <div>
                     <h3 className="font-semibold">Serving the Bay Area</h3>
                     <p className="mt-1 text-sm text-muted-foreground">
@@ -294,9 +324,9 @@ export default function LiveScanPage() {
               </Card>
             </div>
 
-            <div className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-6 py-3 dark:border-blue-800 dark:bg-blue-950/20">
-              <Shield className="h-5 w-5 text-blue-600 dark:text-blue-400" />
-              <p className="text-sm text-blue-700 dark:text-blue-300">
+            <div className="inline-flex items-center gap-2 rounded-lg border border-primary/20 bg-primary/5 px-6 py-3">
+              <Shield className="h-5 w-5 text-primary" />
+              <p className="text-sm text-foreground">
                 <strong>Mail All Center is listed on the </strong>
                 <a
                   href="https://oag.ca.gov/fingerprints/locations/mail-all-center"
@@ -311,6 +341,89 @@ export default function LiveScanPage() {
           </div>
         }
       />
+
+      {/* FD-258 common uses */}
+      <section
+        id="fd-258"
+        className="scroll-mt-24 border-y bg-background py-10 md:py-12"
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl rounded-3xl border bg-gradient-to-br from-primary/10 via-background to-background p-5 shadow-sm sm:p-7">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-3xl">
+                <Badge className="mb-3 bg-primary text-primary-foreground hover:bg-primary">
+                  Physical Ink Fingerprint Cards
+                </Badge>
+                <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+                  Most Common Uses for FD-258 Fingerprint Cards
+                </h2>
+                <p className="mt-2 leading-relaxed text-muted-foreground">
+                  FD-258 is the FBI&apos;s standard applicant fingerprint card.
+                  It is commonly requested when electronic California Live Scan
+                  is not accepted by the receiving agency.
+                </p>
+              </div>
+              <Link
+                href="/book"
+                className="inline-flex min-h-11 flex-none items-center justify-center rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+              >
+                Book Ink Fingerprinting
+              </Link>
+            </div>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {fd258CommonUses.map((use) => (
+                <article
+                  key={use.title}
+                  className="rounded-xl border bg-background/90 p-4"
+                >
+                  <h3 className="flex items-start gap-2 font-semibold">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                    {use.title}
+                  </h3>
+                  <p className="mt-1.5 pl-6 text-sm leading-relaxed text-muted-foreground">
+                    {use.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+
+            <p className="mt-5 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm leading-relaxed text-foreground">
+              <strong>Important:</strong> Bring the instructions or preprinted
+              card supplied by the receiving agency. That agency—not the
+              fingerprint technician—determines the required card, ORI, reason
+              fingerprinted, and submission method.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Common Live Scan forms */}
+      <section className="border-y bg-muted/35 py-12 md:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <Badge variant="secondary" className="mb-3">
+              Official Agency Forms
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              Find Your Live Scan Form
+            </h2>
+            <p className="mt-3 text-lg text-muted-foreground">
+              Search common California agency forms by profession or
+              application, then bring the correct form with a valid photo ID.
+            </p>
+          </div>
+          <LiveScanFormsFinder />
+          <p className="mx-auto mt-5 max-w-5xl text-center text-sm leading-relaxed text-muted-foreground">
+            Common Live Scan applications include healthcare and childcare
+            employment, teaching credentials, security guard licensing, notary
+            commissions, real estate and insurance licensing, DMV occupational
+            licenses, volunteer screening, government employment, and personal
+            record reviews. Your requesting agency determines the correct form
+            and level of service.
+          </p>
+        </div>
+      </section>
 
       {/* Fingerprinting process */}
       <section className="border-y bg-background py-10 md:py-12">
@@ -406,18 +519,6 @@ export default function LiveScanPage() {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {serviceOptions.map((option, index) => {
-              // Define unique colors for each service option
-              const iconColors = [
-                'bg-blue-50 border-blue-200 dark:bg-blue-950 dark:border-blue-800', // Walk-in: Blue
-                'bg-emerald-50 border-emerald-200 dark:bg-emerald-950 dark:border-emerald-800', // Scheduled: Green
-                'bg-purple-50 border-purple-200 dark:bg-purple-950 dark:border-purple-800', // Mobile: Purple
-              ];
-              const textColors = [
-                'text-blue-600 dark:text-blue-400',
-                'text-emerald-600 dark:text-emerald-400',
-                'text-purple-600 dark:text-purple-400',
-              ];
-
               return (
                 <Card
                   key={index}
@@ -432,10 +533,8 @@ export default function LiveScanPage() {
                     </Badge>
                   )}
                   <CardHeader className="pb-4">
-                    <div
-                      className={`mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full border ${iconColors[index]}`}
-                    >
-                      <option.icon className={`h-7 w-7 ${textColors[index]}`} />
+                    <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-primary/20 bg-primary/10">
+                      <option.icon className="h-7 w-7 text-primary" />
                     </div>
                     <CardTitle className="text-xl text-center">
                       {option.title}
@@ -451,7 +550,7 @@ export default function LiveScanPage() {
                           key={featureIndex}
                           className="flex items-center text-sm"
                         >
-                          <Check className="w-4 h-4 mr-2 text-green-600" />
+                          <Check className="mr-2 h-4 w-4 text-success" />
                           {feature}
                         </li>
                       ))}
@@ -537,8 +636,6 @@ export default function LiveScanPage() {
           </div>
         </div>
       </section>
-
-      <CustomerTypesAccordion />
     </div>
   );
 }

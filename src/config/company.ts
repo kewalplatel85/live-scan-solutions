@@ -43,8 +43,8 @@ export const COMPANY = {
   hours: {
     weekdays: {
       label: 'Mon - Fri',
-      display: '10AM - 6PM PST',
-      opens: '10:00',
+      display: '9:30AM - 6PM PST',
+      opens: '09:30',
       closes: '18:00',
     },
     saturday: {
@@ -57,7 +57,7 @@ export const COMPANY = {
       label: 'Sunday',
       display: 'Closed',
     },
-    summary: 'Mon-Fri 10AM-6PM, Sat 10AM-2PM',
+    summary: 'Mon-Fri 9:30AM-6PM, Sat 10AM-2PM',
   },
 
   // ── Social / Listings ──────────────────────────────────────────────────────

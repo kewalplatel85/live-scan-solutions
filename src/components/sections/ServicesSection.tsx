@@ -143,9 +143,9 @@ export const ServicesSection = () => {
                     />
                   </div>
                 ) : (
-                  <div className="flex aspect-[16/10] items-center justify-center bg-gradient-to-br from-violet-100 to-indigo-100 dark:from-violet-950/60 dark:to-indigo-950/60">
-                    <div className="flex h-20 w-20 items-center justify-center rounded-3xl border border-violet-200 bg-white/80 shadow-sm dark:border-violet-800 dark:bg-gray-950/70">
-                      <Icon className="h-10 w-10 text-violet-600" />
+                  <div className="flex aspect-[16/10] items-center justify-center bg-gradient-to-br from-primary/10 to-primary/20">
+                    <div className="flex h-20 w-20 items-center justify-center rounded-3xl border border-primary/20 bg-background/80 shadow-sm">
+                      <Icon className="h-10 w-10 text-primary" />
                     </div>
                   </div>
                 )}
