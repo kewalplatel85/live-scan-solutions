@@ -19,11 +19,14 @@ import { badgeData } from '@/data/badges';
 import { liveScanServiceSchema } from '@/data/google-business-schema';
 import { SITE_URL } from '@/lib/config';
 import {
+  ArrowRight,
   CalendarCheck,
   CalendarClock,
   Check,
   CreditCard,
+  FileSearch,
   Info,
+  ListChecks,
   MapPin,
   Phone,
   Shield,
@@ -261,6 +264,15 @@ export default function LiveScanPage() {
                     DOJ/FBI electronic submission
                   </li>
                 </ul>
+                <div className="border-t px-4 py-3">
+                  <Link
+                    href="#live-scan-forms"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                  >
+                    Find your request form
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </article>
 
               <article className="group overflow-hidden rounded-2xl border bg-card shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -294,6 +306,15 @@ export default function LiveScanPage() {
                     Domestic and international use
                   </li>
                 </ul>
+                <div className="border-t px-4 py-3">
+                  <Link
+                    href="#fd-258"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                  >
+                    See when FD-258 is used
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </article>
             </div>
 
@@ -342,64 +363,55 @@ export default function LiveScanPage() {
         }
       />
 
-      {/* FD-258 common uses */}
-      <section
-        id="fd-258"
-        className="scroll-mt-24 border-y bg-background py-10 md:py-12"
+      {/* Page navigator */}
+      <nav
+        aria-label="Live Scan page sections"
+        className="border-y bg-background py-4"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-6xl rounded-3xl border bg-gradient-to-br from-primary/10 via-background to-background p-5 shadow-sm sm:p-7">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-              <div className="max-w-3xl">
-                <Badge className="mb-3 bg-primary text-primary-foreground hover:bg-primary">
-                  Physical Ink Fingerprint Cards
-                </Badge>
-                <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-                  Most Common Uses for FD-258 Fingerprint Cards
-                </h2>
-                <p className="mt-2 leading-relaxed text-muted-foreground">
-                  FD-258 is the FBI&apos;s standard applicant fingerprint card.
-                  It is commonly requested when electronic California Live Scan
-                  is not accepted by the receiving agency.
-                </p>
-              </div>
-              <Link
-                href="/book"
-                className="inline-flex min-h-11 flex-none items-center justify-center rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
-              >
-                Book Ink Fingerprinting
-              </Link>
-            </div>
-
-            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {fd258CommonUses.map((use) => (
-                <article
-                  key={use.title}
-                  className="rounded-xl border bg-background/90 p-4"
-                >
-                  <h3 className="flex items-start gap-2 font-semibold">
-                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                    {use.title}
-                  </h3>
-                  <p className="mt-1.5 pl-6 text-sm leading-relaxed text-muted-foreground">
-                    {use.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-
-            <p className="mt-5 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm leading-relaxed text-foreground">
-              <strong>Important:</strong> Bring the instructions or preprinted
-              card supplied by the receiving agency. That agency—not the
-              fingerprint technician—determines the required card, ORI, reason
-              fingerprinted, and submission method.
+          <div className="mx-auto grid max-w-6xl gap-3 sm:grid-cols-2 lg:grid-cols-[auto_repeat(4,minmax(0,1fr))] lg:items-center">
+            <p className="text-sm font-bold uppercase tracking-wide text-muted-foreground sm:col-span-2 lg:col-span-1">
+              Start here
             </p>
+            {[
+              {
+                href: '#live-scan-forms',
+                label: 'Find My Form',
+                icon: FileSearch,
+              },
+              {
+                href: '#what-to-expect',
+                label: 'Prepare for My Visit',
+                icon: ListChecks,
+              },
+              { href: '#fd-258', label: 'FD-258 Ink Cards', icon: Shield },
+              {
+                href: '#mobile-live-scan',
+                label: 'Mobile Group Service',
+                icon: Truck,
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex min-h-12 items-center justify-between gap-3 rounded-xl border bg-card px-4 py-3 text-sm font-semibold shadow-sm transition-colors hover:border-primary/40 hover:bg-primary/5"
+              >
+                <span className="flex items-center gap-2">
+                  <item.icon className="h-4 w-4 text-primary" />
+                  {item.label}
+                </span>
+                <ArrowRight className="h-4 w-4 text-muted-foreground" />
+              </Link>
+            ))}
           </div>
         </div>
-      </section>
+      </nav>
 
       {/* Common Live Scan forms */}
-      <section className="border-y bg-muted/35 py-12 md:py-16">
+      <section
+        id="live-scan-forms"
+        className="scroll-mt-24 bg-muted/35 py-12 md:py-16"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <Badge variant="secondary" className="mb-3">
@@ -426,7 +438,10 @@ export default function LiveScanPage() {
       </section>
 
       {/* Fingerprinting process */}
-      <section className="border-y bg-background py-10 md:py-12">
+      <section
+        id="what-to-expect"
+        className="scroll-mt-24 border-y bg-background py-10 md:py-12"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-8 max-w-4xl text-center">
             <Badge variant="secondary" className="mb-3">
@@ -504,8 +519,61 @@ export default function LiveScanPage() {
         </div>
       </section>
 
+      {/* FD-258 common uses */}
+      <section id="fd-258" className="scroll-mt-24 bg-muted/35 py-10 md:py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl rounded-3xl border bg-gradient-to-br from-primary/10 via-background to-background p-5 shadow-sm sm:p-7">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-3xl">
+                <Badge className="mb-3 bg-primary text-primary-foreground hover:bg-primary">
+                  Physical Ink Fingerprint Cards
+                </Badge>
+                <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+                  Most Common Uses for FD-258 Fingerprint Cards
+                </h2>
+                <p className="mt-2 leading-relaxed text-muted-foreground">
+                  FD-258 is the FBI&apos;s standard applicant fingerprint card.
+                  It is commonly requested when electronic California Live Scan
+                  is not accepted by the receiving agency.
+                </p>
+              </div>
+              <Link
+                href="/book"
+                className="inline-flex min-h-11 flex-none items-center justify-center rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+              >
+                Book Ink Fingerprinting
+              </Link>
+            </div>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {fd258CommonUses.map((use) => (
+                <article
+                  key={use.title}
+                  className="rounded-xl border bg-background/90 p-4"
+                >
+                  <h3 className="flex items-start gap-2 font-semibold">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                    {use.title}
+                  </h3>
+                  <p className="mt-1.5 pl-6 text-sm leading-relaxed text-muted-foreground">
+                    {use.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+
+            <p className="mt-5 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm leading-relaxed text-foreground">
+              <strong>Important:</strong> Bring the instructions or preprinted
+              card supplied by the receiving agency. That agency—not the
+              fingerprint technician—determines the required card, ORI, reason
+              fingerprinted, and submission method.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Service Options */}
-      <section className="bg-muted/50 py-12">
+      <section className="border-t bg-background py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-9 text-center">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
@@ -598,7 +666,7 @@ export default function LiveScanPage() {
                       key={feature}
                       className="flex items-start gap-2 text-sm"
                     >
-                      <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
+                      <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-success" />
                       {feature}
                     </li>
                   ))}

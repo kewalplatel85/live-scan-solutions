@@ -192,6 +192,22 @@ export function LiveScanFormsFinder() {
 
   return (
     <div className="mx-auto mt-8 max-w-6xl overflow-hidden rounded-3xl border bg-card shadow-lg shadow-slate-200/40 dark:shadow-none">
+      <div className="flex flex-col gap-2 border-b border-amber-200 bg-amber-50/80 px-4 py-3 text-sm leading-relaxed text-amber-950 dark:border-amber-900 dark:bg-amber-950/20 dark:text-amber-100 sm:flex-row sm:items-center sm:justify-between sm:px-5">
+        <p>
+          <strong>Have a form from your employer or requesting agency?</strong>{' '}
+          Bring and use that exact form. Its ORI and application details
+          identify the agency that should receive your results.
+        </p>
+        <a
+          href="https://oag.ca.gov/fingerprints/forms"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-none font-semibold text-primary underline underline-offset-4 dark:text-blue-300"
+        >
+          Browse all DOJ forms
+        </a>
+      </div>
+
       <div className="border-b bg-gradient-to-r from-primary/10 via-primary/5 to-background p-4 sm:p-5">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -293,21 +309,6 @@ export function LiveScanFormsFinder() {
             </p>
           </div>
         )}
-      </div>
-
-      <div className="flex flex-col gap-2 border-t border-amber-200 bg-amber-50/80 px-4 py-3 text-sm leading-relaxed text-amber-950 dark:border-amber-900 dark:bg-amber-950/20 dark:text-amber-100 sm:flex-row sm:items-center sm:justify-between sm:px-5">
-        <p>
-          <strong>Have an agency form?</strong> Use it—the ORI routes your
-          results correctly.
-        </p>
-        <a
-          href="https://oag.ca.gov/fingerprints/forms"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-none font-semibold text-primary underline underline-offset-4 dark:text-blue-300"
-        >
-          Browse all DOJ forms
-        </a>
       </div>
     </div>
   );
