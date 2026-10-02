@@ -181,7 +181,7 @@ export default function LiveScanPage() {
             <span className="text-primary">Walk-Ins Welcome</span>
           </>
         }
-        subtitle="Rolling Fee: $17*"
+        subtitle="Rolling Fee: $19*"
         description="DOJ-listed Live Scan and professional FD-258 ink fingerprinting for employment, licensing, volunteering, and personal records. Customers from anywhere in the Bay Area are welcome to walk into our Mountain View location, or organizations can schedule mobile group service."
         disclaimerText="*Rolling fee only. Additional DOJ/FBI government submission fees apply and vary by application type. Contact us for a complete fee estimate."
         benefits={[
@@ -235,13 +235,13 @@ export default function LiveScanPage() {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Badge className="flex items-center gap-1 bg-white text-gray-900 hover:bg-white">
-                          $17
+                          $19
                           <Info className="h-3 w-3" />
                         </Badge>
                       </TooltipTrigger>
                       <TooltipContent className="max-w-xs">
                         <p className="text-xs">
-                          Rolling fee is $17. Additional DOJ/FBI government fees
+                          Rolling fee is $19. Additional DOJ/FBI government fees
                           vary by application type.
                         </p>
                       </TooltipContent>

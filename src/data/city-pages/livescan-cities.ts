@@ -72,7 +72,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
 
     metaTitle: 'Walk-In Live Scan in Mountain View | Fast DOJ & FBI Service',
     metaDescription:
-      'DOJ & FBI approved Live Scan fingerprinting for Mountain View residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $17 rolling fee.',
+      'DOJ & FBI approved Live Scan fingerprinting for Mountain View residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $19 rolling fee.',
     keywords:
       'live scan mountain view, fingerprinting mountain view, live scan fingerprinting mountain view ca, live scan near me mountain view, fingerprinting near me mountain view, doj fingerprinting mountain view, fbi fingerprinting mountain view, background check mountain view, fd-258 mountain view, ink fingerprinting mountain view, mobile fingerprinting mountain view, mountain view live scan, certified live scan mountain view, live scan provider mountain view, mountain view fingerprint services',
 
@@ -161,7 +161,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
       {
         title: 'Lowest Rolling Fee in the Bay Area',
         description:
-          'Our rolling fee is $17 — the lowest in the area. Additional government DOJ/FBI fees apply based on your application type.',
+          'Our rolling fee is $19 — the lowest in the area. Additional government DOJ/FBI fees apply based on your application type.',
       },
       {
         title: '15+ Years Serving Mountain View',
@@ -233,7 +233,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
 
     metaTitle: 'Live Scan Near Sunnyvale | Walk-Ins & Mobile Group Service',
     metaDescription:
-      'DOJ & FBI approved Live Scan fingerprinting for Sunnyvale residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $17 rolling fee.',
+      'DOJ & FBI approved Live Scan fingerprinting for Sunnyvale residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $19 rolling fee.',
     keywords:
       'live scan sunnyvale, fingerprinting sunnyvale, live scan fingerprinting sunnyvale ca, live scan near me sunnyvale, fingerprinting near me sunnyvale, doj fingerprinting sunnyvale, fbi fingerprinting sunnyvale, background check sunnyvale, fd-258 sunnyvale, ink fingerprinting sunnyvale, mobile fingerprinting sunnyvale, sunnyvale live scan, certified live scan sunnyvale, sunnyvale school district fingerprinting, sunnyvale background check',
 
@@ -244,7 +244,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
       'Fast, Certified Live Scan Fingerprinting for Sunnyvale Residents & Organizations',
     introContent: [
       "Sunnyvale is one of Silicon Valley's largest and most dynamic cities — home to LinkedIn, Yahoo, Juniper Networks, and a thriving international workforce. Whether you're a tech professional needing employment background checks, a teacher joining the Sunnyvale School District, or a volunteer coaching at AYSO Sunnyvale, Mail All Center provides DOJ-listed, FBI-approved Live Scan fingerprinting just 10 minutes from downtown Sunnyvale.",
-      'The Sunnyvale School District and Fremont Union High School District require background checks for all employees, substitute teachers, and parent volunteers. Local organizations like Sunnyvale Presbyterian Church, St. Martin Episcopal Church, and community sports leagues also mandate Live Scan for volunteer leaders. Our affordable $17 rolling fee and walk-in convenience make us the go-to provider for Sunnyvale families and professionals.',
+      'The Sunnyvale School District and Fremont Union High School District require background checks for all employees, substitute teachers, and parent volunteers. Local organizations like Sunnyvale Presbyterian Church, St. Martin Episcopal Church, and community sports leagues also mandate Live Scan for volunteer leaders. Our affordable $19 rolling fee and walk-in convenience make us the go-to provider for Sunnyvale families and professionals.',
       "Located at 809 Cuesta Dr, Suite B in neighboring Mountain View, our office is a quick drive from Sunnyvale via El Camino Real or Highway 85. We also offer mobile fingerprinting services — we'll come to your Sunnyvale office, school, or community center for groups of 5 or more.",
     ],
 
@@ -364,7 +364,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
       {
         question: 'How much does a Live Scan cost for Sunnyvale residents?',
         answer:
-          'Our rolling fee is $17 — the lowest in the Bay Area. Additional government DOJ and/or FBI submission fees apply and vary by application type (typically $32-$75 depending on the agency). Contact us at (650) 961-4646 for a complete fee estimate for your specific application.',
+          'Our rolling fee is $19 — the lowest in the Bay Area. Additional government DOJ and/or FBI submission fees apply and vary by application type (typically $32-$75 depending on the agency). Contact us at (650) 961-4646 for a complete fee estimate for your specific application.',
       },
     ],
 
@@ -391,7 +391,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
 
     metaTitle: 'Live Scan Near Palo Alto | Fast Walk-Ins & FD-258 Cards',
     metaDescription:
-      'DOJ & FBI approved Live Scan fingerprinting for Palo Alto residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $17 rolling fee.',
+      'DOJ & FBI approved Live Scan fingerprinting for Palo Alto residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $19 rolling fee.',
     keywords:
       'live scan palo alto, fingerprinting palo alto, live scan fingerprinting palo alto ca, live scan near me palo alto, fingerprinting near me palo alto, doj fingerprinting palo alto, fbi fingerprinting palo alto, background check palo alto, fd-258 palo alto, ink fingerprinting palo alto, mobile fingerprinting palo alto, palo alto live scan, palo alto unified school district fingerprinting, stanford fingerprinting, palo alto background check',
 
@@ -404,7 +404,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     introContent: [
       "Palo Alto is home to Stanford University, VMware, HP Enterprise, and a vibrant community of educators, medical professionals, and entrepreneurs. Whether you're a Stanford employee needing a background check, a teacher at Palo Alto Unified, or a volunteer at a local youth organization, Mail All Center provides DOJ-listed, FBI-approved Live Scan fingerprinting just 10 minutes from downtown Palo Alto.",
       "The Palo Alto Unified School District (PAUSD) is one of the highest-rated districts in California and requires background checks for all employees, substitute teachers, and volunteer parents. Stanford University's extensive childcare and K-12 programs also mandate Live Scan for staff. Community organizations like the Palo Alto Family YMCA, All Saints Episcopal Church, and local Boy Scout troops rely on background checks for their volunteer leaders.",
-      "Our Mountain View office at 809 Cuesta Dr, Suite B is easily reachable from Palo Alto via El Camino Real or Highway 101 South. With our $17 rolling fee — the lowest in the area — and walk-in convenience, we're the most affordable and accessible option for Palo Alto residents who need fingerprinting done right.",
+      "Our Mountain View office at 809 Cuesta Dr, Suite B is easily reachable from Palo Alto via El Camino Real or Highway 101 South. With our $19 rolling fee — the lowest in the area — and walk-in convenience, we're the most affordable and accessible option for Palo Alto residents who need fingerprinting done right.",
     ],
 
     targetAudience: [
@@ -479,7 +479,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
       {
         title: 'Lowest Rolling Fee in the Area',
         description:
-          'The $17 rolling fee is significantly less than Palo Alto-area competitors. Additional government fees apply based on application type.',
+          'The $19 rolling fee is significantly less than Palo Alto-area competitors. Additional government fees apply based on application type.',
       },
       {
         title: 'Mobile Service to Palo Alto',
@@ -551,7 +551,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
 
     metaTitle: 'Live Scan Near San Jose | Walk-Ins & Mobile Service',
     metaDescription:
-      'DOJ & FBI approved Live Scan fingerprinting for San Jose residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $17 rolling fee.',
+      'DOJ & FBI approved Live Scan fingerprinting for San Jose residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $19 rolling fee.',
     keywords:
       'live scan san jose, fingerprinting san jose, live scan fingerprinting san jose ca, live scan near me san jose, fingerprinting near me san jose, doj fingerprinting san jose, fbi fingerprinting san jose, background check san jose, fd-258 san jose, ink fingerprinting san jose, mobile fingerprinting san jose, san jose live scan, san jose unified school district fingerprinting, sjsu fingerprinting, san jose background check, east side union high school district',
 
@@ -563,7 +563,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     introContent: [
       "San Jose — the capital of Silicon Valley and largest city in the Bay Area — has a massive need for Live Scan fingerprinting services. With major employers like Adobe, Cisco, eBay, and PayPal headquartered here, plus one of California's largest school systems, thousands of San Jose residents need DOJ and FBI background checks every year. Mail All Center provides fast, certified Live Scan fingerprinting just 20 minutes from downtown San Jose.",
       "San Jose Unified School District, East Side Union High School District, and dozens of charter and private schools require background checks for teachers, aides, coaches, and parent volunteers. The Diocese of San Jose mandates fingerprinting for church employees and volunteers working with youth. Healthcare workers at Regional Medical Center, O'Connor Hospital, and Kaiser San Jose also rely on Live Scan for employment and licensing.",
-      "Our Mountain View location at 809 Cuesta Dr, Suite B is easily reachable from San Jose via Highway 101 North. With our $17 rolling fee — the lowest in the Bay Area — you'll save money compared to many San Jose providers. For large groups, we offer convenient mobile fingerprinting anywhere in San Jose.",
+      "Our Mountain View location at 809 Cuesta Dr, Suite B is easily reachable from San Jose via Highway 101 North. With our $19 rolling fee — the lowest in the Bay Area — you'll save money compared to many San Jose providers. For large groups, we offer convenient mobile fingerprinting anywhere in San Jose.",
     ],
 
     targetAudience: [
@@ -630,7 +630,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
           'Just 20 minutes from downtown San Jose via Highway 101 North. Convenient for South Bay residents who want same-day service.',
       },
       {
-        title: 'Lowest Rolling Fee — $17',
+        title: 'Lowest Rolling Fee — $19',
         description:
           'Save money compared to many San Jose providers. Additional government DOJ/FBI fees apply based on your application type.',
       },
@@ -688,7 +688,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
         question:
           'Is it worth driving from San Jose to Mountain View for Live Scan?',
         answer:
-          'Absolutely. Our rolling fee is $17 — often $10-20 less than San Jose providers. The 20-minute drive via Highway 101 could save you significant money, especially for families needing multiple scans. Plus, we offer walk-in service with no wait.',
+          'Absolutely. Our rolling fee is $19 — often $10-20 less than San Jose providers. The 20-minute drive via Highway 101 could save you significant money, especially for families needing multiple scans. Plus, we offer walk-in service with no wait.',
       },
     ],
 
@@ -715,7 +715,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
 
     metaTitle: 'Live Scan Near Menlo Park | Walk-Ins, FD-258 & Group Service',
     metaDescription:
-      'DOJ & FBI approved Live Scan fingerprinting for Menlo Park residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $17 rolling fee.',
+      'DOJ & FBI approved Live Scan fingerprinting for Menlo Park residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $19 rolling fee.',
     keywords:
       'live scan menlo park, fingerprinting menlo park, live scan fingerprinting menlo park ca, live scan near me menlo park, fingerprinting near me menlo park, doj fingerprinting menlo park, fbi fingerprinting menlo park, background check menlo park, fd-258 menlo park, ink fingerprinting menlo park, mobile fingerprinting menlo park, menlo park live scan, stanford fingerprinting, meta menlo park fingerprinting, menlo park background check',
 
@@ -728,7 +728,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     introContent: [
       'Menlo Park is home to world-renowned companies like Meta (Facebook), SRI International, and the prestigious venture capital firms along Sand Hill Road. It’s also closely tied to the Stanford University community. Thousands of Menlo Park professionals, educators, and volunteers require Live Scan fingerprinting each year for employment, state licensing, and background checks. Mail All Center, located just 12 minutes away in Mountain View, provides certified, DOJ-listed Live Scan services to the Menlo Park community.',
       'The Menlo Park City School District and Sequoia Union High School District require fingerprinting for all teachers, aides, coaches, and parent volunteers. Healthcare workers affiliated with nearby Stanford Health Care also rely on Live Scan for employment and licensing. Additionally, volunteers for local religious organizations and youth sports leagues must undergo mandatory background checks.',
-      'Our Mountain View office at 809 Cuesta Dr, Suite B is a quick drive down El Camino Real or Highway 101 from Menlo Park. With our low $17 rolling fee and fast walk-in convenience, we offer a highly accessible fingerprinting solution. For corporate clients, schools, and large groups, we also provide mobile fingerprinting directly in Menlo Park.',
+      'Our Mountain View office at 809 Cuesta Dr, Suite B is a quick drive down El Camino Real or Highway 101 from Menlo Park. With our low $19 rolling fee and fast walk-in convenience, we offer a highly accessible fingerprinting solution. For corporate clients, schools, and large groups, we also provide mobile fingerprinting directly in Menlo Park.',
     ],
 
     targetAudience: [
@@ -801,7 +801,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
           'We regularly process Live Scans for local school district employees, tech contractors, and volunteers.',
       },
       {
-        title: '$17 Rolling Fee',
+        title: '$19 Rolling Fee',
         description:
           'The lowest rolling fee in the area. Additional government DOJ/FBI fees apply based on your specific application type.',
       },
@@ -874,7 +874,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
 
     metaTitle: 'Live Scan Near Cupertino | Walk-Ins & Mobile Service',
     metaDescription:
-      'DOJ & FBI approved Live Scan fingerprinting for Cupertino residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $17 rolling fee.',
+      'DOJ & FBI approved Live Scan fingerprinting for Cupertino residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $19 rolling fee.',
     keywords:
       'live scan cupertino, fingerprinting cupertino, live scan fingerprinting cupertino ca, live scan near me cupertino, fingerprinting near me cupertino, doj fingerprinting cupertino, fbi fingerprinting cupertino, background check cupertino, fd-258 cupertino, ink fingerprinting cupertino, mobile fingerprinting cupertino, cupertino live scan, cupertino union school district fingerprinting, cupertino background check, apple park fingerprinting',
 
@@ -886,7 +886,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     introContent: [
       "Cupertino is world-renowned as the home of Apple Inc. and one of Silicon Valley's most family-oriented communities. With top-ranked schools, active youth sports leagues, and a diverse population, thousands of Cupertino residents need Live Scan fingerprinting each year for education, volunteering, healthcare, and professional licensing. Mail All Center provides certified, DOJ-listed Live Scan services just 15 minutes from Cupertino.",
       'The Cupertino Union School District (CUSD) and Fremont Union High School District are among the highest-rated in the state and require fingerprinting for all employees, substitute teachers, and parent volunteers. Local organizations like St. Joseph of Cupertino Catholic Church, the Cupertino Library, and AYSO Cupertino also require Live Scan for volunteer leaders working with children.',
-      "Our Mountain View office at 809 Cuesta Dr, Suite B is easily accessible from Cupertino via Stevens Creek Blvd or Highway 85 North. With our $17 rolling fee — the lowest in the Bay Area — and walk-in convenience, we're the most affordable choice for Cupertino residents. We also offer mobile fingerprinting directly at Cupertino businesses and schools for groups.",
+      "Our Mountain View office at 809 Cuesta Dr, Suite B is easily accessible from Cupertino via Stevens Creek Blvd or Highway 85 North. With our $19 rolling fee — the lowest in the Bay Area — and walk-in convenience, we're the most affordable choice for Cupertino residents. We also offer mobile fingerprinting directly at Cupertino businesses and schools for groups.",
     ],
 
     targetAudience: [
@@ -958,7 +958,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
           'We regularly process Live Scans for Cupertino Union School District employees, parent volunteers, and local preschool staff.',
       },
       {
-        title: 'Lowest Rolling Fee — $17',
+        title: 'Lowest Rolling Fee — $19',
         description:
           'The lowest rolling fee in the Bay Area. Additional government DOJ/FBI fees apply based on your application type.',
       },
@@ -1037,7 +1037,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
 
     metaTitle: 'Live Scan Near Los Altos | Easy Walk-Ins & FD-258 Cards',
     metaDescription:
-      'DOJ & FBI approved Live Scan fingerprinting for Los Altos residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $17 rolling fee.',
+      'DOJ & FBI approved Live Scan fingerprinting for Los Altos residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $19 rolling fee.',
     keywords:
       'live scan los altos, fingerprinting los altos, live scan fingerprinting los altos ca, live scan near me los altos, fingerprinting near me los altos, doj fingerprinting los altos, fbi fingerprinting los altos, background check los altos, fd-258 los altos, ink fingerprinting los altos, mobile fingerprinting los altos, los altos live scan, los altos school district fingerprinting, mountain view los altos fingerprinting, los altos background check',
 
@@ -1049,7 +1049,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
       'Convenient Live Scan Fingerprinting for Los Altos Residents & Organizations',
     introContent: [
       'Los Altos is an affluent, family-centered community in the heart of Silicon Valley known for its outstanding schools, active volunteer culture, and proximity to major tech companies. Parents and educators in Los Altos are among the most engaged in the region — and many of them need Live Scan fingerprinting for school volunteering, coaching, and professional licensing. Mail All Center is the closest DOJ-listed Live Scan provider, just 8 minutes away.',
-      'The Los Altos School District and Mountain View Los Altos High School District (MVLA) require background checks for all employees, substitute teachers, and parent volunteers. Local institutions like St. Nicholas Catholic Church, St. Simon Catholic Parish, and the Los Altos Library also mandate Live Scan for volunteers working with children. With our $17 rolling fee, we offer the most affordable option for Los Altos families.',
+      'The Los Altos School District and Mountain View Los Altos High School District (MVLA) require background checks for all employees, substitute teachers, and parent volunteers. Local institutions like St. Nicholas Catholic Church, St. Simon Catholic Parish, and the Los Altos Library also mandate Live Scan for volunteers working with children. With our $19 rolling fee, we offer the most affordable option for Los Altos families.',
       'Our Mountain View office at 809 Cuesta Dr, Suite B is the nearest certified Live Scan provider to Los Altos — an easy 8-minute drive via San Antonio Rd or Foothill Expressway. Walk-ins are always welcome, and we also offer mobile fingerprinting for Los Altos schools and organizations.',
     ],
 
@@ -1122,7 +1122,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
           'We regularly process Live Scans for Los Altos School District employees, MVLA staff, and parent volunteers.',
       },
       {
-        title: 'Lowest Rolling Fee — $17',
+        title: 'Lowest Rolling Fee — $19',
         description:
           'The lowest rolling fee in the area. Additional government DOJ/FBI fees apply based on your application type.',
       },
@@ -1199,7 +1199,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
 
     metaTitle: 'Mobile Live Scan in Fremont | On-Site Group Fingerprinting',
     metaDescription:
-      'DOJ & FBI approved Live Scan fingerprinting for Fremont residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $17 rolling fee.',
+      'DOJ & FBI approved Live Scan fingerprinting for Fremont residents. Fast walk-ins, mobile group services, and FD-258 ink cards, with a $19 rolling fee.',
     keywords:
       'live scan fremont, fingerprinting fremont, live scan fingerprinting fremont ca, live scan near me fremont, fingerprinting near me fremont, doj fingerprinting fremont, fbi fingerprinting fremont, background check fremont, fd-258 fremont, ink fingerprinting fremont, mobile fingerprinting fremont, fremont live scan, fremont unified school district fingerprinting, tesla fremont fingerprinting, fremont background check, ohlone college fingerprinting',
 
@@ -1211,7 +1211,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
     introContent: [
       "Fremont is one of the Bay Area's most populous cities, home to the Tesla factory, Ohlone College, and a massive community of families and professionals. Thousands of Fremont residents require Live Scan fingerprinting annually for employment, state licensing, volunteering, and healthcare certifications. Mail All Center, located in nearby Mountain View, provides certified, DOJ-listed Live Scan services that are often more affordable and accessible than options within Fremont.",
       'The Fremont Unified School District (FUSD) requires fingerprinting for all teachers, aides, substitute teachers, and parent volunteers. Healthcare workers at Washington Hospital Healthcare System and Kaiser Permanente Fremont also rely on Live Scan for employment and state licensing. Additionally, volunteers for local religious organizations like Mission San Jose and various youth sports leagues must undergo mandatory background checks.',
-      'Our office at 809 Cuesta Dr, Suite B in Mountain View is a straightforward drive from Fremont across the Dumbarton Bridge (CA-84) or via CA-237. With our low $17 rolling fee and walk-in convenience, many Fremont residents find it worth the quick trip. For corporate clients, schools, and large groups, we also offer convenient mobile fingerprinting directly in Fremont.',
+      'Our office at 809 Cuesta Dr, Suite B in Mountain View is a straightforward drive from Fremont across the Dumbarton Bridge (CA-84) or via CA-237. With our low $19 rolling fee and walk-in convenience, many Fremont residents find it worth the quick trip. For corporate clients, schools, and large groups, we also offer convenient mobile fingerprinting directly in Fremont.',
     ],
 
     targetAudience: [
@@ -1280,7 +1280,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
           'Officially listed on the California DOJ website as an approved Live Scan location. Your fingerprints go directly to the state and federal databases.',
       },
       {
-        title: 'Lowest Rolling Fee — $17',
+        title: 'Lowest Rolling Fee — $19',
         description:
           'Save money compared to many East Bay providers. Additional government DOJ/FBI fees apply based on your application type.',
       },
@@ -1331,7 +1331,7 @@ export const LIVESCAN_CITIES: LiveScanCityData[] = [
         question:
           'Is it worth driving from Fremont to Mountain View for Live Scan?',
         answer:
-          'Yes. Our rolling fee is $17 — often less than East Bay providers. The drive across the bridge is straightforward, and we offer walk-in service with no wait, making it a fast and affordable option.',
+          'Yes. Our rolling fee is $19 — often less than East Bay providers. The drive across the bridge is straightforward, and we offer walk-in service with no wait, making it a fast and affordable option.',
       },
     ],
 

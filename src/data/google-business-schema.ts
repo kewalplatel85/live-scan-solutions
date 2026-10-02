@@ -238,7 +238,7 @@ export const businessSchema = {
             'Live Scan fingerprint submission services for employment, licensing, and background checks. Electronic fingerprinting with same-day processing.',
           serviceType: 'Fingerprinting Service',
         },
-        price: 17,
+        price: 19,
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
       },
@@ -444,7 +444,7 @@ export const liveScanServiceSchema = {
   offers: {
     '@type': 'Offer',
     name: 'Live Scan Fingerprinting Service',
-    price: 17,
+    price: 19,
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     validFrom: '2010-01-01',
