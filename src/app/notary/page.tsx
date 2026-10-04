@@ -1,4 +1,5 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import { NearbyServiceCities } from '@/components/NearbyServiceCities';
 import SEOGraph, {
   buildBreadcrumb,
   buildWebPage,
@@ -531,6 +532,7 @@ export default function NotaryPublicPage() {
           </p>
         </div>
       </section>
+      <NearbyServiceCities serviceName="Notary Public Service" />
     </main>
   );
 }

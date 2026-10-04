@@ -3,13 +3,18 @@
 import { Button } from '@/components/ui/button';
 import { COMPANY } from '@/config/company';
 import { LocateFixed, MapPin, Navigation, RotateCcw } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 type SupportedCity = {
   name: string;
   driveTime: string;
   latitude: number;
   longitude: number;
+};
+
+type ServiceLocationPersonalizationProps = {
+  serviceName: string;
+  cityDescription: string;
 };
 
 const STORAGE_KEY = 'passport-photo-nearby-city';
@@ -107,7 +112,10 @@ function findNearestCity(latitude: number, longitude: number) {
   });
 }
 
-export function PassportPhotoLocationPersonalization() {
+export function ServiceLocationPersonalization({
+  serviceName,
+  cityDescription,
+}: ServiceLocationPersonalizationProps) {
   const [selectedCity, setSelectedCity] = useState<SupportedCity | null>(null);
   const [locationStatus, setLocationStatus] = useState<
     'idle' | 'locating' | 'error'
@@ -122,7 +130,7 @@ export function PassportPhotoLocationPersonalization() {
     if (savedCity) setSelectedCity(savedCity);
   }, []);
 
-  const chooseCity = (city: SupportedCity | null) => {
+  const chooseCity = useCallback((city: SupportedCity | null) => {
     setSelectedCity(city);
     setLocationStatus('idle');
     setLocationMessage('');
@@ -132,12 +140,22 @@ export function PassportPhotoLocationPersonalization() {
     } else {
       window.localStorage.removeItem(STORAGE_KEY);
     }
-  };
+  }, []);
 
-  const useMyLocation = () => {
+  const locateNearestCity = useCallback(() => {
     if (!navigator.geolocation) {
       setLocationStatus('error');
-      setLocationMessage('Location is not available in this browser.');
+      setLocationMessage(
+        'Location is not available in this browser. Please select your city instead.'
+      );
+      return;
+    }
+
+    if (!window.isSecureContext) {
+      setLocationStatus('error');
+      setLocationMessage(
+        'Location is available on the secure live site. Please select your city while previewing locally.'
+      );
       return;
     }
 
@@ -156,22 +174,64 @@ export function PassportPhotoLocationPersonalization() {
         if (distanceFromStore > MAX_NEARBY_DISTANCE_MILES) {
           setLocationStatus('error');
           setLocationMessage(
-            'You appear to be outside our nearby service area. Select a city to preview the experience.'
+            'You appear to be outside our nearby service area. Select a city to see directions from a nearby location.'
           );
           return;
         }
 
         chooseCity(findNearestCity(coords.latitude, coords.longitude));
       },
-      () => {
+      (error) => {
         setLocationStatus('error');
+        if (error.code === error.PERMISSION_DENIED) {
+          setLocationMessage(
+            'Location access is turned off. Allow location for this site in your browser settings, then try again—or select your city below.'
+          );
+          return;
+        }
+
+        if (error.code === error.TIMEOUT) {
+          setLocationMessage(
+            'Finding your location took too long. Please try again or select your city below.'
+          );
+          return;
+        }
+
         setLocationMessage(
-          'We could not access your location. Select a city instead.'
+          'Your browser could not determine your location. Please try again or select your city below.'
         );
       },
-      { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 }
+      { enableHighAccuracy: false, timeout: 15000, maximumAge: 300000 }
     );
-  };
+  }, [chooseCity]);
+
+  useEffect(() => {
+    if (
+      !navigator.geolocation ||
+      !navigator.permissions ||
+      !window.isSecureContext
+    ) {
+      return;
+    }
+
+    let isMounted = true;
+
+    navigator.permissions
+      .query({ name: 'geolocation' })
+      .then((permission) => {
+        if (isMounted && permission.state === 'granted') {
+          locateNearestCity();
+        }
+      })
+      .catch(() => {
+        // Some browsers do not expose geolocation permission status. The
+        // manual location button remains available in those browsers.
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [locateNearestCity]);
 
   return (
     <section
@@ -184,17 +244,18 @@ export function PassportPhotoLocationPersonalization() {
             <div className="border-b p-6 sm:p-8 lg:border-b-0 lg:border-r">
               <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
                 <LocateFixed className="h-4 w-4" />
-                Location personalization demo
+                Serving nearby cities
               </div>
               <h2
                 id="nearby-passport-photos"
                 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl"
               >
-                Find Passport Photos Near You
+                Find {serviceName} Near You
               </h2>
               <p className="mt-3 text-muted-foreground">
-                Choose a city to preview the personalized message, or use your
-                approximate location only when you want to.
+                Choose your city to see your estimated drive time to our
+                Mountain View location, or use your approximate location only
+                when you want to.
               </p>
 
               <label
@@ -227,7 +288,7 @@ export function PassportPhotoLocationPersonalization() {
                 type="button"
                 variant="outline"
                 className="mt-3 w-full"
-                onClick={useMyLocation}
+                onClick={locateNearestCity}
                 disabled={locationStatus === 'locating'}
               >
                 <Navigation className="mr-2 h-4 w-4" />
@@ -238,7 +299,9 @@ export function PassportPhotoLocationPersonalization() {
 
               <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
                 Your exact coordinates are processed only in your browser and
-                are not saved by this website.
+                are not saved by this website. Once you allow location, this
+                page will automatically use your nearest supported city on
+                future visits.
               </p>
               {locationMessage ? (
                 <p className="mt-3 text-sm font-medium text-destructive">
@@ -255,12 +318,11 @@ export function PassportPhotoLocationPersonalization() {
                     Personalized for {selectedCity.name}
                   </div>
                   <h3 className="mt-5 text-3xl font-bold tracking-tight">
-                    Passport Photos Near {selectedCity.name}
+                    {serviceName} Near {selectedCity.name}
                   </h3>
                   <p className="mt-3 max-w-xl text-lg leading-relaxed text-muted-foreground">
-                    Our Mountain View store is {selectedCity.driveTime} away.
-                    Get compliant passport and visa photos for $9.99, with
-                    walk-in service and photos ready in about five minutes.
+                    Our Mountain View store is {selectedCity.driveTime} away.{' '}
+                    {cityDescription}
                   </p>
                   <p className="mt-4 flex items-start gap-2 text-sm">
                     <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
@@ -295,12 +357,12 @@ export function PassportPhotoLocationPersonalization() {
                     <MapPin className="h-6 w-6" />
                   </div>
                   <h3 className="mt-5 text-2xl font-bold">
-                    Select a city to see the personalized experience
+                    Select your city for nearby {serviceName.toLowerCase()}
                   </h3>
                   <p className="mt-3 max-w-xl text-muted-foreground">
-                    The normal Passport Photos page remains available to
-                    everyone. Only this helpful travel message changes based on
-                    the visitor&apos;s selection.
+                    We serve customers across the Bay Area at our Mountain View
+                    location. Select a nearby city to see the approximate drive
+                    time before you visit.
                   </p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {['Palo Alto', 'Sunnyvale', 'San Jose'].map((cityName) => (
@@ -317,7 +379,7 @@ export function PassportPhotoLocationPersonalization() {
                           )
                         }
                       >
-                        Preview {cityName}
+                        Select {cityName}
                       </Button>
                     ))}
                   </div>
@@ -328,5 +390,14 @@ export function PassportPhotoLocationPersonalization() {
         </div>
       </div>
     </section>
+  );
+}
+
+export function PassportPhotoLocationPersonalization() {
+  return (
+    <ServiceLocationPersonalization
+      serviceName="Passport Photos"
+      cityDescription="Get compliant passport and visa photos for $9.99, with walk-in service and photos ready in minutes."
+    />
   );
 }

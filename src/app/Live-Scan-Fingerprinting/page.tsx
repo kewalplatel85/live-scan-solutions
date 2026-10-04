@@ -1,5 +1,6 @@
 import { GenericHero } from '@/components/common/GenericHero';
 import { LiveScanFormsFinder } from '@/components/LiveScanFormsFinder';
+import { NearbyServiceCities } from '@/components/NearbyServiceCities';
 import SEOGraph, {
   buildBreadcrumb,
   buildHowTo,
@@ -704,6 +705,7 @@ export default function LiveScanPage() {
           </div>
         </div>
       </section>
+      <NearbyServiceCities serviceName="Live Scan Fingerprinting" />
     </div>
   );
 }

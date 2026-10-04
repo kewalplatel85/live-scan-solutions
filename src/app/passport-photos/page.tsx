@@ -7,7 +7,7 @@ import SEOGraph, {
   WEBSITE_NODE,
 } from '@/components/SEOGraph';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { COMPANY } from '@/config/company';
 import { passportPhotosServiceSchema } from '@/data/google-business-schema';
 import { SITE_URL } from '@/lib/config';
@@ -23,21 +23,21 @@ import {
   Shield,
   Star,
   Users,
-  X,
   Zap,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Fast and professional—Passport Photos ready in 5 minutes',
+  title: 'Passport Photos in Mountain View | Ready in Minutes',
   description:
-    'Mail All Center offers professional passport photos in Mountain View, CA for only $9.99 - cheapest in Bay Area! US passport, visa, ID photos that meet all official requirements. Same-day service, guaranteed acceptance or free retake. Walk-ins welcome. Call (650) 961-4646.',
+    'Professional passport, visa, ID, and immigration photos in Mountain View, CA. $9.99 printed photo service, walk-ins welcome, and a free retake if your photo is not accepted.',
   keywords:
     'passport photos mountain view, passport photos near me, passport photos bay area, Mail All Center passport photos, cheap passport photos mountain view, visa photos mountain view, ID photos mountain view, professional passport photos, same day passport photos, passport photo service mountain view, passport photos palo alto, passport photos sunnyvale, US passport photos, visa application photos',
   openGraph: {
-    title: 'Passport Photos Mountain View | Mail All Center | $9.99',
+    title: 'Passport Photos in Mountain View | Mail All Center',
     description:
-      'Mail All Center offers professional passport photos in Mountain View, CA for only $9.99. Same-day service, guaranteed acceptance.',
+      'Professional passport, visa, ID, and immigration photos in Mountain View. $9.99 printed photo service with walk-ins welcome.',
     url: `/passport-photos`,
   },
   alternates: {
@@ -63,6 +63,29 @@ const nodes = [
   ]),
 ];
 
+const passportPhotoQuestions = [
+  {
+    question: 'Do I need an appointment for passport photos?',
+    answer:
+      'No. Walk-ins are welcome during our regular business hours. You can also book ahead if that is more convenient for you.',
+  },
+  {
+    question: 'What should I bring?',
+    answer:
+      'For a standard U.S. passport photo, simply come in. For a visa, immigration, or international application, bring the photo instructions from the embassy, consulate, USCIS, or requesting agency.',
+  },
+  {
+    question: 'Are digital copies included?',
+    answer:
+      'The $9.99 base service includes a printed photo copy. Digital copies are available; ask us about the format you need before your visit.',
+  },
+  {
+    question: 'Can you take photos for children?',
+    answer:
+      'Yes. We welcome customers of all ages. Please bring any application-specific photo instructions with you.',
+  },
+];
+
 export default function PassportPhotosPage() {
   return (
     <main>
@@ -75,18 +98,18 @@ export default function PassportPhotosPage() {
             Professional <span className="text-primary">Passport Photos</span>
           </>
         }
-        subtitle="Only $9.99 - Cheapest in Bay Area"
-        description="Get professional passport photos that meet all official requirements for US passports, visas, and international identification documents. Same-day service with guaranteed acceptance or we'll retake them for free."
+        subtitle="$9.99 Passport Photos — Ready in Minutes"
+        description="Get professional photos for U.S. passports, visas, IDs, and immigration documents. Walk in during business hours; if your photo is not accepted, we will retake it for free."
         benefits={[
-          { text: 'Professional service' },
-          { text: 'Same-day service' },
-          { text: 'Multiple copies' },
+          { text: 'Walk-ins welcome' },
+          { text: 'Photos ready in minutes' },
+          { text: 'Printed copy included' },
           { text: 'All ages welcome' },
         ]}
         badges={[
           {
             icon: DollarSign,
-            text: '$9.99 Lowest Price',
+            text: '$9.99 Printed Photos',
             variant: 'default',
           },
           {
@@ -128,14 +151,28 @@ export default function PassportPhotosPage() {
           },
         ]}
         rightContent={
-          <Card className="p-5 hover:shadow-lg transition-shadow border-2 border-primary/10">
+          <Card className="overflow-hidden p-5 hover:shadow-lg transition-shadow border-2 border-primary/10">
+            <div className="relative -mx-5 -mt-5 mb-5 aspect-[16/7] overflow-hidden border-b">
+              <Image
+                src="/assets/services/passport-photo-service.jpg"
+                alt="Professional passport photo service at Mail All Center"
+                fill
+                sizes="(max-width: 1024px) 100vw, 520px"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+              <Badge className="absolute bottom-3 left-3 bg-background/95 text-foreground shadow-sm hover:bg-background">
+                Walk-ins Welcome
+              </Badge>
+            </div>
+
             {/* Main Heading */}
             <div className="text-center mb-5">
               <h3 className="text-lg font-bold mb-2">
-                All Photo Types We Provide
+                Passport, Visa & ID Photos
               </h3>
               <p className="text-sm text-muted-foreground">
-                Professional photos for all your needs
+                Professional photos for the documents you need
               </p>
             </div>
 
@@ -244,285 +281,238 @@ export default function PassportPhotosPage() {
         }
       />
 
-      <PassportPhotoLocationPersonalization />
+      <nav
+        aria-label="Passport photo page sections"
+        className="border-b bg-background py-4"
+      >
+        <div className="container mx-auto flex flex-wrap items-center justify-center gap-2 px-4 sm:px-6 lg:px-8">
+          <span className="mr-1 text-sm font-semibold">On this page:</span>
+          {[
+            { href: '#before-you-visit', label: 'Before you visit' },
+            {
+              href: '#international-photo-sizes',
+              label: 'International sizes',
+            },
+            { href: '#nearby-passport-photos', label: 'Directions' },
+            { href: '#passport-photo-questions', label: 'Questions' },
+          ].map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="rounded-full border px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:border-primary/30 hover:bg-primary/5 hover:text-primary"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </nav>
 
-      {/* Price Comparison Section */}
-      <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-background">
+      <section
+        id="before-you-visit"
+        className="border-y bg-muted/35 py-12 md:py-16"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Affordable Passport Photos Near Me – Professional Service
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We guarantee the lowest price in Mountain View. Found a better
-              rate? We&apos;ll match it - no questions asked.
+          <div className="mx-auto max-w-3xl text-center">
+            <Badge variant="secondary" className="mb-3">
+              Walk-Ins Welcome
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              Passport Photos Made Simple
+            </h2>
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+              Come in when it works for you. We take your photo, review it for
+              the document requirements you share with us, and provide your
+              printed copy before you leave.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            {/* Mobile-friendly card layout for small screens */}
-            <div className="block md:hidden space-y-4">
-              <div className="text-center mb-6">
-                <Badge variant="default" className="text-sm">
-                  <DollarSign className="w-4 h-4 mr-1" />
-                  Price Match Guarantee
-                </Badge>
-              </div>
-
-              {/* Mail All Center - Featured */}
-              <Card className="border-2 border-primary/30 bg-primary/5">
-                <CardContent className="p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <h3 className="font-bold text-primary">
-                        Mail All Center
-                      </h3>
-                      <Badge variant="default" className="text-xs">
-                        Best Choice
-                      </Badge>
-                    </div>
-                    <span className="text-2xl font-bold text-primary">
-                      $9.99
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <div className="flex items-center gap-1 text-emerald-600">
-                      <CheckCircle className="w-4 h-4" />
-                      <span>Same Day Service</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-emerald-600">
-                      <CheckCircle className="w-4 h-4" />
-                      <span>Guarantee Included</span>
-                    </div>
-                  </div>
-                </CardContent>
+          <div className="mx-auto mt-8 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                icon: Clock,
+                title: '1. Walk In',
+                text: 'No appointment is required during our regular business hours.',
+              },
+              {
+                icon: Camera,
+                title: '2. We Take Your Photo',
+                text: 'We capture a professional photo for your passport, visa, ID, or immigration document.',
+              },
+              {
+                icon: Shield,
+                title: '3. We Review It',
+                text: 'Show us any agency or country instructions so we can prepare the correct photo size and format.',
+              },
+              {
+                icon: CheckCircle,
+                title: '4. Take Your Prints',
+                text: 'Your $9.99 service includes a printed photo copy. Need another format? Ask us before your visit.',
+              },
+            ].map((step) => (
+              <Card key={step.title} className="h-full p-5">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <step.icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-4 font-semibold">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {step.text}
+                </p>
               </Card>
+            ))}
+          </div>
 
-              {/* UPS Store */}
-              <Card className="border">
-                <CardContent className="p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold">UPS Store</h3>
-                    <span className="text-xl font-bold">$15.99</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <div className="flex items-center gap-1 text-blue-600">
-                      <Clock className="w-4 h-4" />
-                      <span>Same Day Available</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-red-500">
-                      <X className="w-4 h-4" />
-                      <span>No Guarantee</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Walgreens */}
-              <Card className="border">
-                <CardContent className="p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold">Walgreens</h3>
-                    <span className="text-xl font-bold">$19.99</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <div className="flex items-center gap-1 text-blue-600">
-                      <Clock className="w-4 h-4" />
-                      <span>Same Day Available</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-red-500">
-                      <X className="w-4 h-4" />
-                      <span>No Guarantee</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* FedEx Office */}
-              <Card className="border">
-                <CardContent className="p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold">FedEx Office</h3>
-                    <span className="text-xl font-bold">$19.99</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <div className="flex items-center gap-1 text-blue-600">
-                      <Clock className="w-4 h-4" />
-                      <span>Same Day Available</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-red-500">
-                      <X className="w-4 h-4" />
-                      <span>No Guarantee</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Desktop table layout for medium screens and up */}
-            <Card className="hidden md:block overflow-hidden border-2 border-primary/20">
-              <div className="bg-primary/5 border-b py-4 flex items-center justify-center">
-                <Badge variant="default" className="text-sm px-3 py-1">
-                  <DollarSign className="w-4 h-4 mr-1" />
-                  Price Match Guarantee
-                </Badge>
-              </div>
-              <CardContent className="p-0">
-                <table className="w-full">
-                  <thead className="bg-muted/50">
-                    <tr>
-                      <th className="px-6 py-4 text-left font-semibold">
-                        Provider
-                      </th>
-                      <th className="px-6 py-4 text-center font-semibold">
-                        Price
-                      </th>
-                      <th className="px-6 py-4 text-center font-semibold">
-                        Same Day
-                      </th>
-                      <th className="px-6 py-4 text-center font-semibold">
-                        Guarantee
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b bg-primary/5 border-primary/20">
-                      <td className="px-6 py-4 font-semibold text-primary">
-                        <div className="flex items-center gap-2">
-                          Mail All Center
-                          <Badge variant="default" className="text-xs">
-                            Best Choice
-                          </Badge>
-                        </div>
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        <span className="text-2xl font-bold text-primary">
-                          $9.99
-                        </span>
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        <CheckCircle className="w-5 h-5 text-emerald-600 mx-auto" />
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        <CheckCircle className="w-5 h-5 text-emerald-600 mx-auto" />
-                      </td>
-                    </tr>
-                    <tr className="border-b">
-                      <td className="px-6 py-4">UPS Store</td>
-                      <td className="px-6 py-4 text-center font-semibold">
-                        $15.99
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        <Clock className="w-5 h-5 text-blue-600 mx-auto" />
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        <X className="w-5 h-5 text-red-500 mx-auto" />
-                      </td>
-                    </tr>
-                    <tr className="border-b">
-                      <td className="px-6 py-4">Walgreens</td>
-                      <td className="px-6 py-4 text-center font-semibold">
-                        $19.99
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        <Clock className="w-5 h-5 text-blue-600 mx-auto" />
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        <X className="w-5 h-5 text-red-500 mx-auto" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4">FedEx Office</td>
-                      <td className="px-6 py-4 text-center font-semibold">
-                        $19.99
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        <Clock className="w-5 h-5 text-blue-600 mx-auto" />
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        <X className="w-5 h-5 text-red-500 mx-auto" />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </CardContent>
-            </Card>
-
-            <div className="text-center mt-8">
-              <Badge variant="outline" className="text-sm">
-                <Star className="w-4 h-4 mr-1 fill-yellow-400 text-yellow-400" />
-                We offer a price match guarantee
-              </Badge>
-            </div>
+          <div className="mx-auto mt-8 flex max-w-3xl flex-col items-center justify-center gap-3 rounded-2xl border border-primary/20 bg-primary/5 p-4 text-center sm:flex-row sm:text-left">
+            <CheckCircle className="h-5 w-5 flex-none text-success" />
+            <p className="text-sm leading-relaxed">
+              <strong>Acceptance promise:</strong> If your photo is not
+              accepted, we will retake it for free.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Why We're the #1 Choice Section */}
-      <section className="py-16 bg-background">
+      <section
+        id="international-photo-sizes"
+        className="bg-background py-12 md:py-16"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why We&apos;re the #1 Choice for Passport Photos
+          <div className="mx-auto max-w-3xl text-center">
+            <Badge variant="secondary" className="mb-3">
+              International Photo Sizes
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              Common Passport &amp; Visa Photo Sizes
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Cheapest in town, quick & reliable service, and 100% compliant
-              with all official standards.
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+              We can prepare photos in these commonly requested formats. Sizes
+              below are shown as width × height.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {/* Cheapest in Town */}
-            <Card className="p-6 text-center">
-              <div className="w-12 h-12 bg-green-50 border border-green-200 dark:bg-green-950 dark:border-green-800 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <DollarSign className="w-6 h-6 text-green-600" />
-              </div>
-              <h3 className="text-lg font-semibold mb-3">Cheapest in Town</h3>
-              <p className="text-sm text-muted-foreground">
-                Only $9.99 with price match guarantee. No hidden fees coupons
-                needed.
-              </p>
-            </Card>
+          <div className="mx-auto mt-8 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {[
+              {
+                country: 'United States',
+                document: 'Passport photo',
+                size: '51 × 51 mm',
+                detail: '2 × 2 inches',
+              },
+              {
+                country: 'Canada',
+                document: 'Passport photo',
+                size: '50 × 70 mm',
+                detail: '2 × 2¾ inches',
+              },
+              {
+                country: 'United Kingdom',
+                document: 'Passport photo',
+                size: '35 × 45 mm',
+                detail: 'Standard printed photo',
+              },
+              {
+                country: 'China',
+                document: 'Visa photo',
+                size: '33 × 48 mm',
+                detail: 'White background required',
+              },
+              {
+                country: 'India',
+                document: 'Passport, visa & OCI',
+                size: '51 × 51 mm',
+                detail: '2 × 2 inches',
+              },
+            ].map((photo) => (
+              <Card key={photo.country} className="h-full p-5">
+                <p className="text-sm font-semibold text-primary">
+                  {photo.country}
+                </p>
+                <h3 className="mt-1 font-semibold">{photo.document}</h3>
+                <p className="mt-4 text-2xl font-bold tracking-tight">
+                  {photo.size}
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {photo.detail}
+                </p>
+              </Card>
+            ))}
+          </div>
 
-            {/* Quick & Reliable */}
-            <Card className="p-6 text-center">
-              <div className="w-12 h-12 bg-blue-50 border border-blue-200 dark:bg-blue-950 dark:border-blue-800 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-6 h-6 text-blue-600" />
-              </div>
-              <h3 className="text-lg font-semibold mb-3">Quick & Reliable</h3>
-              <p className="text-sm text-muted-foreground">
-                Get your photos done in minutes. No appointment needed -
-                walk-ins welcome.
-              </p>
-            </Card>
+          <p className="mx-auto mt-6 max-w-4xl text-center text-sm leading-relaxed text-muted-foreground">
+            Requirements can vary by document type and can change. For any other
+            country, visa, or immigration application, bring the instructions
+            from the embassy, consulate, or requesting agency so we can prepare
+            the correct format.
+          </p>
+        </div>
+      </section>
 
-            {/* Compliant & Professional */}
-            <Card className="p-6 text-center">
-              <div className="w-12 h-12 bg-purple-50 border border-purple-200 dark:bg-purple-950 dark:border-purple-800 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-6 h-6 text-purple-600" />
-              </div>
-              <h3 className="text-lg font-semibold mb-3">
-                Compliant & Professional
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Advanced digital cameras and strict adherence to US State
-                Department guidelines.
-              </p>
-            </Card>
+      <section
+        id="passport-photo-questions"
+        className="border-t bg-muted/35 py-12 md:py-16"
+        aria-labelledby="passport-photo-questions-heading"
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <Badge variant="secondary" className="mb-3">
+              Quick Answers
+            </Badge>
+            <h2
+              id="passport-photo-questions-heading"
+              className="text-3xl font-bold tracking-tight md:text-4xl"
+            >
+              Before You Come In
+            </h2>
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+              A few details that help you arrive prepared.
+            </p>
+          </div>
 
-            {/* Guaranteed Acceptance */}
-            <Card className="p-6 text-center">
-              <div className="w-12 h-12 bg-emerald-50 border border-emerald-200 dark:bg-emerald-950 dark:border-emerald-800 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-6 h-6 text-emerald-600" />
-              </div>
-              <h3 className="text-lg font-semibold mb-3">
-                Guaranteed Acceptance
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Photos guaranteed to be accepted or we&apos;ll retake them for
-                free.
+          <div className="mx-auto mt-8 max-w-3xl overflow-hidden rounded-2xl border bg-card px-5">
+            {passportPhotoQuestions.map((item) => (
+              <details
+                key={item.question}
+                className="group border-b last:border-b-0"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-left font-semibold marker:hidden">
+                  {item.question}
+                  <span
+                    aria-hidden="true"
+                    className="text-xl font-normal text-primary transition-transform group-open:rotate-45"
+                  >
+                    +
+                  </span>
+                </summary>
+                <p className="pb-4 leading-relaxed text-muted-foreground">
+                  {item.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <PassportPhotoLocationPersonalization />
+
+      <section className="bg-background py-12 md:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-5xl gap-6 rounded-3xl border bg-card p-6 shadow-sm md:grid-cols-[1fr_auto] md:items-center md:p-8">
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight">
+                Have a Visa or Immigration Requirement?
+              </h2>
+              <p className="mt-2 leading-relaxed text-muted-foreground">
+                Bring the instructions from the embassy, consulate, USCIS, or
+                requesting agency. We will use them to help prepare the right
+                photo size and format for your application.
               </p>
-            </Card>
+            </div>
+            <a
+              href={COMPANY.phoneTel}
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+            >
+              <Phone className="h-4 w-4" />
+              Ask a Question
+            </a>
           </div>
         </div>
       </section>

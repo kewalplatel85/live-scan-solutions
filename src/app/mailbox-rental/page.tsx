@@ -1,4 +1,5 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import { NearbyServiceCities } from '@/components/NearbyServiceCities';
 import SEOGraph, {
   buildBreadcrumb,
   buildWebPage,
@@ -616,6 +617,7 @@ export default function MailboxRentalPage() {
           </div>
         </div>
       </section>
+      <NearbyServiceCities serviceName="Mailbox Rental" />
     </main>
   );
 }

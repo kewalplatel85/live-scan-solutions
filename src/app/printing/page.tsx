@@ -1,4 +1,5 @@
 import { GenericHero } from '@/components/common/GenericHero';
+import { NearbyServiceCities } from '@/components/NearbyServiceCities';
 import SEOGraph, {
   buildBreadcrumb,
   buildWebPage,
@@ -784,6 +785,7 @@ export default function PrintingPage() {
           </div>
         </div>
       </section>
+      <NearbyServiceCities serviceName="Printing Service" />
     </main>
   );
 }
