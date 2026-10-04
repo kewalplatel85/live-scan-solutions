@@ -93,6 +93,8 @@ export default function PassportPhotosPage() {
 
       {/* Hero Section */}
       <GenericHero
+        layout="split-60-40"
+        className="py-12 md:py-16"
         title={
           <>
             Professional <span className="text-primary">Passport Photos</span>
