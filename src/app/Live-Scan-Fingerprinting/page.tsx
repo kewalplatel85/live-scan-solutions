@@ -25,6 +25,7 @@ import {
   CalendarClock,
   Check,
   CreditCard,
+  ExternalLink,
   FileSearch,
   Info,
   ListChecks,
@@ -182,7 +183,7 @@ export default function LiveScanPage() {
             <span className="text-primary">Walk-Ins Welcome</span>
           </>
         }
-        subtitle="Rolling Fee: $19*"
+        subtitle="Rolling Fee: $17*"
         description="DOJ-listed Live Scan and professional FD-258 ink fingerprinting for employment, licensing, volunteering, and personal records. Customers from anywhere in the Bay Area are welcome to walk into our Mountain View location, or organizations can schedule mobile group service."
         disclaimerText="*Rolling fee only. Additional DOJ/FBI government submission fees apply and vary by application type. Contact us for a complete fee estimate."
         benefits={[
@@ -236,13 +237,13 @@ export default function LiveScanPage() {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Badge className="flex items-center gap-1 bg-white text-gray-900 hover:bg-white">
-                          $19
+                          $17
                           <Info className="h-3 w-3" />
                         </Badge>
                       </TooltipTrigger>
                       <TooltipContent className="max-w-xs">
                         <p className="text-xs">
-                          Rolling fee is $19. Additional DOJ/FBI government fees
+                          Rolling fee is $17. Additional DOJ/FBI government fees
                           vary by application type.
                         </p>
                       </TooltipContent>
@@ -407,6 +408,41 @@ export default function LiveScanPage() {
           </div>
         </div>
       </nav>
+
+      <section
+        className="border-b bg-primary/5 py-8"
+        aria-labelledby="live-scan-status"
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-5xl gap-5 rounded-2xl border border-primary/20 bg-background p-5 shadow-sm md:grid-cols-[auto_1fr_auto] md:items-center md:p-6">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <FileSearch className="h-6 w-6" />
+            </div>
+            <div>
+              <h2 id="live-scan-status" className="text-lg font-bold">
+                Already completed your Live Scan?
+              </h2>
+              <p className="mt-1 leading-relaxed text-muted-foreground">
+                Check your fingerprint transaction on the official California
+                DOJ status page using the 10-digit ATI number from your receipt
+                and your date of birth. Your requesting agency receives the
+                results and determines your next step.
+              </p>
+            </div>
+            <a
+              href="https://applicantstatus.doj.ca.gov"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+            >
+              Check DOJ Status
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <NearbyServiceCities serviceName="Live Scan Fingerprinting" />
 
       {/* Common Live Scan forms */}
       <section
@@ -705,7 +741,6 @@ export default function LiveScanPage() {
           </div>
         </div>
       </section>
-      <NearbyServiceCities serviceName="Live Scan Fingerprinting" />
     </div>
   );
 }

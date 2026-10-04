@@ -71,7 +71,7 @@ const services = [
     title: 'Live Scan Fingerprinting',
     description: 'DOJ & FBI certified electronic fingerprinting',
     icon: Fingerprint,
-    price: '$19 rolling fee',
+    price: '$17 rolling fee',
     features: [
       'Same-day processing',
       'Walk-ins welcome',

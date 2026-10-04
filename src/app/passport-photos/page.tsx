@@ -31,13 +31,13 @@ import Image from 'next/image';
 export const metadata: Metadata = {
   title: 'Passport Photos in Mountain View | Ready in Minutes',
   description:
-    'Professional passport, visa, ID, and immigration photos in Mountain View, CA. $9.99 printed photo service, walk-ins welcome, and a free retake if your photo is not accepted.',
+    'Professional passport, visa, ID, and immigration photos in Mountain View, CA. Photos starting at $9.99, walk-ins welcome, and a free retake if your photo is not accepted.',
   keywords:
     'passport photos mountain view, passport photos near me, passport photos bay area, Mail All Center passport photos, cheap passport photos mountain view, visa photos mountain view, ID photos mountain view, professional passport photos, same day passport photos, passport photo service mountain view, passport photos palo alto, passport photos sunnyvale, US passport photos, visa application photos',
   openGraph: {
     title: 'Passport Photos in Mountain View | Mail All Center',
     description:
-      'Professional passport, visa, ID, and immigration photos in Mountain View. $9.99 printed photo service with walk-ins welcome.',
+      'Professional passport, visa, ID, and immigration photos in Mountain View. Photos starting at $9.99 with walk-ins welcome.',
     url: `/passport-photos`,
   },
   alternates: {
@@ -77,7 +77,7 @@ const passportPhotoQuestions = [
   {
     question: 'Are digital copies included?',
     answer:
-      'The $9.99 base service includes a printed photo copy. Digital copies are available; ask us about the format you need before your visit.',
+      'Photo service starts at $9.99 and includes a printed photo copy. Digital copies are available; ask us about the format you need before your visit.',
   },
   {
     question: 'Can you take photos for children?',
@@ -100,7 +100,7 @@ export default function PassportPhotosPage() {
             Professional <span className="text-primary">Passport Photos</span>
           </>
         }
-        subtitle="$9.99 Passport Photos — Ready in Minutes"
+        subtitle="Passport Photos Starting at $9.99 — Ready in Minutes"
         description="Get professional photos for U.S. passports, visas, IDs, and immigration documents. Walk in during business hours; if your photo is not accepted, we will retake it for free."
         benefits={[
           { text: 'Walk-ins welcome' },
@@ -111,7 +111,7 @@ export default function PassportPhotosPage() {
         badges={[
           {
             icon: DollarSign,
-            text: '$9.99 Printed Photos',
+            text: 'Starting at $9.99',
             variant: 'default',
           },
           {
@@ -168,116 +168,56 @@ export default function PassportPhotosPage() {
               </Badge>
             </div>
 
-            {/* Main Heading */}
-            <div className="text-center mb-5">
-              <h3 className="text-lg font-bold mb-2">
-                Passport, Visa & ID Photos
+            <div className="text-center">
+              <h3 className="text-lg font-bold">
+                U.S. &amp; International Photo Sizes
               </h3>
-              <p className="text-sm text-muted-foreground">
-                Professional photos for the documents you need
+              <p className="mt-1 text-sm text-muted-foreground">
+                Passport, visa, ID, and immigration photos made to your
+                document&apos;s required size
               </p>
             </div>
 
-            {/* Photo Types List */}
-            <div className="space-y-3 mb-5">
-              {/* US Passport */}
-              <div className="flex items-start">
-                <div className="w-9 h-9 bg-blue-100 border border-blue-200 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                  <Globe className="w-5 h-5 text-blue-600" />
+            <div className="mt-5 grid grid-cols-2 gap-2">
+              {[
+                { icon: Globe, label: 'U.S. Passport' },
+                { icon: Camera, label: 'Visa Photos' },
+                { icon: Shield, label: 'ID Photos' },
+                { icon: Users, label: 'Immigration' },
+              ].map((photoType) => (
+                <div
+                  key={photoType.label}
+                  className="flex items-center gap-2 rounded-lg border bg-background p-3"
+                >
+                  <photoType.icon className="h-4 w-4 flex-none text-primary" />
+                  <span className="text-sm font-medium">{photoType.label}</span>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">US Passport</h4>
-                  <p className="text-xs text-muted-foreground">
-                    2x2 inch photos for US passport applications
-                  </p>
-                </div>
-              </div>
-
-              {/* Visa Photos */}
-              <div className="flex items-start">
-                <div className="w-9 h-9 bg-emerald-100 border border-emerald-200 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                  <Camera className="w-5 h-5 text-emerald-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">Visa Photos</h4>
-                  <p className="text-xs text-muted-foreground">
-                    Country-specific visa application photos
-                  </p>
-                </div>
-              </div>
-
-              {/* ID Cards */}
-              <div className="flex items-start">
-                <div className="w-9 h-9 bg-purple-100 border border-purple-200 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                  <Shield className="w-5 h-5 text-purple-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">ID Cards</h4>
-                  <p className="text-xs text-muted-foreground">
-                    State ID and driver license photos
-                  </p>
-                </div>
-              </div>
-
-              {/* Immigration */}
-              <div className="flex items-start">
-                <div className="w-9 h-9 bg-orange-100 border border-orange-200 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                  <Users className="w-5 h-5 text-orange-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">Immigration</h4>
-                  <p className="text-xs text-muted-foreground">
-                    USCIS and immigration document photos
-                  </p>
-                </div>
-              </div>
-
-              {/* All Country Sizes */}
-              <div className="flex items-start">
-                <div className="w-9 h-9 bg-indigo-100 border border-indigo-200 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                  <Globe className="w-5 h-5 text-indigo-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">
-                    All Country Sizes
-                  </h4>
-                  <p className="text-xs text-muted-foreground">
-                    We accept and provide photos for all international size
-                    requirements
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
 
-            {/* Separator */}
-            <div className="border-t border-border pt-4">
-              <h4 className="font-semibold text-sm mb-3 text-center">
-                Additional Services
-              </h4>
-              <div className="space-y-2 mb-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-muted-foreground font-medium">
-                    Digital copy available
-                  </span>
-                  <Badge variant="secondary" className="text-xs px-2 py-0.5">
-                    Available
-                  </Badge>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-muted-foreground font-medium">
-                    USB drive copy
-                  </span>
-                  <Badge variant="outline" className="text-xs px-2 py-0.5">
-                    Extra Cost
-                  </Badge>
-                </div>
+            <div className="mt-4 flex items-start gap-3 rounded-xl bg-primary/5 p-3 text-sm">
+              <Globe className="mt-0.5 h-4 w-4 flex-none text-primary" />
+              <p className="leading-relaxed text-muted-foreground">
+                <span className="font-semibold text-foreground">
+                  We take U.S. and international photos.
+                </span>{' '}
+                Bring any country or agency instructions with you for the
+                correct size and format.
+              </p>
+            </div>
+
+            <div className="mt-4 rounded-xl border border-primary/20 bg-primary/5 p-3">
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-sm font-medium">
+                  Printed photo copy included
+                </span>
+                <span className="text-lg font-bold text-primary">
+                  Starts at $9.99
+                </span>
               </div>
-              <div className="pt-2 border-t border-border">
-                <p className="text-xs text-center text-muted-foreground">
-                  <span className="font-bold text-primary">Base $9.99</span>{' '}
-                  includes print copy only
-                </p>
-              </div>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Digital copies are available on request.
+              </p>
             </div>
           </Card>
         }
@@ -348,7 +288,7 @@ export default function PassportPhotosPage() {
               {
                 icon: CheckCircle,
                 title: '4. Take Your Prints',
-                text: 'Your $9.99 service includes a printed photo copy. Need another format? Ask us before your visit.',
+                text: 'Photo service starts at $9.99 and includes a printed copy. Need another format? Ask us before your visit.',
               },
             ].map((step) => (
               <Card key={step.title} className="h-full p-5">

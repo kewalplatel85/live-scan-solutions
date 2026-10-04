@@ -44,7 +44,7 @@ export const BOOKING_SERVICES: BookingService[] = [
     id: 'live-scan',
     name: 'Live Scan Fingerprinting',
     shortName: 'Live Scan',
-    priceLabel: '$19 Rolling Fee',
+    priceLabel: '$17 Rolling Fee',
     priceSub: '+ Government Fees (vary by agency)',
     duration: '15 mins',
     calSlug: 'mailallcenter/live-scan',

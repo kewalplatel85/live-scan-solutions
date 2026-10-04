@@ -397,7 +397,7 @@ export function PassportPhotoLocationPersonalization() {
   return (
     <ServiceLocationPersonalization
       serviceName="Passport Photos"
-      cityDescription="Get compliant passport and visa photos for $9.99, with walk-in service and photos ready in minutes."
+      cityDescription="Get compliant passport and visa photos starting at $9.99, with walk-in service and photos ready in minutes."
     />
   );
 }

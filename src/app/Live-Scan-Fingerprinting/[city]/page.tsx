@@ -101,7 +101,7 @@ const serviceComparison = [
   {
     type: 'Live Scan Electronic Submission',
     bestFor: 'Employment, licensing, school volunteering, background checks',
-    price: '$19*',
+    price: '$17*',
     highlight: true,
   },
   {
@@ -479,7 +479,7 @@ export default async function LiveScanCityPage({
     ...liveScanServiceSchema,
     '@id': `${url}#service`,
     name: `Live Scan Fingerprinting for ${city.name}, ${city.state}`,
-    description: `DOJ-listed, FBI-approved Live Scan fingerprinting services for residents and organizations in ${city.name}, ${city.county}, California. The rolling fee is $19.`,
+    description: `DOJ-listed, FBI-approved Live Scan fingerprinting services for residents and organizations in ${city.name}, ${city.county}, California. The rolling fee is $17.`,
     areaServed: {
       '@type': 'City',
       name: city.name,
@@ -632,13 +632,13 @@ export default async function LiveScanCityPage({
                         variant="default"
                         className="bg-green-600 text-white hover:bg-green-700 dark:bg-green-600 dark:text-white dark:hover:bg-green-700 flex items-center gap-1"
                       >
-                        $19
+                        $17
                         <Info className="w-3 h-3 opacity-80" />
                       </Badge>
                     </TooltipTrigger>
                     <TooltipContent className="max-w-xs">
                       <p className="text-xs">
-                        <strong>Rolling fee is $19.</strong>
+                        <strong>Rolling fee is $17.</strong>
                         <br />
                         Additional DOJ/FBI government submission fees apply and
                         vary by application type. Contact us for a full fee
@@ -1269,7 +1269,7 @@ export default async function LiveScanCityPage({
               the California DOJ website as an approved Live Scan location. We
               provide walk-in, scheduled, and mobile Live Scan fingerprinting
               services for {city.name}, {city.county}, and the greater Bay Area.
-              Rolling fee is $19. Additional government (DOJ/FBI) submission
+              Rolling fee is $17. Additional government (DOJ/FBI) submission
               fees apply and vary by application type.
             </p>
           </div>
